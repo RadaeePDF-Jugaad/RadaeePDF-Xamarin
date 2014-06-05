@@ -1,0 +1,16 @@
+<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+  <attr name="managedName" path="/api/package[@name='com.radaee.pdf']">Radaee.Pdf</attr>
+  <attr name="managedName" path="/api/package[@name='com.radaee.pdfex']">Radaee.PdfEx</attr>
+  <attr name="managedName" path="/api/package[@name='com.radaee.view']">Radaee.View</attr>
+  <attr name="managedName" path="/api/package[@name='com.radaee.util']">Radaee.Util</attr>
+  
+  <attr path="/api/package[@name='com.radaee.pdfex']/class[@name='ThumbView']/method[@name='onDraw' and count(parameter)=1 and parameter[1][@type='android.graphics.Canvas']]" name="visibility">protected</attr>
+  <attr path="/api/package[@name='com.radaee.util']/class[@name='PDFGridView']/method[@name='onConfigurationChanged' and count(parameter)=1 and parameter[1][@type='android.content.res.Configuration']]" name="visibility">protected</attr>
+</metadata>

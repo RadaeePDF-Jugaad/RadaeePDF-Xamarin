@@ -1,0 +1,9 @@
+RadaeePDF Xamarin Project
+
+Thanks to BUCHI (buchi.com) team who was providing the very first release of the RadaeePDF Xamarin for Android project.
+
+Everyone can use this code for free.
+Every contribution is welcome.
+
+regards,
+GEAR.it and Radaee Studio Teams
