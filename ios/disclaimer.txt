@@ -1,9 +1,0 @@
-RadaeePDF Xamarin Project
-
-Actually we provide only the Android version of the project.
-
-Everyone can use this code for free.
-Every contribution is welcome.
-
-regards,
-GEAR.it and Radaee Studio Teams
