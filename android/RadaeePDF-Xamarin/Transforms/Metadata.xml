@@ -1,0 +1,28 @@
+<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+
+  <attr path="/api/package[@name='com.radaee.reader']/class[@name='PDFNavAct']/method[@name='onCreate']" name="visibility">protected</attr>
+
+  <attr path="/api/package[@name='com.radaee.reader']/class[@name='PDFViewAct']/method[@name='onCreate']" name="visibility">protected</attr>
+
+  <attr path="/api/package[@name='com.radaee.reader']/class[@name='PDFViewAct']/method[@name='onResume']" name="visibility">protected</attr>
+
+  <attr path="/api/package[@name='com.radaee.reader']/class[@name='PDFViewAct']/method[@name='onSaveInstanceState']" name="visibility">protected</attr>
+
+  <attr path="/api/package[@name='com.radaee.reader']/class[@name='PDFViewAct']/method[@name='onRestoreInstanceState']" name="visibility">protected</attr>
+
+  <attr path="/api/package[@name='com.radaee.reader']/class[@name='PDFViewAct']/field[@name='ms_tran_doc']" name="visibility">public</attr>
+
+  <attr path="/api/package[@name='com.radaee.util']/class[@name='PDFGridView']/method[@name='onConfigurationChanged']" name="visibility">protected</attr>
+
+  <attr path="/api/package[@name='com.radaee.view']/class[@name='VCache']/method[@name='clone']" name="managedReturn">Java.Lang.Object</attr>
+
+  <remove-node path="/api/package[@name='com.radaee.view']/interface[@name='PDFPageView.PageListener']" />
+  
+</metadata>
