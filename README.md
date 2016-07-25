@@ -18,13 +18,30 @@ http://www.radaeepdf.com/ecommerce/technical-specification
 
 ```C#
 RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
-bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey);
+bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //license activation info
 ```
 
-- **Example**:
+	- **Example**:
 
 	```C#
 	bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
+	```
+
+### Open PDF from file system/remote server
+
+* Android
+
+```C#
+RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
+mRadaeePDFPlugin.show(filePath, password, this); //the file path and the password to open the pdf if exists
+```
+
+	- **Example**:
+
+	```C#
+	mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //local
+	
+	mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
 	```
 	
 RadaeePDF library version included:
