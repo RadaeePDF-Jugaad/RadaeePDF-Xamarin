@@ -23,9 +23,9 @@ bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, em
 
 ###### Example:
 
-	```C#
-	bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
-	```
+```C#
+bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
+```
 
 ### Open PDF from file system/remote server
 
@@ -38,11 +38,11 @@ mRadaeePDFPlugin.show(filePath, password, this); //the file path and the passwor
 
 ###### Example:
 	
-	```C#
-	mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //local
-	
-	mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
-	```
+```C#
+mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //local
+
+mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
+```
 	
 RadaeePDF library version included:
 - Android: v3.7
