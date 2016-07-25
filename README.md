@@ -43,7 +43,22 @@ mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //l
 
 mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
 ```
+
+### Open PDF from assets
+
+* Android
+
+```C#
+RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
+mRadaeePDFPlugin.openFromAssets(filePath, password); //the file path starting from assets folder and the password to open the pdf if exists
+```
+
+###### Example:
 	
+```C#
+mRadaeePDFPlugin.openFromAssets("test.PDF", "");
+```
+
 RadaeePDF library version included:
 - Android: v3.7
 - iOS: v3.6.6
