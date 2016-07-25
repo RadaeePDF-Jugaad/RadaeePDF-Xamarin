@@ -38,11 +38,11 @@ mRadaeePDFPlugin.show(filePath, password, this); //the file path and the passwor
 
 ###### Example:
 	
-	```C#
+```C#
 	mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //local
 	
 	mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
-	```
+```
 	
 RadaeePDF library version included:
 - Android: v3.7
