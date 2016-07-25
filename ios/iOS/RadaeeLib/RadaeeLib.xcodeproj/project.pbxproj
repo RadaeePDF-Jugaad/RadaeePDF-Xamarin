@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A84A2D501D2284F000B2A4F2 /* ViewModeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */; };
+		A84A2D511D2284F000B2A4F2 /* ViewModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */; };
+		A864EEF81D17EAB600F4B976 /* RadaeeLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; };
+		A864EF011D17EAC000F4B976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864EF001D17EAC000F4B976 /* UIKit.framework */; };
+		A864EF031D17EB4900F4B976 /* RadaeeLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A864EF651D17EBA300F4B976 /* NSObject+PerformBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF281D17EBA300F4B976 /* NSObject+PerformBlock.h */; };
+		A864EF661D17EBA300F4B976 /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF291D17EBA300F4B976 /* NSObject+PerformBlock.m */; };
+		A864EF671D17EBA300F4B976 /* libRDPDFLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A864EF2B1D17EBA300F4B976 /* libRDPDFLib.a */; };
+		A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF2C1D17EBA300F4B976 /* PDFIOS.h */; };
+		A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF2D1D17EBA300F4B976 /* PDFObjc.h */; };
+		A864EF6A1D17EBA400F4B976 /* PDFObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF2E1D17EBA300F4B976 /* PDFObjc.m */; };
+		A864EF6B1D17EBA400F4B976 /* BookmarkTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF301D17EBA300F4B976 /* BookmarkTableViewController.h */; };
+		A864EF6C1D17EBA400F4B976 /* BookmarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF311D17EBA300F4B976 /* BookmarkTableViewController.m */; };
+		A864EF6D1D17EBA400F4B976 /* OUTLINE_ITEM.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF321D17EBA300F4B976 /* OUTLINE_ITEM.h */; };
+		A864EF6E1D17EBA400F4B976 /* OUTLINE_ITEM.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF331D17EBA300F4B976 /* OUTLINE_ITEM.m */; };
+		A864EF6F1D17EBA400F4B976 /* OutLineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF341D17EBA300F4B976 /* OutLineViewController.h */; };
+		A864EF701D17EBA400F4B976 /* OutLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF351D17EBA300F4B976 /* OutLineViewController.m */; };
+		A864EF711D17EBA400F4B976 /* PDFHttpStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF371D17EBA300F4B976 /* PDFHttpStream.h */; };
+		A864EF721D17EBA400F4B976 /* PDFHttpStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF381D17EBA300F4B976 /* PDFHttpStream.m */; };
+		A864EF731D17EBA400F4B976 /* PDFReflowView.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF391D17EBA300F4B976 /* PDFReflowView.h */; };
+		A864EF741D17EBA400F4B976 /* PDFReflowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF3A1D17EBA300F4B976 /* PDFReflowView.m */; };
+		A864EF751D17EBA400F4B976 /* PDFThumbView.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF3B1D17EBA300F4B976 /* PDFThumbView.h */; };
+		A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF3C1D17EBA300F4B976 /* PDFThumbView.m */; };
+		A864EF771D17EBA400F4B976 /* PDFV.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF3D1D17EBA300F4B976 /* PDFV.h */; };
+		A864EF781D17EBA400F4B976 /* PDFV.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF3E1D17EBA300F4B976 /* PDFV.m */; };
+		A864EF791D17EBA400F4B976 /* PDFVCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF3F1D17EBA300F4B976 /* PDFVCanvas.h */; };
+		A864EF7A1D17EBA400F4B976 /* PDFVCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF401D17EBA300F4B976 /* PDFVCanvas.m */; };
+		A864EF7B1D17EBA400F4B976 /* PDFVFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF411D17EBA300F4B976 /* PDFVFinder.h */; };
+		A864EF7C1D17EBA400F4B976 /* PDFVFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF421D17EBA300F4B976 /* PDFVFinder.m */; };
+		A864EF7D1D17EBA400F4B976 /* PDFVGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF431D17EBA300F4B976 /* PDFVGlobal.h */; };
+		A864EF7E1D17EBA400F4B976 /* PDFVGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF441D17EBA300F4B976 /* PDFVGlobal.m */; };
+		A864EF7F1D17EBA400F4B976 /* PDFView.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF451D17EBA300F4B976 /* PDFView.h */; };
+		A864EF801D17EBA400F4B976 /* PDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF461D17EBA300F4B976 /* PDFView.m */; };
+		A864EF811D17EBA400F4B976 /* PDFVPage.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF471D17EBA300F4B976 /* PDFVPage.h */; };
+		A864EF821D17EBA400F4B976 /* PDFVPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF481D17EBA300F4B976 /* PDFVPage.m */; };
+		A864EF831D17EBA400F4B976 /* PDFVThread.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF491D17EBA300F4B976 /* PDFVThread.h */; };
+		A864EF841D17EBA400F4B976 /* PDFVThread.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF4A1D17EBA300F4B976 /* PDFVThread.m */; };
+		A864EF871D17EBA400F4B976 /* PopupMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF4E1D17EBA300F4B976 /* PopupMenu.h */; };
+		A864EF881D17EBA400F4B976 /* PopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF4F1D17EBA300F4B976 /* PopupMenu.m */; };
+		A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF501D17EBA300F4B976 /* PopupMenuItem.h */; };
+		A864EF8A1D17EBA400F4B976 /* PopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF511D17EBA300F4B976 /* PopupMenuItem.m */; };
+		A864EF8B1D17EBA400F4B976 /* PopupMenuOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF521D17EBA300F4B976 /* PopupMenuOverlayView.h */; };
+		A864EF8C1D17EBA400F4B976 /* PopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF531D17EBA300F4B976 /* PopupMenuOverlayView.m */; };
+		A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF541D17EBA300F4B976 /* RDPDFViewController.h */; };
+		A864EF8E1D17EBA400F4B976 /* RDPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF551D17EBA300F4B976 /* RDPDFViewController.m */; };
+		A864EF8F1D17EBA400F4B976 /* TextAnnotViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF571D17EBA300F4B976 /* TextAnnotViewController.h */; };
+		A864EF901D17EBA400F4B976 /* TextAnnotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF581D17EBA300F4B976 /* TextAnnotViewController.m */; };
+		A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF5A1D17EBA300F4B976 /* RadaeePDFPlugin.m */; };
+		A88EBD3E1D1828070084C9A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EBD3D1D1828070084C9A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A864EEF21D17EAB600F4B976 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				A864EEF81D17EAB600F4B976 /* RadaeeLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModeTableViewController.h; sourceTree = "<group>"; };
+		A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModeTableViewController.m; sourceTree = "<group>"; };
+		A864EEF41D17EAB600F4B976 /* libRadaeeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRadaeeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A864EEF71D17EAB600F4B976 /* RadaeeLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadaeeLib.h; sourceTree = "<group>"; };
+		A864EF001D17EAC000F4B976 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A864EF281D17EBA300F4B976 /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlock.h"; sourceTree = "<group>"; };
+		A864EF291D17EBA300F4B976 /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
+		A864EF2B1D17EBA300F4B976 /* libRDPDFLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRDPDFLib.a; sourceTree = "<group>"; };
+		A864EF2C1D17EBA300F4B976 /* PDFIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFIOS.h; sourceTree = "<group>"; };
+		A864EF2D1D17EBA300F4B976 /* PDFObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFObjc.h; sourceTree = "<group>"; };
+		A864EF2E1D17EBA300F4B976 /* PDFObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFObjc.m; sourceTree = "<group>"; };
+		A864EF301D17EBA300F4B976 /* BookmarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkTableViewController.h; sourceTree = "<group>"; };
+		A864EF311D17EBA300F4B976 /* BookmarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkTableViewController.m; sourceTree = "<group>"; };
+		A864EF321D17EBA300F4B976 /* OUTLINE_ITEM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUTLINE_ITEM.h; sourceTree = "<group>"; };
+		A864EF331D17EBA300F4B976 /* OUTLINE_ITEM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUTLINE_ITEM.m; sourceTree = "<group>"; };
+		A864EF341D17EBA300F4B976 /* OutLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutLineViewController.h; sourceTree = "<group>"; };
+		A864EF351D17EBA300F4B976 /* OutLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutLineViewController.m; sourceTree = "<group>"; };
+		A864EF371D17EBA300F4B976 /* PDFHttpStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFHttpStream.h; sourceTree = "<group>"; };
+		A864EF381D17EBA300F4B976 /* PDFHttpStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFHttpStream.m; sourceTree = "<group>"; };
+		A864EF391D17EBA300F4B976 /* PDFReflowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFReflowView.h; sourceTree = "<group>"; };
+		A864EF3A1D17EBA300F4B976 /* PDFReflowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFReflowView.m; sourceTree = "<group>"; };
+		A864EF3B1D17EBA300F4B976 /* PDFThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFThumbView.h; sourceTree = "<group>"; };
+		A864EF3C1D17EBA300F4B976 /* PDFThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFThumbView.m; sourceTree = "<group>"; };
+		A864EF3D1D17EBA300F4B976 /* PDFV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFV.h; sourceTree = "<group>"; };
+		A864EF3E1D17EBA300F4B976 /* PDFV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFV.m; sourceTree = "<group>"; };
+		A864EF3F1D17EBA300F4B976 /* PDFVCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFVCanvas.h; sourceTree = "<group>"; };
+		A864EF401D17EBA300F4B976 /* PDFVCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFVCanvas.m; sourceTree = "<group>"; };
+		A864EF411D17EBA300F4B976 /* PDFVFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFVFinder.h; sourceTree = "<group>"; };
+		A864EF421D17EBA300F4B976 /* PDFVFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFVFinder.m; sourceTree = "<group>"; };
+		A864EF431D17EBA300F4B976 /* PDFVGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFVGlobal.h; sourceTree = "<group>"; };
+		A864EF441D17EBA300F4B976 /* PDFVGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFVGlobal.m; sourceTree = "<group>"; };
+		A864EF451D17EBA300F4B976 /* PDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFView.h; sourceTree = "<group>"; };
+		A864EF461D17EBA300F4B976 /* PDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFView.m; sourceTree = "<group>"; };
+		A864EF471D17EBA300F4B976 /* PDFVPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFVPage.h; sourceTree = "<group>"; };
+		A864EF481D17EBA300F4B976 /* PDFVPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFVPage.m; sourceTree = "<group>"; };
+		A864EF491D17EBA300F4B976 /* PDFVThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFVThread.h; sourceTree = "<group>"; };
+		A864EF4A1D17EBA300F4B976 /* PDFVThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFVThread.m; sourceTree = "<group>"; };
+		A864EF4E1D17EBA300F4B976 /* PopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMenu.h; sourceTree = "<group>"; };
+		A864EF4F1D17EBA300F4B976 /* PopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMenu.m; sourceTree = "<group>"; };
+		A864EF501D17EBA300F4B976 /* PopupMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMenuItem.h; sourceTree = "<group>"; };
+		A864EF511D17EBA300F4B976 /* PopupMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMenuItem.m; sourceTree = "<group>"; };
+		A864EF521D17EBA300F4B976 /* PopupMenuOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMenuOverlayView.h; sourceTree = "<group>"; };
+		A864EF531D17EBA300F4B976 /* PopupMenuOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMenuOverlayView.m; sourceTree = "<group>"; };
+		A864EF541D17EBA300F4B976 /* RDPDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDPDFViewController.h; sourceTree = "<group>"; };
+		A864EF551D17EBA300F4B976 /* RDPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDPDFViewController.m; sourceTree = "<group>"; };
+		A864EF561D17EBA300F4B976 /* RDPDFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RDPDFViewController.xib; sourceTree = "<group>"; };
+		A864EF571D17EBA300F4B976 /* TextAnnotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextAnnotViewController.h; sourceTree = "<group>"; };
+		A864EF581D17EBA300F4B976 /* TextAnnotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextAnnotViewController.m; sourceTree = "<group>"; };
+		A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadaeePDFPlugin.h; sourceTree = "<group>"; };
+		A864EF5A1D17EBA300F4B976 /* RadaeePDFPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadaeePDFPlugin.m; sourceTree = "<group>"; };
+		A88014541D245E47000EADD4 /* cmaps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cmaps; sourceTree = "<group>"; };
+		A88014551D245E47000EADD4 /* fdat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fdat; sourceTree = "<group>"; };
+		A88EBD3D1D1828070084C9A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A864EEF11D17EAB600F4B976 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A88EBD3E1D1828070084C9A9 /* Foundation.framework in Frameworks */,
+				A864EF671D17EBA300F4B976 /* libRDPDFLib.a in Frameworks */,
+				A864EF011D17EAC000F4B976 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A864EEEB1D17EAB600F4B976 = {
+			isa = PBXGroup;
+			children = (
+				A88EBD3D1D1828070084C9A9 /* Foundation.framework */,
+				A864EF001D17EAC000F4B976 /* UIKit.framework */,
+				A864EEF61D17EAB600F4B976 /* RadaeeLib */,
+				A864EEF51D17EAB600F4B976 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A864EEF51D17EAB600F4B976 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A864EEF41D17EAB600F4B976 /* libRadaeeLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A864EEF61D17EAB600F4B976 /* RadaeeLib */ = {
+			isa = PBXGroup;
+			children = (
+				A88014541D245E47000EADD4 /* cmaps */,
+				A88014551D245E47000EADD4 /* fdat */,
+				A864EF041D17EBA300F4B976 /* ios */,
+				A864EEF71D17EAB600F4B976 /* RadaeeLib.h */,
+			);
+			path = RadaeeLib;
+			sourceTree = "<group>";
+		};
+		A864EF041D17EBA300F4B976 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A864EF271D17EBA300F4B976 /* NSObject */,
+				A864EF2A1D17EBA300F4B976 /* PDFLib */,
+				A864EF2F1D17EBA300F4B976 /* PDFView */,
+				A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */,
+				A864EF5A1D17EBA300F4B976 /* RadaeePDFPlugin.m */,
+				A864EF5B1D17EBA300F4B976 /* Resources */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A864EF271D17EBA300F4B976 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				A864EF281D17EBA300F4B976 /* NSObject+PerformBlock.h */,
+				A864EF291D17EBA300F4B976 /* NSObject+PerformBlock.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		A864EF2A1D17EBA300F4B976 /* PDFLib */ = {
+			isa = PBXGroup;
+			children = (
+				A864EF2B1D17EBA300F4B976 /* libRDPDFLib.a */,
+				A864EF2C1D17EBA300F4B976 /* PDFIOS.h */,
+				A864EF2D1D17EBA300F4B976 /* PDFObjc.h */,
+				A864EF2E1D17EBA300F4B976 /* PDFObjc.m */,
+			);
+			path = PDFLib;
+			sourceTree = "<group>";
+		};
+		A864EF2F1D17EBA300F4B976 /* PDFView */ = {
+			isa = PBXGroup;
+			children = (
+				A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */,
+				A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */,
+				A864EF301D17EBA300F4B976 /* BookmarkTableViewController.h */,
+				A864EF311D17EBA300F4B976 /* BookmarkTableViewController.m */,
+				A864EF321D17EBA300F4B976 /* OUTLINE_ITEM.h */,
+				A864EF331D17EBA300F4B976 /* OUTLINE_ITEM.m */,
+				A864EF341D17EBA300F4B976 /* OutLineViewController.h */,
+				A864EF351D17EBA300F4B976 /* OutLineViewController.m */,
+				A864EF371D17EBA300F4B976 /* PDFHttpStream.h */,
+				A864EF381D17EBA300F4B976 /* PDFHttpStream.m */,
+				A864EF391D17EBA300F4B976 /* PDFReflowView.h */,
+				A864EF3A1D17EBA300F4B976 /* PDFReflowView.m */,
+				A864EF3B1D17EBA300F4B976 /* PDFThumbView.h */,
+				A864EF3C1D17EBA300F4B976 /* PDFThumbView.m */,
+				A864EF3D1D17EBA300F4B976 /* PDFV.h */,
+				A864EF3E1D17EBA300F4B976 /* PDFV.m */,
+				A864EF3F1D17EBA300F4B976 /* PDFVCanvas.h */,
+				A864EF401D17EBA300F4B976 /* PDFVCanvas.m */,
+				A864EF411D17EBA300F4B976 /* PDFVFinder.h */,
+				A864EF421D17EBA300F4B976 /* PDFVFinder.m */,
+				A864EF431D17EBA300F4B976 /* PDFVGlobal.h */,
+				A864EF441D17EBA300F4B976 /* PDFVGlobal.m */,
+				A864EF451D17EBA300F4B976 /* PDFView.h */,
+				A864EF461D17EBA300F4B976 /* PDFView.m */,
+				A864EF471D17EBA300F4B976 /* PDFVPage.h */,
+				A864EF481D17EBA300F4B976 /* PDFVPage.m */,
+				A864EF491D17EBA300F4B976 /* PDFVThread.h */,
+				A864EF4A1D17EBA300F4B976 /* PDFVThread.m */,
+				A864EF4D1D17EBA300F4B976 /* PopUpView */,
+				A864EF541D17EBA300F4B976 /* RDPDFViewController.h */,
+				A864EF551D17EBA300F4B976 /* RDPDFViewController.m */,
+				A864EF561D17EBA300F4B976 /* RDPDFViewController.xib */,
+				A864EF571D17EBA300F4B976 /* TextAnnotViewController.h */,
+				A864EF581D17EBA300F4B976 /* TextAnnotViewController.m */,
+			);
+			path = PDFView;
+			sourceTree = "<group>";
+		};
+		A864EF4D1D17EBA300F4B976 /* PopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				A864EF4E1D17EBA300F4B976 /* PopupMenu.h */,
+				A864EF4F1D17EBA300F4B976 /* PopupMenu.m */,
+				A864EF501D17EBA300F4B976 /* PopupMenuItem.h */,
+				A864EF511D17EBA300F4B976 /* PopupMenuItem.m */,
+				A864EF521D17EBA300F4B976 /* PopupMenuOverlayView.h */,
+				A864EF531D17EBA300F4B976 /* PopupMenuOverlayView.m */,
+			);
+			path = PopUpView;
+			sourceTree = "<group>";
+		};
+		A864EF5B1D17EBA300F4B976 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A864EF021D17EB1100F4B976 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */,
+				A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */,
+				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
+				A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */,
+				A864EF871D17EBA400F4B976 /* PopupMenu.h in Headers */,
+				A864EF651D17EBA300F4B976 /* NSObject+PerformBlock.h in Headers */,
+				A864EF791D17EBA400F4B976 /* PDFVCanvas.h in Headers */,
+				A864EF7B1D17EBA400F4B976 /* PDFVFinder.h in Headers */,
+				A864EF6B1D17EBA400F4B976 /* BookmarkTableViewController.h in Headers */,
+				A864EF731D17EBA400F4B976 /* PDFReflowView.h in Headers */,
+				A864EF771D17EBA400F4B976 /* PDFV.h in Headers */,
+				A864EF8F1D17EBA400F4B976 /* TextAnnotViewController.h in Headers */,
+				A864EF831D17EBA400F4B976 /* PDFVThread.h in Headers */,
+				A864EF8B1D17EBA400F4B976 /* PopupMenuOverlayView.h in Headers */,
+				A864EF7D1D17EBA400F4B976 /* PDFVGlobal.h in Headers */,
+				A864EF711D17EBA400F4B976 /* PDFHttpStream.h in Headers */,
+				A864EF031D17EB4900F4B976 /* RadaeeLib.h in Headers */,
+				A864EF7F1D17EBA400F4B976 /* PDFView.h in Headers */,
+				A84A2D501D2284F000B2A4F2 /* ViewModeTableViewController.h in Headers */,
+				A864EF6D1D17EBA400F4B976 /* OUTLINE_ITEM.h in Headers */,
+				A864EF6F1D17EBA400F4B976 /* OutLineViewController.h in Headers */,
+				A864EF811D17EBA400F4B976 /* PDFVPage.h in Headers */,
+				A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */,
+				A864EF751D17EBA400F4B976 /* PDFThumbView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A864EEF31D17EAB600F4B976 /* RadaeeLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A864EEFD1D17EAB600F4B976 /* Build configuration list for PBXNativeTarget "RadaeeLib" */;
+			buildPhases = (
+				A864EEF01D17EAB600F4B976 /* Sources */,
+				A864EEF11D17EAB600F4B976 /* Frameworks */,
+				A864EEF21D17EAB600F4B976 /* CopyFiles */,
+				A864EF021D17EB1100F4B976 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadaeeLib;
+			productName = RadaeeLib;
+			productReference = A864EEF41D17EAB600F4B976 /* libRadaeeLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A864EEEC1D17EAB600F4B976 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = gear.it;
+				TargetAttributes = {
+					A864EEF31D17EAB600F4B976 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A864EEEF1D17EAB600F4B976 /* Build configuration list for PBXProject "RadaeeLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A864EEEB1D17EAB600F4B976;
+			productRefGroup = A864EEF51D17EAB600F4B976 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A864EEF31D17EAB600F4B976 /* RadaeeLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A864EEF01D17EAB600F4B976 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A864EF8A1D17EBA400F4B976 /* PopupMenuItem.m in Sources */,
+				A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */,
+				A864EF821D17EBA400F4B976 /* PDFVPage.m in Sources */,
+				A864EF7E1D17EBA400F4B976 /* PDFVGlobal.m in Sources */,
+				A864EF6C1D17EBA400F4B976 /* BookmarkTableViewController.m in Sources */,
+				A864EF701D17EBA400F4B976 /* OutLineViewController.m in Sources */,
+				A864EF741D17EBA400F4B976 /* PDFReflowView.m in Sources */,
+				A864EF841D17EBA400F4B976 /* PDFVThread.m in Sources */,
+				A864EF8E1D17EBA400F4B976 /* RDPDFViewController.m in Sources */,
+				A864EF881D17EBA400F4B976 /* PopupMenu.m in Sources */,
+				A864EF901D17EBA400F4B976 /* TextAnnotViewController.m in Sources */,
+				A864EF721D17EBA400F4B976 /* PDFHttpStream.m in Sources */,
+				A864EF801D17EBA400F4B976 /* PDFView.m in Sources */,
+				A864EF6A1D17EBA400F4B976 /* PDFObjc.m in Sources */,
+				A864EF781D17EBA400F4B976 /* PDFV.m in Sources */,
+				A864EF661D17EBA300F4B976 /* NSObject+PerformBlock.m in Sources */,
+				A864EF7C1D17EBA400F4B976 /* PDFVFinder.m in Sources */,
+				A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */,
+				A864EF8C1D17EBA400F4B976 /* PopupMenuOverlayView.m in Sources */,
+				A84A2D511D2284F000B2A4F2 /* ViewModeTableViewController.m in Sources */,
+				A864EF6E1D17EBA400F4B976 /* OUTLINE_ITEM.m in Sources */,
+				A864EF7A1D17EBA400F4B976 /* PDFVCanvas.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A864EEFB1D17EAB600F4B976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A864EEFC1D17EAB600F4B976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A864EEFE1D17EAB600F4B976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadaeeLib/ios/PDFLib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = debugging;
+			};
+			name = Debug;
+		};
+		A864EEFF1D17EAB600F4B976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadaeeLib/ios/PDFLib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = debugging;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A864EEEF1D17EAB600F4B976 /* Build configuration list for PBXProject "RadaeeLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A864EEFB1D17EAB600F4B976 /* Debug */,
+				A864EEFC1D17EAB600F4B976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A864EEFD1D17EAB600F4B976 /* Build configuration list for PBXNativeTarget "RadaeeLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A864EEFE1D17EAB600F4B976 /* Debug */,
+				A864EEFF1D17EAB600F4B976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A864EEEC1D17EAB600F4B976 /* Project object */;
+}

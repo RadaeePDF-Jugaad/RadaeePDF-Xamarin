@@ -1,7 +1,7 @@
 RadaeePDF-Xamarin
 =================
 
-Project that enable the use of RadaeePDF SDK for Mobiles (www.radaeepdf.com) with Xamarin development tool.
+Project that enable the use of RadaeePDF SDK (www.radaeepdf.com) with Xamarin development tool.
 
 ## License
 

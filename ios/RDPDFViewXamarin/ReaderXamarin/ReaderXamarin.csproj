@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{7EB5E7D1-4011-406E-BB5B-46A350442CEA}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ReaderXamarin</RootNamespace>
+    <AssemblyName>ReaderXamarin</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\cmaps\" />
+    <Folder Include="Resources\fdat\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RDPDFViewXamarin\RDPDFViewLib.csproj">
+      <Project>{8599A9BC-623D-4EFB-8645-DA85B02EA5B4}</Project>
+      <Name>RDPDFViewLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cmaps\cmaps.dat" />
+    <BundleResource Include="Resources\cmaps\cmyk_rgb.dat" />
+    <BundleResource Include="Resources\cmaps\umaps.dat" />
+    <BundleResource Include="Resources\fdat\01" />
+    <BundleResource Include="Resources\fdat\02" />
+    <BundleResource Include="Resources\fdat\03" />
+    <BundleResource Include="Resources\fdat\00" />
+    <BundleResource Include="Resources\fdat\05" />
+    <BundleResource Include="Resources\fdat\06" />
+    <BundleResource Include="Resources\fdat\07" />
+    <BundleResource Include="Resources\fdat\08" />
+    <BundleResource Include="Resources\fdat\09" />
+    <BundleResource Include="Resources\fdat\10" />
+    <BundleResource Include="Resources\fdat\11" />
+    <BundleResource Include="Resources\fdat\12" />
+    <BundleResource Include="Resources\fdat\13" />
+    <BundleResource Include="Resources\fdat\argbsn00lp.ttf" />
+    <BundleResource Include="Resources\fdat\arimo.ttf" />
+    <BundleResource Include="Resources\fdat\arimob.ttf" />
+    <BundleResource Include="Resources\fdat\arimobi.ttf" />
+    <BundleResource Include="Resources\fdat\arimoi.ttf" />
+    <BundleResource Include="Resources\fdat\cousine.ttf" />
+    <BundleResource Include="Resources\fdat\cousineb.ttf" />
+    <BundleResource Include="Resources\fdat\cousinebi.ttf" />
+    <BundleResource Include="Resources\fdat\cousinei.ttf" />
+    <BundleResource Include="Resources\fdat\rdf008.ttf" />
+    <BundleResource Include="Resources\fdat\rdf013.ttf" />
+    <BundleResource Include="Resources\fdat\tinos.ttf" />
+    <BundleResource Include="Resources\fdat\tinosb.ttf" />
+    <BundleResource Include="Resources\fdat\tinosbi.ttf" />
+    <BundleResource Include="Resources\fdat\tinosi.ttf" />
+    <BundleResource Include="Resources\fdat\04" />
+    <BundleResource Include="Resources\btn_annot_ellipse.png" />
+    <BundleResource Include="Resources\btn_annot_ink.png" />
+    <BundleResource Include="Resources\btn_annot_rect.png" />
+    <BundleResource Include="Resources\btn_done.png" />
+    <BundleResource Include="Resources\btn_left.png" />
+    <BundleResource Include="Resources\btn_outline.png" />
+    <BundleResource Include="Resources\btn_perform.png" />
+    <BundleResource Include="Resources\btn_print.png" />
+    <BundleResource Include="Resources\btn_remove.png" />
+    <BundleResource Include="Resources\btn_right.png" />
+    <BundleResource Include="Resources\btn_search.png" />
+    <BundleResource Include="Resources\btn_view.png" />
+    <BundleResource Include="Resources\btn_view_dual.png" />
+    <BundleResource Include="Resources\btn_view_single.png" />
+    <BundleResource Include="Resources\btn_view_vert.png" />
+    <BundleResource Include="Resources\annot_remove.png" />
+    <BundleResource Include="Resources\test.pdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
