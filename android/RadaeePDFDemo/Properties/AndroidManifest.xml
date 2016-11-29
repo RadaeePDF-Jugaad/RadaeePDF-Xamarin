@@ -2,6 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.radaee.reader" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="16" />
 	<application android:label="RadaeePDFDemo">
-    <activity android:name="com.radaee.reader.PDFViewAct" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar" />
-  </application>
+		<activity android:name="com.radaee.reader.PDFViewAct" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar" />
+	</application>
 </manifest>

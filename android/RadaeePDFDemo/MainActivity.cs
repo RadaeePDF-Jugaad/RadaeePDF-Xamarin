@@ -32,7 +32,7 @@ namespace RadaeePDFDemo
 
             open.Click += delegate {
                 RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
-                mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Facebook Cookbook.pdf", "", this);
+                mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this);
             };
 
             Button openHttp = FindViewById<Button>(Resource.Id.open_http);
