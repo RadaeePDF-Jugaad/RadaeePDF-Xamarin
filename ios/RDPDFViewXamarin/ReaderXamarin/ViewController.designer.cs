@@ -18,6 +18,10 @@ namespace ReaderXamarin
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton openBtn { get; set; }
 
+        [Action ("OpenBtn_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OpenBtn_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (openBtn != null) {

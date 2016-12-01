@@ -104,6 +104,28 @@
     return [self showReader];
 }
 
+//---------------------------------------------------------
+/*
+ Author: Emanuele
+ Date last update: 01/12/16
+ Note: Aggiunta la possibilità di nascondere le icone della
+ toolbar
+ */
+//---------------------------------------------------------
+
+- (void)setHiddenButtons
+{
+    [m_pdf setHideViewModeImage:_hideViewModeImage];
+    [m_pdf setHideSearchImage:_hideSearchImage];
+    [m_pdf setHideBookmarkImage:_hideBookmarkImage];
+    [m_pdf setHideBookmarkListImage:_hideBookmarkListImage];
+    [m_pdf setHideOutlineImage:_hideOutlineImage];
+    [m_pdf setHideLineImage:_hideLineImage];
+    [m_pdf setHideRectImage:_hideRectImage];
+    [m_pdf setHideEllipseImage:_hideEllipseImage];
+    [m_pdf setHidePrintImage:_hidePrintImage];
+}
+
 - (void)readerInit
 {
     if( m_pdf == nil )
@@ -134,6 +156,8 @@
     [m_pdf setDeleteImage:[UIImage imageNamed:@"btn_remove.png"]];
     
     [m_pdf setDoneImage:[UIImage imageNamed:@"btn_done.png"]];
+    
+    [self setHiddenButtons];
     
     /*
      SetColor, Available features

@@ -7,6 +7,7 @@
 //
 
 #import "PDFView.h"
+#import "NSObject+PerformBlock.h"
 #import <QuartzCore/QuartzCore.h>
 extern int g_def_view;
 extern float g_Ink_Width;
@@ -947,9 +948,12 @@ extern bool g_double_page_enabled;
         [m_delegate OnDoubleTapped:[touch locationInView:self.window].x :[touch locationInView:self.window].y];
     }
     
-    [self performBlock:^{
-        isDoubleTapping = NO;
-    } afterDelay:0.5];
+    [self performSelector:@selector(delayedDoubleTapping) withObject:nil afterDelay:0.5];
+}
+
+- (void)delayedDoubleTapping
+{
+    isDoubleTapping = NO;
 }
 
 /*
@@ -1560,15 +1564,20 @@ extern bool g_double_page_enabled;
         {
             if( m_delegate )
             {
-                [self performBlock:^{
-                    if (!isDoubleTapping) {
-                        [m_delegate OnSingleTapped:x:y];
-                    }
-                } afterDelay:0.3];
+                NSArray *a = [NSArray arrayWithObjects:[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y], nil];
+                [self performSelector:@selector(delayedOnSingleTapping:) withObject:a afterDelay:0.3];
             }
         }
     }
 }
+
+- (void)delayedOnSingleTapping:(NSArray *)a
+{
+    if (!isDoubleTapping && a) {
+        [m_delegate OnSingleTapped:[[a objectAtIndex:0] floatValue]:[[a objectAtIndex:1] floatValue]];
+    }
+}
+
 /*
 -(void)vAddTextAnnot:(int)x :(int)y :(NSString *)text
 {

@@ -59,6 +59,42 @@ namespace RDPDFViewXamarin
 		[Export("nextImage", ArgumentSemantic.Strong)]
 		UIImage NextImage { get; set; }
 
+		// @property (nonatomic) BOOL hideViewModeImage;
+		[Export("hideViewModeImage")]
+		bool hideViewModeImage{ get; set; }
+
+		// @property (nonatomic) BOOL hideSearchImage;
+		[Export("hideSearchImage")]
+		bool hideSearchImage { get; set; }
+
+		// @property (nonatomic) BOOL hideBookmarkImage;
+		[Export("hideBookmarkImage")]
+		bool hideBookmarkImage { get; set; }
+
+		// @property (nonatomic) BOOL hideBookmarkListImage;
+		[Export("hideBookmarkListImage")]
+		bool hideBookmarkListImage { get; set; }
+
+		// @property (nonatomic) BOOL hideOutlineImage;
+		[Export("hideOutlineImage")]
+		bool hideOutlineImage { get; set; }
+
+		// @property (nonatomic) BOOL hideLineImage;
+		[Export("hideLineImage")]
+		bool hideLineImage { get; set; }
+
+		// @property (nonatomic) BOOL hideRectImage;
+		[Export("hideRectImage")]
+		bool hideRectImage { get; set; }
+
+		// @property (nonatomic) BOOL hideEllipseImage;
+		[Export("hideEllipseImage")]
+		bool hideEllipseImage { get; set; }
+
+		// @property (nonatomic) BOOL hidePrintImage;
+		[Export("hidePrintImage")]
+		bool hidePrintImage { get; set; }
+
 		// @property (nonatomic, strong) NSArray * cdv_command;
 		[Export("cdv_command", ArgumentSemantic.Strong)]
 		NSArray Cdv_command { get; set; }

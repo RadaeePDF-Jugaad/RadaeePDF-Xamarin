@@ -1,0 +1,8 @@
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Xamarin.iOS.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Mono.Dynamic.Interpreter.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Xml.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/RDPDFViewXamarin.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/mscorlib.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Core.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/Link/ReaderXamarin.exe

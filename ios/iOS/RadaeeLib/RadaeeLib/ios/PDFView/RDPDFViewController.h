@@ -29,6 +29,15 @@
 - (void)pdfChargeDidFailWithError:(NSString*)error andCode:(int)errorCode;
 @end;
 
+//---------------------------------------------------------
+/*
+ Author: Emanuele
+ Date last update: 01/12/16
+ Note: Aggiunta la possibilità di nascondere le icone della
+ toolbar
+ */
+//---------------------------------------------------------
+
 @interface RDPDFViewController : UIViewController <UISearchBarDelegate,saveTextAnnotDelegate,PDFViewDelegate,BookmarkTableViewDelegate,UIPrintInteractionControllerDelegate>
 {
     //GEAR
@@ -87,6 +96,16 @@
 @property (strong, nonatomic) UIImage *prevImage;
 @property (strong, nonatomic) UIImage *nextImage;
 @property (strong, nonatomic) UIImage *performImage;
+
+@property (nonatomic) BOOL hideViewModeImage;
+@property (nonatomic) BOOL hideSearchImage;
+@property (nonatomic) BOOL hideBookmarkImage;
+@property (nonatomic) BOOL hideBookmarkListImage;
+@property (nonatomic) BOOL hideOutlineImage;
+@property (nonatomic) BOOL hideLineImage;
+@property (nonatomic) BOOL hideRectImage;
+@property (nonatomic) BOOL hideEllipseImage;
+@property (nonatomic) BOOL hidePrintImage;
 
 // define delegate property
 @property (nonatomic, assign) id delegate;

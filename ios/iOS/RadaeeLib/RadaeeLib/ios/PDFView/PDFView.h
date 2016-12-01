@@ -11,7 +11,6 @@
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 #import "PDFV.h"
-#import "NSObject+PerformBlock.h"
 
 @protocol PDFViewDelegate <NSObject>
 - (void)OnPageChanged :(int)pageno;
