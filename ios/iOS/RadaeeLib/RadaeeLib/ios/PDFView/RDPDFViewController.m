@@ -919,7 +919,8 @@ extern uint g_oval_color;
 }
 -(void)OnSliderValueChange:(UISlider *)slider
 {
-    [self OnPageClicked:slider.value];
+    int page = (int)round(slider.value);
+    [self OnPageClicked:page - 1];
 }
 -(void)OnPageClicked :(int)pageno
 {

@@ -10,7 +10,10 @@
 #import "RDPDFViewController.h"
 #import "PDFHttpStream.h"
 
-@implementation RadaeePDFPlugin
+@implementation RadaeePDFPlugin {
+    
+    BOOL isViewModeSet;
+}
 
 #pragma mark - Plugin init
 
@@ -31,6 +34,29 @@
     highlightColor = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighlightColor"];
     ovalColor = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"OvalColor"];
     selColor = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"SelColor"];
+    
+    /*
+     SetColor, Available features
+     
+     0: inkColor
+     1: rectColor
+     2: underlineColor
+     3: strikeoutColor
+     4: highlightColor
+     5: ovalColor
+     6: selColor
+     
+     */
+    
+    [self setColor:0xFF000000 forFeature:0];
+    [self setColor:0xFF000000 forFeature:1];
+    [self setColor:0xFF000000 forFeature:2];
+    [self setColor:0xFF000000 forFeature:3];
+    [self setColor:0xFFFFFF00 forFeature:4];
+    [self setColor:0xFF000000 forFeature:5];
+    [self setColor:0x400000C0 forFeature:6];
+    
+    isViewModeSet = NO;
 }
 
 #pragma mark - Plugin API
@@ -135,7 +161,10 @@
     
     [m_pdf setDelegate:self];
     
-    [self setReaderViewMode:3];
+    if (!isViewModeSet) {
+        [self setReaderViewMode:3];
+    }
+    
     [self setPagingEnabled:YES];
     [self setDoublePageEnabled:NO];
     
@@ -158,27 +187,6 @@
     [m_pdf setDoneImage:[UIImage imageNamed:@"btn_done.png"]];
     
     [self setHiddenButtons];
-    
-    /*
-     SetColor, Available features
-     
-     0: inkColor
-     1: rectColor
-     2: underlineColor
-     3: strikeoutColor
-     4: highlightColor
-     5: ovalColor
-     6: selColor
-     
-     */
-    
-    [self setColor:0xFF000000 forFeature:0];
-    [self setColor:0xFF000000 forFeature:1];
-    [self setColor:0xFF000000 forFeature:2];
-    [self setColor:0xFF000000 forFeature:3];
-    [self setColor:0xFFFFFF00 forFeature:4];
-    [self setColor:0xFF000000 forFeature:5];
-    [self setColor:0x400000C0 forFeature:6];
     
     [self loadSettingsWithDefaults];
 }
@@ -238,8 +246,9 @@
 
 - (BOOL)setReaderViewMode:(int)mode
 {
-    if (mode > 0 && mode < 5) {
+    if (mode >= 0 && mode < 5) {
         _viewMode = mode;
+        isViewModeSet = YES;
         return YES;
     }
     
@@ -302,7 +311,9 @@
     [[NSUserDefaults standardUserDefaults] setInteger:_viewMode forKey:@"DefView"];
     [[NSUserDefaults standardUserDefaults] setInteger:selColor forKey:@"SelColor"];
     
-    g_def_view = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DefView"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    g_def_view = _viewMode; //(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DefView"];
     g_MatchWholeWord = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"MatchWholeWord"];
     
     g_rect_color = rectColor;
@@ -313,8 +324,6 @@
     annotUnderlineColor = underlineColor;
     annotStrikeoutColor = strikeoutColor;
     //annotSquigglyColor = 0xFF00FF00;
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];    
 }
 
 #pragma mark - load Bookmarks

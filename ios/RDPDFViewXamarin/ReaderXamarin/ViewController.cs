@@ -58,7 +58,22 @@ namespace ReaderXamarin
 			NSDictionary[] arrDict2 = { openDict };
 			NSArray param2 = NSArray.FromObjects(arrDict2);
 
-			plugin.ToggleThumbSeekBar(1);
+			plugin.ToggleThumbSeekBar(1); //Toggle Thumbnail/SeekBar
+			plugin.SetReaderViewMode(0); //Set Reader Mode
+
+			/*
+			 SetColor, Available features
+
+			 0: inkColor
+			 1: rectColor
+			 2: underlineColor
+			 3: strikeoutColor
+			 4: highlightColor
+			 5: ovalColor
+			 6: selColor
+			 */
+
+			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
 			RDPDFViewController controller = plugin.OpenFromAssets(param2);
 

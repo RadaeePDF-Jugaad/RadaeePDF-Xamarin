@@ -32,6 +32,7 @@
     
     [activationDict setObject:@"Radaee" forKey:@"company"];
     [activationDict setObject:@"radaee_com@yahoo.cn" forKey:@"email"];
+    [activationDict setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:@"bundle"];
     [activationDict setObject:@"89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO" forKey:@"key"];
     [activationDict setObject:[NSNumber numberWithInt:2] forKey:@"licenseType"];
     
@@ -43,6 +44,8 @@
     [openDict setObject:@"" forKey:@"password"];
     
     [plugin toggleThumbSeekBar:1];
+    [plugin setReaderViewMode:0];
+    [plugin setColor:0xFFFF00FF forFeature:1];
     
     RDPDFViewController *controller = [plugin openFromAssets:@[openDict]];
     
