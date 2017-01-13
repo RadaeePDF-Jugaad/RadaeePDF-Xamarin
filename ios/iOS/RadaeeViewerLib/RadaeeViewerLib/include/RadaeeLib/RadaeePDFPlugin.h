@@ -11,6 +11,15 @@
 
 @class RDPDFViewController;
 
+//---------------------------------------------------------
+/*
+ Author: Emanuele
+ Date last update: 01/12/16
+ Note: Aggiunta la possibilità di nascondere le icone della
+ toolbar
+ */
+//---------------------------------------------------------
+
 @interface RadaeePDFPlugin : NSObject{
     RDPDFViewController *m_pdf;
     
@@ -44,14 +53,26 @@
 @property (strong, nonatomic) UIImage *prevImage;
 @property (strong, nonatomic) UIImage *nextImage;
 
+@property (nonatomic) BOOL hideViewModeImage;
+@property (nonatomic) BOOL hideSearchImage;
+@property (nonatomic) BOOL hideBookmarkImage;
+@property (nonatomic) BOOL hideBookmarkListImage;
+@property (nonatomic) BOOL hideOutlineImage;
+@property (nonatomic) BOOL hideLineImage;
+@property (nonatomic) BOOL hideRectImage;
+@property (nonatomic) BOOL hideEllipseImage;
+@property (nonatomic) BOOL hidePrintImage;
+
 @property (strong, nonatomic) NSArray *cdv_command;
 @property (nonatomic, weak) UIViewController *viewController;
 
-- (instancetype)init;
+- (void)pluginInitialize;
 
-- (RDPDFViewController *)show:(NSArray *)command;
-- (RDPDFViewController *)activateLicense:(NSArray *)command;
-- (RDPDFViewController *)openFromAssets:(NSArray *)command;
+- (id)show:(NSArray *)command;
+- (void)activateLicense:(NSArray *)command;
+- (id)openFromAssets:(NSArray *)command;
+
++ (RadaeePDFPlugin *)pluginInit;
 
 + (NSMutableArray *)loadBookmark;
 + (NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName;

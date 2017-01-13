@@ -77,6 +77,8 @@
     float annot_x;
     float annot_y;
     //PDFAnnot end
+    
+    float thumbHight;
 }
 
 #pragma mark - lib features

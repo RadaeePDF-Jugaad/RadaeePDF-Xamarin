@@ -148,11 +148,24 @@ extern bool g_double_page_enabled;
     	self.contentOffset = CGPointMake( 0, 0 );
     
     self.pagingEnabled = NO;
-    if (g_def_view == 3 || g_def_view == 4) {
+    if ([self paginAvailable]) {
         self.pagingEnabled = g_paging_enabled;
     }
 
     [self refresh];
+}
+
+- (void)centerPage
+{
+    if( m_type == 3 || m_type == 4 )
+    {
+        struct PDFV_POS pos;
+        [m_view vGetPos:&pos :m_w/2 :m_h/2];
+        int dx;
+        int dy;
+        [m_view vGetDeltaToCenterPage:pos.pageno :&dx :&dy];
+        [self scrollRectToVisible:CGRectMake(self.contentOffset.x + dx/m_scale, self.contentOffset.y + dy/m_scale, m_w/m_scale, m_h/m_scale) animated:true];
+    }
 }
 
 -(void)vGoto:(int)pageno
@@ -258,6 +271,16 @@ extern bool g_double_page_enabled;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if( m_type == 3 || m_type == 4 ) {
+        
+        //Vertical block
+        if (self.contentOffset.y <= 0)
+            self.contentOffset = CGPointMake(self.contentOffset.x, 0);
+        if (self.contentOffset.y > 0 && self.contentOffset.y >= self.contentSize.height - self.frame.size.height) {
+            self.contentOffset = CGPointMake(self.contentOffset.x, self.contentSize.height - self.frame.size.height);
+        }
+    }
+    
     [m_view vMoveTo:self.contentOffset.x * m_scale :self.contentOffset.y * m_scale];
     [self refresh];
 
@@ -377,9 +400,9 @@ extern bool g_double_page_enabled;
     
     if (self.zoomScale <= 1 && m_status != sta_annot)
     {
-        [self resetZoomLevel];
+        [self centerPage];
         
-        if (self.zoomScale <= 1 && (g_def_view == 3 || g_def_view == 4)) {
+        if (self.zoomScale <= 1 && [self paginAvailable]) {
             self.pagingEnabled = g_paging_enabled;
         }
     }
@@ -918,7 +941,7 @@ extern bool g_double_page_enabled;
     }
     else
     {
-        if( m_type == 3 || m_type == 4 )
+        if([self paginAvailable])
         {
             struct PDFV_POS pos;
             [m_view vGetPos:&pos :m_w/2 :m_h/2];
@@ -1050,7 +1073,7 @@ extern bool g_double_page_enabled;
 
 -(void)vGetPos:(struct PDFV_POS*)pos
 {
-    [m_view vGetPos:pos :0 :0];
+    [m_view vGetPos:pos :m_w/2 :m_h/2];
 }
 
 -(void)vSetPos:(const struct PDFV_POS*)pos;
@@ -1067,7 +1090,8 @@ extern bool g_double_page_enabled;
 {
     if( m_status == sta_sel )
     {
-        self.scrollEnabled = true;
+        [self enableScroll];
+        
         m_status = sta_none;
     }
 }
@@ -1144,8 +1168,9 @@ extern bool g_double_page_enabled;
     
 	if( m_status == sta_note )
 	{
-	    self.scrollEnabled = true;
-		m_status = sta_none;
+        [self enableScroll];
+        
+	    m_status = sta_none;
 		//[m_view vRenderSync:pos.pageno];
 		[self refresh];
 	}
@@ -1168,7 +1193,8 @@ extern bool g_double_page_enabled;
 {
     if( m_status == sta_ink )
     {
-        self.scrollEnabled = true;
+        [self enableScroll];
+        
         m_status = sta_none;
         m_ink = NULL;
         [self refresh];
@@ -1203,7 +1229,7 @@ extern bool g_double_page_enabled;
         [m_doc save];
         //END
         
-        self.scrollEnabled = true;
+        [self enableScroll];
     }
 }
 -(bool)vEllipseStart
@@ -1222,7 +1248,7 @@ extern bool g_double_page_enabled;
 {
     if( m_status == sta_ellipse )
     {
-        self.scrollEnabled = true;
+        [self enableScroll];
         m_ellipse_cnt = 0;
         m_ellipse_drawing = false;
         m_status = sta_none;
@@ -1301,7 +1327,7 @@ extern bool g_double_page_enabled;
         }
         [self refresh];
         [m_doc save];
-        self.scrollEnabled = true;
+        [self enableScroll];
     }
 }
 -(bool)vRectStart
@@ -1320,7 +1346,7 @@ extern bool g_double_page_enabled;
 {
     if( m_status == sta_rect )
     {
-        self.scrollEnabled = true;
+        [self enableScroll];
         m_rects_cnt = 0;
         m_rects_drawing = false;
         m_status = sta_none;
@@ -1403,8 +1429,13 @@ extern bool g_double_page_enabled;
         //Save Annotations
        	//Document_save(m_doc);
         //END
-        self.scrollEnabled = true;
+        [self enableScroll];
     }
+}
+
+- (void)enableScroll
+{
+    self.scrollEnabled = true;
 }
 
 -(void)vAnnotPerform
@@ -1721,4 +1752,10 @@ extern bool g_double_page_enabled;
     [self vAnnotEnd];
     
 }
+
+- (BOOL)paginAvailable
+{
+    return (g_def_view == 3 || g_def_view == 4);
+}
+
 @end

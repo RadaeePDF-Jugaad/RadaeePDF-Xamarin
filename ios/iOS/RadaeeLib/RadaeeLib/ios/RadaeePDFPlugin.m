@@ -61,7 +61,7 @@
 
 #pragma mark - Plugin API
 
-- (RDPDFViewController *)show:(NSArray *)command
+- (id)show:(NSArray *)command
 {
     self.cdv_command = command;
 
@@ -98,7 +98,7 @@
     return nil;
 }
 
-- (RDPDFViewController *)openFromAssets:(NSArray *)command
+- (id)openFromAssets:(NSArray *)command
 {
     self.cdv_command = command;
     
@@ -141,6 +141,8 @@
 
 - (void)setHiddenButtons
 {
+    //Standard implementation
+    /*
     [m_pdf setHideViewModeImage:_hideViewModeImage];
     [m_pdf setHideSearchImage:_hideSearchImage];
     [m_pdf setHideBookmarkImage:_hideBookmarkImage];
@@ -150,6 +152,18 @@
     [m_pdf setHideRectImage:_hideRectImage];
     [m_pdf setHideEllipseImage:_hideEllipseImage];
     [m_pdf setHidePrintImage:_hidePrintImage];
+    */
+    
+    //GEE implemention
+    [m_pdf setHideViewModeImage:_hideViewModeImage];
+    [m_pdf setHideSearchImage:_hideSearchImage];
+    [m_pdf setHideBookmarkImage:YES];
+    [m_pdf setHideBookmarkListImage:YES];
+    [m_pdf setHideOutlineImage:YES];
+    [m_pdf setHideLineImage:YES];
+    [m_pdf setHideRectImage:YES];
+    [m_pdf setHideEllipseImage:YES];
+    [m_pdf setHidePrintImage:YES];
 }
 
 - (void)readerInit
@@ -165,8 +179,8 @@
         [self setReaderViewMode:3];
     }
     
-    [self setPagingEnabled:YES];
-    [self setDoublePageEnabled:NO];
+    [self setPagingEnabled:g_paging_enabled];
+    [self setDoublePageEnabled:g_double_page_enabled];
     
     [m_pdf setViewModeImage:[UIImage imageNamed:@"btn_view.png"]];
     [m_pdf setSearchImage:[UIImage imageNamed:@"btn_search.png"]];
@@ -193,7 +207,6 @@
 
 - (RDPDFViewController *)showReader
 {
-    //toggle thumbnail/seekbar
     //toggle thumbnail/seekbar
     if (bottomBar < 1)
         [m_pdf PDFThumbNailinit:1];
@@ -246,7 +259,7 @@
 
 - (BOOL)setReaderViewMode:(int)mode
 {
-    if (mode >= 0 && mode < 5) {
+    if (mode >= 0 && mode < 4) {
         _viewMode = mode;
         isViewModeSet = YES;
         return YES;

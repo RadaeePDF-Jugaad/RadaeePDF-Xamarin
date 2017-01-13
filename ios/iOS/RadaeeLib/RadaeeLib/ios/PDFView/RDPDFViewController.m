@@ -183,6 +183,10 @@ extern uint g_oval_color;
     
     [toolbarItem removeObjectsInArray:objectsToRemove];
     
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    [toolbarItem insertObject:flex atIndex:0];
+    
     [toolBar setItems:toolbarItem animated:NO];
 }
 
@@ -201,6 +205,8 @@ extern uint g_oval_color;
     
     BOOL isActive = [[NSUserDefaults standardUserDefaults] boolForKey:@"actIsActive"];
     int licenseType = [[[NSUserDefaults standardUserDefaults] objectForKey:@"actActivationType"] intValue];
+    
+    thumbHight = 100;
     
     PDFannot = [[PDFAnnot alloc] init];
     b_outline = false;
@@ -272,6 +278,8 @@ extern uint g_oval_color;
     b_findStart = NO;
 	[self createToolbarItems];
     self.navigationItem.titleView =toolBar;
+    
+    [pageNumLabel setFrame:CGRectMake(0, 20+self.navigationController.navigationBar.frame.size.height+1, 65, 30)];
     
     [self toolbarStyle];
     
@@ -544,7 +552,6 @@ extern uint g_oval_color;
 }
 - (IBAction)viewMenu:(id) sender
 {
-    
     b_outline =true;
     PDFOutline *root = [m_doc rootOutline];
     if( root )
@@ -584,7 +591,7 @@ extern uint g_oval_color;
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAllButUpsideDown;
 }
@@ -635,8 +642,8 @@ extern uint g_oval_color;
     float hi = self.navigationController.navigationBar.bounds.size.height;
     if(SYS_VERSION>=7.0)
     {
-        [m_Thumbview setFrame:CGRectMake(0, cheight-50, cwidth, 50)];
-        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-50, cwidth, 50).size];
+        [m_Thumbview setFrame:CGRectMake(0, cheight-thumbHight, cwidth, thumbHight)];
+        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-thumbHight, cwidth, thumbHight).size];
         [m_slider setFrame:CGRectMake(0, cheight-50, cwidth, 50)];
         [m_slider sizeThatFits:CGRectMake(0, cheight-50, cwidth, 50).size];
         
@@ -644,8 +651,8 @@ extern uint g_oval_color;
     }
     else
     {
-        [m_Thumbview setFrame:CGRectMake(0, cheight-hi-50-20, cwidth, 50)];
-        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-hi-50-20, cwidth, 50).size];
+        [m_Thumbview setFrame:CGRectMake(0, cheight-hi-thumbHight-20, cwidth, thumbHight)];
+        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-hi-thumbHight-20, cwidth, thumbHight).size];
         [m_slider setFrame:CGRectMake(0, cheight-hi-50-20, cwidth, 50)];
         [m_slider sizeThatFits:CGRectMake(0, cheight-hi-50-20, cwidth, 50).size];
         [m_searchBar setFrame:CGRectMake(0, 0, cwidth, 41)];
@@ -670,7 +677,7 @@ extern uint g_oval_color;
     err = [m_doc open:path :pwd];
     if ([m_doc canSave]){
         NSString *cacheFile = [[NSTemporaryDirectory() stringByAppendingString:@""] stringByAppendingString:@"cache.dat"];
-       // [m_doc setCache:cacheFile];
+        [m_doc setCache:cacheFile];
     }
     
     switch( err )
@@ -703,14 +710,15 @@ extern uint g_oval_color;
     pagecount =[m_doc pageCount];
     [self.view addSubview:m_view];
     m_bSel = false;
+    
     return 1;
 }
--(int)PDFOpenStream:(id<PDFStream>)stream :(NSString *)password
+-(int)PDFOpenStream:(id<PDFStream>)stream :(NSString *)pwd
 {
+    password = pwd;
     [self PDFClose];
     PDF_ERR err = 0;
     m_doc = [[PDFDoc alloc] init];
-   // err = [m_doc open:path :pwd];
     err = [m_doc openStream:stream :password];
     switch( err )
     {
@@ -829,7 +837,7 @@ extern uint g_oval_color;
     pageNumLabel.backgroundColor = [UIColor colorWithRed:1.5 green:1.5 blue:1.5 alpha:0.2];
     pageNumLabel.textColor = [UIColor whiteColor];
     pageNumLabel.adjustsFontSizeToFitWidth = YES;
-    pageNumLabel.textAlignment= UITextAlignmentCenter;
+    pageNumLabel.textAlignment= NSTextAlignmentCenter;
     pageNumLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     pageNumLabel.layer.cornerRadius = 10;
     NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pagecount];
@@ -858,16 +866,17 @@ extern uint g_oval_color;
     
     
     float hi = self.navigationController.navigationBar.bounds.size.height;
+
     CGRect rect;
     rect = [[UIApplication sharedApplication] statusBarFrame];
 
     if(SYS_VERSION>=7.0)
     {
-        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-50, cwidth, 50)];
+        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-thumbHight, cwidth, thumbHight)];
         pageNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20+hi+1, 65, 30)];
     }
     else{
-        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-hi-50-20, cwidth, 50)];
+        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-hi-thumbHight-20, cwidth, thumbHight)];
         pageNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 65, 30)];
     }
     [m_Thumbview vOpen :m_doc :(id<PDFThumbViewDelegate>)self];
@@ -876,7 +885,7 @@ extern uint g_oval_color;
     pageNumLabel.backgroundColor = [UIColor colorWithRed:1.5 green:1.5 blue:1.5 alpha:0.2];
     pageNumLabel.textColor = [UIColor whiteColor];
     pageNumLabel.adjustsFontSizeToFitWidth = YES;
-    pageNumLabel.textAlignment= UITextAlignmentCenter;
+    pageNumLabel.textAlignment = NSTextAlignmentCenter;
     pageNumLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     pageNumLabel.layer.cornerRadius = 10;
     NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pagecount];
@@ -1690,7 +1699,7 @@ extern uint g_oval_color;
         
         viewModePopover = [[UIPopoverController alloc] initWithContentViewController:vm];
         [viewModePopover setPopoverContentSize:CGSizeMake(300, 44 * 3) animated:NO];
-        [viewModePopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:0] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [viewModePopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:1] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
     else
     {
@@ -1735,10 +1744,14 @@ extern uint g_oval_color;
             break;
         }
         default:
+        {
+            g_def_view = 3;
+            g_double_page_enabled = NO;
             break;
+        }
     }
     
-    [[NSUserDefaults standardUserDefaults] setInteger:mode forKey:@"DefView"];
+    [[NSUserDefaults standardUserDefaults] setInteger:g_def_view forKey:@"DefView"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     CGRect rect = [[UIScreen mainScreen]bounds];
     
@@ -1852,5 +1865,44 @@ extern uint g_oval_color;
     [textField resignFirstResponder];
     return YES;
 }
+
+//add begin and end editing delegate to add keyboard notifications
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    
+    [self.view endEditing:YES];
+    return YES;
+}
+
+//add keyboard notification
+#pragma mark - Keyboard Notifications
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    //move the view to avoid the keyboard overlay
+    NSDictionary* keyboardInfo = [notification userInfo];
+    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
+    
+    float gap = (keyboardFrameBeginRect.size.height - 30) - (textFd.frame.origin.y + textFd.frame.size.height);
+    
+    if (gap < 0) {
+        [self.view setFrame:CGRectMake(0, gap, self.view.frame.size.width, self.view.frame.size.height)];
+    }
+}
+
+- (void)keyboardDidHide:(NSNotification *)notification
+{
+    //restore the correct view position
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+}
+
 
 @end

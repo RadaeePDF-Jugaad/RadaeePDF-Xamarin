@@ -68,9 +68,9 @@
 
 - (void)pluginInitialize;
 
-- (RDPDFViewController *)show:(NSArray *)command;
+- (id)show:(NSArray *)command;
 - (void)activateLicense:(NSArray *)command;
-- (RDPDFViewController *)openFromAssets:(NSArray *)command;
+- (id)openFromAssets:(NSArray *)command;
 
 + (RadaeePDFPlugin *)pluginInit;
 

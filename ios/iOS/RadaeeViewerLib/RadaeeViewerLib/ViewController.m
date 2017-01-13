@@ -47,7 +47,7 @@
     [plugin setReaderViewMode:0];
     [plugin setColor:0xFFFF00FF forFeature:1];
     
-    RDPDFViewController *controller = [plugin openFromAssets:@[openDict]];
+    UIViewController *controller = (UIViewController *)[plugin openFromAssets:@[openDict]];
     
     [self.navigationController pushViewController:controller animated:YES];
 }
