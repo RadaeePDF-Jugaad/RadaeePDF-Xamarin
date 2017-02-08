@@ -162,8 +162,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f070031
 			public const int annot_combo = 2131165233;
 			
-			// aapt resource value: 0x7f070032
-			public const int annot_text = 2131165234;
+			// aapt resource value: 0x7f070033
+			public const int annot_text = 2131165235;
 			
 			// aapt resource value: 0x7f07000c
 			public const int btn_annot = 2131165196;
@@ -258,8 +258,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f070018
 			public const int lab_subj = 2131165208;
 			
-			// aapt resource value: 0x7f070033
-			public const int lay_root = 2131165235;
+			// aapt resource value: 0x7f070032
+			public const int lay_root = 2131165234;
 			
 			// aapt resource value: 0x7f07001c
 			public const int lst_outline = 2131165212;
@@ -398,13 +398,10 @@ namespace RadaeePDFDemo
 			public const int pop_edit = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int pop_edit1 = 2130903057;
+			public const int pop_view = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int pop_view = 2130903058;
-			
-			// aapt resource value: 0x7f030013
-			public const int thumb_view = 2130903059;
+			public const int thumb_view = 2130903058;
 			
 			static Layout()
 			{
@@ -420,55 +417,61 @@ namespace RadaeePDFDemo
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int arimo = 2130968576;
+			public const int amiri_regular = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int arimob = 2130968577;
+			public const int arimo = 2130968577;
 			
 			// aapt resource value: 0x7f040002
-			public const int arimobi = 2130968578;
+			public const int arimob = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int arimoi = 2130968579;
+			public const int arimobi = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int cmaps = 2130968580;
+			public const int arimoi = 2130968580;
 			
 			// aapt resource value: 0x7f040005
-			public const int cmyk_rgb = 2130968581;
+			public const int cmaps = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int cousine = 2130968582;
+			public const int cmyk_rgb = 2130968582;
 			
 			// aapt resource value: 0x7f040007
-			public const int cousineb = 2130968583;
+			public const int cousine = 2130968583;
 			
 			// aapt resource value: 0x7f040008
-			public const int cousinebi = 2130968584;
+			public const int cousineb = 2130968584;
 			
 			// aapt resource value: 0x7f040009
-			public const int cousinei = 2130968585;
+			public const int cousinebi = 2130968585;
 			
 			// aapt resource value: 0x7f04000a
-			public const int rdf013 = 2130968586;
+			public const int cousinei = 2130968586;
 			
 			// aapt resource value: 0x7f04000b
-			public const int symbol = 2130968587;
+			public const int rdf008 = 2130968587;
 			
 			// aapt resource value: 0x7f04000c
-			public const int tinos = 2130968588;
+			public const int rdf013 = 2130968588;
 			
 			// aapt resource value: 0x7f04000d
-			public const int tinosb = 2130968589;
+			public const int symbol = 2130968589;
 			
 			// aapt resource value: 0x7f04000e
-			public const int tinosbi = 2130968590;
+			public const int tinos = 2130968590;
 			
 			// aapt resource value: 0x7f04000f
-			public const int tinosi = 2130968591;
+			public const int tinosb = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int umaps = 2130968592;
+			public const int tinosbi = 2130968592;
+			
+			// aapt resource value: 0x7f040011
+			public const int tinosi = 2130968593;
+			
+			// aapt resource value: 0x7f040012
+			public const int umaps = 2130968594;
 			
 			static Raw()
 			{
@@ -483,95 +486,197 @@ namespace RadaeePDFDemo
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f06001d
-			public const int ApplicationName = 2131099677;
+			// aapt resource value: 0x7f05003f
+			public const int ApplicationName = 2131034175;
 			
-			// aapt resource value: 0x7f06001c
-			public const int Hello = 2131099676;
+			// aapt resource value: 0x7f05003e
+			public const int Hello = 2131034174;
 			
-			// aapt resource value: 0x7f060000
-			public const int annotation_failed = 2131099648;
+			// aapt resource value: 0x7f050000
+			public const int about = 2131034112;
 			
-			// aapt resource value: 0x7f060001
-			public const int app_name = 2131099649;
+			// aapt resource value: 0x7f050001
+			public const int advance = 2131034113;
 			
-			// aapt resource value: 0x7f060002
-			public const int cancel = 2131099650;
+			// aapt resource value: 0x7f050002
+			public const int annotation_failed = 2131034114;
 			
-			// aapt resource value: 0x7f060003
-			public const int cannot_write_or_encrypted = 2131099651;
+			// aapt resource value: 0x7f050003
+			public const int app_name = 2131034115;
 			
-			// aapt resource value: 0x7f060004
-			public const int copy_text_to_clipboard = 2131099652;
+			// aapt resource value: 0x7f050004
+			public const int browse_open_file = 2131034116;
 			
-			// aapt resource value: 0x7f060005
-			public const int dual_page = 2131099653;
+			// aapt resource value: 0x7f050005
+			public const int cancel = 2131034117;
 			
-			// aapt resource value: 0x7f060006
-			public const int exiting = 2131099654;
+			// aapt resource value: 0x7f050006
+			public const int cannot_write_or_encrypted = 2131034118;
 			
-			// aapt resource value: 0x7f060007
-			public const int failed_encryption = 2131099655;
+			// aapt resource value: 0x7f050007
+			public const int catalog_not_found = 2131034119;
 			
-			// aapt resource value: 0x7f060008
-			public const int failed_invalid_format = 2131099656;
+			// aapt resource value: 0x7f05003d
+			public const int copy_text = 2131034173;
 			
-			// aapt resource value: 0x7f060009
-			public const int failed_invalid_password = 2131099657;
+			// aapt resource value: 0x7f050008
+			public const int copy_text_to_clipboard = 2131034120;
 			
-			// aapt resource value: 0x7f06000a
-			public const int failed_invalid_path = 2131099658;
+			// aapt resource value: 0x7f050009
+			public const int create_pdf = 2131034121;
 			
-			// aapt resource value: 0x7f06000b
-			public const int failed_unknown = 2131099659;
+			// aapt resource value: 0x7f05000a
+			public const int curl_pages = 2131034122;
 			
-			// aapt resource value: 0x7f06000c
-			public const int highlight_texts = 2131099660;
+			// aapt resource value: 0x7f05000b
+			public const int dual_page = 2131034123;
 			
-			// aapt resource value: 0x7f06000d
-			public const int no = 2131099661;
+			// aapt resource value: 0x7f05000c
+			public const int edit_catalog_failed = 2131034124;
 			
-			// aapt resource value: 0x7f06000e
-			public const int no_more_found = 2131099662;
+			// aapt resource value: 0x7f05000d
+			public const int exiting = 2131034125;
 			
-			// aapt resource value: 0x7f06000f
-			public const int no_more_redo = 2131099663;
+			// aapt resource value: 0x7f05000e
+			public const int failed_encryption = 2131034126;
 			
-			// aapt resource value: 0x7f060010
-			public const int no_more_undo = 2131099664;
+			// aapt resource value: 0x7f05000f
+			public const int failed_invalid_format = 2131034127;
 			
-			// aapt resource value: 0x7f060011
-			public const int pdf_outline = 2131099665;
+			// aapt resource value: 0x7f050010
+			public const int failed_invalid_password = 2131034128;
 			
-			// aapt resource value: 0x7f060012
-			public const int please_wait = 2131099666;
+			// aapt resource value: 0x7f050011
+			public const int failed_invalid_path = 2131034129;
 			
-			// aapt resource value: 0x7f060013
-			public const int process_selected_text = 2131099667;
+			// aapt resource value: 0x7f050012
+			public const int failed_unknown = 2131034130;
 			
-			// aapt resource value: 0x7f060014
-			public const int save_msg = 2131099668;
+			// aapt resource value: 0x7f050013
+			public const int file_not_exist = 2131034131;
 			
-			// aapt resource value: 0x7f060015
-			public const int single_page = 2131099669;
+			// aapt resource value: 0x7f050014
+			public const int file_not_exist_error = 2131034132;
 			
-			// aapt resource value: 0x7f060016
-			public const int squiggly = 2131099670;
+			// aapt resource value: 0x7f050015
+			public const int file_not_opened = 2131034133;
 			
-			// aapt resource value: 0x7f060017
-			public const int strikeout = 2131099671;
+			// aapt resource value: 0x7f050016
+			public const int highlight_texts = 2131034134;
 			
-			// aapt resource value: 0x7f060018
-			public const int thumbnail_creation_running = 2131099672;
+			// aapt resource value: 0x7f050017
+			public const int input_password = 2131034135;
 			
-			// aapt resource value: 0x7f060019
-			public const int underline = 2131099673;
+			// aapt resource value: 0x7f050018
+			public const int javascript = 2131034136;
 			
-			// aapt resource value: 0x7f06001a
-			public const int vertical = 2131099674;
+			// aapt resource value: 0x7f050019
+			public const int loading_pdf = 2131034137;
 			
-			// aapt resource value: 0x7f06001b
-			public const int yes = 2131099675;
+			// aapt resource value: 0x7f05001a
+			public const int no = 2131034138;
+			
+			// aapt resource value: 0x7f05001b
+			public const int no_more_found = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int no_more_redo = 2131034140;
+			
+			// aapt resource value: 0x7f05001d
+			public const int no_more_undo = 2131034141;
+			
+			// aapt resource value: 0x7f05001e
+			public const int no_pdf_outlines = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int note_content = 2131034143;
+			
+			// aapt resource value: 0x7f050020
+			public const int ok = 2131034144;
+			
+			// aapt resource value: 0x7f050021
+			public const int open_asset = 2131034145;
+			
+			// aapt resource value: 0x7f050022
+			public const int open_http = 2131034146;
+			
+			// aapt resource value: 0x7f050023
+			public const int open_sdcard = 2131034147;
+			
+			// aapt resource value: 0x7f050024
+			public const int page_change_block = 2131034148;
+			
+			// aapt resource value: 0x7f050025
+			public const int pdf_outline = 2131034149;
+			
+			// aapt resource value: 0x7f050026
+			public const int pdf_print_calculation_failed = 2131034150;
+			
+			// aapt resource value: 0x7f050027
+			public const int pdf_print_not_available = 2131034151;
+			
+			// aapt resource value: 0x7f050028
+			public const int please_wait = 2131034152;
+			
+			// aapt resource value: 0x7f050029
+			public const int process_selected_text = 2131034153;
+			
+			// aapt resource value: 0x7f05002a
+			public const int save_msg = 2131034154;
+			
+			// aapt resource value: 0x7f05002b
+			public const int simple_open_gl = 2131034155;
+			
+			// aapt resource value: 0x7f05002c
+			public const int single_page = 2131034156;
+			
+			// aapt resource value: 0x7f05002d
+			public const int squiggly = 2131034157;
+			
+			// aapt resource value: 0x7f05002e
+			public const int strikeout = 2131034158;
+			
+			// aapt resource value: 0x7f05002f
+			public const int thumbnail_creation_running = 2131034159;
+			
+			// aapt resource value: 0x7f050030
+			public const int todo_3d = 2131034160;
+			
+			// aapt resource value: 0x7f050031
+			public const int todo_attachment = 2131034161;
+			
+			// aapt resource value: 0x7f050032
+			public const int todo_copy_text = 2131034162;
+			
+			// aapt resource value: 0x7f050033
+			public const int todo_java_script = 2131034163;
+			
+			// aapt resource value: 0x7f050034
+			public const int todo_open_url = 2131034164;
+			
+			// aapt resource value: 0x7f050035
+			public const int todo_play_movie = 2131034165;
+			
+			// aapt resource value: 0x7f050036
+			public const int todo_play_sound = 2131034166;
+			
+			// aapt resource value: 0x7f050037
+			public const int underline = 2131034167;
+			
+			// aapt resource value: 0x7f050038
+			public const int using_RGB_4444 = 2131034168;
+			
+			// aapt resource value: 0x7f050039
+			public const int using_RGB_565 = 2131034169;
+			
+			// aapt resource value: 0x7f05003a
+			public const int vertical = 2131034170;
+			
+			// aapt resource value: 0x7f05003b
+			public const int view_pager = 2131034171;
+			
+			// aapt resource value: 0x7f05003c
+			public const int yes = 2131034172;
 			
 			static String()
 			{
@@ -586,11 +691,11 @@ namespace RadaeePDFDemo
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int AppBaseTheme = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int AppBaseTheme = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int AppTheme = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int AppTheme = 2131099649;
 			
 			static Style()
 			{
