@@ -16,6 +16,7 @@
 #import "PDFThumbView.h"
 #import "BookmarkTableViewController.h"
 #import "RadaeePDFPlugin.h"
+#import "RDFormManager.h"
 
 @class OutLineViewController;
 @class PDFView;
@@ -25,8 +26,12 @@
 // define the protocol for the delegate
 @protocol RDPDFViewControllerDelegate
 // define protocol functions that can be used in any class using this delegate
-- (void)pdfChargeDidFinishLoading:(int)dim;
-- (void)pdfChargeDidFailWithError:(NSString*)error andCode:(int)errorCode;
+- (void)willShowReader;
+- (void)didShowReader;
+- (void)willCloseReader;
+- (void)didCloseReader;
+- (void)didChangePage:(int)page;
+- (void)didSearchTerm:(NSString *)term found:(BOOL)found;
 @end;
 
 //---------------------------------------------------------
@@ -40,11 +45,24 @@
 
 @interface RDPDFViewController : UIViewController <UISearchBarDelegate,saveTextAnnotDelegate,PDFViewDelegate,BookmarkTableViewDelegate,UIPrintInteractionControllerDelegate>
 {
+    BOOL defaultTranslucent;
+    BOOL firstPageCover;
+    BOOL isImmersive;
+    
+    int gridBackgroundColor;
+    int gridElementHeight;
+    int gridGap;
+    int gridMode;
+    int doubleTapZoomMode;
+    
+    float thumbHeight;
+    
     //GEAR
     MPMoviePlayerViewController *mpvc;
     //FINE
     PDFView *m_view;
     PDFThumbView *m_Thumbview;
+    PDFThumbView *m_Gridview;
     UISlider *m_slider;
     PDFDoc *m_doc;
     BOOL b_findStart;
@@ -70,6 +88,7 @@
     TextAnnotViewController *textAnnotVC;
     NSMutableArray *tempfiles;
     UIToolbar *annotToolBar;
+    UIToolbar *gridToolBar;
     
     //PDFAnnot begin
     PDFPage *PDFpage;
@@ -77,8 +96,6 @@
     float annot_x;
     float annot_y;
     //PDFAnnot end
-    
-    float thumbHight;
 }
 
 #pragma mark - lib features
@@ -92,6 +109,7 @@
 @property (strong, nonatomic) UIImage *rectImage;
 @property (strong, nonatomic) UIImage *ellipseImage;
 @property (strong, nonatomic) UIImage *printImage;
+@property (strong, nonatomic) UIImage *gridImage;
 @property (strong, nonatomic) UIImage *deleteImage;
 @property (strong, nonatomic) UIImage *doneImage;
 @property (strong, nonatomic) UIImage *removeImage;
@@ -108,9 +126,10 @@
 @property (nonatomic) BOOL hideRectImage;
 @property (nonatomic) BOOL hideEllipseImage;
 @property (nonatomic) BOOL hidePrintImage;
+@property (nonatomic) BOOL hideGridImage;
 
 // define delegate property
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, assign) id <RDPDFViewControllerDelegate> delegate;
 
 #pragma mark - standard properties
 
@@ -162,6 +181,21 @@
 -(BOOL)isPortrait;
 -(void)PDFThumbNailinit:(int) pageno;
 - (void)PDFSeekBarInit:(int)pageno;
+
+- (id)getDoc;
+- (int)getCurrentPage;
+- (void)setThumbnailBGColor:(int)color;
+- (void)setThumbGridBGColor:(int)color;
+- (void)setThumbGridElementHeight:(float)height;
+- (void)setThumbGridGap:(float)gap;
+- (void)setThumbGridViewMode:(int)mode;
+- (void)setReaderBGColor:(int)color;
+- (void)setThumbHeight:(float)height;
+- (void)setFirstPageCover:(BOOL)cover;
+- (void)setDoubleTapZoomMode:(int)mode;
+- (void)setImmersive:(BOOL)immersive;
+
+- (void)refreshCurrentPage;
 
 //GEAR
 - (void)moviePlayedDidFinish:(NSNotification *)notification;

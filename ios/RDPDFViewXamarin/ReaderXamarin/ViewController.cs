@@ -1,65 +1,87 @@
 ﻿using System;
 using System.IO;
 using Foundation;
-using RDPDFViewXamarin;
+using RadaeeLib;
 using UIKit;
 
 namespace ReaderXamarin
 {
+	public class RadaeeDelegate : RadaeePDFPluginDelegate
+	{
+		public override void WillShowReader()
+		{
+			Console.WriteLine("will show reader");
+		}
+	
+		public override void DidShowReader()
+		{
+			Console.WriteLine("did show reader");
+		}
+
+		public override void WillCloseReader()
+		{
+			Console.WriteLine("will close reader");
+		}
+
+		public override void DidCloseReader()
+		{
+			Console.WriteLine("did close reader");
+		}
+
+		public override void DidChangePage(int page)
+		{
+			Console.WriteLine("did change page {0}", page);
+		}
+
+		public override void DidSearchTerm(string term, bool found)
+		{
+			Console.WriteLine("will show reader");
+		}	
+	}
+
 	public partial class ViewController : UIViewController
 	{
+		RadaeeDelegate selector;
+		RadaeePDFPlugin plugin;
+
 		partial void OpenBtn_TouchUpInside(UIButton sender)
 		{
-			RadaeePDFPlugin plugin = RadaeePDFPlugin.PluginInit;
+			//Reader settings init
+			plugin = RadaeePDFPlugin.PluginInit;
 
-			NSMutableDictionary dict = new NSMutableDictionary();
-			dict.SetValueForKey(new NSString("Radaee"), new NSString("company"));
-			dict.SetValueForKey(new NSString("radaee_com@yahoo.cn"), new NSString("email"));
-			dict.SetValueForKey(new NSString("com.radaee.pdf.PDFViewer"), new NSString("bundle"));
-			dict.SetValueForKey(new NSString("89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO"), new NSString("key"));
-			dict.SetValueForKey(NSNumber.FromInt32(2), new NSString("licenseType"));
+			//Activate license
+			plugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO", 2);
 
-			//Uncomment to hide a toolbar item
+			//General settings
+
+			//render type
 			/*
-			plugin.hideSearchImage = true;
-			plugin.hideViewModeImage = true;
-			plugin.hideSearchImage = true;
-			plugin.hideBookmarkImage = true;
-			plugin.hideBookmarkListImage = true;
-			plugin.hideOutlineImage = true;
-			plugin.hideLineImage = true;
-			plugin.hideRectImage = true;
-			plugin.hideEllipseImage = true;
-			plugin.hidePrintImage = true;
-			*/
 
-			NSDictionary[] arrDict = { dict };
-			NSArray param = NSArray.FromObjects(arrDict);
+			 0: Vertical
+			 1: Horizontal continous (LRM)
+			 2: Horizontal continous (RTL)
+			 3: Horizontal mixed (LRM): paging and doublePage feature are availble only in this mode
 
-			plugin.ActivateLicense(param);
+			 */
+			plugin.SetReaderViewMode(3); //Set Reader Mode
+			plugin.SetPagingEnabled(true); //paging
+			plugin.SetDoublePageEnabled(true); //double page render
+			plugin.ToggleThumbSeekBar(0); //Toggle Thumbnail/SeekBar
 
-			/*
-			NSMutableDictionary openDict = new NSMutableDictionary();
-			openDict.SetValueForKey(new NSString("http://www.radaeepdf.com/documentation/MRBrochoure.pdf"), new NSString("url"));
-			openDict.SetValueForKey(new NSString(""), new NSString("password"));
+			//Set thumbnail view background
+			plugin.SetThumbnailBGColor(Convert.ToInt32("0x88000000", 16)); //AARRGGBB
 
-			NSDictionary[] arrDict2 = { openDict };
-			NSArray param2 = NSArray.FromObjects(arrDict2);
+			//Set reader background
+			//plugin.SetReaderBGColor(Convert.ToInt32("0xFFFF0000", 16)); //AARRGGBB
 
-			plugin.ToggleThumbSeekBar(1);
+			//Set thumbnail view height
+			plugin.SetThumbHeight(100);
 
-			RDPDFViewController controller = plugin.Show(param2);
-			*/
+			//In double page mode, show the first page as single page
+			plugin.SetFirstPageCover(true);
 
-			NSMutableDictionary openDict = new NSMutableDictionary();
-			openDict.SetValueForKey(new NSString("test.pdf"), new NSString("url"));
-			openDict.SetValueForKey(new NSString(""), new NSString("password"));
-
-			NSDictionary[] arrDict2 = { openDict };
-			NSArray param2 = NSArray.FromObjects(arrDict2);
-
-			plugin.ToggleThumbSeekBar(1); //Toggle Thumbnail/SeekBar
-			plugin.SetReaderViewMode(0); //Set Reader Mode
+			//Set immersive mode
+			//plugin.SetImmersive(true);
 
 			/*
 			 SetColor, Available features
@@ -71,11 +93,22 @@ namespace ReaderXamarin
 			 4: highlightColor
 			 5: ovalColor
 			 6: selColor
-			 */
+			*/
 
 			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
-			RDPDFViewController controller = plugin.OpenFromAssets(param2);
+			//Open from url
+			//UIViewController controller = plugin.Show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "");
+
+
+			//Set Callback for RadaeeDelegate
+			selector = new RadaeeDelegate();
+			plugin.SetDelegate(selector);
+
+			this.NavigationController.NavigationBar.BarTintColor = UIColor.Black;
+			this.NavigationController.NavigationBar.TintColor = UIColor.Red;
+
+			UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
 
 			if (controller != null)
 			{
@@ -111,6 +144,9 @@ namespace ReaderXamarin
 			base.DidReceiveMemoryWarning();
 			// Release any cached data, images, etc that aren't in use.
 		}
+
+
+
 	}
 }
 

@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    
+    RadaeePDFPlugin *plugin;
+}
 
 @end
 
@@ -17,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    [self moveFileToCustomDir:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"pdf"] overwrite:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,30 +31,99 @@
 
 - (void)apri:(id)sender
 {
-    RadaeePDFPlugin *plugin = [[RadaeePDFPlugin alloc] init];
+    plugin = [[RadaeePDFPlugin alloc] init];
     
-    NSMutableDictionary *activationDict = [NSMutableDictionary dictionary];
+    [plugin setDelegate:self];
     
-    [activationDict setObject:@"Radaee" forKey:@"company"];
-    [activationDict setObject:@"radaee_com@yahoo.cn" forKey:@"email"];
-    [activationDict setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:@"bundle"];
-    [activationDict setObject:@"89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO" forKey:@"key"];
-    [activationDict setObject:[NSNumber numberWithInt:2] forKey:@"licenseType"];
+    [plugin activateLicenseWithBundleId:[[NSBundle mainBundle] bundleIdentifier] company:@"Radaee" email:@"radaee_com@yahoo.cn" key:@"89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO" licenseType:2];
     
-    [plugin activateLicense:@[activationDict]];
-    
-    NSMutableDictionary *openDict = [NSMutableDictionary dictionary];
-    
-    [openDict setObject:@"test.pdf" forKey:@"url"];
-    [openDict setObject:@"" forKey:@"password"];
-    
-    [plugin toggleThumbSeekBar:1];
-    [plugin setReaderViewMode:0];
+    [plugin toggleThumbSeekBar:0];
+    [plugin setReaderViewMode:3];
+
     [plugin setColor:0xFFFF00FF forFeature:1];
     
-    UIViewController *controller = (UIViewController *)[plugin openFromAssets:@[openDict]];
+    [plugin setThumbHeight:100];
+    [plugin setThumbnailBGColor:0x88000000];
+    
+    [plugin setDoublePageEnabled:YES];
+    [plugin setFirstPageCover:YES];
+    
+    UIViewController *controller = (UIViewController *)[plugin show:[[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"] withPassword:@""];
+    
+    //self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+    //self.navigationController.navigationBar.tintColor = [UIColor redColor];
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma mark - Delegate Methods
+
+- (void)willShowReader
+{
+    NSLog(@"willShowReader");
+    NSLog(@"page: %i", [plugin getPageNumber]);
+}
+
+- (void)didShowReader
+{
+    NSLog(@"didShowReader");
+    //NSLog(@"JSON: %@", [plugin getJSONFormFieldsAtPage:1]);
+    NSLog(@"page: %i", [plugin getPageNumber]);
+}
+
+- (void)willCloseReader
+{
+    NSLog(@"willCloseReader");
+    NSLog(@"page: %i", [plugin getPageNumber]);
+}
+
+- (void)didCloseReader
+{
+    NSLog(@"didCloseReader");
+    NSLog(@"page: %i", [plugin getPageNumber]);
+}
+
+- (void)didChangePage:(int)page
+{
+    NSLog(@"didChangePage: %i", page);
+}
+
+- (void)didSearchTerm:(NSString *)term found:(BOOL)found
+{
+    NSLog(@"didSearchTerm: %@", term);
+}
+
+#pragma mark - Path Utils
+
+- (NSString *)getCustomPath
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *libraryPath = [paths objectAtIndex:0];
+    NSString *customDirectory = [libraryPath stringByAppendingPathComponent:@"customDirectory"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:customDirectory]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:customDirectory withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    
+    return customDirectory;
+}
+
+- (BOOL)moveFileToCustomDir:(NSString *)path overwrite:(BOOL)overwrite
+{
+    NSString *itemPath = [[self getCustomPath] stringByAppendingPathComponent:[path lastPathComponent]];
+    
+    BOOL res = NO;
+    BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:itemPath];
+    
+    if (exist && overwrite) {
+        [[NSFileManager defaultManager] removeItemAtPath:itemPath error:nil];
+    }
+    
+    if (!exist) {
+        res = [[NSFileManager defaultManager] copyItemAtPath:path toPath:[[self getCustomPath] stringByAppendingPathComponent:[path lastPathComponent]] error:nil];
+    }
+    
+    return res;
 }
 
 @end

@@ -10,9 +10,21 @@
 #import "RDPDFViewController.h"
 #import "PDFHttpStream.h"
 
+@interface RadaeePDFPlugin() <RDPDFViewControllerDelegate>
+
+@end
+
 @implementation RadaeePDFPlugin {
     
     BOOL isViewModeSet;
+    id <RadaeePDFPluginDelegate> delegate;
+}
+
+#pragma mark - Delegate Setting
+
+- (void)setDelegate:(id)myDelegate
+{
+    delegate = myDelegate;
 }
 
 #pragma mark - Plugin init
@@ -61,14 +73,15 @@
 
 #pragma mark - Plugin API
 
-- (id)show:(NSArray *)command
+- (id)show:(NSString *)file withPassword:(NSString *)password
 {
-    self.cdv_command = command;
-
+    if (!file)
+        return nil;
+    
+        
     // Get user parameters
-    NSDictionary *params = (NSDictionary*) [self.cdv_command objectAtIndex:0];
-    url = [params objectForKey:@"url"];
-    if(![[NSURL URLWithString:url] isFileURL]){
+    url = file;
+    if([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]){
         NSLog(@"%@", url);
         NSString *cacheFile = [[NSTemporaryDirectory() stringByAppendingString:@""] stringByAppendingString:@"cacheFile.pdf"];
         
@@ -77,7 +90,7 @@
         
         [self readerInit];
         
-        int result = [m_pdf PDFOpenStream:httpStream :[params objectForKey:@"password"]];
+        int result = [m_pdf PDFOpenStream:httpStream :password];
         
         NSLog(@"%d", result);
         if(result != err_ok && result != err_open){
@@ -88,27 +101,46 @@
         return [self showReader];
         
     } else {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[url stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
-        
-        return [self openPdf:filePath withPassword:[params objectForKey:@"password"]];
+        if ([url containsString:@"file://"]) {
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+            NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[url stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
+            
+            return [self openPdf:filePath withPassword:password];
+        } else {
+            return [self openFromPath:file withPassword:password];
+        }
     }
 
     return nil;
 }
 
-- (id)openFromAssets:(NSArray *)command
+- (id)openFromAssets:(NSString *)file withPassword:(NSString *)password
 {
-    self.cdv_command = command;
-    
-    // Get user parameters
-    NSDictionary *params = (NSDictionary*) [self.cdv_command objectAtIndex:0];
-    url = [params objectForKey:@"url"];
+    if (!file)
+        return nil;
+        
+    url = file;
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:url ofType:nil];
     
-    return [self openPdf:filePath withPassword:[params objectForKey:@"password"]];
+    _lastOpenedPath = filePath;
+    
+    return [self openPdf:filePath withPassword:password];
+}
+
+- (id)openFromPath:(NSString *)path withPassword:(NSString *)password
+{
+    if (!path)
+        return nil;
+    
+    url = path;
+    
+    NSString *filePath = url;
+    
+    _lastOpenedPath = filePath;
+    
+    return [self openPdf:filePath withPassword:password];
 }
 
 - (RDPDFViewController *)openPdf:(NSString *)filePath withPassword:(NSString *)password
@@ -141,8 +173,9 @@
 
 - (void)setHiddenButtons
 {
-    //Standard implementation
-    /*
+#if IS_DEMO == 1
+    //DEMO implementation
+    
     [m_pdf setHideViewModeImage:_hideViewModeImage];
     [m_pdf setHideSearchImage:_hideSearchImage];
     [m_pdf setHideBookmarkImage:_hideBookmarkImage];
@@ -152,9 +185,10 @@
     [m_pdf setHideRectImage:_hideRectImage];
     [m_pdf setHideEllipseImage:_hideEllipseImage];
     [m_pdf setHidePrintImage:_hidePrintImage];
-    */
-    
-    //GEE implemention
+    [m_pdf setHideGridImage:YES];
+#else
+    //Standard implemention
+
     [m_pdf setHideViewModeImage:_hideViewModeImage];
     [m_pdf setHideSearchImage:_hideSearchImage];
     [m_pdf setHideBookmarkImage:YES];
@@ -164,6 +198,62 @@
     [m_pdf setHideRectImage:YES];
     [m_pdf setHideEllipseImage:YES];
     [m_pdf setHidePrintImage:YES];
+    [m_pdf setHideGridImage:_hideGridImage];
+#endif
+}
+
+- (void)setThumbnailBGColor:(int)color
+{
+    thumbBackgroundColor = color;
+}
+
+- (void)setReaderBGColor:(int)color
+{
+    readerBackgroundColor = color;
+}
+
+- (void)setThumbHeight:(float)height
+{
+    thumbHeight = height;
+}
+
+- (void)setFirstPageCover:(BOOL)cover
+{
+    firstPageCover = cover;
+}
+
+- (void)setDoubleTapZoomMode:(int)mode
+{
+    doubleTapZoomMode = mode;
+}
+
+- (void)setImmersive:(BOOL)immersive
+{
+    isImmersive = immersive;
+    
+    if (m_pdf != nil && [m_pdf getDoc] != nil) {
+        [m_pdf setImmersive:isImmersive];
+    }
+}
+
+- (void)setThumbGridBGColor:(int)color
+{
+    gridBackgroundColor = color;
+}
+
+- (void)setThumbGridElementHeight:(float)height
+{
+    gridElementHeight = height;
+}
+
+- (void)setThumbGridGap:(float)gap
+{
+    gridGap = gap;
+}
+
+- (void)setThumbGridViewMode:(int)mode
+{
+    gridMode = mode;
 }
 
 - (void)readerInit
@@ -182,6 +272,15 @@
     [self setPagingEnabled:g_paging_enabled];
     [self setDoublePageEnabled:g_double_page_enabled];
     
+    [m_pdf setFirstPageCover:firstPageCover];
+    
+#if IS_DEMO == 1
+    [m_pdf setDoubleTapZoomMode:1];
+#else
+    [m_pdf setDoubleTapZoomMode:doubleTapZoomMode];
+#endif
+    [m_pdf setImmersive:isImmersive];
+    
     [m_pdf setViewModeImage:[UIImage imageNamed:@"btn_view.png"]];
     [m_pdf setSearchImage:[UIImage imageNamed:@"btn_search.png"]];
     [m_pdf setLineImage:[UIImage imageNamed:@"btn_annot_ink.png"]];
@@ -189,6 +288,7 @@
     [m_pdf setEllipseImage:[UIImage imageNamed:@"btn_annot_ellipse.png"]];
     [m_pdf setOutlineImage:[UIImage imageNamed:@"btn_outline.png"]];
     [m_pdf setPrintImage:[UIImage imageNamed:@"btn_print.png"]];
+    [m_pdf setGridImage:[UIImage imageNamed:@"btn_grid.png"]];
     
     [m_pdf setRemoveImage:[UIImage imageNamed:@"annot_remove.png"]];
     
@@ -208,36 +308,80 @@
 - (RDPDFViewController *)showReader
 {
     //toggle thumbnail/seekbar
-    if (bottomBar < 1)
+    if (bottomBar < 1){
+        [m_pdf setThumbHeight:(thumbHeight > 0) ? thumbHeight : 50];
         [m_pdf PDFThumbNailinit:1];
+        [m_pdf setThumbnailBGColor:thumbBackgroundColor];
+    }
     else
         [m_pdf PDFSeekBarInit:1];
     
+    [m_pdf setReaderBGColor:readerBackgroundColor];
+    
+    //Set thumbGridView
+    [m_pdf setThumbGridBGColor:gridBackgroundColor];
+    [m_pdf setThumbGridElementHeight:gridElementHeight];
+    [m_pdf setThumbGridGap:gridGap];
+    [m_pdf setThumbGridViewMode:gridMode];
+    
     m_pdf.hidesBottomBarWhenPushed = YES;
-    //UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:m_pdf];
-    //[self.viewController presentViewController:navController animated:YES completion:nil];
+
     return m_pdf;
 }
 
-- (void)activateLicense:(NSArray *)command
+- (void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type
 {
     [self pluginInitialize];
     
-    self.cdv_command = command;
-    
-    NSDictionary *params = (NSDictionary*) [self.cdv_command objectAtIndex:0];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[params objectForKey:@"bundle"] forKey:@"actBundleId"];
-    [[NSUserDefaults standardUserDefaults] setObject:[params objectForKey:@"company"] forKey:@"actCompany"];
-    [[NSUserDefaults standardUserDefaults] setObject:[params objectForKey:@"email"] forKey:@"actEmail"];
-    [[NSUserDefaults standardUserDefaults] setObject:[params objectForKey:@"key"] forKey:@"actSerial"];
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:[[params objectForKey:@"licenseType"] intValue]] forKey:@"actActivationType"];
+    [[NSUserDefaults standardUserDefaults] setObject:bundleId forKey:@"actBundleId"];
+    [[NSUserDefaults standardUserDefaults] setObject:company forKey:@"actCompany"];
+    [[NSUserDefaults standardUserDefaults] setObject:email forKey:@"actEmail"];
+    [[NSUserDefaults standardUserDefaults] setObject:key forKey:@"actSerial"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:type] forKey:@"actActivationType"];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     NSLog(@"set license");
     
     APP_Init();
+}
+
+- (NSString *)fileState
+{
+    if ([[NSFileManager defaultManager] fileExistsAtPath:_lastOpenedPath]) {
+        
+        NSString *message = @"";
+        
+        switch ([[NSUserDefaults standardUserDefaults] integerForKey:@"fileStat"]) {
+            case 0:
+                message = @"File has not been modified.";
+                break;
+                
+            case 1:
+                message = @"File has been modified but not saved.";
+                break;
+                
+            case 2:
+                message = @"File has been modified and saved.";
+                break;
+                
+            default:
+                break;
+        }
+        
+        return message;
+    }
+    else
+        return @"File not found";
+}
+
+- (int)getPageNumber
+{
+    if (m_pdf == nil || [m_pdf getDoc] == nil) {
+        return -1;
+    }
+    
+    return [m_pdf getCurrentPage];
 }
 
 #pragma mark - Settings
@@ -389,6 +533,86 @@
     }
     
     return bookmarks;
+}
+
+#pragma mark - Form Manager
+
+- (NSString *)getJSONFormFields
+{
+    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
+    return [fe jsonInfoForAllPages];
+}
+
+- (NSString *)getJSONFormFieldsAtPage:(int)page
+{
+    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
+    return [fe jsonInfoForPage:page];
+}
+
+- (void)setFormFieldWithJSON:(NSString *)json
+{
+    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
+    
+    NSError *error;
+    if (json && json.length > 0) {
+        [fe setInfoWithJson:json error:&error];
+        
+        if (error) {
+            NSLog(@"%@", error.description);
+        } else
+        {
+            if (m_pdf) {
+                [m_pdf refreshCurrentPage];
+            }
+        }
+    } else
+    {
+        NSLog(@"JSON not valid");
+    }
+}
+
+#pragma mark - Reader Delegate
+
+- (void)willShowReader
+{
+    if (delegate) {
+        [delegate willShowReader];
+    }
+}
+
+- (void)didShowReader
+{
+    if (delegate) {
+        [delegate didShowReader];
+    }
+}
+
+- (void)willCloseReader
+{
+    if (delegate) {
+        [delegate willCloseReader];
+    }
+}
+
+- (void)didCloseReader
+{
+    if (delegate) {
+        [delegate didCloseReader];
+    }
+}
+
+- (void)didChangePage:(int)page
+{
+    if (delegate) {
+        [delegate didChangePage:page];
+    }
+}
+
+- (void)didSearchTerm:(NSString *)term found:(BOOL)found
+{
+    if (delegate) {
+        [delegate didSearchTerm:term found:found];
+    }
 }
 
 @end

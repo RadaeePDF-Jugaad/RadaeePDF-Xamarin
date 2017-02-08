@@ -27,20 +27,34 @@
 {
 }
 
--(void)vOpen:(PDFDoc *)doc :(id<PDFThumbViewDelegate>)delegate
+-(void)vOpen:(PDFDoc *)doc :(id<PDFThumbViewDelegate>)delegate mode:(int)mode elementGap:(int)gap elementHeight:(int)height gridMode:(int)gridMode
 {
     //GEAR
     [self vClose];
     //END
     m_doc = doc;
-    m_view = [[PDFVThmb alloc] init:0:false];
+    
+    if (mode == 2) {
+        m_view = [[PDFVThmb alloc] init:mode:false :height * m_scale :gridMode];
+    } else {
+        m_view = [[PDFVThmb alloc] init:mode:false];
+    }
+    
+    
     m_delegate = delegate;
     
     struct PDFVThreadBack tback;
     tback.OnPageRendered = @selector(OnPageRendered:);
     //tback.OnFound = @selector(OnFound:);
-    self.backgroundColor = [UIColor colorWithRed:0.7f green:0.7f blue:0.7f alpha:1.0f];
-    [m_view vOpen:doc :4 : self: &tback];
+    self.backgroundColor = (thumbBackgroundColor != 0) ? UIColorFromRGB(thumbBackgroundColor) : [UIColor colorWithRed:0.7f green:0.7f blue:0.7f alpha:1.0f];
+    
+    if (mode == 2) {
+        [m_view vOpen:doc :gap : self: &tback];
+    }
+    else {
+        [m_view vOpen:doc :gap : self: &tback];
+    }
+    
     [m_view vResize:m_w :m_h];
     self.contentSize = CGSizeMake([m_view vGetDocW]/m_scale, [m_view vGetDocH]/m_scale);
     CGPoint pt;
@@ -54,7 +68,33 @@
     [[NSRunLoop currentRunLoop]addTimer:m_timer forMode:NSDefaultRunLoopMode];
     m_status = tsta_none;
     self.delegate = self;
-//    m_delegate = nil;
+
+#if IS_DEMO != 1
+    if (mode == 0) {
+        PDFVPage *page = [m_view vGetPage:0];
+        if (page) {
+            cur_gap = gap;
+            gridButton = [[UIButton alloc] initWithFrame:CGRectMake(([page GetX] / m_scale) - ([page GetWidth] / m_scale) - gap, 0, ([page GetWidth] / m_scale), ([page GetHeight] / m_scale))];
+            [gridButton setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0.5]];
+            [gridButton setImage:[[UIImage imageNamed:@"btn_grid"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+            [gridButton setContentMode:UIViewContentModeCenter];
+            [gridButton setTintColor:[UIColor whiteColor]];
+            [gridButton addTarget:self action:@selector(onGridButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+            
+            [self addSubview:gridButton];
+            
+        } else {
+            gridButton = nil;
+        }
+    } else {
+        gridButton = nil;
+    }
+#endif
+}
+
+-(void)vOpen:(PDFDoc *)doc :(id<PDFThumbViewDelegate>)delegate
+{
+    [self vOpen:doc :delegate mode:0 elementGap:4 elementHeight:0 gridMode:0];
 }
 
 -(void)vGoto:(int)pageno
@@ -116,6 +156,38 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     //NSLog(@"scrollViewDidEndDecelerating");
+}
+
+- (void)didRotate
+{
+    if (gridButton) {
+        PDFVPage *page = [m_view vGetPage:0];
+        if (page) {
+            [gridButton setFrame:CGRectMake(([page GetX] / m_scale) - ([page GetWidth] / m_scale) - cur_gap, 0, ([page GetWidth] / m_scale), ([page GetHeight] / m_scale))];
+        }
+    }
+    
+    //needed if set a static scale
+    [self refresh];
+    
+    //for dynamic scale need to destroy and re-render the thumbview
+    /*
+    [m_view vClose];
+    m_view = [[PDFVThmb alloc] init:2:false];
+    
+    struct PDFVThreadBack tback;
+    tback.OnPageRendered = @selector(OnPageRendered:);
+    [m_view vOpen:m_doc :20 : self: &tback];
+    
+    [m_view vResize:m_w :m_h];
+    self.contentSize = CGSizeMake([m_view vGetDocW]/m_scale, [m_view vGetDocH]/m_scale);
+    CGPoint pt;
+    pt.x = [m_view vGetX]/m_scale;
+    pt.y = [m_view vGetY]/m_scale;
+    self.contentOffset = pt;
+    
+    [self refresh];
+     */
 }
 
 -(void)refresh
@@ -263,4 +335,21 @@
         }
     }
 }
+
+- (void)onGridButtonTapped
+{
+    if (m_delegate) {
+        [m_delegate OnPageClicked:-1];
+    }
+}
+
+- (void)setThumbBackgroundColor:(int)color
+{
+    thumbBackgroundColor = color;
+    
+    if (thumbBackgroundColor != 0) {
+        self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
+    }
+}
+
 @end

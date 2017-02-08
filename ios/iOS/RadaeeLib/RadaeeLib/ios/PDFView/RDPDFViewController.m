@@ -59,11 +59,16 @@ extern uint g_oval_color;
 
 - (void)toolbarStyle
 {
+    defaultTranslucent = self.navigationController.navigationBar.isTranslucent;
+    [self.navigationController.navigationBar setTranslucent:YES];
+    
     //set style
-    toolBar.barStyle = searchToolBar.barStyle = m_searchBar.barStyle = annotToolBar.barStyle = drawLineToolBar.barStyle = drawRectToolBar.barStyle = self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    //toolBar.barStyle = searchToolBar.barStyle = m_searchBar.barStyle = annotToolBar.barStyle = drawLineToolBar.barStyle = drawRectToolBar.barStyle = self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     //set tint
-    toolBar.tintColor = searchToolBar.tintColor = m_searchBar.tintColor = annotToolBar.tintColor = drawLineToolBar.tintColor = drawRectToolBar.tintColor = m_slider.tintColor = self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
+    toolBar.tintColor = searchToolBar.tintColor = m_searchBar.tintColor = annotToolBar.tintColor = drawLineToolBar.tintColor = drawRectToolBar.tintColor = m_slider.tintColor = gridToolBar.tintColor = self.navigationController.navigationBar.tintColor;
+    
+    toolBar.barTintColor = searchToolBar.barTintColor = m_searchBar.barTintColor = annotToolBar.barTintColor = drawLineToolBar.barTintColor = drawRectToolBar.barTintColor = gridToolBar.barTintColor = self.navigationController.navigationBar.barTintColor;
 }
 
 //---------------------------------------------------------
@@ -160,9 +165,21 @@ extern uint g_oval_color;
     
     printButton.width =30;
     
-    NSMutableArray *hiddenItems = [NSMutableArray arrayWithObjects:[NSNumber numberWithBool:_hideViewModeImage], [NSNumber numberWithBool:_hideSearchImage], [NSNumber numberWithBool:_hideLineImage], [NSNumber numberWithBool:_hideRectImage], [NSNumber numberWithBool:_hideEllipseImage], [NSNumber numberWithBool:_hideBookmarkImage], [NSNumber numberWithBool:_hideBookmarkListImage], [NSNumber numberWithBool:_hideOutlineImage], [NSNumber numberWithBool:_hidePrintImage], nil];
+    UIBarButtonItem *gridButton;
     
-    NSMutableArray *toolbarItem = [[NSMutableArray alloc] initWithObjects:viewModeButton, searchButton, lineButton, rectButton, circleButton, addBookMarkButton, addBookMarkListButton, viewMenuButton, printButton,nil];
+    if (_gridImage) {
+        gridButton = [[UIBarButtonItem alloc] initWithImage:_gridImage style:UIBarButtonItemStylePlain target:self action:@selector(toggleGridView)];
+    }
+    else
+    {
+        gridButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(toggleGridView)];
+    }
+    
+    gridButton.width =30;
+    
+    NSMutableArray *hiddenItems = [NSMutableArray arrayWithObjects:[NSNumber numberWithBool:_hideViewModeImage], [NSNumber numberWithBool:_hideSearchImage], [NSNumber numberWithBool:_hideLineImage], [NSNumber numberWithBool:_hideRectImage], [NSNumber numberWithBool:_hideEllipseImage], [NSNumber numberWithBool:_hideBookmarkImage], [NSNumber numberWithBool:_hideBookmarkListImage], [NSNumber numberWithBool:_hideOutlineImage], [NSNumber numberWithBool:_hidePrintImage], [NSNumber numberWithBool:_hideGridImage], nil];
+    
+    NSMutableArray *toolbarItem = [[NSMutableArray alloc] initWithObjects:viewModeButton, searchButton, lineButton, rectButton, circleButton, addBookMarkButton, addBookMarkListButton, viewMenuButton, printButton, gridButton,nil];
     
     if (!isActive || licenseType < 1) {
         [hiddenItems setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:2];
@@ -184,7 +201,6 @@ extern uint g_oval_color;
     [toolbarItem removeObjectsInArray:objectsToRemove];
     
     UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
     [toolbarItem insertObject:flex atIndex:0];
     
     [toolBar setItems:toolbarItem animated:NO];
@@ -205,8 +221,6 @@ extern uint g_oval_color;
     
     BOOL isActive = [[NSUserDefaults standardUserDefaults] boolForKey:@"actIsActive"];
     int licenseType = [[[NSUserDefaults standardUserDefaults] objectForKey:@"actActivationType"] intValue];
-    
-    thumbHight = 100;
     
     PDFannot = [[PDFAnnot alloc] init];
     b_outline = false;
@@ -272,6 +286,9 @@ extern uint g_oval_color;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+    if (_delegate) {
+        [_delegate willShowReader];
+    }
     
     toolBar = [UIToolbar new];
     [toolBar sizeToFit];
@@ -288,12 +305,32 @@ extern uint g_oval_color;
     //END
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (_delegate) {
+        [_delegate didShowReader];
+    }
+    
+    if (isImmersive) {
+        [self hideBars];
+    }
+}
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     if(!b_outline)
     {
+        [self.navigationController.navigationBar setTranslucent:defaultTranslucent];
+        
+        if (_delegate) {
+            [_delegate willCloseReader];
+        }
+        
        //[m_ThumbView vClose] should before [m_view vClose]
         [m_Thumbview vClose];
+        [m_Gridview vClose];
         [m_view vClose];
         m_slider = nil;
     }
@@ -307,6 +344,18 @@ extern uint g_oval_color;
     }
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    if(!b_outline)
+    {
+        if (_delegate) {
+            [_delegate didCloseReader];
+        }
+    }
 }
 
 - (void)closeView
@@ -326,7 +375,7 @@ extern uint g_oval_color;
         bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:b];
         bookmarkPopover.popoverContentSize = CGSizeMake(300, 44 * b.items.count);
         
-        [bookmarkPopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:5] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [bookmarkPopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:7] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
     else
     {
@@ -552,6 +601,7 @@ extern uint g_oval_color;
 }
 - (IBAction)viewMenu:(id) sender
 {
+    
     b_outline =true;
     PDFOutline *root = [m_doc rootOutline];
     if( root )
@@ -642,8 +692,10 @@ extern uint g_oval_color;
     float hi = self.navigationController.navigationBar.bounds.size.height;
     if(SYS_VERSION>=7.0)
     {
-        [m_Thumbview setFrame:CGRectMake(0, cheight-thumbHight, cwidth, thumbHight)];
-        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-thumbHight, cwidth, thumbHight).size];
+        [m_Thumbview setFrame:CGRectMake(0, cheight-thumbHeight, cwidth, thumbHeight)];
+        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-thumbHeight, cwidth, thumbHeight).size];
+        [m_Gridview setFrame:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)];
+        [m_Gridview sizeThatFits:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height).size];
         [m_slider setFrame:CGRectMake(0, cheight-50, cwidth, 50)];
         [m_slider sizeThatFits:CGRectMake(0, cheight-50, cwidth, 50).size];
         
@@ -651,18 +703,87 @@ extern uint g_oval_color;
     }
     else
     {
-        [m_Thumbview setFrame:CGRectMake(0, cheight-hi-thumbHight-20, cwidth, thumbHight)];
-        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-hi-thumbHight-20, cwidth, thumbHight).size];
+        [m_Thumbview setFrame:CGRectMake(0, cheight-hi-thumbHeight-20, cwidth, thumbHeight)];
+        [m_Thumbview sizeThatFits:CGRectMake(0, cheight-hi-thumbHeight-20, cwidth, thumbHeight).size];
+        [m_Gridview setFrame:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)];
+        [m_Gridview sizeThatFits:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height).size];
         [m_slider setFrame:CGRectMake(0, cheight-hi-50-20, cwidth, 50)];
         [m_slider sizeThatFits:CGRectMake(0, cheight-hi-50-20, cwidth, 50).size];
         [m_searchBar setFrame:CGRectMake(0, 0, cwidth, 41)];
     }
-    [m_Thumbview refresh];
+    [m_Thumbview didRotate];
+    [m_Gridview didRotate];
     
     [m_view resetZoomLevel];
 }
 - (IBAction)sliderAction:(id)sender
 {
+}
+
+- (id)getDoc
+{
+    return m_doc;
+}
+
+- (int)getCurrentPage
+{
+    return [m_view vGetCurrentPage];
+}
+
+- (void)setThumbnailBGColor:(int)color
+{
+    [m_Thumbview setThumbBackgroundColor:color];
+}
+
+- (void)setThumbGridBGColor:(int)color
+{
+    gridBackgroundColor = color;
+}
+
+- (void)setThumbGridElementHeight:(float)height
+{
+    gridElementHeight = height;
+}
+
+- (void)setThumbGridGap:(float)gap
+{
+    gridGap = gap;
+}
+
+- (void)setThumbGridViewMode:(int)mode
+{
+    gridMode = mode;
+}
+
+- (void)setReaderBGColor:(int)color
+{
+    [m_view setReaderBackgroundColor:color];
+}
+
+- (void)setThumbHeight:(float)height
+{
+    thumbHeight = height;
+}
+
+- (void)setFirstPageCover:(BOOL)cover
+{
+    firstPageCover = cover;
+}
+
+- (void)setDoubleTapZoomMode:(int)mode
+{
+    doubleTapZoomMode = mode;
+}
+
+- (void)setImmersive:(BOOL)immersive
+{
+    isImmersive = immersive;
+    
+    if (isImmersive) {
+        [self hideBars];
+    } else {
+        [self showBars];
+    }
 }
 
 -(int)PDFOpen:(NSString *)path : (NSString *)pwd
@@ -706,10 +827,14 @@ extern uint g_oval_color;
     {
         m_view = [[PDFView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height-20-44)];
     }
+    
+    [m_view setFirstPageCover:firstPageCover];
+    [m_view setDoubleTapZoomMode:doubleTapZoomMode];
     [m_view vOpen :m_doc :(id<PDFViewDelegate>)self];
     pagecount =[m_doc pageCount];
     [self.view addSubview:m_view];
     m_bSel = false;
+    
     
     return 1;
 }
@@ -746,6 +871,8 @@ extern uint g_oval_color;
     {
         m_view = [[PDFView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height-20-44)];
     }
+    [m_view setFirstPageCover:firstPageCover];
+    [m_view setDoubleTapZoomMode:doubleTapZoomMode];
     [m_view vOpen:m_doc:(id<PDFViewDelegate>)self];
     pagecount =[m_doc pageCount];
     [self.view addSubview:m_view];
@@ -786,6 +913,8 @@ extern uint g_oval_color;
     {
         m_view = [[PDFView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height-20-44)];
     }
+    [m_view setFirstPageCover:firstPageCover];
+    [m_view setDoubleTapZoomMode:doubleTapZoomMode];
     [m_view vOpen :m_doc :(id<PDFViewDelegate>)self];
     pagecount =[m_doc pageCount];
     [self.view addSubview:m_view];
@@ -866,17 +995,16 @@ extern uint g_oval_color;
     
     
     float hi = self.navigationController.navigationBar.bounds.size.height;
-
     CGRect rect;
     rect = [[UIApplication sharedApplication] statusBarFrame];
 
     if(SYS_VERSION>=7.0)
     {
-        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-thumbHight, cwidth, thumbHight)];
+        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-thumbHeight, cwidth, thumbHeight)];
         pageNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20+hi+1, 65, 30)];
     }
     else{
-        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-hi-thumbHight-20, cwidth, thumbHight)];
+        m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-hi-thumbHeight-20, cwidth, thumbHeight)];
         pageNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 65, 30)];
     }
     [m_Thumbview vOpen :m_doc :(id<PDFThumbViewDelegate>)self];
@@ -933,12 +1061,18 @@ extern uint g_oval_color;
 }
 -(void)OnPageClicked :(int)pageno
 {
+    if (pageno < 0) {
+        [self showGridView];
+        return;
+    }
+    
     [m_view resetZoomLevel];
     [m_view vGoto:pageno];
-    pagenow = pageno-1;
+    pagenow = pageno + 1;
     NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pagenow];
     pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
     pageNumLabel.text = pagestr;
+    [self hideGridView];
 }
 
 -(int)PDFOpenPage:(NSString *)path :(int)pageno :(float)x :(float)y :(NSString *)pwd
@@ -1128,6 +1262,14 @@ extern uint g_oval_color;
 
 - (void)OnPageChanged :(int)pageno
 {
+    static int prevPage = -1;
+    if (_delegate) {
+        if (pageno != prevPage) {
+            prevPage = pageno;
+            [_delegate didChangePage:pageno];
+        }
+    }
+    
     pageno++;
     NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pageno];
     pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
@@ -1147,26 +1289,15 @@ extern uint g_oval_color;
     if(SYS_VERSION>=7.0)
     {
         //ios7
-        if(self.navigationController.navigationBar.hidden)
+        if(isImmersive)
         {
-            m_Thumbview.hidden = NO;
-            m_slider.hidden = NO;
-            [self.pageNumLabel setHidden:false];
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
-            [[UIApplication sharedApplication] setStatusBarHidden:NO];
-            [m_searchBar setHidden:NO];
-            statusBarHidden = NO;
+            [self showBars];
         }
         else
         {
-             m_Thumbview.hidden =YES;
-            [self.pageNumLabel setHidden:true];
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-            [m_searchBar resignFirstResponder];
-            [m_searchBar setHidden:YES];
-            m_slider.hidden = YES;
-            statusBarHidden = YES;
+            [self hideBars];
         }
+        
         b_outline = true;
         m_bSel = false;
         [m_view vSelEnd];
@@ -1202,14 +1333,17 @@ extern uint g_oval_color;
 
 - (void)OnFound:(bool)found
 {
-    if( !found )
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Waring" message:@"Find Over" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
+    if (_delegate) {
+        [_delegate didSearchTerm:findString found:found];
     }
 }
 -(void)refreshStatusBar{
     [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)refreshCurrentPage
+{
+    [m_view refreshCurrentPage];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -1230,6 +1364,30 @@ extern uint g_oval_color;
         
     }
 }
+
+#pragma mark GridToolBar
+-(void)addGridToolBar
+{
+    gridToolBar = [UIToolbar new];
+    [gridToolBar sizeToFit];
+    
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *cancelbtn= [[UIBarButtonItem alloc] initWithImage:_removeImage style:UIBarButtonItemStylePlain target:self action:@selector(hideGridView)];
+    cancelbtn.width =30;
+    
+    NSArray *toolbarItem = [[NSArray alloc]initWithObjects:flex, cancelbtn,nil];
+    [gridToolBar setItems:toolbarItem animated:NO];
+    self.navigationItem.titleView = gridToolBar;
+    
+    [self toolbarStyle];
+}
+
+-(void)removeGridToolBar
+{
+    [gridToolBar removeFromSuperview];
+    self.navigationItem.titleView = toolBar;
+}
+
 #pragma mark AnnotToolBar
 -(void)addAnnotToolBar
 {
@@ -1688,6 +1846,38 @@ extern uint g_oval_color;
     
 }
 
+#pragma mark - Immersive
+
+- (void)showBars
+{
+    if(self.navigationController.navigationBar.hidden)
+    {
+        m_Thumbview.hidden = NO;
+        m_slider.hidden = NO;
+        [self.pageNumLabel setHidden:false];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        [m_searchBar setHidden:NO];
+        statusBarHidden = NO;
+        isImmersive = NO;
+    }
+}
+
+- (void)hideBars
+{
+    if(!self.navigationController.navigationBar.hidden)
+    {
+        m_Thumbview.hidden =YES;
+        [self.pageNumLabel setHidden:true];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [m_searchBar resignFirstResponder];
+        [m_searchBar setHidden:YES];
+        m_slider.hidden = YES;
+        statusBarHidden = YES;
+        isImmersive = YES;
+    }
+}
+
 #pragma mark - Set view
 
 - (void)showViewModeTableView
@@ -1744,14 +1934,10 @@ extern uint g_oval_color;
             break;
         }
         default:
-        {
-            g_def_view = 3;
-            g_double_page_enabled = NO;
             break;
-        }
     }
     
-    [[NSUserDefaults standardUserDefaults] setInteger:g_def_view forKey:@"DefView"];
+    [[NSUserDefaults standardUserDefaults] setInteger:mode forKey:@"DefView"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     CGRect rect = [[UIScreen mainScreen]bounds];
     
@@ -1770,6 +1956,8 @@ extern uint g_oval_color;
     {
         m_view = [[PDFView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height-20-44)];
     }
+    [m_view setFirstPageCover:firstPageCover];
+    [m_view setDoubleTapZoomMode:doubleTapZoomMode];
     [m_view vOpen :m_doc :(id<PDFViewDelegate>)self];
     pagecount =[m_doc pageCount];
     
@@ -1784,6 +1972,48 @@ extern uint g_oval_color;
     m_bSel = false;
 
     [self PDFGoto:currentPage];
+}
+
+#pragma mark - Grid View
+
+- (void)toggleGridView
+{
+    if (!m_Gridview) {
+        [self showGridView];
+        
+    } else {
+        [self hideGridView];
+    }
+}
+
+- (void)showGridView
+{
+    if (!m_Gridview) {
+        
+        [self addGridToolBar];
+        
+        CGRect frame = self.view.frame;
+        m_Gridview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)];
+        [m_Gridview vOpen:m_doc :(id<PDFThumbViewDelegate>)self mode:2 elementGap:(gridGap > 0) ? gridGap : 10 elementHeight:(gridElementHeight > 0) ? gridElementHeight : 200 gridMode:gridMode];
+        
+        if (gridBackgroundColor != 0) {
+            [m_Gridview setThumbBackgroundColor:gridBackgroundColor];
+        }
+        
+        [self.view addSubview:m_Gridview];
+    }
+}
+
+- (void)hideGridView
+{
+    if(m_Gridview) {
+        
+        [self removeGridToolBar];
+        
+        [m_Gridview removeFromSuperview];
+        [m_Gridview vClose];
+        m_Gridview = nil;
+    }
 }
 
 #pragma mark - Print

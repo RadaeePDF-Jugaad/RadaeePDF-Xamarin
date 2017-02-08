@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RadaeePDFPlugin.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <RadaeePDFPluginDelegate>
 
 
 - (IBAction)apri:(id)sender;

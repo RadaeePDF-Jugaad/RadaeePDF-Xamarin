@@ -11,6 +11,13 @@
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 #import "PDFV.h"
+#import "ReaderHandler.h"
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0x00FF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x0000FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x000000FF) >>  0))/255.0 \
+alpha:((float)((rgbValue & 0xFF000000) >>  24))/255.0]
 
 @protocol PDFViewDelegate <NSObject>
 - (void)OnPageChanged :(int)pageno;
@@ -40,6 +47,11 @@
 
 @interface PDFView : UIScrollView<PDFVInnerDel, UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
+    BOOL coverPage;
+    
+    int doubleTapZoomMode;
+    int readerBackgroundColor;
+    
     PDFDoc *m_doc;
     PDFV *m_view;
     PDFInk *m_ink;
@@ -166,6 +178,12 @@
 
 - (void)setCommboItem :(int)item;
 - (void)setEditBoxWithText :(NSString *)text;
+
+- (void)setReaderBackgroundColor:(int)color;
+- (void)setFirstPageCover:(BOOL)cover;
+- (void)setDoubleTapZoomMode:(int)mode;
+
+- (void)refreshCurrentPage;
 
 @end
 

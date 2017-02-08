@@ -11,6 +11,17 @@
 
 @class RDPDFViewController;
 
+// define the protocol for the delegate
+@protocol RadaeePDFPluginDelegate
+// define protocol functions that can be used in any class using this delegate
+- (void)willShowReader;
+- (void)didShowReader;
+- (void)willCloseReader;
+- (void)didCloseReader;
+- (void)didChangePage:(int)page;
+- (void)didSearchTerm:(NSString *)term found:(BOOL)found;
+@end;
+
 //---------------------------------------------------------
 /*
  Author: Emanuele
@@ -37,16 +48,35 @@
     int ovalColor;
     int selColor;
     
+    int thumbBackgroundColor;
+    int gridBackgroundColor;
+    int readerBackgroundColor;
+    
+    float thumbHeight;
+    int gridElementHeight;
+    int gridGap;
+    int gridMode;
+    
+    int doubleTapZoomMode;
+    
+    BOOL firstPageCover;
+    BOOL isImmersive;
+    
     int bottomBar;
 }
 
 @property (nonatomic) int viewMode;
+
+@property (strong, nonatomic) NSString *lastOpenedPath;
+@property (strong, nonatomic) UIImage *viewModeImage;
 @property (strong, nonatomic) UIImage *searchImage;
 @property (strong, nonatomic) UIImage *bookmarkImage;
 @property (strong, nonatomic) UIImage *outlineImage;
 @property (strong, nonatomic) UIImage *lineImage;
 @property (strong, nonatomic) UIImage *rectImage;
 @property (strong, nonatomic) UIImage *ellipseImage;
+@property (strong, nonatomic) UIImage *printImage;
+@property (strong, nonatomic) UIImage *gridImage;
 @property (strong, nonatomic) UIImage *deleteImage;
 @property (strong, nonatomic) UIImage *doneImage;
 @property (strong, nonatomic) UIImage *removeImage;
@@ -62,15 +92,25 @@
 @property (nonatomic) BOOL hideRectImage;
 @property (nonatomic) BOOL hideEllipseImage;
 @property (nonatomic) BOOL hidePrintImage;
+@property (nonatomic) BOOL hideGridImage;
 
-@property (strong, nonatomic) NSArray *cdv_command;
 @property (nonatomic, weak) UIViewController *viewController;
 
 - (void)pluginInitialize;
 
-- (id)show:(NSArray *)command;
-- (void)activateLicense:(NSArray *)command;
-- (id)openFromAssets:(NSArray *)command;
+- (id)show:(NSString *)file withPassword:(NSString *)password;
+- (void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
+- (id)openFromAssets:(NSString *)file withPassword:(NSString *)password;
+- (id)openFromPath:(NSString *)path withPassword:(NSString *)password;
+- (NSString *)fileState;
+- (int)getPageNumber;
+
+// Form Manager
+
+- (NSString *)getJSONFormFields;
+- (NSString *)getJSONFormFieldsAtPage:(int)page;
+
+- (void)setFormFieldWithJSON:(NSString *)json;
 
 + (RadaeePDFPlugin *)pluginInit;
 
@@ -84,5 +124,21 @@
 - (BOOL)setReaderViewMode:(int)mode;
 - (void)toggleThumbSeekBar:(int)mode;
 - (void)setColor:(int)color forFeature:(int)feature;
+- (void)setThumbnailBGColor:(int)color;
+- (void)setReaderBGColor:(int)color;
+#if IS_DEMO == 1
+- (void)setThumbGridBGColor:(int)color;
+- (void)setThumbGridElementHeight:(float)height;
+- (void)setThumbGridGap:(float)gap;
+- (void)setThumbGridViewMode:(int)mode;
+- (void)setDoubleTapZoomMode:(int)mode;
+#endif
+- (void)setThumbHeight:(float)height;
+- (void)setFirstPageCover:(BOOL)cover;
+- (void)setImmersive:(BOOL)immersive;
+
+// Delegate
+
+- (void)setDelegate:(id)myDelegate;
 
 @end

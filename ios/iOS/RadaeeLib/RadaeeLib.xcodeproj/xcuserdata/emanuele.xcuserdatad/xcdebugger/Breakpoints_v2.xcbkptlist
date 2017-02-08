@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RadaeeLib/ios/PDFView/PDFView.m"
-            timestampString = "502296639.581767"
+            filePath = "RadaeeLib/ios/PDFView/PDFV.m"
+            timestampString = "506940041.484523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1576"
-            endingLineNumber = "1576"
-            landmarkName = "-onSingleTap::"
+            startingLineNumber = "973"
+            endingLineNumber = "973"
+            landmarkName = "-vClose"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

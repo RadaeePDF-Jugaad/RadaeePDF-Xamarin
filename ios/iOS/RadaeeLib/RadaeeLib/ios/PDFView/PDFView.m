@@ -72,6 +72,14 @@ extern bool g_double_page_enabled;
     //END
     m_doc = doc;
     bool *verts = (bool *)calloc( sizeof(bool), [doc pageCount] );
+    bool *horzs = (bool *)calloc( sizeof(bool), [doc pageCount] );
+    
+    for (int i = 0; i < m_doc.pageCount; i++) {
+        if (i > 0) {
+            horzs[i] = true;
+        }
+    }
+    
     switch(g_def_view)
     {
         case 1:
@@ -85,7 +93,7 @@ extern bool g_double_page_enabled;
             doublePage = g_double_page_enabled;
             
             if (doublePage) {
-                m_view = [[PDFVDual alloc] init:false :NULL :0 :NULL :0];
+                m_view = [[PDFVDual alloc] init:false :NULL :0 :(coverPage) ? horzs : NULL :doc.pageCount];
             }
             else
             {
@@ -115,7 +123,7 @@ extern bool g_double_page_enabled;
     struct PDFVThreadBack tback;
     tback.OnPageRendered = @selector(OnPageRendered:);
     tback.OnFound = @selector(OnFound:);
-    self.backgroundColor = [UIColor colorWithRed:0.7f green:0.7f blue:0.7f alpha:1.0f];
+    self.backgroundColor = (readerBackgroundColor != 0) ? UIColorFromRGB(readerBackgroundColor) : [UIColor colorWithRed:0.7f green:0.7f blue:0.7f alpha:1.0f];
     [m_view vOpen:doc :4 :self: &tback];
     [m_view vResize:m_w :m_h];
     m_status = sta_none;
@@ -175,7 +183,9 @@ extern bool g_double_page_enabled;
             pageno++;
         }
         
-        if (g_paging_enabled && g_def_view == 3 && pageno > 0 && (pageno % 2 != 0) && !UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
+        BOOL checkMod = (coverPage) ? (pageno % 2 == 0) : (pageno % 2 != 0);
+        
+        if (g_paging_enabled && g_def_view == 3 && pageno > 0 && checkMod && !UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
             pageno--;
         }
     }
@@ -185,7 +195,7 @@ extern bool g_double_page_enabled;
     pos.x = 0;
     pos.y = [m_doc pageHeight:pageno];
     pos.pageno = pageno;
-    int pages = (!UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]) && doublePage && m_doc.pageCount > 1) ? 2 : 1;
+    int pages = (!UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]) && doublePage && m_doc.pageCount > 1 && !(coverPage && (pageno < 1 || ((pageno % 2 != 0) && pageno == (m_doc.pageCount - 1))))) ? 2 : 1;
     float gapX = (m_w - (([m_doc pageWidth:pageno] * pages)*[m_view vGetScaleMin])) / 2;
     float gapY = (m_h - ([m_doc pageHeight:pageno]*[m_view vGetScaleMin])) / 2;
     
@@ -214,6 +224,7 @@ extern bool g_double_page_enabled;
     if( m_modified && m_doc != NULL )
     {
         [m_doc save];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:2] forKey:@"fileStat"];
     }
     if( m_view != nil )
     {
@@ -258,6 +269,21 @@ extern bool g_double_page_enabled;
 -(void)refresh
 {
     [self setNeedsDisplay];
+}
+
+- (void)refreshCurrentPage
+{
+    if (m_cur_page > 0) {
+        [m_view vRenderSync:m_cur_page - 1];
+    }
+    if ((m_cur_page + 1) < [m_doc pageCount]) {
+        [m_view vRenderSync:m_cur_page + 1];
+    }
+    
+
+    [m_view vRenderSync:m_cur_page];
+    
+    [self refresh];
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
@@ -696,6 +722,7 @@ extern bool g_double_page_enabled;
     if( [m_doc canSave] )
     {
     	m_modified = true;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
         m_tx = point.x * m_scale;
         m_ty = point.y * m_scale;
         m_annot_rect.left += m_tx - m_px;
@@ -755,6 +782,7 @@ extern bool g_double_page_enabled;
 		if( page )
 		{
 			m_modified = true;
+            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
 			PDF_POINT pt;
 			pt.x = pos.x;
 			pt.y = pos.y;
@@ -958,13 +986,53 @@ extern bool g_double_page_enabled;
     isDoubleTapping = YES;
     
     NSLog(@"double tap");
-    if (m_zoom > 1){
-        self.pagingEnabled = g_paging_enabled;
-        [self resetZoomLevel];
-    }else {
-        self.pagingEnabled = NO;
-        [self initZoomWithPoint:[touch locationInView:self.window]];
-        [self zoomToScale:2.0 atPoint:[touch locationInView:self.window]];
+    
+    if (doubleTapZoomMode > 0) {
+        if (m_zoom > 1){
+            self.pagingEnabled = g_paging_enabled;
+            [self resetZoomLevel];
+        }else {
+            self.pagingEnabled = NO;
+            [self initZoomWithPoint:[touch locationInView:self.window]];
+            
+            if (doubleTapZoomMode == 1) {
+                [self zoomToScale:2.0 atPoint:[touch locationInView:self.window]];
+            } else {
+                struct PDFV_POS pos;
+                CGPoint p = [touch locationInView:self.window];
+                
+                [m_view vGetPos:&pos :p.x * m_scale :p.y * m_scale];
+                PDF_RECT mZoomRect = [ReaderHandler handleAutomaticZoom:m_view withPos:pos forDoc:m_doc containedInWidth:m_w];
+                
+                float mParagraphWidth = mZoomRect.right - mZoomRect.left;
+                
+                if (mParagraphWidth == 0) {
+                    [self zoomToScale:2.0 atPoint:[touch locationInView:self.window]];
+                } else {
+                    int scale = (int) (m_w / mParagraphWidth); //screen width / paragraph width
+                    
+                    pos.x = mZoomRect.right - (mParagraphWidth / 2);
+                    
+                    if (scale > 1) {
+                        
+                        self.zoomScale = (scale > g_zoom_level) ? g_zoom_level : scale;
+                        m_zoom = scale;
+                        
+                        [m_view vSetScale:scale];
+                        [m_view vSetPos:&pos :m_w /2 :m_h /2];
+                        
+                        CGSize sz;
+                        sz.width = [m_view vGetDocW]/m_scale;
+                        sz.height = [m_view vGetDocH]/m_scale;
+                        self.contentSize = sz;
+                        //[m_view vSetPos:&m_zoom_pos :(pos.x - (zoomPoint.x * scale)) * m_scale :(pos.y - (zoomPoint.y * scale)) * m_scale];
+                        self.contentOffset = CGPointMake([m_view vGetX]/m_scale, [m_view vGetY]/m_scale);
+                        
+                        [self refresh];
+                    }
+                }
+            }
+        }
     }
     
     if (m_delegate) {
@@ -1165,6 +1233,7 @@ extern bool g_double_page_enabled;
 -(void)vNoteEnd
 {
     m_modified = true;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
     
 	if( m_status == sta_note )
 	{
@@ -1219,6 +1288,7 @@ extern bool g_double_page_enabled;
                 [m_view vRenderSync:pos.pageno];
             }
             m_modified = true;
+            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
         }
         m_status = sta_none;
         m_ink = NULL;
@@ -1497,6 +1567,7 @@ extern bool g_double_page_enabled;
 {
 	if( m_status != sta_annot ) return;
     m_modified = true;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
     [m_annot removeFromPage];
 	[self vAnnotEnd];
 	[m_view vRenderSync:m_annot_pos.pageno];
@@ -1668,6 +1739,7 @@ extern bool g_double_page_enabled;
             return;
         }
         m_modified = true;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
         
         PDF_POINT pt;
         pt.x = pos.x ;
@@ -1756,6 +1828,25 @@ extern bool g_double_page_enabled;
 - (BOOL)paginAvailable
 {
     return (g_def_view == 3 || g_def_view == 4);
+}
+
+- (void)setReaderBackgroundColor:(int)color
+{
+    readerBackgroundColor = color;
+    
+    if (readerBackgroundColor != 0) {
+        self.backgroundColor = UIColorFromRGB(readerBackgroundColor);
+    }
+}
+
+- (void)setFirstPageCover:(BOOL)cover
+{
+    coverPage = cover;
+}
+
+- (void)setDoubleTapZoomMode:(int)mode
+{
+    doubleTapZoomMode = mode;
 }
 
 @end

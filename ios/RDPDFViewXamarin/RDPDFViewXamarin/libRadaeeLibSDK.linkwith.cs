@@ -7,4 +7,4 @@
 
 using ObjCRuntime;
 
-[assembly: LinkWith("libRadaeeLibSDK.a", IsCxx=true, LinkTarget = LinkTarget.Simulator | LinkTarget.ArmV7 | LinkTarget.Simulator64 | LinkTarget.Arm64, SmartLink = true, ForceLoad = true)]
+[assembly: LinkWith("libRadaeeLibSDK.a", LinkTarget.Simulator | LinkTarget.ArmV7 | LinkTarget.Simulator64 | LinkTarget.Arm64, SmartLink = true, ForceLoad = true, IsCxx = true)]

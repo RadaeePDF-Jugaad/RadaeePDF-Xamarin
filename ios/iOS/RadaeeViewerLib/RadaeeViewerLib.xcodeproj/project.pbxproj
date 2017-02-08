@@ -23,6 +23,7 @@
 		A84A2D6E1D2285B800B2A4F2 /* btn_view_vert.png in Resources */ = {isa = PBXBuildFile; fileRef = A84A2D5F1D2285B800B2A4F2 /* btn_view_vert.png */; };
 		A84A2D6F1D2285B800B2A4F2 /* btn_view.png in Resources */ = {isa = PBXBuildFile; fileRef = A84A2D601D2285B800B2A4F2 /* btn_view.png */; };
 		A84A2D731D22B6F900B2A4F2 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A84A2D721D22B6F800B2A4F2 /* test.pdf */; };
+		A86E071C1E3748D000F0A018 /* btn_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E071B1E3748D000F0A018 /* btn_grid.png */; };
 		A88EBD1F1D1824B70084C9A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EBD1E1D1824B70084C9A9 /* main.m */; };
 		A88EBD221D1824B70084C9A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EBD211D1824B70084C9A9 /* AppDelegate.m */; };
 		A88EBD251D1824B70084C9A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EBD241D1824B70084C9A9 /* ViewController.m */; };
@@ -52,6 +53,7 @@
 		A84A2D5F1D2285B800B2A4F2 /* btn_view_vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_view_vert.png; sourceTree = "<group>"; };
 		A84A2D601D2285B800B2A4F2 /* btn_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_view.png; sourceTree = "<group>"; };
 		A84A2D721D22B6F800B2A4F2 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
+		A86E071B1E3748D000F0A018 /* btn_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_grid.png; sourceTree = "<group>"; };
 		A88EBD1A1D1824B70084C9A9 /* RadaeeViewerLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadaeeViewerLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88EBD1E1D1824B70084C9A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A88EBD201D1824B70084C9A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				A84A2D571D2285B800B2A4F2 /* btn_outline.png */,
 				A84A2D581D2285B800B2A4F2 /* btn_perform.png */,
 				A84A2D591D2285B800B2A4F2 /* btn_print.png */,
+				A86E071B1E3748D000F0A018 /* btn_grid.png */,
 				A84A2D5A1D2285B800B2A4F2 /* btn_remove.png */,
 				A84A2D5B1D2285B800B2A4F2 /* btn_right.png */,
 				A84A2D5C1D2285B800B2A4F2 /* btn_search.png */,
@@ -236,6 +239,7 @@
 			files = (
 				A84A2D621D2285B800B2A4F2 /* btn_annot_ink.png in Resources */,
 				A84A2D6C1D2285B800B2A4F2 /* btn_view_dual.png in Resources */,
+				A86E071C1E3748D000F0A018 /* btn_grid.png in Resources */,
 				A84A2D651D2285B800B2A4F2 /* btn_left.png in Resources */,
 				A84A2D641D2285B800B2A4F2 /* btn_done.png in Resources */,
 				A88EBD2D1D1824B70084C9A9 /* LaunchScreen.storyboard in Resources */,

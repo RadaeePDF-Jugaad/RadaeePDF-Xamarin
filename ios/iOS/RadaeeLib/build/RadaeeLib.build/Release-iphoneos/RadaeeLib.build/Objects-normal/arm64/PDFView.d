@@ -9,4 +9,5 @@ dependencies: \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFVPage.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFVCanvas.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFVThread.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RDUtils/ReaderHandler.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/NSObject/NSObject+PerformBlock.h
