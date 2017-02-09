@@ -549,7 +549,7 @@
     return [fe jsonInfoForPage:page];
 }
 
-- (void)setFormFieldWithJSON:(NSString *)json
+- (NSString *)setFormFieldWithJSON:(NSString *)json
 {
     RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
     
@@ -558,17 +558,17 @@
         [fe setInfoWithJson:json error:&error];
         
         if (error) {
-            NSLog(@"%@", error.description);
+            return error.description;
         } else
         {
-            if (m_pdf) {
-                [m_pdf refreshCurrentPage];
-            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Radaee-Refresh-Page" object:nil];
         }
     } else
     {
-        NSLog(@"JSON not valid");
+        return @"JSON not valid";
     }
+    
+    return @"";
 }
 
 #pragma mark - Reader Delegate

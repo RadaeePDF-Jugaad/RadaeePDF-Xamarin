@@ -282,7 +282,7 @@ extern uint g_oval_color;
     [self.view addSubview:textFd];
     textFd.hidden = YES;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -308,6 +308,8 @@ extern uint g_oval_color;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCurrentPage) name:@"Radaee-Refresh-Page" object:nil];
     
     if (_delegate) {
         [_delegate didShowReader];
@@ -355,6 +357,8 @@ extern uint g_oval_color;
         if (_delegate) {
             [_delegate didCloseReader];
         }
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Radaee-Refresh-Page" object:nil];
     }
 }
 
@@ -387,8 +391,6 @@ extern uint g_oval_color;
 
 -(void)composeFile:(id)sender
 {
-
-    
     int pageno = 0;
     struct PDFV_POS pos;
     [m_view vGetPos:&pos];
@@ -415,16 +417,19 @@ extern uint g_oval_color;
         NSString *str1=NSLocalizedString(@"Alert", @"Localizable");
         NSString *str2=NSLocalizedString(@"Add BookMark Success!", @"Localizable");
         NSString *str3=NSLocalizedString(@"OK", @"Localizable");
-        UIAlertView *alter = [[UIAlertView alloc]initWithTitle:str1 message:str2  delegate:self cancelButtonTitle:str3 otherButtonTitles:nil, nil];
-        
-        [alter show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:str1 message:str2 preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:str3 style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action1];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     else {
         NSString *str1=NSLocalizedString(@"Alert", @"Localizable");
         NSString *str2=NSLocalizedString(@"BookMark Already Exist", @"Localizable");
         NSString *str3=NSLocalizedString(@"OK", @"Localizable");
-        UIAlertView *alter = [[UIAlertView alloc]initWithTitle:str1 message:str2 delegate:self cancelButtonTitle:str3 otherButtonTitles:nil, nil];
-        [alter show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:str1 message:str2 preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:str3 style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action1];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 - (IBAction)searchView:(id) sender

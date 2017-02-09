@@ -46,7 +46,7 @@
     struct PDFVThreadBack tback;
     tback.OnPageRendered = @selector(OnPageRendered:);
     //tback.OnFound = @selector(OnFound:);
-    self.backgroundColor = (thumbBackgroundColor != 0) ? UIColorFromRGB(thumbBackgroundColor) : [UIColor colorWithRed:0.7f green:0.7f blue:0.7f alpha:1.0f];
+    self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
     
     if (mode == 2) {
         [m_view vOpen:doc :gap : self: &tback];
@@ -347,9 +347,7 @@
 {
     thumbBackgroundColor = color;
     
-    if (thumbBackgroundColor != 0) {
-        self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
-    }
+    self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
 }
 
 @end

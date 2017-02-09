@@ -31,6 +31,7 @@
 		A88EBD2A1D1824B70084C9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88EBD291D1824B70084C9A9 /* Assets.xcassets */; };
 		A88EBD2D1D1824B70084C9A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88EBD2B1D1824B70084C9A9 /* LaunchScreen.storyboard */; };
 		A88EBD401D1829F60084C9A9 /* libRDPDFLibSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EBD3F1D1829F60084C9A9 /* libRDPDFLibSDK.a */; };
+		A89B016E1E4CBC17005CFB7C /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = A89B016D1E4CBC17005CFB7C /* btn_back.png */; };
 		A8C1A4321DF1AEE900453AA1 /* cmaps in Resources */ = {isa = PBXBuildFile; fileRef = A8C1A4301DF1AEE800453AA1 /* cmaps */; };
 		A8C1A4331DF1AEE900453AA1 /* fdat in Resources */ = {isa = PBXBuildFile; fileRef = A8C1A4311DF1AEE800453AA1 /* fdat */; };
 		A8C1A4351DF1BF4C00453AA1 /* annot_remove.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C1A4341DF1BF4C00453AA1 /* annot_remove.png */; };
@@ -67,6 +68,7 @@
 		A88EBD371D1824F10084C9A9 /* RadaeeLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadaeeLib.h; sourceTree = "<group>"; };
 		A88EBD381D1824F10084C9A9 /* RadaeePDFPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadaeePDFPlugin.h; sourceTree = "<group>"; };
 		A88EBD3F1D1829F60084C9A9 /* libRDPDFLibSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRDPDFLibSDK.a; sourceTree = "<group>"; };
+		A89B016D1E4CBC17005CFB7C /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
 		A8C1A4301DF1AEE800453AA1 /* cmaps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cmaps; sourceTree = "<group>"; };
 		A8C1A4311DF1AEE800453AA1 /* fdat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fdat; sourceTree = "<group>"; };
 		A8C1A4341DF1BF4C00453AA1 /* annot_remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annot_remove.png; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				A84A2D5A1D2285B800B2A4F2 /* btn_remove.png */,
 				A84A2D5B1D2285B800B2A4F2 /* btn_right.png */,
 				A84A2D5C1D2285B800B2A4F2 /* btn_search.png */,
+				A89B016D1E4CBC17005CFB7C /* btn_back.png */,
 				A84A2D5D1D2285B800B2A4F2 /* btn_view_dual.png */,
 				A84A2D5F1D2285B800B2A4F2 /* btn_view_vert.png */,
 				A84A2D5E1D2285B800B2A4F2 /* btn_view_single.png */,
@@ -248,6 +251,7 @@
 				A84A2D681D2285B800B2A4F2 /* btn_print.png in Resources */,
 				A84A2D671D2285B800B2A4F2 /* btn_perform.png in Resources */,
 				A8C1A4321DF1AEE900453AA1 /* cmaps in Resources */,
+				A89B016E1E4CBC17005CFB7C /* btn_back.png in Resources */,
 				A84A2D6B1D2285B800B2A4F2 /* btn_search.png in Resources */,
 				A84A2D6A1D2285B800B2A4F2 /* btn_right.png in Resources */,
 				A84A2D6F1D2285B800B2A4F2 /* btn_view.png in Resources */,

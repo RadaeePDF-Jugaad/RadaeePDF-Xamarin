@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{7EB5E7D1-4011-406E-BB5B-46A350442CEA}|Default">
   <MonoDevelop.Ide.ItemProperties.RDPDFViewLib PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/ViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Main.cs">
     <Files>
-      <File FileName="ReaderXamarin/ViewController.cs" Line="85" Column="4" />
-      <File FileName="RDPDFViewXamarin/ApiDefinition.cs" Line="1" Column="1" />
+      <File FileName="ReaderXamarin/ViewController.cs" Line="120" Column="27" />
+      <File FileName="RDPDFViewXamarin/ApiDefinition.cs" Line="193" Column="9" />
       <File FileName="ReaderXamarin/Main.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -12,5 +12,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0F615FEB-1E61-4544-8D77-A1100A71F632" />
+  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.61003C6F-11AB-434F-B4CE-DAD7428C4EB4" />
 </Properties>

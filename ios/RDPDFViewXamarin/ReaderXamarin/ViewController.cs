@@ -8,6 +8,13 @@ namespace ReaderXamarin
 {
 	public class RadaeeDelegate : RadaeePDFPluginDelegate
 	{
+		RadaeePDFPlugin plugin;
+
+		public RadaeeDelegate(RadaeePDFPlugin plugin)
+		{
+			this.plugin = plugin;
+		}
+
 		public override void WillShowReader()
 		{
 			Console.WriteLine("will show reader");
@@ -35,7 +42,7 @@ namespace ReaderXamarin
 
 		public override void DidSearchTerm(string term, bool found)
 		{
-			Console.WriteLine("will show reader");
+			Console.WriteLine("did search {0}", term);
 		}	
 	}
 
@@ -102,20 +109,20 @@ namespace ReaderXamarin
 
 
 			//Set Callback for RadaeeDelegate
-			selector = new RadaeeDelegate();
+			selector = new RadaeeDelegate(plugin);
 			plugin.SetDelegate(selector);
 
 			this.NavigationController.NavigationBar.BarTintColor = UIColor.Black;
 			this.NavigationController.NavigationBar.TintColor = UIColor.Red;
 
-			UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
-
+			UIViewController controller = plugin.OpenFromAssets("campi.pdf", "");
+			string res = plugin.SetFormFieldWithJSON("{\"Pages\":[{\"Page\":0,\"Annots\":[{\"Index\":0,\"EditText\":\"ciao\"}]}]}");
+			Console.WriteLine(res);
+	
 			if (controller != null)
 			{
 				//show reader
 				this.NavigationController.PushViewController(controller, true);
-
-				//controller.PDFGoto (2);
 			}
 			else {
 
