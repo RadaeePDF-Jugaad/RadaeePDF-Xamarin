@@ -115,9 +115,7 @@ namespace ReaderXamarin
 			this.NavigationController.NavigationBar.BarTintColor = UIColor.Black;
 			this.NavigationController.NavigationBar.TintColor = UIColor.Red;
 
-			UIViewController controller = plugin.OpenFromAssets("campi.pdf", "");
-			string res = plugin.SetFormFieldWithJSON("{\"Pages\":[{\"Page\":0,\"Annots\":[{\"Index\":0,\"EditText\":\"ciao\"}]}]}");
-			Console.WriteLine(res);
+			UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
 	
 			if (controller != null)
 			{
