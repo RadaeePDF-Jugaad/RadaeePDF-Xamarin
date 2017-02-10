@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{7EB5E7D1-4011-406E-BB5B-46A350442CEA}|Default">
   <MonoDevelop.Ide.ItemProperties.RDPDFViewLib PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/ViewController.cs">
     <Files>
-      <File FileName="ReaderXamarin/ViewController.cs" Line="120" Column="27" />
+      <File FileName="ReaderXamarin/ViewController.cs" Line="118" Column="72" />
       <File FileName="RDPDFViewXamarin/ApiDefinition.cs" Line="193" Column="9" />
       <File FileName="ReaderXamarin/Main.cs" Line="12" Column="1" />
     </Files>

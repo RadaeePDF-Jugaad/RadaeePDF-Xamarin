@@ -582,6 +582,7 @@
  * 4: signature field
  */
 -(int)fieldType;
+-(int)fieldFlag;
 /**
  *	@brief	get name of this annotation, example: "EditBox1[0]".
  *			this method valid in premium version
@@ -624,6 +625,7 @@
  * @param hide true or false.
  */
 -(bool)setHidden:(bool)hide;
+-(bool)renderToBmp:(CGImageRef)img;
 /**
  * @brief get annotation's box rectangle.
  *			this method valid in professional or premium version
@@ -697,6 +699,7 @@
  * @return true or false
  */
 -(bool)setStrokeWidth:(float)width;
+-(bool)setStrokeDash:(float *)dash : (int)cnt;
 /**
  * @brief get icon value for sticky text note/file attachment annotation.
  * this method valid in professional or premium version
@@ -1437,6 +1440,7 @@
 -(bool)isEncrypted;
 -(int)getEmbedFileCount;
 -(NSString *)getEmbedFileName:(int)idx;
+-(NSString *)getEmbedFileDesc:(int)idx;
 -(bool)getEmbedFileData:(int)idx :(NSString *)path;
 -(NSString *)exportForm;
 /**

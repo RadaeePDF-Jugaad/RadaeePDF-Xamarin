@@ -392,6 +392,7 @@ extern uint annotStrikeoutColor;
 {
 	return Document_setGStateStrokeDash( m_doc, m_handle, dash, dash_cnt, phase );
 }
+
 @end
 
 @implementation PDFDocImage
@@ -757,6 +758,10 @@ extern uint annotStrikeoutColor;
 {
 	return Page_getAnnotFieldType( m_page, m_handle );
 }
+-(int)fieldFlag
+{
+	return Page_getAnnotFieldFlag( m_page, m_handle );
+}
 -(NSString *)fieldName
 {
 	char buf[512];
@@ -809,6 +814,10 @@ extern uint annotStrikeoutColor;
 {
 	Page_setAnnotHide( m_page, m_handle, hide );
 	return true;
+}
+-(bool)renderToBmp:(CGImageRef)img
+{
+	return Page_renderAnnotToBmp(m_page, m_handle, img);
 }
 -(void)getRect:(PDF_RECT *)rect
 {
@@ -1558,6 +1567,10 @@ extern uint annotStrikeoutColor;
 -(NSString *)getEmbedFileName:(int)idx
 {
 	return Document_getEFName(m_doc, idx);
+}
+-(NSString *)getEmbedFileDesc:(int)idx
+{
+	return Document_getEFDesc(m_doc, idx);
 }
 -(bool)getEmbedFileData:(int)idx :(NSString *)path
 {

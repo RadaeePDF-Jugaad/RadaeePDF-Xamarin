@@ -48,7 +48,7 @@ typedef struct _PDF_DIB * PDF_DIB;
 typedef struct _PDF_MATRIX * PDF_MATRIX;
 typedef struct _PDF_DOC * PDF_DOC;
 typedef struct _PDF_OUTLINE * PDF_OUTLINE;
-typedef void * PDF_PAGE;
+typedef struct _PDF_PAGE *PDF_PAGE;
 typedef struct _PDF_FINDER * PDF_FINDER;
 typedef struct _PDF_ANNOT * PDF_ANNOT;
 typedef struct _PDF_INK * PDF_INK;
@@ -274,7 +274,7 @@ void Global_toPDFRect( PDF_MATRIX matrix, const PDF_RECT *drect, PDF_RECT *prect
 /**
  *	@brief	not used for developer
  */
-void Global_drawScroll( PDF_DIB dst, PDF_DIB dib1, PDF_DIB dib2, int x, int y, int style );
+void Global_drawScroll( PDF_DIB dst, PDF_DIB dib1, PDF_DIB dib2, int x, int y, int style, unsigned int back_side_clr );
 /**
  *	@brief	create a Matrix object
  *
@@ -563,6 +563,7 @@ int Document_getSignByteRangeCount( PDF_DOC doc );
 int Document_checkSignByteRange( PDF_DOC doc );
 int Document_getEFCount(PDF_DOC doc);
 NSString *Document_getEFName(PDF_DOC doc, int index);
+NSString *Document_getEFDesc(PDF_DOC doc, int index);
 bool Document_getEFData(PDF_DOC doc, int index, NSString *path);
 NSString *Document_exportForm( PDF_DOC doc );
 
@@ -1016,6 +1017,8 @@ int Page_getAnnotType( PDF_PAGE page, PDF_ANNOT annot );
  *          4: signature field
  */
 int Page_getAnnotFieldType( PDF_PAGE page, PDF_ANNOT annot );
+int Page_getAnnotFieldFlag(PDF_PAGE page, PDF_ANNOT annot);
+
 /**
  *	@brief get field name of this annotation.
  *			a premium license is needed for this function.
@@ -1050,6 +1053,7 @@ int Page_getAnnotFieldFullName( PDF_PAGE page, PDF_ANNOT annot, char *buf, int b
  *	@return	name of this annotation, like: "form1[0].EditBox1[0]"
  */
 int Page_getAnnotFieldFullName2( PDF_PAGE page, PDF_ANNOT annot, char *buf, int buf_size );
+bool Page_renderAnnotToBmp(PDF_PAGE page, PDF_ANNOT annot, CGImageRef img);
 /**
  *	@brief	get annotation rect.
             to invoke this function, developers should call Page_objsStart or Page_render before.
@@ -2042,21 +2046,6 @@ bool Page_addAnnotPopup(PDF_PAGE page, PDF_ANNOT parent, const PDF_RECT *rect, b
 bool Page_addAnnotMarkup2( PDF_PAGE page, int index1, int index2, int color, int type );
 int Page_getAnnotMarkupRects(PDF_PAGE page, PDF_ANNOT annot, PDF_RECT *rects, int cnt);
 
-/**
- *	@brief	add bitmap annotation to page
-            to invoke this function, developers should call Page_objsStart or Page_render before.
-            this function valid in professional or premium license.
-            you should re-render page to display modified data
- *
- *	@param 	page 	returned from Document_getPage
- *	@param 	matrix 	Matrix object passed to Page_render
- *	@param 	bitmap 	bitmap data, must be in RGBA color space
- *	@param 	has_alpha 	need generate alpha values for bitmap?
- *	@param 	rect 	rect in PDF coordinate.
- *
- *	@return	true or false
- */
-bool Page_addBitmap( PDF_PAGE page, PDF_MATRIX matrix, CGImageRef bitmap, bool has_alpha, const PDF_RECT *rect );
 	/**
 	 * @brief	add an Rubber Stamp to page.
 	 *		you should re-render page to display modified data.

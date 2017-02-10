@@ -496,7 +496,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"IS_DEMO=1",
+					"IS_DEMO=0",
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -515,7 +515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "IS_DEMO=0";
+				GCC_PREPROCESSOR_DEFINITIONS = "IS_DEMO=1";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RadaeeLib/ios/PDFLib",
