@@ -3,6 +3,8 @@ RadaeePDF-Xamarin
 
 Project that enable the use of RadaeePDF SDK (www.radaeepdf.com) with Xamarin development tool.
 
+Official information page: http://www.radaeepdf.com/download/xamarin-module
+
 ## License
 
 This plugin is released under the Apache 2.0 license
