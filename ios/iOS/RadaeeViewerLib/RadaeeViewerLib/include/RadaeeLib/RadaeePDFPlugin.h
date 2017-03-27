@@ -104,13 +104,14 @@
 - (id)openFromPath:(NSString *)path withPassword:(NSString *)password;
 - (NSString *)fileState;
 - (int)getPageNumber;
+- (NSData *)getImageForPage:(int)page;
 
 // Form Manager
 
 - (NSString *)getJSONFormFields;
 - (NSString *)getJSONFormFieldsAtPage:(int)page;
 
-- (void)setFormFieldWithJSON:(NSString *)json;
+- (NSString *)setFormFieldWithJSON:(NSString *)json;
 
 + (RadaeePDFPlugin *)pluginInit;
 

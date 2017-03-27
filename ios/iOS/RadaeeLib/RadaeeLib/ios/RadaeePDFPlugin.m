@@ -384,6 +384,11 @@
     return [m_pdf getCurrentPage];
 }
 
+- (NSData *)getImageForPage:(int)page
+{
+    return UIImagePNGRepresentation([[UIImage alloc] initWithCGImage:[m_pdf imageForPage:page]]);
+}
+
 #pragma mark - Settings
 
 - (void)toggleThumbSeekBar:(int)mode

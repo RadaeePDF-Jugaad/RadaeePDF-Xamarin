@@ -180,6 +180,10 @@ namespace RadaeeLib
 		[Export("getPageNumber")]
 		int PageNumber { get; }
 
+		// -(NSData *)getImageForPage:(int)page;
+		[Export ("getImageForPage:")]
+		NSData GetImageForPage (int page);
+
 		// -(NSString *)getJSONFormFields;
 		[Export("getJSONFormFields")]
 		string GetJSONFormFields();

@@ -116,7 +116,17 @@ namespace ReaderXamarin
 			this.NavigationController.NavigationBar.TintColor = UIColor.Red;
 
 			UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
-	
+
+
+			//Create image of a specific page (needs a valid pdf opened instance)
+			/*
+			//Create data of the image 
+			NSData pageData = plugin.GetImageForPage(0);
+
+			//Create the UIImage from NData
+			UIImage image = new UIImage(pageData);
+			*/
+
 			if (controller != null)
 			{
 				//show reader

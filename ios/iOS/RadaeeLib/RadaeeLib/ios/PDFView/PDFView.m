@@ -128,7 +128,7 @@ extern bool g_double_page_enabled;
     [m_view vResize:m_w :m_h];
     m_status = sta_none;
     m_ink = NULL;
-    m_modified = false;
+    [self setModified:NO force:NO];
     
     m_rects = NULL;
     m_rects_cnt = 0;
@@ -220,8 +220,7 @@ extern bool g_double_page_enabled;
 
 -(void)vClose
 {
-   
-    if( m_modified && m_doc != NULL )
+    if( [self isModified] && m_doc != NULL )
     {
         [m_doc save];
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:2] forKey:@"fileStat"];
@@ -721,8 +720,7 @@ extern bool g_double_page_enabled;
 	if( m_status != sta_annot ) return false;
     if( [m_doc canSave] )
     {
-    	m_modified = true;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+    	//[self setModified:YES force:NO];
         m_tx = point.x * m_scale;
         m_ty = point.y * m_scale;
         m_annot_rect.left += m_tx - m_px;
@@ -781,8 +779,7 @@ extern bool g_double_page_enabled;
 		PDFPage *page = [vpage GetPage];
 		if( page )
 		{
-			m_modified = true;
-            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+			[self setModified:YES force:NO];
 			PDF_POINT pt;
 			pt.x = pos.x;
 			pt.y = pos.y;
@@ -1185,7 +1182,8 @@ extern bool g_double_page_enabled;
     if( pos.pageno >= 0 )
     {
         PDFVPage *vpage = [m_view vGetPage:pos.pageno];
-        m_modified = [vpage SetSelMarkup:type];
+        [self setModified:[vpage SetSelMarkup:type] force:NO];
+        
         [m_view vRenderSync:pos.pageno];
         [self refresh];
         return true;
@@ -1232,8 +1230,7 @@ extern bool g_double_page_enabled;
 
 -(void)vNoteEnd
 {
-    m_modified = true;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+    [self setModified:YES force:NO];
     
 	if( m_status == sta_note )
 	{
@@ -1287,18 +1284,12 @@ extern bool g_double_page_enabled;
                 [page addAnnotInk:m_ink];
                 [m_view vRenderSync:pos.pageno];
             }
-            m_modified = true;
-            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+            [self setModified:YES force:NO];
         }
         m_status = sta_none;
         m_ink = NULL;
         [self refresh];
-        
-        //GEAR
-        //Save Annotations
-        [m_doc save];
-        //END
-        
+            
         [self enableScroll];
     }
 }
@@ -1383,7 +1374,7 @@ extern bool g_double_page_enabled;
             }
             pt_cur += 2;
         }
-        m_modified = (m_ellipse_cnt != 0);
+        [self setModified:(m_ellipse_cnt != 0) force:NO];
         m_ellipse_cnt = 0;
         m_ellipse_drawing = false;
         m_status = sta_none;
@@ -1396,7 +1387,6 @@ extern bool g_double_page_enabled;
             cur++;
         }
         [self refresh];
-        [m_doc save];
         [self enableScroll];
     }
 }
@@ -1481,7 +1471,8 @@ extern bool g_double_page_enabled;
             }
             pt_cur += 2;
         }
-        m_modified = (m_rects_cnt != 0);
+        [self setModified:(m_rects_cnt != 0) force:NO];
+        
         m_rects_cnt = 0;
         m_rects_drawing = false;
         m_status = sta_none;
@@ -1566,8 +1557,7 @@ extern bool g_double_page_enabled;
 -(void)vAnnotRemove
 {
 	if( m_status != sta_annot ) return;
-    m_modified = true;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+    [self setModified:YES force:NO];
     [m_annot removeFromPage];
 	[self vAnnotEnd];
 	[m_view vRenderSync:m_annot_pos.pageno];
@@ -1626,9 +1616,10 @@ extern bool g_double_page_enabled;
                         [m_annot setRadio];
                         break;
                 }
+                [self setModified:YES force:NO];
+                
                 //need refresh PDFView and save annot status
                 [m_view vRenderSync:m_annot_pos.pageno];
-                [m_doc save];
                 [self vAnnotEnd];
                 return;
             }
@@ -1738,8 +1729,7 @@ extern bool g_double_page_enabled;
         if (!page) {
             return;
         }
-        m_modified = true;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+        [self setModified:YES force:NO];
         
         PDF_POINT pt;
         pt.x = pos.x ;
@@ -1748,8 +1738,6 @@ extern bool g_double_page_enabled;
         PDFAnnot *annot = [page annotAtIndex: [page annotCount] - 1];
         [annot setPopupText:text];
         [m_view vRenderSync:pos.pageno];
-        [m_doc save];
-
     }
 }
 
@@ -1810,17 +1798,22 @@ extern bool g_double_page_enabled;
 
 - (void)setCommboItem :(int)item
 {
+    if ([m_annot getComboSel] != item) {
+        [self setModified:YES force:NO];
+    }
     [m_annot setComboSel:item];
     [m_view vRenderSync:m_annot_pos.pageno];
-    [m_doc save];
     [self vAnnotEnd];
 }
 
 - (void)setEditBoxWithText:(NSString *)text
 {
+    if (m_status != sta_annot) return;
+    if (![[m_annot getEditText] isEqualToString:text]) {
+        [self setModified:YES force:NO];
+    }
     [m_annot setEditText:text];
     [m_view vRenderSync:m_annot_pos.pageno];
-    [m_doc save];
     [self vAnnotEnd];
     
 }
@@ -1847,6 +1840,26 @@ extern bool g_double_page_enabled;
 - (void)setDoubleTapZoomMode:(int)mode
 {
     doubleTapZoomMode = mode;
+}
+
+- (BOOL)isModified
+{
+    return m_modified;
+}
+
+- (void)setModified:(BOOL)modified force:(BOOL)force
+{
+    if (!m_modified) {
+        m_modified = modified;
+    }
+    
+    if (force) {
+        m_modified = modified;
+    }
+    
+    if (m_modified) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
+    }
 }
 
 @end

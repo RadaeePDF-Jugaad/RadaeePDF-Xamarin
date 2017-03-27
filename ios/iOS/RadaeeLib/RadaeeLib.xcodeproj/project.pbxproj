@@ -294,6 +294,7 @@
 			files = (
 				A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */,
 				A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */,
+				A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */,
 				A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */,
 				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
 				A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */,
@@ -316,7 +317,6 @@
 				A864EF6D1D17EBA400F4B976 /* OUTLINE_ITEM.h in Headers */,
 				A864EF6F1D17EBA400F4B976 /* OutLineViewController.h in Headers */,
 				A864EF811D17EBA400F4B976 /* PDFVPage.h in Headers */,
-				A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */,
 				A864EF751D17EBA400F4B976 /* PDFThumbView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +496,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"IS_DEMO=0",
+					"IS_DEMO=1",
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (

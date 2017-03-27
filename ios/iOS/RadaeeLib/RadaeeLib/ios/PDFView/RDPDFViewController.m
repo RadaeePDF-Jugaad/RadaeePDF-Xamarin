@@ -22,6 +22,7 @@
 	UIPopoverController *bookmarkPopover;
     UIPopoverController *viewModePopover;
     NSString *password;
+    UIBarButtonItem *addBookMarkListButton;
 }
 
 @end
@@ -129,8 +130,6 @@ extern uint g_oval_color;
     
     addBookMarkButton.width =30;
     
-    UIBarButtonItem *addBookMarkListButton;
-    
     if (_bookmarkListImage) {
         addBookMarkListButton = [[UIBarButtonItem alloc] initWithImage:_bookmarkListImage style:UIBarButtonItemStylePlain target:self action:@selector(bookmarkList)];
     }
@@ -199,9 +198,6 @@ extern uint g_oval_color;
     }
     
     [toolbarItem removeObjectsInArray:objectsToRemove];
-    
-    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    [toolbarItem insertObject:flex atIndex:0];
     
     [toolBar setItems:toolbarItem animated:NO];
 }
@@ -364,8 +360,45 @@ extern uint g_oval_color;
 
 - (void)closeView
 {
-    [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([m_view isModified]) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Exiting"
+                                                                       message:@"Document modified.\r\nDo you want to save it?"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"Yes"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [self PDFClose];
+                                 [self.navigationController popViewControllerAnimated:YES];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"No"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [m_view setModified:NO force:YES];
+                                     [self PDFClose];
+                                     [self.navigationController popViewControllerAnimated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+                                        
+        [alert addAction:ok];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+    else {
+        [self PDFClose];
+        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)bookmarkList
@@ -379,7 +412,7 @@ extern uint g_oval_color;
         bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:b];
         bookmarkPopover.popoverContentSize = CGSizeMake(300, 44 * b.items.count);
         
-        [bookmarkPopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:7] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [bookmarkPopover presentPopoverFromBarButtonItem:addBookMarkListButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
     else
     {
@@ -735,6 +768,64 @@ extern uint g_oval_color;
     return [m_view vGetCurrentPage];
 }
 
+- (CGImageRef)imageForPage:(int)pg
+{
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        if (bounds.size.height > bounds.size.width) {
+            bounds.size.width = bounds.size.height;
+            bounds.size.height = [[[[UIApplication sharedApplication] delegate] window] bounds].size.width;
+        }
+    }
+
+    PDFPage *page = [m_doc page:pg];;
+    float w = [m_doc pageWidth:pg];
+    float h = [m_doc pageHeight:pg];
+    int iw = w;
+    int ih = h;
+    PDF_DIB m_dib = NULL;
+    PDF_DIB bmp = Global_dibGet(m_dib, iw, ih);
+    float ratiox = 1;
+    float ratioy = 1;
+    
+    if (ratiox>ratioy) {
+        ratiox = ratioy;
+    }
+    
+    ratiox = ratiox * 1.0;
+    PDF_MATRIX mat = Matrix_createScale(ratiox, -ratiox, 0, h * ratioy);
+    Page_renderPrepare(page.handle, bmp);
+    Page_render(page.handle, bmp, mat, false, 1);
+    Matrix_destroy(mat);
+    page = nil;
+    
+    void *data = Global_dibGetData(bmp);
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, iw * ih * 4, NULL);
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceRGB();
+    CGImageRef imgRef = CGImageCreate(iw, ih, 8, 32, iw<<2, cs, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst, provider, NULL, FALSE, kCGRenderingIntentDefault);
+    
+    
+    CGContextRef context = CGBitmapContextCreate(NULL, (bounds.size.width - ((bounds.size.width - iw) / 2)) * 1, ih * 1, 8, 0, cs, kCGImageAlphaPremultipliedLast);
+    
+    
+    // Draw ...
+    //
+    CGContextSetAlpha(context, 1);
+    CGContextSetRGBFillColor(context, (CGFloat)0.0, (CGFloat)0.0, (CGFloat)0.0, (CGFloat)1.0 );
+    CGContextDrawImage(context, CGRectMake(((bounds.size.width- iw) / 2), 1, iw, ih), imgRef);
+    
+    
+    // Get your image
+    //
+    CGImageRef cgImage = CGBitmapContextCreateImage(context);
+    
+    
+    CGColorSpaceRelease(cs);
+    CGDataProviderRelease(provider);
+    
+    return cgImage;
+}
+
 - (void)setThumbnailBGColor:(int)color
 {
     [m_Thumbview setThumbBackgroundColor:color];
@@ -1066,11 +1157,6 @@ extern uint g_oval_color;
 }
 -(void)OnPageClicked :(int)pageno
 {
-    if (pageno < 0) {
-        [self showGridView];
-        return;
-    }
-    
     [m_view resetZoomLevel];
     [m_view vGoto:pageno];
     pagenow = pageno + 1;
@@ -1894,7 +1980,7 @@ extern uint g_oval_color;
         
         viewModePopover = [[UIPopoverController alloc] initWithContentViewController:vm];
         [viewModePopover setPopoverContentSize:CGSizeMake(300, 44 * 3) animated:NO];
-        [viewModePopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:1] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [viewModePopover presentPopoverFromBarButtonItem:[self.toolBar.items objectAtIndex:0] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
     else
     {

@@ -1,0 +1,5 @@
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll.mdb
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewXamarin.dll
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewXamarin.dll.mdb

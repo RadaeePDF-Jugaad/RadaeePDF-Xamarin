@@ -184,6 +184,7 @@
 
 - (id)getDoc;
 - (int)getCurrentPage;
+- (CGImageRef)imageForPage:(int)pg;
 - (void)setThumbnailBGColor:(int)color;
 - (void)setThumbGridBGColor:(int)color;
 - (void)setThumbGridElementHeight:(float)height;

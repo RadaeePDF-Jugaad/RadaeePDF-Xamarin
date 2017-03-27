@@ -104,6 +104,7 @@
 - (id)openFromPath:(NSString *)path withPassword:(NSString *)password;
 - (NSString *)fileState;
 - (int)getPageNumber;
+- (NSData *)getImageForPage:(int)page;
 
 // Form Manager
 
