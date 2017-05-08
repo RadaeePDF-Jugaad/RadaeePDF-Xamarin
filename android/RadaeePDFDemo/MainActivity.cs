@@ -43,7 +43,8 @@ namespace RadaeePDFDemo
             Button open = FindViewById<Button>(Resource.Id.open);
 
             open.Click += delegate {
-                mPdfManager.Show(this, "file:///mnt/sdcard/Download/pdf/Test.pdf", "");
+                mPdfManager.Show(this, "file:///mnt/sdcard/Download/pdf/License.pdf", "");
+                //mPdfManager.Show(this, "file:///mnt/sdcard/Download/pdf/License.pdf", "", false, false, 4);
             };
 
             Button openHttp = FindViewById<Button>(Resource.Id.open_http);
@@ -77,6 +78,9 @@ namespace RadaeePDFDemo
         public void DidShowReader()
         {
             Log.Debug(TAG, "Did show reader");
+            //int count = mPdfManager.PageCount;
+           // mPdfManager.ExtractTextFromPage(0);
+            //mPdfManager.EncryptDocAs("file:///mnt/sdcard/Download/pdf/License_enc.pdf", "12345", "", 4, 4, "123456789abcdefghijklmnopqrstuvw");
         }
 
         public void WillCloseReader()
