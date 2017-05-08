@@ -3,6 +3,7 @@ using System.IO;
 using Foundation;
 using RadaeeLib;
 using UIKit;
+using CoreGraphics;
 
 namespace ReaderXamarin
 {
@@ -43,7 +44,17 @@ namespace ReaderXamarin
 		public override void DidSearchTerm(string term, bool found)
 		{
 			Console.WriteLine("did search {0}", term);
-		}	
+		}
+
+		public override void DidTapOnPage(int page, CGPoint point)
+		{ 
+			Console.WriteLine("did tap page {0}", page);
+		}
+
+		public override void DidTapOnAnnotationOfType(int type, int page, CGPoint point)
+		{
+			Console.WriteLine("did tap annot of type {0} at page {1}", type, page);
+		}
 	}
 
 	public partial class ViewController : UIViewController

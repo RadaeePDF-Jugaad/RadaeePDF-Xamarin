@@ -48,16 +48,18 @@ extern uint annotStrikeoutColor;
 {
     return Global_dibGetHeight(m_dib);
 }
+/*
 -(void)clear
 {
     Global_dibFree(m_dib);
     m_dib = NULL;
-}
+}*/
 
 -(void)dealloc
 {
-	Global_dibFree(m_dib);
+    PDF_DIB tmp_dib = m_dib;
     m_dib = NULL;
+    Global_dibFree(tmp_dib);
 }
 @end
 
@@ -109,8 +111,9 @@ extern uint annotStrikeoutColor;
 }
 -(void)dealloc
 {
-    Matrix_destroy(m_mat);
+    PDF_MATRIX tmp_mat = m_mat;
     m_mat = NULL;
+    Matrix_destroy(tmp_mat);
 }
 @end
 
@@ -911,8 +914,13 @@ extern uint annotStrikeoutColor;
 }
 -(bool)setIcon:(int)icon
 {
-	return Page_setAnnotIcon( m_page, m_handle, icon );
+	return Page_setAnnotIcon(m_page, m_handle, icon);
 }
+-(bool)setIcon2:(NSString *)icon_name :(PDFDocForm *)icon
+{
+	return Page_setAnnotIcon2(m_page, m_handle, [icon_name UTF8String], [icon handle]);
+}
+
 -(int)getDest
 {
 	return Page_getAnnotDest( m_page, m_handle );
@@ -1081,10 +1089,10 @@ extern uint annotStrikeoutColor;
 	return [NSString stringWithUTF8String:buf];
 }
 
--(NSString *)getEditTextFormat
+-(NSString *)getFieldJS:(int)idx
 {
 	char buf[1024];
-	if( !Page_getAnnotEditTextFormat( m_page, m_handle, buf, 1023 ) )
+	if( !Page_getAnnotFieldJS( m_page, m_handle, idx, buf, 1023 ) )
 		return NULL;
 	return [NSString stringWithUTF8String:buf];
 }
@@ -1407,8 +1415,9 @@ extern uint annotStrikeoutColor;
 }
 -(void)dealloc
 {
-    Page_close(m_page);
+    PDF_PAGE tmp_page = m_page;
     m_page = NULL;
+    Page_close(tmp_page);
 }
 @end
 

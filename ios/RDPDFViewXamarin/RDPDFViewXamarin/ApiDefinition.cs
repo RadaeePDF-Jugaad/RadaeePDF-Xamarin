@@ -1,3 +1,4 @@
+using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
 using UIKit;
@@ -38,6 +39,16 @@ namespace RadaeeLib
 		[Abstract]
 		[Export ("didSearchTerm:found:")]
 		void DidSearchTerm (string term, bool found);
+
+		// @required -(void)didTapOnPage:(int)page atPoint:(CGPoint)point;
+		[Abstract]
+		[Export ("didTapOnPage:atPoint:")]
+		void DidTapOnPage (int page, CGPoint point);
+
+		// @required -(void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point;
+		[Abstract]
+		[Export ("didTapOnAnnotationOfType:atPage:atPoint:")]
+		void DidTapOnAnnotationOfType (int type, int page, CGPoint point);
 	}
 
 	// @interface RadaeePDFPlugin : NSObject
@@ -160,6 +171,10 @@ namespace RadaeeLib
 		[Export("show:withPassword:")]
 		UIViewController Show(string file, string password);
 
+		// -(id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave;
+		[Export ("show:atPage:withPassword:readOnly:autoSave:")]
+		UIViewController Show (string file, int page, string password, bool readOnly, bool autoSave);
+
 		// -(void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
 		[Export ("activateLicenseWithBundleId:company:email:key:licenseType:")]
 		void ActivateLicenseWithBundleId (string bundleId, string company, string email, string key, int type);
@@ -179,6 +194,18 @@ namespace RadaeeLib
 		// -(int)getPageNumber;
 		[Export("getPageNumber")]
 		int PageNumber { get; }
+
+		// -(int)getPageCount;
+		[Export ("getPageCount")]
+		int PageCount { get; }
+
+		// -(NSString *)extractTextFromPage:(int)pageNum;
+		[Export ("extractTextFromPage:")]
+		string ExtractTextFromPage (int pageNum);
+
+		// -(BOOL)encryptDocAs:(NSString *)path userPwd:(NSString *)userPwd ownerPwd:(NSString *)ownerPwd permission:(int)permission method:(int)method idString:(NSString *)idString;
+		[Export ("encryptDocAs:userPwd:ownerPwd:permission:method:idString:")]
+		bool EncryptDocAs (string path, string userPwd, string ownerPwd, int permission, int method, string idString);
 
 		// -(NSData *)getImageForPage:(int)page;
 		[Export ("getImageForPage:")]

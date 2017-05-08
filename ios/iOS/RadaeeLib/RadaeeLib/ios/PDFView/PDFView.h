@@ -47,6 +47,9 @@ alpha:((float)((rgbValue & 0xFF000000) >>  24))/255.0]
 
 @interface PDFView : UIScrollView<PDFVInnerDel, UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
+    BOOL readOnlyEnabled;
+    BOOL autoSaveEnabled;
+    
     BOOL coverPage;
     
     int doubleTapZoomMode;
@@ -165,6 +168,7 @@ alpha:((float)((rgbValue & 0xFF000000) >>  24))/255.0]
 
 //get position at left-top on the screen.
 -(void)vGetPos :(struct PDFV_POS*)pos;
+-(void)vGetPos :(struct PDFV_POS*)pos x:(int)x y:(int)y;
 //set position to left-top on the screen;
 -(void)vSetPos:(const struct PDFV_POS*)pos;
 
@@ -187,6 +191,9 @@ alpha:((float)((rgbValue & 0xFF000000) >>  24))/255.0]
 
 - (BOOL)isModified;
 - (void)setModified:(BOOL)modified force:(BOOL)force;
+
+- (BOOL)canSaveDocument;
+- (void)setReadOnly:(BOOL)enabled;
 
 @end
 

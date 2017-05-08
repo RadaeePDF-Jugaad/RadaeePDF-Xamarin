@@ -20,6 +20,8 @@
 - (void)didCloseReader;
 - (void)didChangePage:(int)page;
 - (void)didSearchTerm:(NSString *)term found:(BOOL)found;
+- (void)didTapOnPage:(int)page atPoint:(CGPoint)point;
+- (void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point;
 @end;
 
 //---------------------------------------------------------
@@ -97,13 +99,16 @@
 @property (nonatomic, weak) UIViewController *viewController;
 
 - (void)pluginInitialize;
-
 - (id)show:(NSString *)file withPassword:(NSString *)password;
+- (id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave;
 - (void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
 - (id)openFromAssets:(NSString *)file withPassword:(NSString *)password;
 - (id)openFromPath:(NSString *)path withPassword:(NSString *)password;
 - (NSString *)fileState;
 - (int)getPageNumber;
+- (int)getPageCount;
+- (NSString *)extractTextFromPage:(int)pageNum;
+- (BOOL)encryptDocAs:(NSString *)path userPwd:(NSString *)userPwd ownerPwd:(NSString *)ownerPwd permission:(int)permission method:(int)method idString:(NSString *)idString;
 - (NSData *)getImageForPage:(int)page;
 
 // Form Manager

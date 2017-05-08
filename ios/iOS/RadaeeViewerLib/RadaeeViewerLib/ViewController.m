@@ -42,7 +42,7 @@
 
     [plugin setColor:0xFFFF00FF forFeature:1];
     
-    [plugin setThumbHeight:100];
+    [plugin setThumbHeight:50];
     [plugin setThumbnailBGColor:0x88000000];
     
     [plugin setDoublePageEnabled:YES];
@@ -91,6 +91,17 @@
 - (void)didSearchTerm:(NSString *)term found:(BOOL)found
 {
     NSLog(@"didSearchTerm: %@", term);
+}
+
+- (void)didTapOnPage:(int)page atPoint:(CGPoint)point
+{
+    NSLog(@"tapped at page: %i x: %f y:%f", page, point.x, point.y);
+}
+
+- (void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point
+{
+    NSLog(@"annot type: %i", type);
+    NSLog(@"tapped at page: %i x: %f y:%f", page, point.x, point.y);
 }
 
 #pragma mark - Path Utils

@@ -1053,6 +1053,8 @@ int Page_getAnnotFieldFullName( PDF_PAGE page, PDF_ANNOT annot, char *buf, int b
  *	@return	name of this annotation, like: "form1[0].EditBox1[0]"
  */
 int Page_getAnnotFieldFullName2( PDF_PAGE page, PDF_ANNOT annot, char *buf, int buf_size );
+bool Page_getAnnotFieldJS(PDF_PAGE page, PDF_ANNOT annot, int idx, char *text, int len);
+
 bool Page_renderAnnotToBmp(PDF_PAGE page, PDF_ANNOT annot, CGImageRef img);
 /**
  *	@brief	get annotation rect.
@@ -1191,6 +1193,7 @@ bool Page_setAnnotStrokeDash(PDF_PAGE page, PDF_ANNOT annot, const float *dash, 
  *	@return	true or false
  */
 bool Page_setAnnotIcon( PDF_PAGE page, PDF_ANNOT annot, int icon );
+bool Page_setAnnotIcon2(PDF_PAGE page, PDF_ANNOT annot, const char *name, PDF_DOC_FORM form);
 /**
  *	@brief	get icon value for sticky text note/file attachment/Rubber Stamp annotation.
  *          this can be invoked after ObjsStart or Render or RenderToBmp.

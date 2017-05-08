@@ -75,6 +75,11 @@
 
 - (id)show:(NSString *)file withPassword:(NSString *)password
 {
+    return [self show:file atPage:0 withPassword:password readOnly:NO autoSave:NO];
+}
+
+- (id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave
+{
     if (!file)
         return nil;
     
@@ -106,9 +111,9 @@
             NSString *documentsDirectory = [paths objectAtIndex:0];
             NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[url stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
             
-            return [self openPdf:filePath withPassword:password];
+            return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
         } else {
-            return [self openFromPath:file withPassword:password];
+            return [self openFromPath:file atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
         }
     }
 
@@ -116,6 +121,11 @@
 }
 
 - (id)openFromAssets:(NSString *)file withPassword:(NSString *)password
+{
+    return [self openFromAssets:file atPage:0 withPassword:password readOnly:NO autoSave:NO];
+}
+
+- (id)openFromAssets:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave
 {
     if (!file)
         return nil;
@@ -126,10 +136,15 @@
     
     _lastOpenedPath = filePath;
     
-    return [self openPdf:filePath withPassword:password];
+    return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
 }
 
 - (id)openFromPath:(NSString *)path withPassword:(NSString *)password
+{
+    return [self openFromPath:path atPage:0 withPassword:password readOnly:NO autoSave:NO];
+}
+
+- (id)openFromPath:(NSString *)path atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave
 {
     if (!path)
         return nil;
@@ -140,10 +155,10 @@
     
     _lastOpenedPath = filePath;
     
-    return [self openPdf:filePath withPassword:password];
+    return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
 }
 
-- (RDPDFViewController *)openPdf:(NSString *)filePath withPassword:(NSString *)password
+- (RDPDFViewController *)openPdf:(NSString *)filePath atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave
 {
     NSLog(@"%@", filePath);
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
@@ -153,7 +168,7 @@
     
     [self readerInit];
     
-    int result = [m_pdf PDFOpen:filePath :password];
+    int result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave];
     NSLog(@"%d", result);
     if(result != err_ok && result != err_open){
         //pdf fail
@@ -384,6 +399,45 @@
     return [m_pdf getCurrentPage];
 }
 
+- (int)getPageCount
+{
+    if (m_pdf == nil || [m_pdf getDoc] == nil) {
+        return -1;
+    }
+    
+    return [(PDFDoc *)[m_pdf getDoc] pageCount];
+}
+
+- (NSString *)extractTextFromPage:(int)pageNum
+{    
+    PDFDoc *doc = [m_pdf getDoc];
+    
+    if (m_pdf == nil || doc == nil) {
+        return @"";
+    }
+    
+    PDFPage *page = [doc page:pageNum];
+    [page objsStart];
+    
+    return [page objsString:0 :page.objsCount];
+    
+    page = nil;
+}
+
+- (BOOL)encryptDocAs:(NSString *)path userPwd:(NSString *)userPwd ownerPwd:(NSString *)ownerPwd permission:(int)permission method:(int)method idString:(NSString *)idString
+{
+    
+    PDFDoc *doc = [m_pdf getDoc];
+    
+    if (m_pdf == nil || doc == nil) {
+        return NO;
+    }
+    
+    unsigned char *c = (unsigned char *)[idString cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    return [doc encryptAs:path :userPwd :ownerPwd :permission :method :c];
+}
+
 - (NSData *)getImageForPage:(int)page
 {
     return UIImagePNGRepresentation([[UIImage alloc] initWithCGImage:[m_pdf imageForPage:page]]);
@@ -610,6 +664,20 @@
 {
     if (delegate) {
         [delegate didChangePage:page];
+    }
+}
+
+- (void)didTapOnPage:(int)page atPoint:(CGPoint)point
+{
+    if (delegate) {
+        [delegate didTapOnPage:page atPoint:point];
+    }
+}
+
+- (void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point
+{
+    if (delegate) {
+        [delegate didTapOnAnnotationOfType:type atPage:page atPoint:point];
     }
 }
 

@@ -515,7 +515,7 @@
  *	@param	handle	GState handle.
  *
  */
--(id)init:(PDF_DOC)doc : (PDF_DOC_FORM *)handle;
+-(id)init:(PDF_DOC)doc : (PDF_DOC_FORM)handle;
 -(PDF_PAGE_FONT)addResFont :(PDFDocFont *)font;
 -(PDF_PAGE_IMAGE)addResImage :(PDFDocImage *)img;
 -(PDF_PAGE_GSTATE)addResGState : (PDFDocGState *)gs;
@@ -599,6 +599,7 @@
  *			this method valid in premium version
  */
 -(NSString *)fieldFullName2;
+-(NSString *)getFieldJS:(int)idx;
 /**
  * @brief check if position and size of the annotation is locked?
  * this method valid in professional or premium version
@@ -800,6 +801,7 @@
  * @return true or false.
  */
 -(bool)setIcon:(int)icon;
+-(bool)setIcon2:(NSString *)icon_name :(PDFDocForm *)icon;
 /**
  * @brief get annotation's destination.
  * this method valid in professional or premium version

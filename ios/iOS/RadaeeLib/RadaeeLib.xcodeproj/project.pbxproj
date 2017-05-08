@@ -14,8 +14,6 @@
 		A864EEF81D17EAB600F4B976 /* RadaeeLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; };
 		A864EF011D17EAC000F4B976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864EF001D17EAC000F4B976 /* UIKit.framework */; };
 		A864EF031D17EB4900F4B976 /* RadaeeLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A864EF651D17EBA300F4B976 /* NSObject+PerformBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF281D17EBA300F4B976 /* NSObject+PerformBlock.h */; };
-		A864EF661D17EBA300F4B976 /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF291D17EBA300F4B976 /* NSObject+PerformBlock.m */; };
 		A864EF671D17EBA300F4B976 /* libRDPDFLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A864EF2B1D17EBA300F4B976 /* libRDPDFLib.a */; };
 		A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF2C1D17EBA300F4B976 /* PDFIOS.h */; };
 		A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF2D1D17EBA300F4B976 /* PDFObjc.h */; };
@@ -84,8 +82,6 @@
 		A864EEF41D17EAB600F4B976 /* libRadaeeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRadaeeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A864EEF71D17EAB600F4B976 /* RadaeeLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadaeeLib.h; sourceTree = "<group>"; };
 		A864EF001D17EAC000F4B976 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A864EF281D17EBA300F4B976 /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlock.h"; sourceTree = "<group>"; };
-		A864EF291D17EBA300F4B976 /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
 		A864EF2B1D17EBA300F4B976 /* libRDPDFLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRDPDFLib.a; sourceTree = "<group>"; };
 		A864EF2C1D17EBA300F4B976 /* PDFIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFIOS.h; sourceTree = "<group>"; };
 		A864EF2D1D17EBA300F4B976 /* PDFObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFObjc.h; sourceTree = "<group>"; };
@@ -194,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				A82CCC4D1E2E6EE70013AD08 /* RDUtils */,
-				A864EF271D17EBA300F4B976 /* NSObject */,
 				A864EF2A1D17EBA300F4B976 /* PDFLib */,
 				A864EF2F1D17EBA300F4B976 /* PDFView */,
 				A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */,
@@ -202,15 +197,6 @@
 				A864EF5B1D17EBA300F4B976 /* Resources */,
 			);
 			path = ios;
-			sourceTree = "<group>";
-		};
-		A864EF271D17EBA300F4B976 /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				A864EF281D17EBA300F4B976 /* NSObject+PerformBlock.h */,
-				A864EF291D17EBA300F4B976 /* NSObject+PerformBlock.m */,
-			);
-			path = NSObject;
 			sourceTree = "<group>";
 		};
 		A864EF2A1D17EBA300F4B976 /* PDFLib */ = {
@@ -299,7 +285,6 @@
 				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
 				A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */,
 				A864EF871D17EBA400F4B976 /* PopupMenu.h in Headers */,
-				A864EF651D17EBA300F4B976 /* NSObject+PerformBlock.h in Headers */,
 				A8A212D91E3B4432000E24AC /* ReaderHandler.h in Headers */,
 				A864EF791D17EBA400F4B976 /* PDFVCanvas.h in Headers */,
 				A864EF7B1D17EBA400F4B976 /* PDFVFinder.h in Headers */,
@@ -394,7 +379,6 @@
 				A864EF801D17EBA400F4B976 /* PDFView.m in Sources */,
 				A864EF6A1D17EBA400F4B976 /* PDFObjc.m in Sources */,
 				A864EF781D17EBA400F4B976 /* PDFV.m in Sources */,
-				A864EF661D17EBA300F4B976 /* NSObject+PerformBlock.m in Sources */,
 				A864EF7C1D17EBA400F4B976 /* PDFVFinder.m in Sources */,
 				A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */,
 				A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */,

@@ -23,6 +23,8 @@
     UIPopoverController *viewModePopover;
     NSString *password;
     UIBarButtonItem *addBookMarkListButton;
+    
+    BOOL autoSave;
 }
 
 @end
@@ -67,9 +69,9 @@ extern uint g_oval_color;
     //toolBar.barStyle = searchToolBar.barStyle = m_searchBar.barStyle = annotToolBar.barStyle = drawLineToolBar.barStyle = drawRectToolBar.barStyle = self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     //set tint
-    toolBar.tintColor = searchToolBar.tintColor = m_searchBar.tintColor = annotToolBar.tintColor = drawLineToolBar.tintColor = drawRectToolBar.tintColor = m_slider.tintColor = gridToolBar.tintColor = self.navigationController.navigationBar.tintColor;
+    toolBar.tintColor = searchToolBar.tintColor = m_searchBar.tintColor = annotToolBar.tintColor = drawLineToolBar.tintColor = drawRectToolBar.tintColor = m_slider.tintColor = self.navigationController.navigationBar.tintColor;
     
-    toolBar.barTintColor = searchToolBar.barTintColor = m_searchBar.barTintColor = annotToolBar.barTintColor = drawLineToolBar.barTintColor = drawRectToolBar.barTintColor = gridToolBar.barTintColor = self.navigationController.navigationBar.barTintColor;
+    toolBar.barTintColor = searchToolBar.barTintColor = m_searchBar.barTintColor = annotToolBar.barTintColor = drawLineToolBar.barTintColor = drawRectToolBar.barTintColor = self.navigationController.navigationBar.barTintColor;
 }
 
 //---------------------------------------------------------
@@ -237,14 +239,14 @@ extern uint g_oval_color;
     item1.width = 40;
     
     PopupMenuItem *item2 = [PopupMenuItem itemWithTitle:@"Mark" image:nil target:self action:@selector(Mark:)];
-    item1.width = 40;
+    item2.width = 40;
     
     PopupMenuItem *item3 = [PopupMenuItem itemWithTitle:@"STO" image:nil target:self action:@selector(StrikeOut:)];
-    item2.width =40;
+    item3.width =40;
     PopupMenuItem *item4 = [PopupMenuItem itemWithTitle:@"HL" image:nil target:self action:@selector(HighLight:)];
-    item3.width=40;
+    item4.width=40;
     PopupMenuItem *item5 = [PopupMenuItem itemWithTitle:@"UDL" image:nil target:self action:@selector(UnderLine:)];
-    item4.width =40;
+    item5.width =40;
     PopupMenuItem *item6 = [PopupMenuItem itemWithTitle:@"TA" image:nil target:self action:@selector(TextAnnot:)];
     item6.width = 40;
     
@@ -278,7 +280,7 @@ extern uint g_oval_color;
     [self.view addSubview:textFd];
     textFd.hidden = YES;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -360,7 +362,8 @@ extern uint g_oval_color;
 
 - (void)closeView
 {
-    if ([m_view isModified]) {
+    if ([m_view isModified] && !autoSave) {
+        
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Exiting"
                                                                        message:@"Document modified.\r\nDo you want to save it?"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -882,8 +885,10 @@ extern uint g_oval_color;
     }
 }
 
--(int)PDFOpen:(NSString *)path : (NSString *)pwd
+-(int)PDFOpen:(NSString *)path : (NSString *)pwd atPage:(int)page readOnly:(BOOL)readOnlyEnabled autoSave:(BOOL)autoSaveEnabled
 {
+    autoSave = autoSaveEnabled;
+    
     pdfPath = [path mutableCopy];
     pdfName = [[path lastPathComponent] mutableCopy];
     password = pwd;
@@ -892,6 +897,7 @@ extern uint g_oval_color;
     PDF_ERR err = 0;
     m_doc = [[PDFDoc alloc] init];
     err = [m_doc open:path :pwd];
+    
     if ([m_doc canSave]){
         NSString *cacheFile = [[NSTemporaryDirectory() stringByAppendingString:@""] stringByAppendingString:@"cache.dat"];
         [m_doc setCache:cacheFile];
@@ -926,7 +932,13 @@ extern uint g_oval_color;
     
     [m_view setFirstPageCover:firstPageCover];
     [m_view setDoubleTapZoomMode:doubleTapZoomMode];
+    [m_view setReadOnly:readOnlyEnabled];
     [m_view vOpen :m_doc :(id<PDFViewDelegate>)self];
+    
+    if (page > 0) {
+        [m_view vGoto:page];
+    }
+    
     pagecount =[m_doc pageCount];
     [self.view addSubview:m_view];
     m_bSel = false;
@@ -1124,7 +1136,6 @@ extern uint g_oval_color;
     
 }
 
-
 -(void)initbar :(int) pageno
 {
     CGRect boundsc = [[UIScreen mainScreen]bounds];
@@ -1216,6 +1227,7 @@ extern uint g_oval_color;
 {
     if( m_view != nil )
     {
+        b_outline = false;
         [m_view vClose];
         [m_view removeFromSuperview];
         m_view = NULL;
@@ -1372,6 +1384,12 @@ extern uint g_oval_color;
 
 - (void)OnSingleTapped:(float)x :(float)y
 {
+    if (_delegate) {
+        struct PDFV_POS pos;
+        [m_view vGetPos:&pos x:x y:y];
+        [_delegate didTapOnPage:pos.pageno atPoint:CGPointMake(x, y)];
+    }
+    
     if (!pickerView.hidden) {
         pickerView.hidden = YES;
         confirmPickerBtn.hidden = YES;
@@ -1427,10 +1445,17 @@ extern uint g_oval_color;
     if (_delegate) {
         [_delegate didSearchTerm:findString found:found];
     }
+    
+    if( !found )
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Waring" message:@"Find Over" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 -(void)refreshStatusBar{
     [self setNeedsStatusBarAppearanceUpdate];
 }
+
 
 - (void)refreshCurrentPage
 {
@@ -1455,30 +1480,6 @@ extern uint g_oval_color;
         
     }
 }
-
-#pragma mark GridToolBar
--(void)addGridToolBar
-{
-    gridToolBar = [UIToolbar new];
-    [gridToolBar sizeToFit];
-    
-    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *cancelbtn= [[UIBarButtonItem alloc] initWithImage:_removeImage style:UIBarButtonItemStylePlain target:self action:@selector(hideGridView)];
-    cancelbtn.width =30;
-    
-    NSArray *toolbarItem = [[NSArray alloc]initWithObjects:flex, cancelbtn,nil];
-    [gridToolBar setItems:toolbarItem animated:NO];
-    self.navigationItem.titleView = gridToolBar;
-    
-    [self toolbarStyle];
-}
-
--(void)removeGridToolBar
-{
-    [gridToolBar removeFromSuperview];
-    self.navigationItem.titleView = toolBar;
-}
-
 #pragma mark AnnotToolBar
 -(void)addAnnotToolBar
 {
@@ -1509,6 +1510,7 @@ extern uint g_oval_color;
 }
 -(void)annotCancel
 {
+    [m_view vAnnotEnd];
     [self removeAnnotToolBar];
 }
 -(void)removeAnnotToolBar
@@ -1519,6 +1521,11 @@ extern uint g_oval_color;
 //enter annotation status.
 -(void)OnAnnotClicked:(PDFPage *)page :(PDFAnnot *)annot :(float)x :(float)y
 {
+    if (_delegate) {
+        struct PDFV_POS pos;
+        [m_view vGetPos:&pos x:x y:y];
+        [_delegate didTapOnAnnotationOfType:annot.type atPage:pos.pageno atPoint:CGPointMake(x, y)];
+    }
     if(SYS_VERSION>=7.0)
     {
         //TEST EditText method
@@ -1808,7 +1815,15 @@ extern uint g_oval_color;
 -(void)StrikeOut :(id)sender
 {
     //2strikethrough
-    [m_view vSelMarkup:annotUnderlineColor :2];
+    if(![m_view vSelMarkup:annotUnderlineColor :2])
+    {
+        NSString *str1=NSLocalizedString(@"Alert", @"Localizable");
+        NSString *str2=NSLocalizedString(@"This Document is readonly", @"Localizable");
+        NSString *str3=NSLocalizedString(@"OK", @"Localizable");
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:str1 message:str2 delegate:self cancelButtonTitle:str3 otherButtonTitles:nil,nil];
+        [alter show];
+        return;
+    }
     [popupMenu1 dismiss];
     if(m_bSel)
     {
@@ -1820,7 +1835,16 @@ extern uint g_oval_color;
 -(void)HighLight :(id)sender
 {
     //0HighLight
-    [m_view vSelMarkup:annotUnderlineColor :0];
+    if(![m_view vSelMarkup:annotUnderlineColor :0])
+    {
+        NSString *str1=NSLocalizedString(@"Alert", @"Localizable");
+        NSString *str2=NSLocalizedString(@"This Document is readonly", @"Localizable");
+        NSString *str3=NSLocalizedString(@"OK", @"Localizable");
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:str1 message:str2 delegate:self cancelButtonTitle:str3 otherButtonTitles:nil,nil];
+        [alter show];
+        return;
+    }
+    
     [popupMenu1 dismiss];
     if(m_bSel)
     {
@@ -1831,7 +1855,16 @@ extern uint g_oval_color;
 -(void)UnderLine :(id)sender
 {
      //1UnderLine
-    [m_view vSelMarkup:annotUnderlineColor :1];
+    if(![m_view vSelMarkup:annotUnderlineColor :1])
+    {
+        NSString *str1=NSLocalizedString(@"Alert", @"Localizable");
+        NSString *str2=NSLocalizedString(@"This Document is readonly", @"Localizable");
+        NSString *str3=NSLocalizedString(@"OK", @"Localizable");
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:str1 message:str2 delegate:self cancelButtonTitle:str3 otherButtonTitles:nil,nil];
+        [alter show];
+        return;
+    }
+    
     [popupMenu1 dismiss];
     if(m_bSel)
     {
@@ -1852,6 +1885,14 @@ extern uint g_oval_color;
 
 -(void)TextAnnot :(id)sender
 {
+    if (![m_view canSaveDocument]) {
+        NSString *str1=NSLocalizedString(@"Alert", @"Localizable");
+        NSString *str2=NSLocalizedString(@"This Document is readonly", @"Localizable");
+        NSString *str3=NSLocalizedString(@"OK", @"Localizable");
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:str1 message:str2 delegate:self cancelButtonTitle:str3 otherButtonTitles:nil,nil];
+        [alter show];
+        return;
+    }
     
     m_bSel = false;
     b_outline = true;
@@ -2080,9 +2121,6 @@ extern uint g_oval_color;
 - (void)showGridView
 {
     if (!m_Gridview) {
-        
-        [self addGridToolBar];
-        
         CGRect frame = self.view.frame;
         m_Gridview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)];
         [m_Gridview vOpen:m_doc :(id<PDFThumbViewDelegate>)self mode:2 elementGap:(gridGap > 0) ? gridGap : 10 elementHeight:(gridElementHeight > 0) ? gridElementHeight : 200 gridMode:gridMode];
@@ -2098,9 +2136,6 @@ extern uint g_oval_color;
 - (void)hideGridView
 {
     if(m_Gridview) {
-        
-        [self removeGridToolBar];
-        
         [m_Gridview removeFromSuperview];
         [m_Gridview vClose];
         m_Gridview = nil;

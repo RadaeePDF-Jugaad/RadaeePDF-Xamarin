@@ -46,7 +46,7 @@
     struct PDFVThreadBack tback;
     tback.OnPageRendered = @selector(OnPageRendered:);
     //tback.OnFound = @selector(OnFound:);
-    self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
+    self.backgroundColor = (thumbBackgroundColor != 0) ? UIColorFromRGB(thumbBackgroundColor) : [UIColor colorWithRed:0.7f green:0.7f blue:0.7f alpha:1.0f];
     
     if (mode == 2) {
         [m_view vOpen:doc :gap : self: &tback];
@@ -68,28 +68,6 @@
     [[NSRunLoop currentRunLoop]addTimer:m_timer forMode:NSDefaultRunLoopMode];
     m_status = tsta_none;
     self.delegate = self;
-
-#if IS_DEMO != 1
-    if (mode == 0) {
-        PDFVPage *page = [m_view vGetPage:0];
-        if (page) {
-            cur_gap = gap;
-            gridButton = [[UIButton alloc] initWithFrame:CGRectMake(([page GetX] / m_scale) - ([page GetWidth] / m_scale) - gap, 0, ([page GetWidth] / m_scale), ([page GetHeight] / m_scale))];
-            [gridButton setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0.5]];
-            [gridButton setImage:[[UIImage imageNamed:@"btn_grid"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-            [gridButton setContentMode:UIViewContentModeCenter];
-            [gridButton setTintColor:[UIColor whiteColor]];
-            [gridButton addTarget:self action:@selector(onGridButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-            
-            [self addSubview:gridButton];
-            
-        } else {
-            gridButton = nil;
-        }
-    } else {
-        gridButton = nil;
-    }
-#endif
 }
 
 -(void)vOpen:(PDFDoc *)doc :(id<PDFThumbViewDelegate>)delegate
@@ -160,13 +138,6 @@
 
 - (void)didRotate
 {
-    if (gridButton) {
-        PDFVPage *page = [m_view vGetPage:0];
-        if (page) {
-            [gridButton setFrame:CGRectMake(([page GetX] / m_scale) - ([page GetWidth] / m_scale) - cur_gap, 0, ([page GetWidth] / m_scale), ([page GetHeight] / m_scale))];
-        }
-    }
-    
     //needed if set a static scale
     [self refresh];
     
@@ -336,18 +307,13 @@
     }
 }
 
-- (void)onGridButtonTapped
-{
-    if (m_delegate) {
-        [m_delegate OnPageClicked:-1];
-    }
-}
-
 - (void)setThumbBackgroundColor:(int)color
 {
     thumbBackgroundColor = color;
     
-    self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
+    if (thumbBackgroundColor != 0) {
+        self.backgroundColor = UIColorFromRGB(thumbBackgroundColor);
+    }
 }
 
 @end

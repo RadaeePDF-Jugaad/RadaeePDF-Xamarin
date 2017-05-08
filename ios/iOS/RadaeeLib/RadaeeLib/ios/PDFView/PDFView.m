@@ -7,7 +7,6 @@
 //
 
 #import "PDFView.h"
-#import "NSObject+PerformBlock.h"
 #import <QuartzCore/QuartzCore.h>
 extern int g_def_view;
 extern float g_Ink_Width;
@@ -706,7 +705,7 @@ extern bool g_double_page_enabled;
 -(bool)OnAnnotTouchMove:(CGPoint)point
 {
 	if( m_status != sta_annot ) return false;
-    if( [m_doc canSave] )
+    if([self canSaveDocument])
     {
         m_tx = point.x * m_scale;
         m_ty = point.y * m_scale;
@@ -718,7 +717,7 @@ extern bool g_double_page_enabled;
 -(bool)OnAnnotTouchEnd:(CGPoint)point
 {
 	if( m_status != sta_annot ) return false;
-    if( [m_doc canSave] )
+    if([self canSaveDocument])
     {
     	//[self setModified:YES force:NO];
         m_tx = point.x * m_scale;
@@ -1141,6 +1140,11 @@ extern bool g_double_page_enabled;
     [m_view vGetPos:pos :m_w/2 :m_h/2];
 }
 
+- (void)vGetPos:(struct PDFV_POS *)pos x:(int)x y:(int)y
+{
+    [m_view vGetPos:pos :x * m_scale :y * m_scale];
+}
+
 -(void)vSetPos:(const struct PDFV_POS*)pos;
 {
 	if( !pos ) return;
@@ -1177,6 +1181,7 @@ extern bool g_double_page_enabled;
 -(BOOL)vSelMarkup:(int)color :(int)type
 {
     if( m_status != sta_sel ) return false;
+    if(![self canSaveDocument]) return false;
     struct PDFV_POS pos;
     [m_view vGetPos:&pos: m_tx: m_ty];
     if( pos.pageno >= 0 )
@@ -1219,7 +1224,7 @@ extern bool g_double_page_enabled;
 
 -(bool)vNoteStart
 {
-    if( ![m_doc canSave] ) return false;
+    if(![self canSaveDocument]) return false;
 	if( m_status == sta_none )
 	{
 	    self.scrollEnabled = false;
@@ -1244,7 +1249,7 @@ extern bool g_double_page_enabled;
 
 -(bool)vInkStart
 {
-    if( ![m_doc canSave] ) return false;
+    if(![self canSaveDocument]) return false;
     if( m_status == sta_none )
     {
         self.scrollEnabled = false;
@@ -1289,13 +1294,13 @@ extern bool g_double_page_enabled;
         m_status = sta_none;
         m_ink = NULL;
         [self refresh];
-            
+        
         [self enableScroll];
     }
 }
 -(bool)vEllipseStart
 {
-    if( ![m_doc canSave] ) return false;
+    if(![self canSaveDocument]) return false;
     if( m_status == sta_none )
     {
         m_status = sta_ellipse;
@@ -1392,7 +1397,7 @@ extern bool g_double_page_enabled;
 }
 -(bool)vRectStart
 {
-    if( ![m_doc canSave] ) return false;
+    if(![self canSaveDocument]) return false;
     if( m_status == sta_none )
     {
         self.scrollEnabled = false;
@@ -1556,6 +1561,10 @@ extern bool g_double_page_enabled;
 
 -(void)vAnnotRemove
 {
+    if (![self canSaveDocument]) {
+        [self vAnnotEnd];
+        return;
+    }
 	if( m_status != sta_annot ) return;
     [self setModified:YES force:NO];
     [m_annot removeFromPage];
@@ -1588,11 +1597,24 @@ extern bool g_double_page_enabled;
         	if( m_delegate ) [m_delegate OnSingleTapped:x:y];
         	return;
        	}
+        
         PDFPage *page = [vpage GetPage];
         if( !page ) return;
         m_annot = [page annotAtPoint:m_annot_pos.x: m_annot_pos.y];
         if( m_annot )
         {
+            if (![self canSaveDocument] && m_annot.type != 1) {
+                if( m_delegate )
+                {
+                    if (!isDoubleTapping) {
+                        NSArray *a = [NSArray arrayWithObjects:[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y], nil];
+                        [self performSelector:@selector(delayedOnSingleTapping:) withObject:a afterDelay:0.3];
+                    }
+                }
+                return;
+            }
+            
+            
         	self.scrollEnabled = false;
         	m_status = sta_annot;
         	[m_annot getRect:&m_annot_rect];
@@ -1860,6 +1882,16 @@ extern bool g_double_page_enabled;
     if (m_modified) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:@"fileStat"];
     }
+}
+
+- (BOOL)canSaveDocument
+{
+    return ([m_doc canSave] && !readOnlyEnabled);
+}
+
+- (void)setReadOnly:(BOOL)enabled
+{
+    readOnlyEnabled = enabled;
 }
 
 @end
