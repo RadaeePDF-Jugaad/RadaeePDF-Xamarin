@@ -22,8 +22,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -38,8 +36,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -55,8 +51,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -75,8 +69,6 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
@@ -96,8 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Resources\cmaps\" />
-    <Folder Include="Resources\fdat\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -122,13 +112,33 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\btn_annot_ellipse.png" />
+    <BundleResource Include="Resources\btn_annot_ink.png" />
+    <BundleResource Include="Resources\btn_annot_rect.png" />
+    <BundleResource Include="Resources\btn_done.png" />
+    <BundleResource Include="Resources\btn_left.png" />
+    <BundleResource Include="Resources\btn_outline.png" />
+    <BundleResource Include="Resources\btn_perform.png" />
+    <BundleResource Include="Resources\btn_print.png" />
+    <BundleResource Include="Resources\btn_remove.png" />
+    <BundleResource Include="Resources\btn_right.png" />
+    <BundleResource Include="Resources\btn_search.png" />
+    <BundleResource Include="Resources\btn_view.png" />
+    <BundleResource Include="Resources\btn_view_dual.png" />
+    <BundleResource Include="Resources\btn_view_single.png" />
+    <BundleResource Include="Resources\btn_view_vert.png" />
+    <BundleResource Include="Resources\annot_remove.png" />
+    <BundleResource Include="Resources\test.pdf" />
+    <BundleResource Include="Resources\btn_grid.png" />
+    <BundleResource Include="Resources\btn_back.png" />
     <BundleResource Include="Resources\cmaps\cmaps.dat" />
     <BundleResource Include="Resources\cmaps\cmyk_rgb.dat" />
     <BundleResource Include="Resources\cmaps\umaps.dat" />
+    <BundleResource Include="Resources\fdat\00" />
     <BundleResource Include="Resources\fdat\01" />
     <BundleResource Include="Resources\fdat\02" />
     <BundleResource Include="Resources\fdat\03" />
-    <BundleResource Include="Resources\fdat\00" />
+    <BundleResource Include="Resources\fdat\04" />
     <BundleResource Include="Resources\fdat\05" />
     <BundleResource Include="Resources\fdat\06" />
     <BundleResource Include="Resources\fdat\07" />
@@ -153,26 +163,6 @@
     <BundleResource Include="Resources\fdat\tinosb.ttf" />
     <BundleResource Include="Resources\fdat\tinosbi.ttf" />
     <BundleResource Include="Resources\fdat\tinosi.ttf" />
-    <BundleResource Include="Resources\fdat\04" />
-    <BundleResource Include="Resources\btn_annot_ellipse.png" />
-    <BundleResource Include="Resources\btn_annot_ink.png" />
-    <BundleResource Include="Resources\btn_annot_rect.png" />
-    <BundleResource Include="Resources\btn_done.png" />
-    <BundleResource Include="Resources\btn_left.png" />
-    <BundleResource Include="Resources\btn_outline.png" />
-    <BundleResource Include="Resources\btn_perform.png" />
-    <BundleResource Include="Resources\btn_print.png" />
-    <BundleResource Include="Resources\btn_remove.png" />
-    <BundleResource Include="Resources\btn_right.png" />
-    <BundleResource Include="Resources\btn_search.png" />
-    <BundleResource Include="Resources\btn_view.png" />
-    <BundleResource Include="Resources\btn_view_dual.png" />
-    <BundleResource Include="Resources\btn_view_single.png" />
-    <BundleResource Include="Resources\btn_view_vert.png" />
-    <BundleResource Include="Resources\annot_remove.png" />
-    <BundleResource Include="Resources\test.pdf" />
-    <BundleResource Include="Resources\btn_grid.png" />
-    <BundleResource Include="Resources\btn_back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

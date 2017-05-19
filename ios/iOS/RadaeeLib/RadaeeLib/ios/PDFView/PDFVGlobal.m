@@ -159,9 +159,37 @@ void APP_Init()
     NSString *umaps_path = [[NSBundle mainBundle] pathForResource:@"umaps" ofType:@"dat" inDirectory:@"cmaps"];
     NSString *cmyk_path = [[NSBundle mainBundle] pathForResource:@"cmyk_rgb" ofType:@"dat" inDirectory:@"cmaps"];
     
+    if (![[NSFileManager defaultManager] fileExistsAtPath:cmaps_path]) {
+        NSLog(@"Check resources files: cmaps.dat not found.");
+        NSLog(@"Include fdat and cmaps folders as resources (like demo project)");
+        return;
+    }
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:cmaps_path]) {
+        NSLog(@"Check resources files: umaps.dat not found.");
+        NSLog(@"Include fdat and cmaps folders as resources (like demo project)");
+        return;
+    }
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:cmaps_path]) {
+        NSLog(@"Check resources files: cmyk_rgb.dat not found.");
+        NSLog(@"Include fdat and cmaps folders as resources (like demo project)");
+        return;
+    }
+    
     Global_setCMapsPath([cmaps_path UTF8String], [umaps_path UTF8String]);
     Global_setCMYKProfile([cmyk_path UTF8String]);
-
+    
+    NSArray *stdFonts = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", nil];
+    
+    for (NSString *stdFont in stdFonts) {
+        if (![[NSFileManager defaultManager] fileExistsAtPath:[[NSBundle mainBundle] pathForResource:stdFont ofType:nil inDirectory:@"fdat"]]) {
+            NSLog(@"Check resources files: %@ not found.", stdFont);
+            NSLog(@"Include fdat and cmaps folders as resources (like demo project)");
+            return;
+        }
+    }
+    
     NSString *fpath;
     fpath = [[NSBundle mainBundle] pathForResource:@"00" ofType:nil inDirectory:@"fdat"];
     Global_loadStdFont( 0, [fpath UTF8String] );
@@ -191,6 +219,16 @@ void APP_Init()
     Global_loadStdFont( 12, [fpath UTF8String] );
     fpath = [[NSBundle mainBundle] pathForResource:@"13" ofType:nil inDirectory:@"fdat"];
     Global_loadStdFont( 13, [fpath UTF8String] );
+    
+    NSArray *customFonts = [NSArray arrayWithObjects:@"argbsn00lp.ttf", @"arimo.ttf", @"arimob.ttf", @"arimobi.ttf", @"arimoi.ttf", @"cousine.ttf", @"cousineb.ttf", @"cousinebi.ttf", @"cousinei.ttf", @"rdf008.ttf", @"rdf013.ttf", @"tinos.ttf", @"tinosb.ttf", @"tinosbi.ttf", @"tinosi.ttf", nil];
+    
+    for (NSString *customFont in customFonts) {
+        if (![[NSFileManager defaultManager] fileExistsAtPath:[[NSBundle mainBundle] pathForResource:customFont ofType:nil inDirectory:@"fdat"]]) {
+            NSLog(@"Check resources files: %@ not found.", customFont);
+            NSLog(@"Include fdat and cmaps folders as resources (like demo project)");
+            return;
+        }
+    }
     
     Global_fontfileListStart();
 
