@@ -60,6 +60,11 @@ extern uint g_ellipse_color;
 bool b_outline;
 extern uint g_oval_color;
 
+- (CGRect)getReaderBounds
+{
+    return self.view.bounds;
+}
+
 - (void)toolbarStyle
 {
     defaultTranslucent = self.navigationController.navigationBar.isTranslucent;
@@ -257,8 +262,8 @@ extern uint g_oval_color;
     popupMenu1.items = [NSArray arrayWithObjects:item1,item5,item4,item3,item6,nil];
 
     m_bSel = false;
-    float width = [UIScreen mainScreen].bounds.size.width;
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 160, width, 60)];
+    float width = [self getReaderBounds].size.width; //[UIScreen mainScreen].bounds.size.width;
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, [self getReaderBounds].size.height/*[UIScreen mainScreen].bounds.size.height*/ - 160, width, 60)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.backgroundColor = [UIColor lightGrayColor];
@@ -284,6 +289,8 @@ extern uint g_oval_color;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     if (_delegate) {
         [_delegate willShowReader];
     }
@@ -306,6 +313,8 @@ extern uint g_oval_color;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self didRotateFromInterfaceOrientation:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCurrentPage) name:@"Radaee-Refresh-Page" object:nil];
     
@@ -486,7 +495,7 @@ extern uint g_oval_color;
     self.navigationItem.titleView =searchToolBar;
 
     
-    CGRect boundsc = [[UIScreen mainScreen]bounds];
+    CGRect boundsc = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     int cwidth = boundsc.size.width;
     if(SYS_VERSION>=7.0)
     {
@@ -688,7 +697,7 @@ extern uint g_oval_color;
 }
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    CGRect rect =[[UIScreen mainScreen]bounds];
+    CGRect rect = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     if ([self isPortrait])
     {
         if (rect.size.height < rect.size.width) {
@@ -712,7 +721,7 @@ extern uint g_oval_color;
     [m_view sizeThatFits:rect.size];
     [self.toolBar sizeToFit];
     
-    CGRect boundsc = [[UIScreen mainScreen]bounds];
+    CGRect boundsc = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     int cwidth = boundsc.size.width;
     int cheight = boundsc.size.height;
     
@@ -773,7 +782,7 @@ extern uint g_oval_color;
 
 - (CGImageRef)imageForPage:(int)pg
 {
-    CGRect bounds = [[UIScreen mainScreen] bounds];
+    CGRect bounds = [self getReaderBounds]; //[[UIScreen mainScreen] bounds];
     if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
         if (bounds.size.height > bounds.size.width) {
             bounds.size.width = bounds.size.height;
@@ -912,7 +921,8 @@ extern uint g_oval_color;
         break;
     default: return 0;
     }
-    CGRect rect = [[UIScreen mainScreen]bounds];
+    
+    CGRect rect = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     
     //GEAR
     if (![self isPortrait] && rect.size.width < rect.size.height) {
@@ -962,7 +972,7 @@ extern uint g_oval_color;
             break;
         default: return 0;
     }
-    CGRect rect = [[UIScreen mainScreen]bounds];
+    CGRect rect = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     
     //GEAR
     if (![self isPortrait] && rect.size.width < rect.size.height) {
@@ -1004,7 +1014,7 @@ extern uint g_oval_color;
         default: return 0;
     }
     
-    CGRect rect = [[UIScreen mainScreen]bounds];
+    CGRect rect = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     
     //GEAR
     if (![self isPortrait] && rect.size.width < rect.size.height) {
@@ -1032,7 +1042,7 @@ extern uint g_oval_color;
 
 - (void)PDFSeekBarInit:(int)pageno
 {
-    CGRect boundsc = [[UIScreen mainScreen]bounds];
+    CGRect boundsc = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     if (![self isPortrait] && boundsc.size.width < boundsc.size.height) {
         float height = boundsc.size.height;
         boundsc.size.height = boundsc.size.width;
@@ -1044,8 +1054,6 @@ extern uint g_oval_color;
     
     
     float hi = self.navigationController.navigationBar.bounds.size.height;
-    CGRect rect;
-    rect = [[UIApplication sharedApplication] statusBarFrame];
     
     if(SYS_VERSION>=7.0)
     {
@@ -1091,7 +1099,7 @@ extern uint g_oval_color;
 
 -(void)PDFThumbNailinit:(int)pageno
 {
-    CGRect boundsc = [[UIScreen mainScreen]bounds];
+    CGRect boundsc = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     if (![self isPortrait] && boundsc.size.width < boundsc.size.height) {
         float height = boundsc.size.height;
         boundsc.size.height = boundsc.size.width;
@@ -1103,9 +1111,7 @@ extern uint g_oval_color;
     
     
     float hi = self.navigationController.navigationBar.bounds.size.height;
-    CGRect rect;
-    rect = [[UIApplication sharedApplication] statusBarFrame];
-
+    
     if(SYS_VERSION>=7.0)
     {
         m_Thumbview = [[PDFThumbView alloc] initWithFrame:CGRectMake(0, cheight-thumbHeight, cwidth, thumbHeight)];
@@ -1138,7 +1144,7 @@ extern uint g_oval_color;
 
 -(void)initbar :(int) pageno
 {
-    CGRect boundsc = [[UIScreen mainScreen]bounds];
+    CGRect boundsc = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     if (![self isPortrait] && boundsc.size.width < boundsc.size.height) {
         float height = boundsc.size.height;
         boundsc.size.height = boundsc.size.width;
@@ -1192,7 +1198,7 @@ extern uint g_oval_color;
     default: return 0;
     }
 
-    CGRect rect = [[UIScreen mainScreen]bounds];
+    CGRect rect = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     //GEAR
     if (![self isPortrait] && rect.size.width < rect.size.height) {
         float height = rect.size.height;
@@ -1238,7 +1244,7 @@ extern uint g_oval_color;
 - (void)searchBarSearchButtonClicked:(UISearchBar *)m_SearchBar
 {
     float hi = self.navigationController.navigationBar.bounds.size.height;
-    CGRect boundsc = [[UIScreen mainScreen]bounds];
+    CGRect boundsc = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     int cwidth = boundsc.size.width;
     if(SYS_VERSION>=7.0)
     {
@@ -1625,7 +1631,7 @@ extern uint g_oval_color;
     NSURL *urlPath = [NSURL fileURLWithPath:fileName];
     if ([[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
         mpvc = [[MPMoviePlayerViewController alloc] initWithContentURL:urlPath];
-        mpvc.view.frame = self.view.bounds;
+        mpvc.view.frame = [self getReaderBounds];
         mpvc.modalPresentationStyle = UIModalPresentationFormSheet;
         
         [self presentMoviePlayerViewControllerAnimated:mpvc];
@@ -1942,7 +1948,7 @@ extern uint g_oval_color;
     NSURL *urlPath = [NSURL fileURLWithPath:fileName];
     if ([[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
         mpvc = [[MPMoviePlayerViewController alloc] initWithContentURL:urlPath];
-        mpvc.view.frame = self.view.bounds;
+        mpvc.view.frame = [self getReaderBounds];
         mpvc.modalPresentationStyle = UIModalPresentationFormSheet;
 
         [self presentMoviePlayerViewControllerAnimated:mpvc];
@@ -2071,7 +2077,7 @@ extern uint g_oval_color;
     
     [[NSUserDefaults standardUserDefaults] setInteger:mode forKey:@"DefView"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    CGRect rect = [[UIScreen mainScreen]bounds];
+    CGRect rect = [self getReaderBounds]; //[[UIScreen mainScreen]bounds];
     
     //GEAR
     if (![self isPortrait] && rect.size.width < rect.size.height) {

@@ -31,6 +31,10 @@
 
 - (void)apri:(id)sender
 {
+    NSLog(@"VIEWCONTROLLER BOUNDS:");
+    NSLog(@"WIDTH: %f", self.view.bounds.size.width);
+    NSLog(@"HEIGHT: %f", self.view.bounds.size.height);
+    
     plugin = [[RadaeePDFPlugin alloc] init];
     
     [plugin setDelegate:self];
@@ -38,7 +42,7 @@
     [plugin activateLicenseWithBundleId:[[NSBundle mainBundle] bundleIdentifier] company:@"Radaee" email:@"radaee_com@yahoo.cn" key:@"89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO" licenseType:2];
     
     [plugin toggleThumbSeekBar:0];
-    [plugin setReaderViewMode:3];
+    [plugin setReaderViewMode:0];
 
     [plugin setColor:0xFFFF00FF forFeature:1];
     

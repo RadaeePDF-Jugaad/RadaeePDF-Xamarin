@@ -143,6 +143,8 @@
 - (void)setFirstPageCover:(BOOL)cover;
 - (void)setImmersive:(BOOL)immersive;
 
+- (void)setReaderSize:(CGSize)size;
+
 // Delegate
 
 - (void)setDelegate:(id)myDelegate;

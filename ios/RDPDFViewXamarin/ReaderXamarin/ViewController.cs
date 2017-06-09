@@ -62,8 +62,8 @@ namespace ReaderXamarin
 		RadaeeDelegate selector;
 		RadaeePDFPlugin plugin;
 
-		partial void OpenBtn_TouchUpInside(UIButton sender)
-		{
+        partial void OpenBtn_TouchUpInside(UIButton sender)
+        {
 			//Reader settings init
 			plugin = RadaeePDFPlugin.PluginInit;
 
@@ -75,13 +75,13 @@ namespace ReaderXamarin
 			//render type
 			/*
 
-			 0: Vertical
-			 1: Horizontal continous (LRM)
-			 2: Horizontal continous (RTL)
-			 3: Horizontal mixed (LRM): paging and doublePage feature are availble only in this mode
+             0: Vertical
+             1: Horizontal continous (LRM)
+             2: Horizontal continous (RTL)
+             3: Horizontal mixed (LRM): paging and doublePage feature are availble only in this mode
 
-			 */
-			plugin.SetReaderViewMode(3); //Set Reader Mode
+             */
+			plugin.SetReaderViewMode(0); //Set Reader Mode
 			plugin.SetPagingEnabled(true); //paging
 			plugin.SetDoublePageEnabled(true); //double page render
 			plugin.ToggleThumbSeekBar(0); //Toggle Thumbnail/SeekBar
@@ -102,16 +102,16 @@ namespace ReaderXamarin
 			//plugin.SetImmersive(true);
 
 			/*
-			 SetColor, Available features
+             SetColor, Available features
 
-			 0: inkColor
-			 1: rectColor
-			 2: underlineColor
-			 3: strikeoutColor
-			 4: highlightColor
-			 5: ovalColor
-			 6: selColor
-			*/
+             0: inkColor
+             1: rectColor
+             2: underlineColor
+             3: strikeoutColor
+             4: highlightColor
+             5: ovalColor
+             6: selColor
+            */
 
 			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
@@ -131,19 +131,20 @@ namespace ReaderXamarin
 
 			//Create image of a specific page (needs a valid pdf opened instance)
 			/*
-			//Create data of the image 
-			NSData pageData = plugin.GetImageForPage(0);
+            //Create data of the image 
+            NSData pageData = plugin.GetImageForPage(0);
 
-			//Create the UIImage from NData
-			UIImage image = new UIImage(pageData);
-			*/
+            //Create the UIImage from NData
+            UIImage image = new UIImage(pageData);
+            */
 
 			if (controller != null)
 			{
 				//show reader
 				this.NavigationController.PushViewController(controller, true);
 			}
-			else {
+			else
+			{
 
 				UIAlertView alert = new UIAlertView();
 				alert.Title = "Error";
@@ -151,7 +152,7 @@ namespace ReaderXamarin
 				alert.AddButton("OK");
 				alert.Show();
 			}
-		}
+        }
 
 		protected ViewController(IntPtr handle) : base(handle)
 		{
