@@ -1,4 +1,5 @@
 ﻿using Com.Radaee.Util;
+using Com.Radaee.Pdf;
 using Android.App;
 using Android.Widget;
 using Android.OS;
@@ -19,6 +20,8 @@ namespace RadaeePDFDemo
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            //Global.HighlightColor = Convert.ToInt32("0xFFFF0000", 16);
 
             mPdfManager = new RadaeePDFManager(this);
 
