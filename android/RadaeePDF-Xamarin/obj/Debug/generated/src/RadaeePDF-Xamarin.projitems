@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);ANDROID_1;ANDROID_2;ANDROID_3;ANDROID_4;ANDROID_5;ANDROID_6;ANDROID_7;ANDROID_8;ANDROID_9;ANDROID_10;ANDROID_11;ANDROID_12;ANDROID_13;ANDROID_14;ANDROID_15;ANDROID_16;ANDROID_17;ANDROID_18;ANDROID_19;ANDROID_20;ANDROID_21;ANDROID_22;ANDROID_23</DefineConstants>
+  </PropertyGroup>
+  <!-- Classes -->
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Adv.Obj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Adv.Ref.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.BMDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.BMP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.DIB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Document.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Global.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.HWriting.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Ink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Matrix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Page.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.PageContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.Path.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.ResFont.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.ResForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.ResGState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.ResImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Pdf.SuperDoc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFBotBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFLayoutOPStack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFLayoutView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFNavAct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFTopBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFViewAct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Reader.PDFViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.ComboList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.ComboListAdt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.CommonUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.OutlineList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.OutlineListAdt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFAESStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFAssetStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFFileStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFGridAdt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFGridItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFGridThread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFGridView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFHttpStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFMemStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PDFThumbView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.PopupEditAct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.RadaeePDFManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Util.RadaeePluginCallback.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFLayoutDual.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFLayoutVert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFPageView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFVCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFVFinder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewCurl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewDual.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewHorz.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewPager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewReflow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewThumb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFViewVert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFVPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFVSel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.PDFVThread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.VCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.VFinder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.VPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.VPageCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.VSel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.View.VThread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Com.Radaee.Viewlib.BuildConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\Java.Interop.__TypeRegistrations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\__NamespaceMapping__.cs" />
+  </ItemGroup>
+  <!-- Enums -->
+  <ItemGroup />
+</Project>

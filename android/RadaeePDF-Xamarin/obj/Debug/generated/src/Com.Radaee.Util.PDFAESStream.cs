@@ -1,0 +1,494 @@
+using System;
+using System.Collections.Generic;
+using Android.Runtime;
+
+namespace Com.Radaee.Util {
+
+	// Metadata.xml XPath class reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']"
+	[global::Android.Runtime.Register ("com/radaee/util/PDFAESStream", DoNotGenerateAcw=true)]
+	public partial class PDFAESStream : global::Java.Lang.Object, global::Com.Radaee.Pdf.Document.IPDFStream {
+
+		internal static IntPtr java_class_handle;
+		internal static IntPtr class_ref {
+			get {
+				return JNIEnv.FindClass ("com/radaee/util/PDFAESStream", ref java_class_handle);
+			}
+		}
+
+		protected override IntPtr ThresholdClass {
+			get { return class_ref; }
+		}
+
+		protected override global::System.Type ThresholdType {
+			get { return typeof (PDFAESStream); }
+		}
+
+		protected PDFAESStream (IntPtr javaReference, JniHandleOwnership transfer) : base (javaReference, transfer) {}
+
+		static IntPtr id_ctor;
+		// Metadata.xml XPath constructor reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/constructor[@name='PDFAESStream' and count(parameter)=0]"
+		[Register (".ctor", "()V", "")]
+		public unsafe PDFAESStream ()
+			: base (IntPtr.Zero, JniHandleOwnership.DoNotTransfer)
+		{
+			if (((global::Java.Lang.Object) this).Handle != IntPtr.Zero)
+				return;
+
+			try {
+				if (((object) this).GetType () != typeof (PDFAESStream)) {
+					SetHandle (
+							global::Android.Runtime.JNIEnv.StartCreateInstance (((object) this).GetType (), "()V"),
+							JniHandleOwnership.TransferLocalRef);
+					global::Android.Runtime.JNIEnv.FinishCreateInstance (((global::Java.Lang.Object) this).Handle, "()V");
+					return;
+				}
+
+				if (id_ctor == IntPtr.Zero)
+					id_ctor = JNIEnv.GetMethodID (class_ref, "<init>", "()V");
+				SetHandle (
+						global::Android.Runtime.JNIEnv.StartCreateInstance (class_ref, id_ctor),
+						JniHandleOwnership.TransferLocalRef);
+				JNIEnv.FinishCreateInstance (((global::Java.Lang.Object) this).Handle, class_ref, id_ctor);
+			} finally {
+			}
+		}
+
+		static Delegate cb_ExportToFile_Ljava_lang_String_;
+#pragma warning disable 0169
+		static Delegate GetExportToFile_Ljava_lang_String_Handler ()
+		{
+			if (cb_ExportToFile_Ljava_lang_String_ == null)
+				cb_ExportToFile_Ljava_lang_String_ = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, IntPtr, bool>) n_ExportToFile_Ljava_lang_String_);
+			return cb_ExportToFile_Ljava_lang_String_;
+		}
+
+		static bool n_ExportToFile_Ljava_lang_String_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			string p0 = JNIEnv.GetString (native_p0, JniHandleOwnership.DoNotTransfer);
+			bool __ret = __this.ExportToFile (p0);
+			return __ret;
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_ExportToFile_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='ExportToFile' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
+		[Register ("ExportToFile", "(Ljava/lang/String;)Z", "GetExportToFile_Ljava_lang_String_Handler")]
+		public virtual unsafe bool ExportToFile (string p0)
+		{
+			if (id_ExportToFile_Ljava_lang_String_ == IntPtr.Zero)
+				id_ExportToFile_Ljava_lang_String_ = JNIEnv.GetMethodID (class_ref, "ExportToFile", "(Ljava/lang/String;)Z");
+			IntPtr native_p0 = JNIEnv.NewString (p0);
+			try {
+				JValue* __args = stackalloc JValue [1];
+				__args [0] = new JValue (native_p0);
+
+				bool __ret;
+				if (((object) this).GetType () == ThresholdType)
+					__ret = JNIEnv.CallBooleanMethod (((global::Java.Lang.Object) this).Handle, id_ExportToFile_Ljava_lang_String_, __args);
+				else
+					__ret = JNIEnv.CallNonvirtualBooleanMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "ExportToFile", "(Ljava/lang/String;)Z"), __args);
+				return __ret;
+			} finally {
+				JNIEnv.DeleteLocalRef (native_p0);
+			}
+		}
+
+		static Delegate cb_ImportFromBuf_arrayB;
+#pragma warning disable 0169
+		static Delegate GetImportFromBuf_arrayBHandler ()
+		{
+			if (cb_ImportFromBuf_arrayB == null)
+				cb_ImportFromBuf_arrayB = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, IntPtr, bool>) n_ImportFromBuf_arrayB);
+			return cb_ImportFromBuf_arrayB;
+		}
+
+		static bool n_ImportFromBuf_arrayB (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			byte[] p0 = (byte[]) JNIEnv.GetArray (native_p0, JniHandleOwnership.DoNotTransfer, typeof (byte));
+			bool __ret = __this.ImportFromBuf (p0);
+			if (p0 != null)
+				JNIEnv.CopyArray (p0, native_p0);
+			return __ret;
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_ImportFromBuf_arrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='ImportFromBuf' and count(parameter)=1 and parameter[1][@type='byte[]']]"
+		[Register ("ImportFromBuf", "([B)Z", "GetImportFromBuf_arrayBHandler")]
+		public virtual unsafe bool ImportFromBuf (byte[] p0)
+		{
+			if (id_ImportFromBuf_arrayB == IntPtr.Zero)
+				id_ImportFromBuf_arrayB = JNIEnv.GetMethodID (class_ref, "ImportFromBuf", "([B)Z");
+			IntPtr native_p0 = JNIEnv.NewArray (p0);
+			try {
+				JValue* __args = stackalloc JValue [1];
+				__args [0] = new JValue (native_p0);
+
+				bool __ret;
+				if (((object) this).GetType () == ThresholdType)
+					__ret = JNIEnv.CallBooleanMethod (((global::Java.Lang.Object) this).Handle, id_ImportFromBuf_arrayB, __args);
+				else
+					__ret = JNIEnv.CallNonvirtualBooleanMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "ImportFromBuf", "([B)Z"), __args);
+				return __ret;
+			} finally {
+				if (p0 != null) {
+					JNIEnv.CopyArray (native_p0, p0);
+					JNIEnv.DeleteLocalRef (native_p0);
+				}
+			}
+		}
+
+		static Delegate cb_ImportFromFile_Ljava_lang_String_;
+#pragma warning disable 0169
+		static Delegate GetImportFromFile_Ljava_lang_String_Handler ()
+		{
+			if (cb_ImportFromFile_Ljava_lang_String_ == null)
+				cb_ImportFromFile_Ljava_lang_String_ = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, IntPtr, bool>) n_ImportFromFile_Ljava_lang_String_);
+			return cb_ImportFromFile_Ljava_lang_String_;
+		}
+
+		static bool n_ImportFromFile_Ljava_lang_String_ (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			string p0 = JNIEnv.GetString (native_p0, JniHandleOwnership.DoNotTransfer);
+			bool __ret = __this.ImportFromFile (p0);
+			return __ret;
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_ImportFromFile_Ljava_lang_String_;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='ImportFromFile' and count(parameter)=1 and parameter[1][@type='java.lang.String']]"
+		[Register ("ImportFromFile", "(Ljava/lang/String;)Z", "GetImportFromFile_Ljava_lang_String_Handler")]
+		public virtual unsafe bool ImportFromFile (string p0)
+		{
+			if (id_ImportFromFile_Ljava_lang_String_ == IntPtr.Zero)
+				id_ImportFromFile_Ljava_lang_String_ = JNIEnv.GetMethodID (class_ref, "ImportFromFile", "(Ljava/lang/String;)Z");
+			IntPtr native_p0 = JNIEnv.NewString (p0);
+			try {
+				JValue* __args = stackalloc JValue [1];
+				__args [0] = new JValue (native_p0);
+
+				bool __ret;
+				if (((object) this).GetType () == ThresholdType)
+					__ret = JNIEnv.CallBooleanMethod (((global::Java.Lang.Object) this).Handle, id_ImportFromFile_Ljava_lang_String_, __args);
+				else
+					__ret = JNIEnv.CallNonvirtualBooleanMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "ImportFromFile", "(Ljava/lang/String;)Z"), __args);
+				return __ret;
+			} finally {
+				JNIEnv.DeleteLocalRef (native_p0);
+			}
+		}
+
+		static Delegate cb_close;
+#pragma warning disable 0169
+		static Delegate GetCloseHandler ()
+		{
+			if (cb_close == null)
+				cb_close = JNINativeWrapper.CreateDelegate ((Action<IntPtr, IntPtr>) n_Close);
+			return cb_close;
+		}
+
+		static void n_Close (IntPtr jnienv, IntPtr native__this)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			__this.Close ();
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_close;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='close' and count(parameter)=0]"
+		[Register ("close", "()V", "GetCloseHandler")]
+		public virtual unsafe void Close ()
+		{
+			if (id_close == IntPtr.Zero)
+				id_close = JNIEnv.GetMethodID (class_ref, "close", "()V");
+			try {
+
+				if (((object) this).GetType () == ThresholdType)
+					JNIEnv.CallVoidMethod (((global::Java.Lang.Object) this).Handle, id_close);
+				else
+					JNIEnv.CallNonvirtualVoidMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "close", "()V"));
+			} finally {
+			}
+		}
+
+		static Delegate cb_get_size;
+#pragma warning disable 0169
+		static Delegate GetGet_sizeHandler ()
+		{
+			if (cb_get_size == null)
+				cb_get_size = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, int>) n_Get_size);
+			return cb_get_size;
+		}
+
+		static int n_Get_size (IntPtr jnienv, IntPtr native__this)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			return __this.Get_size ();
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_get_size;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='get_size' and count(parameter)=0]"
+		[Register ("get_size", "()I", "GetGet_sizeHandler")]
+		public virtual unsafe int Get_size ()
+		{
+			if (id_get_size == IntPtr.Zero)
+				id_get_size = JNIEnv.GetMethodID (class_ref, "get_size", "()I");
+			try {
+
+				if (((object) this).GetType () == ThresholdType)
+					return JNIEnv.CallIntMethod (((global::Java.Lang.Object) this).Handle, id_get_size);
+				else
+					return JNIEnv.CallNonvirtualIntMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "get_size", "()I"));
+			} finally {
+			}
+		}
+
+		static Delegate cb_open_Ljava_lang_String_arrayB;
+#pragma warning disable 0169
+		static Delegate GetOpen_Ljava_lang_String_arrayBHandler ()
+		{
+			if (cb_open_Ljava_lang_String_arrayB == null)
+				cb_open_Ljava_lang_String_arrayB = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, IntPtr, IntPtr, bool>) n_Open_Ljava_lang_String_arrayB);
+			return cb_open_Ljava_lang_String_arrayB;
+		}
+
+		static bool n_Open_Ljava_lang_String_arrayB (IntPtr jnienv, IntPtr native__this, IntPtr native_p0, IntPtr native_p1)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			string p0 = JNIEnv.GetString (native_p0, JniHandleOwnership.DoNotTransfer);
+			byte[] p1 = (byte[]) JNIEnv.GetArray (native_p1, JniHandleOwnership.DoNotTransfer, typeof (byte));
+			bool __ret = __this.Open (p0, p1);
+			if (p1 != null)
+				JNIEnv.CopyArray (p1, native_p1);
+			return __ret;
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_open_Ljava_lang_String_arrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='open' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='byte[]']]"
+		[Register ("open", "(Ljava/lang/String;[B)Z", "GetOpen_Ljava_lang_String_arrayBHandler")]
+		public virtual unsafe bool Open (string p0, byte[] p1)
+		{
+			if (id_open_Ljava_lang_String_arrayB == IntPtr.Zero)
+				id_open_Ljava_lang_String_arrayB = JNIEnv.GetMethodID (class_ref, "open", "(Ljava/lang/String;[B)Z");
+			IntPtr native_p0 = JNIEnv.NewString (p0);
+			IntPtr native_p1 = JNIEnv.NewArray (p1);
+			try {
+				JValue* __args = stackalloc JValue [2];
+				__args [0] = new JValue (native_p0);
+				__args [1] = new JValue (native_p1);
+
+				bool __ret;
+				if (((object) this).GetType () == ThresholdType)
+					__ret = JNIEnv.CallBooleanMethod (((global::Java.Lang.Object) this).Handle, id_open_Ljava_lang_String_arrayB, __args);
+				else
+					__ret = JNIEnv.CallNonvirtualBooleanMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "open", "(Ljava/lang/String;[B)Z"), __args);
+				return __ret;
+			} finally {
+				JNIEnv.DeleteLocalRef (native_p0);
+				if (p1 != null) {
+					JNIEnv.CopyArray (native_p1, p1);
+					JNIEnv.DeleteLocalRef (native_p1);
+				}
+			}
+		}
+
+		static Delegate cb_read_arrayB;
+#pragma warning disable 0169
+		static Delegate GetRead_arrayBHandler ()
+		{
+			if (cb_read_arrayB == null)
+				cb_read_arrayB = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, IntPtr, int>) n_Read_arrayB);
+			return cb_read_arrayB;
+		}
+
+		static int n_Read_arrayB (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			byte[] p0 = (byte[]) JNIEnv.GetArray (native_p0, JniHandleOwnership.DoNotTransfer, typeof (byte));
+			int __ret = __this.Read (p0);
+			if (p0 != null)
+				JNIEnv.CopyArray (p0, native_p0);
+			return __ret;
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_read_arrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='read' and count(parameter)=1 and parameter[1][@type='byte[]']]"
+		[Register ("read", "([B)I", "GetRead_arrayBHandler")]
+		public virtual unsafe int Read (byte[] p0)
+		{
+			if (id_read_arrayB == IntPtr.Zero)
+				id_read_arrayB = JNIEnv.GetMethodID (class_ref, "read", "([B)I");
+			IntPtr native_p0 = JNIEnv.NewArray (p0);
+			try {
+				JValue* __args = stackalloc JValue [1];
+				__args [0] = new JValue (native_p0);
+
+				int __ret;
+				if (((object) this).GetType () == ThresholdType)
+					__ret = JNIEnv.CallIntMethod (((global::Java.Lang.Object) this).Handle, id_read_arrayB, __args);
+				else
+					__ret = JNIEnv.CallNonvirtualIntMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "read", "([B)I"), __args);
+				return __ret;
+			} finally {
+				if (p0 != null) {
+					JNIEnv.CopyArray (native_p0, p0);
+					JNIEnv.DeleteLocalRef (native_p0);
+				}
+			}
+		}
+
+		static Delegate cb_seek_I;
+#pragma warning disable 0169
+		static Delegate GetSeek_IHandler ()
+		{
+			if (cb_seek_I == null)
+				cb_seek_I = JNINativeWrapper.CreateDelegate ((Action<IntPtr, IntPtr, int>) n_Seek_I);
+			return cb_seek_I;
+		}
+
+		static void n_Seek_I (IntPtr jnienv, IntPtr native__this, int p0)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			__this.Seek (p0);
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_seek_I;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='seek' and count(parameter)=1 and parameter[1][@type='int']]"
+		[Register ("seek", "(I)V", "GetSeek_IHandler")]
+		public virtual unsafe void Seek (int p0)
+		{
+			if (id_seek_I == IntPtr.Zero)
+				id_seek_I = JNIEnv.GetMethodID (class_ref, "seek", "(I)V");
+			try {
+				JValue* __args = stackalloc JValue [1];
+				__args [0] = new JValue (p0);
+
+				if (((object) this).GetType () == ThresholdType)
+					JNIEnv.CallVoidMethod (((global::Java.Lang.Object) this).Handle, id_seek_I, __args);
+				else
+					JNIEnv.CallNonvirtualVoidMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "seek", "(I)V"), __args);
+			} finally {
+			}
+		}
+
+		static Delegate cb_tell;
+#pragma warning disable 0169
+		static Delegate GetTellHandler ()
+		{
+			if (cb_tell == null)
+				cb_tell = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, int>) n_Tell);
+			return cb_tell;
+		}
+
+		static int n_Tell (IntPtr jnienv, IntPtr native__this)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			return __this.Tell ();
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_tell;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='tell' and count(parameter)=0]"
+		[Register ("tell", "()I", "GetTellHandler")]
+		public virtual unsafe int Tell ()
+		{
+			if (id_tell == IntPtr.Zero)
+				id_tell = JNIEnv.GetMethodID (class_ref, "tell", "()I");
+			try {
+
+				if (((object) this).GetType () == ThresholdType)
+					return JNIEnv.CallIntMethod (((global::Java.Lang.Object) this).Handle, id_tell);
+				else
+					return JNIEnv.CallNonvirtualIntMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "tell", "()I"));
+			} finally {
+			}
+		}
+
+		static Delegate cb_write_arrayB;
+#pragma warning disable 0169
+		static Delegate GetWrite_arrayBHandler ()
+		{
+			if (cb_write_arrayB == null)
+				cb_write_arrayB = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, IntPtr, int>) n_Write_arrayB);
+			return cb_write_arrayB;
+		}
+
+		static int n_Write_arrayB (IntPtr jnienv, IntPtr native__this, IntPtr native_p0)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			byte[] p0 = (byte[]) JNIEnv.GetArray (native_p0, JniHandleOwnership.DoNotTransfer, typeof (byte));
+			int __ret = __this.Write (p0);
+			if (p0 != null)
+				JNIEnv.CopyArray (p0, native_p0);
+			return __ret;
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_write_arrayB;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='write' and count(parameter)=1 and parameter[1][@type='byte[]']]"
+		[Register ("write", "([B)I", "GetWrite_arrayBHandler")]
+		public virtual unsafe int Write (byte[] p0)
+		{
+			if (id_write_arrayB == IntPtr.Zero)
+				id_write_arrayB = JNIEnv.GetMethodID (class_ref, "write", "([B)I");
+			IntPtr native_p0 = JNIEnv.NewArray (p0);
+			try {
+				JValue* __args = stackalloc JValue [1];
+				__args [0] = new JValue (native_p0);
+
+				int __ret;
+				if (((object) this).GetType () == ThresholdType)
+					__ret = JNIEnv.CallIntMethod (((global::Java.Lang.Object) this).Handle, id_write_arrayB, __args);
+				else
+					__ret = JNIEnv.CallNonvirtualIntMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "write", "([B)I"), __args);
+				return __ret;
+			} finally {
+				if (p0 != null) {
+					JNIEnv.CopyArray (native_p0, p0);
+					JNIEnv.DeleteLocalRef (native_p0);
+				}
+			}
+		}
+
+		static Delegate cb_writeable;
+#pragma warning disable 0169
+		static Delegate GetWriteableHandler ()
+		{
+			if (cb_writeable == null)
+				cb_writeable = JNINativeWrapper.CreateDelegate ((Func<IntPtr, IntPtr, bool>) n_Writeable);
+			return cb_writeable;
+		}
+
+		static bool n_Writeable (IntPtr jnienv, IntPtr native__this)
+		{
+			global::Com.Radaee.Util.PDFAESStream __this = global::Java.Lang.Object.GetObject<global::Com.Radaee.Util.PDFAESStream> (jnienv, native__this, JniHandleOwnership.DoNotTransfer);
+			return __this.Writeable ();
+		}
+#pragma warning restore 0169
+
+		static IntPtr id_writeable;
+		// Metadata.xml XPath method reference: path="/api/package[@name='com.radaee.util']/class[@name='PDFAESStream']/method[@name='writeable' and count(parameter)=0]"
+		[Register ("writeable", "()Z", "GetWriteableHandler")]
+		public virtual unsafe bool Writeable ()
+		{
+			if (id_writeable == IntPtr.Zero)
+				id_writeable = JNIEnv.GetMethodID (class_ref, "writeable", "()Z");
+			try {
+
+				if (((object) this).GetType () == ThresholdType)
+					return JNIEnv.CallBooleanMethod (((global::Java.Lang.Object) this).Handle, id_writeable);
+				else
+					return JNIEnv.CallNonvirtualBooleanMethod (((global::Java.Lang.Object) this).Handle, ThresholdClass, JNIEnv.GetMethodID (ThresholdClass, "writeable", "()Z"));
+			} finally {
+			}
+		}
+
+	}
+}

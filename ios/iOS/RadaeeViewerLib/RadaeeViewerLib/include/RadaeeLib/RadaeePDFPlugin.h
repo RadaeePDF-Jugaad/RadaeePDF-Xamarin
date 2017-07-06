@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+//#import "PDFObjc.h"
+
+@class PDFDoc;
 @class RDPDFViewController;
 
 // define the protocol for the delegate
@@ -120,8 +123,12 @@
 
 + (RadaeePDFPlugin *)pluginInit;
 
-+ (NSMutableArray *)loadBookmark;
-+ (NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName;
++ (NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName withPath:(BOOL)withPath;
+
+// Bookmarks
++ (NSString *)addToBookmarks:(NSString *)pdfPath page:(int)page label:(NSString *)label;
++ (void)removeBookmark:(int)page pdfPath:(NSString *)pdfPath;
++ (NSString *)getBookmarks:(NSString *)pdfPath;
 
 //Settings
 
@@ -143,10 +150,10 @@
 - (void)setFirstPageCover:(BOOL)cover;
 - (void)setImmersive:(BOOL)immersive;
 
-- (void)setReaderSize:(CGSize)size;
-
 // Delegate
 
 - (void)setDelegate:(id)myDelegate;
+
+- (void)refreshCurrentPage;
 
 @end

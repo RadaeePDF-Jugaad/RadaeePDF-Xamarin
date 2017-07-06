@@ -39,6 +39,7 @@ namespace ReaderXamarin
 		public override void DidChangePage(int page)
 		{
 			Console.WriteLine("did change page {0}", page);
+			plugin.SetImmersive(true);
 		}
 
 		public override void DidSearchTerm(string term, bool found)
@@ -64,8 +65,8 @@ namespace ReaderXamarin
 
         partial void OpenBtn_TouchUpInside(UIButton sender)
         {
-			//Reader settings init
-			plugin = RadaeePDFPlugin.PluginInit;
+            //Reader settings init
+            plugin = RadaeePDFPlugin.PluginInit;
 
 			//Activate license
 			plugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO", 2);
@@ -118,7 +119,6 @@ namespace ReaderXamarin
 			//Open from url
 			//UIViewController controller = plugin.Show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "");
 
-
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);
 			plugin.SetDelegate(selector);
@@ -127,7 +127,6 @@ namespace ReaderXamarin
 			this.NavigationController.NavigationBar.TintColor = UIColor.Red;
 
 			UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
-
 
 			//Create image of a specific page (needs a valid pdf opened instance)
 			/*

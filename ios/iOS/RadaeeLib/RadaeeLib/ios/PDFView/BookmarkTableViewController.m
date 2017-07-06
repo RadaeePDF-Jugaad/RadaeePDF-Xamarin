@@ -60,17 +60,11 @@
     }
     
     NSArray *arr = [_items objectAtIndex:indexPath.row];
-    
-    NSString *temp1 = [arr objectAtIndex:1];
-    NSString *temp2 = [arr objectAtIndex:2];
-    NSString *page = NSLocalizedString(@"Page ", @"Localizable");
-    int pageno = [temp2 intValue];
+
+    int pageno = [[arr objectAtIndex:0] intValue];
     pageno++;
-    temp2 = [NSString stringWithFormat:@"%d",pageno];
-    NSString *temp3 = [page stringByAppendingFormat:@"%@",[temp2 stringByAppendingFormat:@", "]];
-    NSString *text =  [temp3 stringByAppendingFormat:@"%@",temp1];
     
-    cell.textLabel.text = text;
+    cell.textLabel.text = [NSString stringWithFormat:@"Page: %i", pageno];
     
     return cell;
 }
@@ -78,8 +72,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *arr = [_items objectAtIndex:indexPath.row];
-    NSString *temp2=[arr objectAtIndex:2];
-    int pageno = [temp2 intValue];
+    int pageno = [[arr objectAtIndex:0] intValue];
     
     [_delegate didSelectItem:pageno];
     
@@ -98,7 +91,7 @@
         // Delete the row from the data source
         
         NSArray *row_item = [_items objectAtIndex:indexPath.row];
-        NSString *path = [row_item objectAtIndex:5];
+        NSString *path = [row_item objectAtIndex:1];
         
         NSFileManager *fm = [NSFileManager defaultManager];
         [fm removeItemAtPath:path error:nil];

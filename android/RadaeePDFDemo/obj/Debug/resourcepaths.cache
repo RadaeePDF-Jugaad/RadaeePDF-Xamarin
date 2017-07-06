@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <AdditionalAndroidResourcePaths>
+    <AdditionalAndroidResourcePath>/Users/emanuele/.local/share/Xamarin/Xamarin.Android.Support.v4/23.4.0.0/embedded</AdditionalAndroidResourcePath>
+  </AdditionalAndroidResourcePaths>
+  <AdditionalJavaLibraryReferences>
+    <AdditionalJavaLibraryReference>/Users/emanuele/.local/share/Xamarin/Xamarin.Android.Support.v4/23.4.0.0/embedded/classes.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>/Users/emanuele/.local/share/Xamarin/Xamarin.Android.Support.v4/23.4.0.0/embedded/libs/internal_impl-23.4.0.jar</AdditionalJavaLibraryReference>
+  </AdditionalJavaLibraryReferences>
+  <AdditionalNativeLibraryReferences />
+</Paths>

@@ -1,0 +1,2 @@
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDFDemo/obj/Debug/RadaeePDFDemo.csprojResolveAssemblyReference.cache
+/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDFDemo/obj/Debug/RadaeePDFDemo.csproj.CoreCompileInputs.cache

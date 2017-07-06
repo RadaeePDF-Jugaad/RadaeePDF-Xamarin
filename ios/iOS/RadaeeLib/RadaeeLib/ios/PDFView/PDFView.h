@@ -45,7 +45,7 @@ alpha:((float)((rgbValue & 0xFF000000) >>  24))/255.0]
 - (void)OnAnnotCommboBox:(NSArray *)dataArray;
 @end
 
-@interface PDFView : UIScrollView<PDFVInnerDel, UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+@interface PDFView : UIScrollView<PDFVInnerDel, UIScrollViewDelegate>
 {
     BOOL readOnlyEnabled;
     BOOL autoSaveEnabled;

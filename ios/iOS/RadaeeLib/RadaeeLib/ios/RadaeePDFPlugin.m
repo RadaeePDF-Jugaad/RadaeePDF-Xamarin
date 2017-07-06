@@ -443,6 +443,11 @@
     return UIImagePNGRepresentation([[UIImage alloc] initWithCGImage:[m_pdf imageForPage:page]]);
 }
 
+- (void)refreshCurrentPage
+{
+    [m_pdf refreshCurrentPage];
+}
+
 #pragma mark - Settings
 
 - (void)toggleThumbSeekBar:(int)mode
@@ -542,23 +547,68 @@
     //annotSquigglyColor = 0xFF00FF00;
 }
 
-#pragma mark - load Bookmarks
+#pragma mark - Bookmarks
 
-+ (NSMutableArray *)loadBookmark
++ (NSString *)addToBookmarks:(NSString *)pdfPath page:(int)page label:(NSString *)label
 {
-    return [self loadBookmarkForPdf:@""];
-}
-
-+ (NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName
-{
-    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *dpath=[paths objectAtIndex:0];
-    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *tempName = [[pdfPath lastPathComponent] stringByDeletingPathExtension];
+    NSString *tempFile = [tempName stringByAppendingFormat:@"%d%@",page,@".bookmark"];
     
-    return [RadaeePDFPlugin addBookMarks:dpath :@"" :fm :0 pdfName:pdfName];
+    NSString *fileContent = [NSString stringWithFormat:@"%i",page];
+    NSString *BookMarkDir = [pdfPath stringByDeletingLastPathComponent];
+    
+    NSString *bookMarkFile = [BookMarkDir stringByAppendingPathComponent:tempFile];
+    
+    if (![[NSFileManager defaultManager] isWritableFileAtPath:BookMarkDir]) {
+        return @"Cannot add bookmark";
+    }
+    
+    NSLog(@"%@", bookMarkFile);
+    
+    if(![[NSFileManager defaultManager] fileExistsAtPath:bookMarkFile])
+    {
+        [[NSFileManager defaultManager]createFileAtPath:bookMarkFile contents:nil attributes:nil];
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:bookMarkFile];
+        [fileHandle seekToEndOfFile];
+        [fileHandle writeData:[fileContent dataUsingEncoding:NSUTF8StringEncoding]];
+        [fileHandle closeFile];
+        
+        return @"Add BookMark Success!";
+    }
+    else {
+        return @"BookMark Already Exist";
+    }
 }
 
-+ (NSMutableArray *)addBookMarks:(NSString *)dpath :(NSString *)subdir :(NSFileManager *)fm :(int)level pdfName:(NSString *)pdfName
++ (void)removeBookmark:(int)page pdfPath:(NSString *)pdfPath
+{
+    NSString *item = [[pdfPath lastPathComponent] stringByDeletingPathExtension];
+    NSString *folder = [pdfPath stringByDeletingLastPathComponent];
+    NSString *bookmarkFile = [folder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%i.bookmark", item, page]];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:bookmarkFile]) {
+        [[NSFileManager defaultManager] removeItemAtPath:bookmarkFile error:nil];
+    }
+}
+
++ (NSString *)getBookmarks:(NSString *)pdfPath
+{
+    if ([[NSFileManager defaultManager] fileExistsAtPath:pdfPath]) {
+        NSMutableArray *bookmarks = [RadaeePDFPlugin loadBookmarkForPdf:pdfPath withPath:NO];
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:bookmarks options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return jsonString;
+    }
+    
+    return @"";
+}
+
++ (NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfPath withPath:(BOOL)withPath
+{
+    return [RadaeePDFPlugin addBookMarks:[pdfPath stringByDeletingLastPathComponent] :@"" :[NSFileManager defaultManager] pdfName:[[pdfPath lastPathComponent] stringByDeletingPathExtension] withPath:withPath];
+}
+
++ (NSMutableArray *)addBookMarks:(NSString *)dpath :(NSString *)subdir :(NSFileManager *)fm pdfName:(NSString *)pdfName withPath:(BOOL)withPath
 {
     NSMutableArray *bookmarks = [NSMutableArray array];
     
@@ -566,16 +616,16 @@
     NSString *fName;
     while(fName = [fenum nextObject])
     {
-        
-        NSString *dst = [dpath stringByAppendingFormat:@"/%@",fName];
-        NSString *tempString ;
+        NSLog(@"%@", [dpath stringByAppendingPathComponent:fName]);
+        NSString *dst = [dpath stringByAppendingPathComponent:fName];
+        NSString *tempString;
         
         if(fName.length >10)
         {
-            tempString = [fName substringFromIndex:fName.length-9];
+            tempString = [fName pathExtension];
         }
         
-        if( [tempString isEqualToString:@".bookmark"] )
+        if( [tempString isEqualToString:@"bookmark"] )
         {
             if (pdfName.length > 0 && ![fName containsString:pdfName]) {
                 continue;
@@ -586,8 +636,14 @@
             NSString *content = [[NSString alloc]initWithData:[fileHandle availableData] encoding:NSUTF8StringEncoding];
             NSArray *myarray =[content componentsSeparatedByString:@","];
             [myarray objectAtIndex:0];
-            NSArray *arr = [[NSArray alloc] initWithObjects:[myarray objectAtIndex:0],[myarray objectAtIndex:1],[myarray objectAtIndex:2],[myarray objectAtIndex:3],[myarray objectAtIndex:4],dst,nil];
-            [bookmarks addObject:arr];
+            NSArray *arr = [[NSArray alloc] initWithObjects:[myarray objectAtIndex:0],dst,nil];
+            
+            if (withPath) {
+                [bookmarks addObject:arr];
+            } else {
+                [bookmarks addObject:@{@"Page:": [NSNumber numberWithInteger:[[myarray objectAtIndex:0] intValue]], @"Label": @""}];
+            }
+            
         }
     }
     

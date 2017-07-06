@@ -228,15 +228,25 @@ namespace RadaeeLib
 		[Export("pluginInit")]
 		RadaeePDFPlugin PluginInit { get; }
 
-		// +(NSMutableArray *)loadBookmark;
-		[Static]
-		[Export("loadBookmark")]
-		NSMutableArray LoadBookmark { get; }
-
 		// +(NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName;
 		[Static]
 		[Export ("loadBookmarkForPdf:")]
 		NSMutableArray LoadBookmarkForPdf (string pdfName);
+
+		// +(NSString *)addToBookmarks:(NSString *)pdfPath page:(int)page label:(NSString *)label;
+		[Static]
+		[Export ("addToBookmarks:page:label:")]
+		string AddToBookmarks (string pdfPath, int page, string label);
+
+		// +(void)removeBookmark:(int)page pdfPath:(NSString *)pdfPath;
+		[Static]
+		[Export ("removeBookmark:pdfPath:")]
+		void RemoveBookmark (int page, string pdfPath);
+
+		// +(NSString *)getBookmarks:(NSString *)pdfPath;
+		[Static]
+		[Export ("getBookmarks:")]
+		string GetBookmarks (string pdfPath);
 
 		// -(void)setPagingEnabled:(BOOL)enabled;
 		[Export ("setPagingEnabled:")]

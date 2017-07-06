@@ -11,13 +11,13 @@ dependencies: \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFVCanvas.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFVThread.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RDUtils/ReaderHandler.h \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/OutLineViewController.h \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/OUTLINE_ITEM.h \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/TextAnnotViewController.h \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFThumbView.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/BookmarkTableViewController.h \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RadaeePDFPlugin.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/TextAnnotViewController.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RDUtils/RDFormManager.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PopUpView/PopupMenu.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PopUpView/PopupMenuItem.h \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/ViewModeTableViewController.h
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/ViewModeTableViewController.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFThumbView.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RadaeePDFPlugin.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/OutLineViewController.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/OUTLINE_ITEM.h

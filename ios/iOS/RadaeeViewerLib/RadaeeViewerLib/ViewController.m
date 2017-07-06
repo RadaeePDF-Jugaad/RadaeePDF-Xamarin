@@ -29,6 +29,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addBookmark:(id)sender
+{
+    NSString *pdfPath = [[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"];
+    NSString *res = [RadaeePDFPlugin addToBookmarks:pdfPath page:1 label:@""];
+    NSLog(@"%@", res);
+}
+
+- (void)removeBookmark:(id)sender
+{
+    NSString *pdfPath = [[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"];
+    [RadaeePDFPlugin removeBookmark:0 pdfPath:pdfPath];
+}
+
+- (void)getBookmarks:(id)sender
+{
+    NSString *pdfPath = [[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"];
+    NSString *json = [RadaeePDFPlugin getBookmarks:pdfPath];
+    NSLog(@"%@", json);
+}
+
 - (void)apri:(id)sender
 {
     NSLog(@"VIEWCONTROLLER BOUNDS:");

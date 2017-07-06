@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{FE9B00D4-71AF-4C2C-9168-1654EECCC90F}|Default">
+  <MonoDevelop.Ide.ItemProperties.RadaeePDF-Xamarin PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.RadaeePDFDemo PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RadaeePDFDemo/MainActivity.cs">
+    <Files>
+      <File FileName="RadaeePDFDemo/MainActivity.cs" Line="10" Column="86" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

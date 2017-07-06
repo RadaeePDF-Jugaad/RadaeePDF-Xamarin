@@ -99,6 +99,25 @@ namespace RadaeeLib {
 			
 		}
 		
+		[Export ("addToBookmarks:page:label:")]
+		[CompilerGenerated]
+		public static string AddToBookmarks (string pdfPath, int page, string label)
+		{
+			if (pdfPath == null)
+				throw new ArgumentNullException ("pdfPath");
+			if (label == null)
+				throw new ArgumentNullException ("label");
+			var nspdfPath = NSString.CreateNative (pdfPath);
+			var nslabel = NSString.CreateNative (label);
+			
+			string ret;
+			ret = NSString.FromHandle (global::ApiDefinition.Messaging.IntPtr_objc_msgSend_IntPtr_int_IntPtr (class_ptr, Selector.GetHandle ("addToBookmarks:page:label:"), nspdfPath, page, nslabel));
+			NSString.ReleaseNative (nspdfPath);
+			NSString.ReleaseNative (nslabel);
+			
+			return ret;
+		}
+		
 		[Export ("encryptDocAs:userPwd:ownerPwd:permission:method:idString:")]
 		[CompilerGenerated]
 		public virtual bool EncryptDocAs (string path, string userPwd, string ownerPwd, int permission, int method, string idString)
@@ -139,6 +158,21 @@ namespace RadaeeLib {
 			} else {
 				return NSString.FromHandle (global::ApiDefinition.Messaging.IntPtr_objc_msgSendSuper_int (this.SuperHandle, Selector.GetHandle ("extractTextFromPage:"), pageNum));
 			}
+		}
+		
+		[Export ("getBookmarks:")]
+		[CompilerGenerated]
+		public static string GetBookmarks (string pdfPath)
+		{
+			if (pdfPath == null)
+				throw new ArgumentNullException ("pdfPath");
+			var nspdfPath = NSString.CreateNative (pdfPath);
+			
+			string ret;
+			ret = NSString.FromHandle (global::ApiDefinition.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, Selector.GetHandle ("getBookmarks:"), nspdfPath));
+			NSString.ReleaseNative (nspdfPath);
+			
+			return ret;
 		}
 		
 		[Export ("getImageForPage:")]
@@ -244,6 +278,19 @@ namespace RadaeeLib {
 			} else {
 				global::ApiDefinition.Messaging.void_objc_msgSendSuper (this.SuperHandle, Selector.GetHandle ("pluginInitialize"));
 			}
+		}
+		
+		[Export ("removeBookmark:pdfPath:")]
+		[CompilerGenerated]
+		public static void RemoveBookmark (int page, string pdfPath)
+		{
+			if (pdfPath == null)
+				throw new ArgumentNullException ("pdfPath");
+			var nspdfPath = NSString.CreateNative (pdfPath);
+			
+			global::ApiDefinition.Messaging.void_objc_msgSend_int_IntPtr (class_ptr, Selector.GetHandle ("removeBookmark:pdfPath:"), page, nspdfPath);
+			NSString.ReleaseNative (nspdfPath);
+			
 		}
 		
 		[Export ("setColor:forFeature:")]
@@ -832,17 +879,6 @@ namespace RadaeeLib {
 					global::ApiDefinition.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, Selector.GetHandle ("setLineImage:"), value.Handle);
 				}
 			}
-		}
-		
-		[CompilerGenerated]
-		public static NSMutableArray LoadBookmark {
-			[Export ("loadBookmark")]
-			get {
-				NSMutableArray ret;
-				ret =  Runtime.GetNSObject<NSMutableArray> (global::ApiDefinition.Messaging.IntPtr_objc_msgSend (class_ptr, Selector.GetHandle ("loadBookmark")));
-				return ret;
-			}
-			
 		}
 		
 		[CompilerGenerated]

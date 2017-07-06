@@ -7,21 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PDFView.h"
-#import "PDFIOS.h"
-#import "OutLineViewController.h"
 #import <CoreData/CoreData.h>
-#import "TextAnnotViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "PDFThumbView.h"
+#import "PDFView.h"
 #import "BookmarkTableViewController.h"
-#import "RadaeePDFPlugin.h"
+#import "TextAnnotViewController.h"
 #import "RDFormManager.h"
 
 @class OutLineViewController;
 @class PDFView;
 @class PopupMenu;
 @class PDFV;
+@class PDFThumbView;
 
 // define the protocol for the delegate
 @protocol RDPDFViewControllerDelegate

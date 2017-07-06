@@ -13,6 +13,9 @@
 
 
 - (IBAction)apri:(id)sender;
+- (IBAction)addBookmark:(id)sender;
+- (IBAction)removeBookmark:(id)sender;
+- (IBAction)getBookmarks:(id)sender;
 
 @end
 

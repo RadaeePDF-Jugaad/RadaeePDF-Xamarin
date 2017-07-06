@@ -280,9 +280,9 @@
 			files = (
 				A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */,
 				A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */,
+				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
 				A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */,
 				A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */,
-				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
 				A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */,
 				A864EF871D17EBA400F4B976 /* PopupMenu.h in Headers */,
 				A8A212D91E3B4432000E24AC /* ReaderHandler.h in Headers */,
