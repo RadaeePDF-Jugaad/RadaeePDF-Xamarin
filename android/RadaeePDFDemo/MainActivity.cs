@@ -31,6 +31,12 @@ namespace RadaeePDFDemo
             //mPdfManager.SetTitleBGColor(Convert.ToInt32("0xFFffff00", 16));
             //mPdfManager.SetIconsBGColor(Convert.ToInt32("0xFFFF0000", 16));
 
+            //bookmarks
+            //Global.Init(this);
+            //mPdfManager.AddToBookmarks(this, "/mnt/sdcard/Download/pdf/License.pdf", 0, "Page 1");
+            //mPdfManager.RemoveBookmark(2, "/mnt/sdcard/Download/pdf/License.pdf");
+            //Log.Debug(TAG, mPdfManager.GetBookmarksAsJson("/mnt/sdcard/Download/pdf/License.pdf"));
+
             // Get our button from the layout resource,
             // and attach an event to it
             Button activate = FindViewById<Button>(Resource.Id.activate);
