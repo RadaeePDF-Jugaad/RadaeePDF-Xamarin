@@ -34,7 +34,7 @@ namespace RadaeePDFDemo
             //bookmarks
             //Global.Init(this);
             //mPdfManager.AddToBookmarks(this, "/mnt/sdcard/Download/pdf/License.pdf", 0, "Page 1");
-            //mPdfManager.RemoveBookmark(2, "/mnt/sdcard/Download/pdf/License.pdf");
+            //mPdfManager.RemoveBookmark(0, "/mnt/sdcard/Download/pdf/License.pdf");
             //Log.Debug(TAG, mPdfManager.GetBookmarksAsJson("/mnt/sdcard/Download/pdf/License.pdf"));
 
             // Get our button from the layout resource,
