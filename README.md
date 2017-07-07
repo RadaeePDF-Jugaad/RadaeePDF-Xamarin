@@ -65,4 +65,5 @@ RadaeePDF library version included:
 - Android: v3.14
 - iOS: v3.8.1
 
-More information about RadaeePDF SDK on http://www.radaeepdf.com.
+More information about RadaeePDF SDK on http://www.radaeepdf.com.  
+Knowledge Base articles: http://www.radaeepdf.com/support/knowledge-base?view=kb&catid=4
