@@ -1,7 +1,0 @@
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/bin/Debug/RadaeePDF-Xamarin.dll
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/bin/Debug/RadaeePDF-Xamarin.pdb
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/bin/Debug/Xamarin.Android.Support.v4.dll
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/obj/Debug/RadaeePDF-Xamarin.csprojResolveAssemblyReference.cache
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/obj/Debug/RadaeePDF-Xamarin.csproj.CoreCompileInputs.cache
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/obj/Debug/RadaeePDF-Xamarin.dll
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/android/RadaeePDF-Xamarin/obj/Debug/RadaeePDF-Xamarin.pdb

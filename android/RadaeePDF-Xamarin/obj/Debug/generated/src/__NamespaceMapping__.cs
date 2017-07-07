@@ -1,6 +1,0 @@
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.radaee.pdf", Managed="Com.Radaee.Pdf")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.radaee.pdf.adv", Managed="Com.Radaee.Pdf.Adv")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.radaee.reader", Managed="Com.Radaee.Reader")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.radaee.util", Managed="Com.Radaee.Util")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.radaee.view", Managed="Com.Radaee.View")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.radaee.viewlib", Managed="Com.Radaee.Viewlib")]
