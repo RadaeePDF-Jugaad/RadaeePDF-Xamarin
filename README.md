@@ -66,4 +66,4 @@ RadaeePDF library version included:
 - iOS: v3.8.1
 
 More information about RadaeePDF SDK on http://www.radaeepdf.com.  
-Knowledge Base articles: http://www.radaeepdf.com/support/knowledge-base?view=kb&catid=4
+For guide please check [Knowledge Base articles](http://www.radaeepdf.com/support/knowledge-base?view=kb&catid=4)
