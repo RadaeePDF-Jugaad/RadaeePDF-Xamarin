@@ -107,6 +107,7 @@
 - (void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
 - (id)openFromAssets:(NSString *)file withPassword:(NSString *)password;
 - (id)openFromPath:(NSString *)path withPassword:(NSString *)password;
+- (id)openFromMem:(NSData *)data withPassword:(NSString *)password;
 - (NSString *)fileState;
 - (int)getPageNumber;
 - (int)getPageCount;

@@ -111,7 +111,7 @@
             NSString *documentsDirectory = [paths objectAtIndex:0];
             NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[url stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
             
-            return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
+            return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave data:nil];
         } else {
             return [self openFromPath:file atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
         }
@@ -136,12 +136,17 @@
     
     _lastOpenedPath = filePath;
     
-    return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
+    return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave data:nil];
 }
 
 - (id)openFromPath:(NSString *)path withPassword:(NSString *)password
 {
     return [self openFromPath:path atPage:0 withPassword:password readOnly:NO autoSave:NO];
+}
+
+- (id)openFromMem:(NSData *)data withPassword:(NSString *)password
+{
+    return [self openPdf:nil atPage:0 withPassword:password readOnly:NO autoSave:NO data:data];
 }
 
 - (id)openFromPath:(NSString *)path atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave
@@ -155,10 +160,10 @@
     
     _lastOpenedPath = filePath;
     
-    return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave];
+    return [self openPdf:filePath atPage:page withPassword:password readOnly:readOnly autoSave:autoSave data:nil];
 }
 
-- (RDPDFViewController *)openPdf:(NSString *)filePath atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave
+- (RDPDFViewController *)openPdf:(NSString *)filePath atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave data:(NSData *)data
 {
     NSLog(@"%@", filePath);
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
@@ -168,7 +173,25 @@
     
     [self readerInit];
     
-    int result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave];
+    int result = 0;
+    
+    //Open PDF from Mem demo
+    if (data != nil) {
+        const char *path1 = [filePath UTF8String];
+        FILE *file1 = fopen(path1, "rb");
+        fseek(file1, 0, SEEK_END);
+        long filesize1 = ftell(file1);
+        fseek(file1, 0, SEEK_SET);
+        buffer = malloc((filesize1)*sizeof(char));
+        fread(buffer, filesize1, 1, file1);
+        fclose(file1);
+
+        //Open PDF file
+        result = [m_pdf PDFopenMem: buffer :(int)filesize1 :nil];
+    } else {
+        result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave];
+    }
+
     NSLog(@"%d", result);
     if(result != err_ok && result != err_open){
         //pdf fail
@@ -346,6 +369,7 @@
 
 - (void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type
 {
+    NSLog(@"Activate License");
     [self pluginInitialize];
     
     [[NSUserDefaults standardUserDefaults] setObject:bundleId forKey:@"actBundleId"];

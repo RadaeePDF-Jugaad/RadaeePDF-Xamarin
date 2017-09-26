@@ -65,6 +65,7 @@ typedef struct _PDF_PAGE_IMAGE * PDF_PAGE_IMAGE;
 typedef struct _PDF_DOC_FORM * PDF_DOC_FORM;
 typedef struct _PDF_PAGE_FORM * PDF_PAGE_FORM;
 typedef struct _PDF_OBJ * PDF_OBJ;
+typedef struct _PDF_SIGN *PDF_SIGN;
 typedef unsigned long long PDF_OBJ_REF;
 
 /**
@@ -554,13 +555,9 @@ bool Document_encryptAs(PDF_DOC doc, NSString *dst, NSString *upswd, NSString *o
  *	@return		true or false.
  */
 bool Document_isEncrypted( PDF_DOC doc );
-unsigned char* Document_getSignContents( PDF_DOC doc );
-int Document_getSignContentsLen( PDF_DOC doc );
-const char *Document_getSignFilter( PDF_DOC doc );
-const char *Document_getSignSubFilter( PDF_DOC doc );
-const int *Document_getSignByteRange( PDF_DOC doc );
-int Document_getSignByteRangeCount( PDF_DOC doc );
-int Document_checkSignByteRange( PDF_DOC doc );
+
+int Document_verifySign(PDF_DOC doc, PDF_SIGN sign);
+
 int Document_getEFCount(PDF_DOC doc);
 NSString *Document_getEFName(PDF_DOC doc, int index);
 NSString *Document_getEFDesc(PDF_DOC doc, int index);
@@ -645,12 +642,15 @@ bool Document_setGStateStrokeAlpha( PDF_DOC doc, PDF_DOC_GSTATE state, int alpha
  */
 bool Document_setGStateFillAlpha( PDF_DOC doc, PDF_DOC_GSTATE state, int alpha );
 bool Document_setGStateStrokeDash(PDF_DOC doc, PDF_DOC_GSTATE state, const float *dash, int dash_cnt, float phase);
+bool Document_setGStateBlendMode(PDF_DOC doc, PDF_DOC_GSTATE state, int bmode);
+
 PDF_DOC_FORM Document_newForm(PDF_DOC doc);
 PDF_PAGE_FONT Document_addFormResFont(PDF_DOC doc, PDF_DOC_FORM form, PDF_DOC_FONT font);
 PDF_PAGE_IMAGE Document_addFormResImage(PDF_DOC doc, PDF_DOC_FORM form, PDF_DOC_IMAGE image);
 PDF_PAGE_GSTATE Document_addFormResGState(PDF_DOC doc, PDF_DOC_FORM form, PDF_DOC_GSTATE gstate);
 PDF_PAGE_FORM Document_addFormResForm(PDF_DOC doc, PDF_DOC_FORM form, PDF_DOC_FORM sub);
 void Document_setFormContent(PDF_DOC doc, PDF_DOC_FORM form, float x, float y, float w, float h, PDF_PAGECONTENT content);
+void Document_setFormTransparency(PDF_DOC doc, PDF_DOC_FORM form, bool isolate, bool knockout);
 void Document_freeForm(PDF_DOC doc, PDF_DOC_FORM form);
 /**
  *	@brief	insert a page to Document
@@ -746,6 +746,11 @@ PDF_DOC_IMAGE Document_newImageJPEG( PDF_DOC doc, const char *path );
  */
 PDF_DOC_IMAGE Document_newImageJPX( PDF_DOC doc, const char *path );
 
+NSString *Sign_getIssue(PDF_SIGN sign);
+NSString *Sign_getSubject(PDF_SIGN sign);
+long Sign_getVersion(PDF_SIGN sign);
+
+int Page_sign(PDF_PAGE page, PDF_DOC_FORM appearence, const PDF_RECT *box, const char *cert_file, const char *pswd, const char *reason, const char *location, const char *contact);
 bool Page_getCropBox( PDF_PAGE page, PDF_RECT *box );
 bool Page_getMediaBox( PDF_PAGE page, PDF_RECT *box );
 /**
@@ -924,6 +929,7 @@ PDF_ANNOT Page_getAnnot( PDF_PAGE page, int index );
  */
 PDF_ANNOT Page_getAnnotFromPoint( PDF_PAGE page, float x, float y );
 int Page_getAnnotSignStatus(PDF_PAGE page, PDF_ANNOT annot);
+PDF_SIGN Page_getAnnotSign(PDF_PAGE page, PDF_ANNOT annot);
 /**
  *	@brief	is annotation locked?
  *          to invoke this function, developers should call Page_objsStart or Page_render before.
@@ -963,6 +969,8 @@ bool Page_isAnnotHide( PDF_PAGE page, PDF_ANNOT annot );
  *	@param 	hide 	true or false
  */
 void Page_setAnnotHide( PDF_PAGE page, PDF_ANNOT annot, bool hide );
+bool Page_setAnnotName(PDF_PAGE page, PDF_ANNOT annot, const char *name);
+PDF_ANNOT Page_getAnnotByName(PDF_PAGE page, const char *name);
 /**
  *	@brief	get annotation type.
  *          this can be invoked after ObjsStart or Render or RenderToBmp.
@@ -1001,6 +1009,8 @@ void Page_setAnnotHide( PDF_PAGE page, PDF_ANNOT annot, bool hide );
  *          26: rich media
  */
 int Page_getAnnotType( PDF_PAGE page, PDF_ANNOT annot );
+int Page_signAnnotField(PDF_PAGE page, PDF_ANNOT annot, PDF_DOC_FORM appearence, const char *cert_file, const char *pswd, const char *reason, const char *location, const char *contact);
+
 /**
  *	@brief	get annotation field type in acroForm.
  *          this can be invoked after ObjsStart or Render or RenderToBmp.
@@ -1496,7 +1506,7 @@ bool Page_getAnnotEditTextRect( PDF_PAGE page, PDF_ANNOT annot, PDF_RECT *rect )
  *	@return	text size in PDF coordinate.
  */
 float Page_getAnnotEditTextSize( PDF_PAGE page, PDF_ANNOT annot );
-bool Page_getAnnotEditTextFormat( PDF_PAGE page, PDF_ANNOT annot, char *text, int len );
+bool Page_setAnnotEditTextSize(PDF_PAGE page, PDF_ANNOT annot, float fsize);
 
 /**
  *	@brief	get text of edit-box, may either for free-text annotation and widget annotation.
@@ -1527,6 +1537,9 @@ bool Page_setAnnotEditText( PDF_PAGE page, PDF_ANNOT annot, const char *text );
 bool Page_setAnnotEditFont(PDF_PAGE page, PDF_ANNOT annot, PDF_DOC_FONT font);
 int Page_getAnnotEditTextColor(PDF_PAGE page, PDF_ANNOT annot);
 bool Page_setAnnotEditTextColor(PDF_PAGE page, PDF_ANNOT annot, int color);
+
+int Page_exportAnnot(PDF_PAGE page, PDF_ANNOT annot, unsigned char *data, int data_len);
+bool Page_importAnnot(PDF_PAGE page, const PDF_RECT *rect, const unsigned char *data, int data_len);
 
 /**
  *	@brief	add an edit-box.

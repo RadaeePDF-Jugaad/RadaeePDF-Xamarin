@@ -22,7 +22,7 @@
     NSArray *pickViewArr;
     UIButton *confirmPickerBtn;
     int selectItem;
-    UITextField *textFd;
+    UITextView *textV;
 	UIPopoverController *bookmarkPopover;
     UIPopoverController *viewModePopover;
     NSString *password;
@@ -284,10 +284,10 @@ extern uint g_oval_color;
     [confirmPickerBtn addTarget:self action:@selector(setComboselect) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:confirmPickerBtn];
     
-    textFd = [[UITextField alloc] init];
-    textFd.delegate = self;
-    [self.view addSubview:textFd];
-    textFd.hidden = YES;
+    textV = [[UITextView alloc] init];
+    textV.delegate = self;
+    [self.view addSubview:textV];
+    textV.hidden = YES;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
 }
@@ -1555,9 +1555,9 @@ extern uint g_oval_color;
         pickerView.hidden = YES;
         confirmPickerBtn.hidden = YES;
     }
-    if (!textFd.hidden){
-        [textFd resignFirstResponder];
-        textFd.hidden = YES;
+    if (!textV.hidden){
+        [textV resignFirstResponder];
+        textV.hidden = YES;
     }
     [self removeAnnotToolBar];
 }
@@ -2187,39 +2187,34 @@ extern uint g_oval_color;
 - (void)OnAnnotEditBox :(CGRect)annotRect :(NSString *)editText
 {
     NSLog(@"annotRect = %@",NSStringFromCGRect(annotRect));
-    textFd.hidden = NO;
-    textFd.frame = annotRect;
-    textFd.text = editText;
-    textFd.backgroundColor = [UIColor whiteColor];
-    textFd.font = [UIFont systemFontOfSize:annotRect.size.height -3];
-    [self.view bringSubviewToFront:textFd];
-    [textFd becomeFirstResponder];
+    textV.hidden = NO;
+    textV.frame = annotRect;
+    textV.text = editText;
+    textV.backgroundColor = [UIColor whiteColor];
+    textV.font = [UIFont systemFontOfSize:annotRect.size.height -3];
+    [self.view bringSubviewToFront:textV];
+    [textV becomeFirstResponder];
 }
 
-#pragma mark - textField Delegate
-- (void)textFieldDidEndEditing:(UITextField *)textField;
+#pragma mark - textView Delegate
+- (void)textViewDidEndEditing:(UITextView *)textView
 {
-    NSLog(@"textView.text = %@",textField.text);
-    [m_view setEditBoxWithText:textField.text];
-}
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
+    NSLog(@"textView.text = %@",textView.text);
+    [m_view setEditBoxWithText:textV.text];
 }
 
-//add begin and end editing delegate to add keyboard notifications
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     return YES;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
     [self.view endEditing:YES];
+    
     return YES;
 }
 
@@ -2233,7 +2228,7 @@ extern uint g_oval_color;
     NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
     
-    float gap = (keyboardFrameBeginRect.size.height - 30) - (textFd.frame.origin.y + textFd.frame.size.height);
+    float gap = (keyboardFrameBeginRect.size.height - 30) - (textV.frame.origin.y + textV.frame.size.height);
     
     if (gap < 0) {
         [self.view setFrame:CGRectMake(0, gap, self.view.frame.size.width, self.view.frame.size.height)];

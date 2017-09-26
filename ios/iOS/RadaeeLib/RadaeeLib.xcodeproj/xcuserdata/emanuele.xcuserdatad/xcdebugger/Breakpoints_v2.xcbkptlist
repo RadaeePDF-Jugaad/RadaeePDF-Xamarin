@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "569"
             endingLineNumber = "569"
-            landmarkName = "+addToBookmarks:page:label:"
+            landmarkName = "-loadSettingsWithDefaults"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

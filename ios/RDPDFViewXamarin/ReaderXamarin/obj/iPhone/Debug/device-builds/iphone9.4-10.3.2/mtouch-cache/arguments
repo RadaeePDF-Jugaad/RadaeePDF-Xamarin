@@ -1,6 +1,6 @@
-# Version: 10.10.0.36 (d15-2: d2270eec)
+# Version: 11.0.0.0 (xcode9: 152b654a)
 # [first argument, ignore] # --cache
-/Library/Frameworks/Xamarin.iOS.framework/Versions/10.10.0.36/lib/mtouch/mtouch.exe \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.0.0.0/lib/mtouch/mtouch.exe \
 	/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-10.3.2/mtouch-cache \
 	--dev \
 	/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/bin/iPhone/Debug/device-builds/iphone9.4-10.3.2/ReaderXamarin.app \
@@ -11,7 +11,7 @@
 	--sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--sdk \
-	10.3 \
+	11.0 \
 	--targetver \
 	9.3 \
 	--aot-options=-O=float32 \
@@ -20,6 +20,7 @@
 	--symbollist \
 	/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-10.3.2/mtouch-symbols.list \
 	--dsym=no \
+	--registrar:static \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \

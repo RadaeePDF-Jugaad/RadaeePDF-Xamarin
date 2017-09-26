@@ -6,11 +6,11 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		PADD/RhGvfX/ZruY4XQOz5uMJ/U=
+		iBtw/4QM6pv5PyxWkKTVWVoLQSY=
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		1HEqQzBs86I+1exJODjsKA2zNuM=
+		QYcd0G38QWooI9yNUZ6V/Ud9tqM=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		UMQbtG2/a0Pz9eg5qfP72T2rgJ8=
+		d2tQxcw1NrakonAZAMBx3fEXiEw=
 		</data>
 		<key>Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		NMUaxU8qhXxf3z2aQVSWvKrgl0M=
+		jRavmIXRJ6FngzwO8ae/RvbK4pY=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
@@ -30,19 +30,7 @@
 		</data>
 		<key>Main.storyboardc/UINavigationController-10.nib</key>
 		<data>
-		MQ9IcVrZLfwPmweoROcuzApXBLo=
-		</data>
-		<key>Mono.Security.aotdata.arm64</key>
-		<data>
-		OAOrrqHucoxLLGfbxDRM9DPLPIg=
-		</data>
-		<key>Mono.Security.dll</key>
-		<data>
-		Fm6CCgQI1EkWFPfwiOYa8PW1pqc=
-		</data>
-		<key>Mono.Security.pdb</key>
-		<data>
-		RxCxdglKj0cj3onYVl5sLS8DWnw=
+		CFq+tQaghc++cqXVnAjdhxEHLUI=
 		</data>
 		<key>MonoTouchDebugConfiguration.txt</key>
 		<data>
@@ -58,55 +46,43 @@
 		</data>
 		<key>RDPDFViewXamarin.aotdata.arm64</key>
 		<data>
-		U3hewMTlfH8zwpMzX8vKzlXBC7Y=
+		kMMWia98G9dm6vvksbCpcvACxnk=
 		</data>
 		<key>RDPDFViewXamarin.dll</key>
 		<data>
-		ZtvFJPXrUSLl7aCwbNDzmTSri5A=
+		cQD40dcGUXCIspPI+1tSmT67JAI=
 		</data>
 		<key>RDPDFViewXamarin.pdb</key>
 		<data>
-		ryUI4x4yS/KM5eeSOPXVTfKEK/s=
+		HPP7S01OCnoBSpicdvwbd9R2p8Y=
 		</data>
 		<key>ReaderXamarin.aotdata.arm64</key>
 		<data>
-		GCTmFHe/pfzhjMtEiwwHW5UqTno=
+		8vEZz43yhuy1KELUPfROcGJof7E=
 		</data>
 		<key>ReaderXamarin.exe</key>
 		<data>
-		5wTSmL2MR29lTruZDDspFaniFmQ=
+		gEfH5GFte8l2ZjIPMP3MG5xvksc=
 		</data>
 		<key>ReaderXamarin.pdb</key>
 		<data>
-		kBcpL/EYNKFPNiOvN629pm3JXS0=
+		5UE9r5LTMTUj99fZV7Ih7BhNESY=
 		</data>
 		<key>Settings.bundle/Root.plist</key>
 		<data>
 		nrVMGKClE6pvxn6IcBgG4it6i0A=
 		</data>
-		<key>System.aotdata.arm64</key>
-		<data>
-		ahXCpW7mKVQosBgFu5/5sYfSuPA=
-		</data>
-		<key>System.dll</key>
-		<data>
-		kWCAQ1TwoziT4CoCTJWmX9ioOk4=
-		</data>
-		<key>System.pdb</key>
-		<data>
-		2Ylu2Moy3dnSdMspuC9jide3Fv4=
-		</data>
 		<key>Xamarin.iOS.aotdata.arm64</key>
 		<data>
-		MlJRuHnWvE39m6CvRq9LwROpnxM=
+		gxpSN1K6mF3d6/kDlTDqw2QBNys=
 		</data>
 		<key>Xamarin.iOS.dll</key>
 		<data>
-		egBwE9XUl3t9QlYVVrr8/OPt0iE=
+		SpvFjlXj7FEIFiHdmN135b8X4xU=
 		</data>
 		<key>Xamarin.iOS.dll.mdb</key>
 		<data>
-		NbRtvuT4nc2qCvtbg3pS4KBZozU=
+		aSU0O8xCJPwKM8yldd2q8002mag=
 		</data>
 		<key>annot_remove.png</key>
 		<data>
@@ -198,7 +174,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		y7q9tygAqZ7vvzWMX4e7DXZOZVI=
+		aKJul5Xk6UIcXTHsC9iWIZJflEM=
 		</data>
 		<key>fdat/00</key>
 		<data>
@@ -316,53 +292,49 @@
 		<data>
 		V0qsijCQmrsoaGRwukFzfjGK8AM=
 		</data>
-		<key>libMono.Security.dll.dylib</key>
-		<data>
-		xuQ8BQ2PJCl/NUxzvpCE6oE6Gno=
-		</data>
 		<key>libRDPDFViewXamarin.dll.dylib</key>
 		<data>
-		ZBIWWgtsmOIuhY+pKWq+cFtfCdE=
+		RIchX+O6iYsLQumtz7by+dvEOGQ=
 		</data>
 		<key>libReaderXamarin.exe.dylib</key>
 		<data>
-		wJyCxbkbVaacBaUDGCXt5TgDyqE=
-		</data>
-		<key>libSystem.dll.dylib</key>
-		<data>
-		DCr0r7d/MZzV67DX0f5VRCw9BlM=
+		NTapWLQka/o18vUBUFyqFMG+V5Q=
 		</data>
 		<key>libXamarin.iOS.dll.dylib</key>
 		<data>
-		2cuTIxNzX2qp6cmimEY3po4/e/I=
+		d0M0Z8CGR3Z6eT7kFo1/7wj61vo=
 		</data>
 		<key>libmonosgen-2.0.dylib</key>
 		<data>
-		JMfV7heUaQKRdfkkvPgdyYCXIHE=
+		ol/0W/P9iOfx/uuR2s4eBb1AJGE=
 		</data>
 		<key>libmscorlib.dll.dylib</key>
 		<data>
-		LxzF1zbdU2dh1aBU/Gb8TAnDWz8=
+		o6uUxNc8VV5NxgsnFUCWYCW9jLY=
 		</data>
 		<key>libxamarin-debug.dylib</key>
 		<data>
-		yhUxcarv5w2nf8ftCusibD4ydVA=
+		D6Uk1e2BKpXT3YW79wwKWD33RZs=
 		</data>
 		<key>mscorlib.aotdata.arm64</key>
 		<data>
-		Ev3DpYPfpZbho9clXa8jyMxV0hw=
+		fSvc0zI0jywCO9ITdi1jcriS+zU=
 		</data>
 		<key>mscorlib.dll</key>
 		<data>
-		K3DqAlNq/3G4tarPO80QMSW2E/A=
+		M9BJcgZfEIvVDMqNtRaEeQ3En0w=
 		</data>
 		<key>mscorlib.pdb</key>
 		<data>
-		ms4FVFgFCxbkJMKfi4hGxoi7zX0=
+		BCMSVSo+cRaFLn17cFTo1RcjY9E=
 		</data>
 		<key>test.pdf</key>
 		<data>
 		2Rt0v/qWMRyiqNPrUkkfj88Bp7o=
+		</data>
+		<key>test2.pdf</key>
+		<data>
+		vs8/I+dAEmC8cp7QjFLIpqhxGw8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -371,11 +343,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1HEqQzBs86I+1exJODjsKA2zNuM=
+			QYcd0G38QWooI9yNUZ6V/Ud9tqM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5cqFGTs1bRtAdmFKEYr70HZ43BGd+yczSQHrwZ6BMlA=
+			giGakpIDkfAxYCnw0EmLuxpe3B2lPze1lqTn7nSG6J4=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -393,22 +365,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UMQbtG2/a0Pz9eg5qfP72T2rgJ8=
+			d2tQxcw1NrakonAZAMBx3fEXiEw=
 			</data>
 			<key>hash2</key>
 			<data>
-			4o/bRPZZ9o0T2gVmJdQflJufye+qbDZlt476RHMNDgo=
+			chhK42eLjZcuk3BCtYysFFd4yYkeontluLLh0x6l+y4=
 			</data>
 		</dict>
 		<key>Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NMUaxU8qhXxf3z2aQVSWvKrgl0M=
+			jRavmIXRJ6FngzwO8ae/RvbK4pY=
 			</data>
 			<key>hash2</key>
 			<data>
-			/MTWRfyETMKMl3TqDzQ1gaSD/W0W16edo1+B/AP9r1Q=
+			LF1W0tPSmSl92Ue0RuZeIqfHUcdPIFwgKmiF2Xv+y8k=
 			</data>
 		</dict>
 		<key>Main.storyboardc/Info.plist</key>
@@ -426,44 +398,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MQ9IcVrZLfwPmweoROcuzApXBLo=
+			CFq+tQaghc++cqXVnAjdhxEHLUI=
 			</data>
 			<key>hash2</key>
 			<data>
-			7Qm60kMRnwBTYHulAyUVM7KoyJuIq6gmIdXW1a+bn7U=
-			</data>
-		</dict>
-		<key>Mono.Security.aotdata.arm64</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OAOrrqHucoxLLGfbxDRM9DPLPIg=
-			</data>
-			<key>hash2</key>
-			<data>
-			fzIyQW/6/wmza9q4iFcH00bQy3QsJhZIDbjXtHqWDmU=
-			</data>
-		</dict>
-		<key>Mono.Security.dll</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Fm6CCgQI1EkWFPfwiOYa8PW1pqc=
-			</data>
-			<key>hash2</key>
-			<data>
-			HogNwdSVMwDaA5YbN1mmBhow6/qQ323xkRqjDdEq6fE=
-			</data>
-		</dict>
-		<key>Mono.Security.pdb</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RxCxdglKj0cj3onYVl5sLS8DWnw=
-			</data>
-			<key>hash2</key>
-			<data>
-			LuYLc6w6oMMPd5oxqjnntwciQfCZt54URbRoID05P0s=
+			tnG+JcBx6dS/Y1ciYLmgFpReZCHGGzOae0IHk9HMLzc=
 			</data>
 		</dict>
 		<key>MonoTouchDebugConfiguration.txt</key>
@@ -492,66 +431,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U3hewMTlfH8zwpMzX8vKzlXBC7Y=
+			kMMWia98G9dm6vvksbCpcvACxnk=
 			</data>
 			<key>hash2</key>
 			<data>
-			nAZd2S7FG8dfu7YDpmKylJ39Uyl1mpIKqP3ZPGEvU6s=
+			86UlFZMDcx/zUgHPZVxfiz/a7e0gu13U0mEBEELtIjE=
 			</data>
 		</dict>
 		<key>RDPDFViewXamarin.dll</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZtvFJPXrUSLl7aCwbNDzmTSri5A=
+			cQD40dcGUXCIspPI+1tSmT67JAI=
 			</data>
 			<key>hash2</key>
 			<data>
-			mXPEtLjYue+uOpj96XFy1XWShO2O6i89nsm0gyeBWOU=
+			3JIRmBzxJsR7s8K5Yzek0V/T9O9zghWL8LjGVoJv2Ko=
 			</data>
 		</dict>
 		<key>RDPDFViewXamarin.pdb</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ryUI4x4yS/KM5eeSOPXVTfKEK/s=
+			HPP7S01OCnoBSpicdvwbd9R2p8Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			dWVE5nCbsCDVeh6JynRzRdTOAwmqXZ1ZIG2DSPNiPQU=
+			kE5cG42nCcN8MVySDrINU05zpG1du64BJCcGoJMwnZM=
 			</data>
 		</dict>
 		<key>ReaderXamarin.aotdata.arm64</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GCTmFHe/pfzhjMtEiwwHW5UqTno=
+			8vEZz43yhuy1KELUPfROcGJof7E=
 			</data>
 			<key>hash2</key>
 			<data>
-			oGeLIBnRyTboBjx1yMUyEaXup9EtzNBBTjuuE4JAYPI=
+			pW/WaGVrpMAF50eMa/FUh3FRzNzKpEkYa6W8nSN2wg8=
 			</data>
 		</dict>
 		<key>ReaderXamarin.exe</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5wTSmL2MR29lTruZDDspFaniFmQ=
+			gEfH5GFte8l2ZjIPMP3MG5xvksc=
 			</data>
 			<key>hash2</key>
 			<data>
-			BFO6yb9ghAmfF9NtgDikUQzEC+wV4CoNQeARI4vAUVc=
+			vr/LgJMp2msNNSlzht0dey8TTz4yONEcU5oRmGb5VRY=
 			</data>
 		</dict>
 		<key>ReaderXamarin.pdb</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kBcpL/EYNKFPNiOvN629pm3JXS0=
+			5UE9r5LTMTUj99fZV7Ih7BhNESY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ye7yPlXLFYpgpXbphn7vt9GM/AhOyaJ/UU9eE8XvYJk=
+			Ke61TMEanOXE5eI3+pUpD2ZaY2LQ+DJ1jQwm61pyPDI=
 			</data>
 		</dict>
 		<key>Settings.bundle/Root.plist</key>
@@ -565,70 +504,37 @@
 			zi1Y0A+tVNNfppRDjT3LpbeC+xDRJTirIvMQJ0HkgMQ=
 			</data>
 		</dict>
-		<key>System.aotdata.arm64</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ahXCpW7mKVQosBgFu5/5sYfSuPA=
-			</data>
-			<key>hash2</key>
-			<data>
-			4vNFo17YtL6ZVYsv1UWnHUCElaLiExmRYsxWVbfwec8=
-			</data>
-		</dict>
-		<key>System.dll</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kWCAQ1TwoziT4CoCTJWmX9ioOk4=
-			</data>
-			<key>hash2</key>
-			<data>
-			FF7lXoznv6mk+8aC7YoBGE9HN1c6QPLLEmb525Sqoyo=
-			</data>
-		</dict>
-		<key>System.pdb</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2Ylu2Moy3dnSdMspuC9jide3Fv4=
-			</data>
-			<key>hash2</key>
-			<data>
-			pRJa2fmMDpuocIFYWaJEGi2Q17LAwkg3d3G+6vFHdb4=
-			</data>
-		</dict>
 		<key>Xamarin.iOS.aotdata.arm64</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MlJRuHnWvE39m6CvRq9LwROpnxM=
+			gxpSN1K6mF3d6/kDlTDqw2QBNys=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZRwzEHOLIneD9OPG6KuxlWcM1elhBR5V9lIkLvBD3Y8=
+			mbncH3TNU7SZjieXpQhnYiCvvYXyu1LcqB0GtOa1D58=
 			</data>
 		</dict>
 		<key>Xamarin.iOS.dll</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			egBwE9XUl3t9QlYVVrr8/OPt0iE=
+			SpvFjlXj7FEIFiHdmN135b8X4xU=
 			</data>
 			<key>hash2</key>
 			<data>
-			47A0+T9DCRNPG5nVEHDAEUkvvnZz5f+xaZhvt2YgoYo=
+			9Q1IaB/46kH0gfcxJ0rRemZZER5cX+5MS4JZcsMjeUo=
 			</data>
 		</dict>
 		<key>Xamarin.iOS.dll.mdb</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NbRtvuT4nc2qCvtbg3pS4KBZozU=
+			aSU0O8xCJPwKM8yldd2q8002mag=
 			</data>
 			<key>hash2</key>
 			<data>
-			CBOFX+eaiOFII9N98sop4AqGrz1zzXsCGcye2UlHg/Q=
+			ZYSweTUxPA+z7Z614rU8RdDWP0y7bfG+f1pucmrRqBs=
 			</data>
 		</dict>
 		<key>annot_remove.png</key>
@@ -877,11 +783,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			y7q9tygAqZ7vvzWMX4e7DXZOZVI=
+			aKJul5Xk6UIcXTHsC9iWIZJflEM=
 			</data>
 			<key>hash2</key>
 			<data>
-			dbw7nlsBDsk+2iENao7HPlGWmeoKJdFeR7db0sGkINM=
+			kbRr5IDSRbfw6EHis4A+Qq5CuH99yMkma6I7VoL6L8E=
 			</data>
 		</dict>
 		<key>fdat/00</key>
@@ -1203,125 +1109,103 @@
 			08VyQRnX2mKYNDMIjcIAt/VTwJRhZDzBHKZ+o0VbNow=
 			</data>
 		</dict>
-		<key>libMono.Security.dll.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xuQ8BQ2PJCl/NUxzvpCE6oE6Gno=
-			</data>
-			<key>hash2</key>
-			<data>
-			Q8OQSARpM4Jidh3nvhh6TOkzzyEq+a3k+d3yEyd375w=
-			</data>
-		</dict>
 		<key>libRDPDFViewXamarin.dll.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZBIWWgtsmOIuhY+pKWq+cFtfCdE=
+			RIchX+O6iYsLQumtz7by+dvEOGQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			FsNA9N4iztY9ZimYXZGSXCJHE0W5Xb/CH0eelRSoupc=
+			BnXETLSbTcLvoxe8uxs1uVj4EfhR+jJFkREHbDTrroo=
 			</data>
 		</dict>
 		<key>libReaderXamarin.exe.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wJyCxbkbVaacBaUDGCXt5TgDyqE=
+			NTapWLQka/o18vUBUFyqFMG+V5Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			YnhFvgkqjBB6ChNOpSoUYmsMH5rVA/wT04HUGDdN4hw=
-			</data>
-		</dict>
-		<key>libSystem.dll.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			DCr0r7d/MZzV67DX0f5VRCw9BlM=
-			</data>
-			<key>hash2</key>
-			<data>
-			EkiPTFh+SI48jnZSh+ggneqFacbA4Z1JlfP11OUSjWw=
+			LMmP4t3ncGNYEo22E7Iqeja8ZlfSIr7yMXudkWDuAks=
 			</data>
 		</dict>
 		<key>libXamarin.iOS.dll.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2cuTIxNzX2qp6cmimEY3po4/e/I=
+			d0M0Z8CGR3Z6eT7kFo1/7wj61vo=
 			</data>
 			<key>hash2</key>
 			<data>
-			OfB+5BFktsMUvHsGFrKU+FWK0kSyxWQ8eX8qfWvM7RI=
+			GP9ckz070YxP51CWJOK76xCiMAy2RdLHbmzocu7ta+U=
 			</data>
 		</dict>
 		<key>libmonosgen-2.0.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JMfV7heUaQKRdfkkvPgdyYCXIHE=
+			ol/0W/P9iOfx/uuR2s4eBb1AJGE=
 			</data>
 			<key>hash2</key>
 			<data>
-			xaR7l1WD9AehbnPVR5UkSd23NTPet/e0yf+Yjr5hI5E=
+			8byZ5EjXP43oLsc3lFLtWeMCimGCGGb3npkVhxV9Elc=
 			</data>
 		</dict>
 		<key>libmscorlib.dll.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LxzF1zbdU2dh1aBU/Gb8TAnDWz8=
+			o6uUxNc8VV5NxgsnFUCWYCW9jLY=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dmz9PFXRiysn4LofpjHbZhCFfLDKLHj+wQmB4068TOE=
+			brc+RhK6rG2T2UIOvsuwxeDKxkXiOPcgtIKmVgpbnBw=
 			</data>
 		</dict>
 		<key>libxamarin-debug.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yhUxcarv5w2nf8ftCusibD4ydVA=
+			D6Uk1e2BKpXT3YW79wwKWD33RZs=
 			</data>
 			<key>hash2</key>
 			<data>
-			VjITGpZ3y3XRpimNPiOA6RdDb6FXPf+ExpDWb+vaeXE=
+			Hrc7EpHWW2CyCFigeWhlIFwGhO297+3V2M7ju/+V88A=
 			</data>
 		</dict>
 		<key>mscorlib.aotdata.arm64</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ev3DpYPfpZbho9clXa8jyMxV0hw=
+			fSvc0zI0jywCO9ITdi1jcriS+zU=
 			</data>
 			<key>hash2</key>
 			<data>
-			GTjzB+sbVr179Ky0MdRhkF+epI9J4b56J0YVME2ZiCU=
+			wzGk/JjQKpM1Vn3v1wqUzaHw1AVrwsE5IEZMbcN6vYQ=
 			</data>
 		</dict>
 		<key>mscorlib.dll</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K3DqAlNq/3G4tarPO80QMSW2E/A=
+			M9BJcgZfEIvVDMqNtRaEeQ3En0w=
 			</data>
 			<key>hash2</key>
 			<data>
-			A/fMN8STveUCPfr+mV1YLSIYFFd9GptMgvktfH18QSw=
+			Rc++mBapCDubFaZpzSPGw2tjwvtxppZSBbXZEk8+5tk=
 			</data>
 		</dict>
 		<key>mscorlib.pdb</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ms4FVFgFCxbkJMKfi4hGxoi7zX0=
+			BCMSVSo+cRaFLn17cFTo1RcjY9E=
 			</data>
 			<key>hash2</key>
 			<data>
-			xRwAHPulTJ4lTYw4aTzGdJwzVT1PW/jlzrqrWGz2uq4=
+			8LgTvku6ckGqMq3JpV1+ZTcue/+gujn8zBOhwah3S24=
 			</data>
 		</dict>
 		<key>test.pdf</key>
@@ -1333,6 +1217,17 @@
 			<key>hash2</key>
 			<data>
 			H37cyGfVPWOGQ/W9Z0nF0SD4yR62C6i81nS1/wzRAzM=
+			</data>
+		</dict>
+		<key>test2.pdf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vs8/I+dAEmC8cp7QjFLIpqhxGw8=
+			</data>
+			<key>hash2</key>
+			<data>
+			aPBfi0aeuHCvaRyRQ3dQd030byIQwRmAPA5HKd3bTH0=
 			</data>
 		</dict>
 	</dict>

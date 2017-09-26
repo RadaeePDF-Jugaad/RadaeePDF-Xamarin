@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.0.1 (tarball Mon May 22 16:16:38 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.2.0 (tarball Fri Sep 15 02:07:52 EDT 2017)"
 	.asciz "ReaderXamarin.exe"
 	.asciz ""
 
@@ -129,7 +129,7 @@ ReaderXamarin_Application_Main_string__:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #208]
+ldr x16, [x16, #200]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -155,7 +155,7 @@ ldr x16, [x16, #208]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x2, [x16, #216]
+ldr x2, [x16, #208]
 .word 0xd2800001
 bl _p_1
 .word 0xf9400fb1
@@ -188,7 +188,7 @@ ReaderXamarin_AppDelegate_get_Window:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #224]
+ldr x16, [x16, #216]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -220,14 +220,14 @@ Lme_1:
 	.no_dead_strip ReaderXamarin_AppDelegate_set_Window_UIKit_UIWindow
 ReaderXamarin_AppDelegate_set_Window_UIKit_UIWindow:
 .loc 2 16 0 prologue_end
-.word 0xa9bb7bfd
+.word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xf9000fa1
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #232]
+ldr x16, [x16, #224]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -243,19 +243,27 @@ ldr x16, [x16, #232]
 .word 0xf9405631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba0
-.word 0xf9400fa1
-.word 0xf90023a1
-.word 0xf9001401
-.word 0x9100a000
-bl _p_2
-.word 0xf94023a0
+.word 0xf9400ba1
+.word 0xf9400fa0
+.word 0xf9001420
+.word 0x9100a021
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
 .word 0xf94013b1
-.word 0xf9408231
+.word 0xf9409e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
-.word 0xa8c57bfd
+.word 0xa8c47bfd
 .word 0xd65f03c0
 
 Lme_2:
@@ -273,7 +281,7 @@ ReaderXamarin_AppDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDic
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #240]
+ldr x16, [x16, #232]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -325,7 +333,7 @@ ReaderXamarin_AppDelegate_OnResignActivation_UIKit_UIApplication:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #248]
+ldr x16, [x16, #240]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -367,7 +375,7 @@ ReaderXamarin_AppDelegate_DidEnterBackground_UIKit_UIApplication:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #256]
+ldr x16, [x16, #248]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -409,7 +417,7 @@ ReaderXamarin_AppDelegate_WillEnterForeground_UIKit_UIApplication:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #264]
+ldr x16, [x16, #256]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -451,7 +459,7 @@ ReaderXamarin_AppDelegate_OnActivated_UIKit_UIApplication:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #272]
+ldr x16, [x16, #264]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -493,7 +501,7 @@ ReaderXamarin_AppDelegate_WillTerminate_UIKit_UIApplication:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #280]
+ldr x16, [x16, #272]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -533,7 +541,7 @@ ReaderXamarin_AppDelegate__ctor:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #288]
+ldr x16, [x16, #280]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -542,7 +550,7 @@ ldr x16, [x16, #288]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400ba0
-bl _p_3
+bl _p_2
 .word 0xf9400fb1
 .word 0xf9404a31
 .word 0xb4000051
@@ -562,7 +570,7 @@ Lme_9:
 ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin:
 .file 3 "/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/ViewController.cs"
 .loc 3 14 0 prologue_end
-.word 0xa9bb7bfd
+.word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000bb9
 .word 0xaa0003f9
@@ -570,7 +578,7 @@ ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #296]
+ldr x16, [x16, #288]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -588,7 +596,7 @@ ldr x16, [x16, #296]
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xaa1903e0
-bl _p_4
+bl _p_3
 .word 0xf94013b1
 .word 0xf9407631
 .word 0xb4000051
@@ -605,23 +613,31 @@ bl _p_4
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xf9400fa0
-.word 0xf90023a0
 .word 0xf9001720
-.word 0x9100a320
-bl _p_2
-.word 0xf94023a0
+.word 0x9100a321
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
 .loc 3 17 0
 .word 0xf94013b1
-.word 0xf940c231
+.word 0xf940de31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94013b1
-.word 0xf940d231
+.word 0xf940ee31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400bb9
 .word 0x910003bf
-.word 0xa8c57bfd
+.word 0xa8c47bfd
 .word 0xd65f03c0
 
 Lme_a:
@@ -636,7 +652,7 @@ ReaderXamarin_RadaeeDelegate_WillShowReader:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #304]
+ldr x16, [x16, #296]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -660,8 +676,8 @@ ldr x16, [x16, #304]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #312]
-bl _p_5
+ldr x0, [x16, #304]
+bl _p_4
 .word 0xf9400fb1
 .word 0xf9408231
 .word 0xb4000051
@@ -691,7 +707,7 @@ ReaderXamarin_RadaeeDelegate_DidShowReader:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #320]
+ldr x16, [x16, #312]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -715,8 +731,8 @@ ldr x16, [x16, #320]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #328]
-bl _p_5
+ldr x0, [x16, #320]
+bl _p_4
 .word 0xf9400fb1
 .word 0xf9408231
 .word 0xb4000051
@@ -746,7 +762,7 @@ ReaderXamarin_RadaeeDelegate_WillCloseReader:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #336]
+ldr x16, [x16, #328]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -770,8 +786,8 @@ ldr x16, [x16, #336]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #344]
-bl _p_5
+ldr x0, [x16, #336]
+bl _p_4
 .word 0xf9400fb1
 .word 0xf9408231
 .word 0xb4000051
@@ -801,7 +817,7 @@ ReaderXamarin_RadaeeDelegate_DidCloseReader:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #352]
+ldr x16, [x16, #344]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -825,8 +841,8 @@ ldr x16, [x16, #352]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #360]
-bl _p_5
+ldr x0, [x16, #352]
+bl _p_4
 .word 0xf9400fb1
 .word 0xf9408231
 .word 0xb4000051
@@ -857,7 +873,7 @@ ReaderXamarin_RadaeeDelegate_DidChangePage_int:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #368]
+ldr x16, [x16, #360]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -881,22 +897,22 @@ ldr x16, [x16, #368]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #376]
+ldr x0, [x16, #368]
 .word 0xf90023a0
 .word 0xb9801ba0
 .word 0xf90027a0
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #384]
+ldr x0, [x16, #376]
 .word 0xd2800281
 .word 0xd2800281
-bl _p_6
+bl _p_5
 .word 0xaa0003e1
 .word 0xf94023a0
 .word 0xf94027a2
 .word 0xb9001022
-bl _p_7
+bl _p_6
 .word 0xf94013b1
 .word 0xf940ba31
 .word 0xb4000051
@@ -945,7 +961,7 @@ ReaderXamarin_RadaeeDelegate_DidSearchTerm_string_bool:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #392]
+ldr x16, [x16, #384]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -969,9 +985,9 @@ ldr x16, [x16, #392]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #400]
+ldr x0, [x16, #392]
 .word 0xf9400fa1
-bl _p_7
+bl _p_6
 .word 0xf94017b1
 .word 0xf9408e31
 .word 0xb4000051
@@ -995,70 +1011,197 @@ Lme_10:
 	.no_dead_strip ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
 ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint:
 .loc 3 51 0 prologue_end
-.word 0xa9b77bfd
+.word 0xa9b07bfd
 .word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xfd0013a0
-.word 0xfd0017a1
+.word 0xf9000bb8
+.word 0xf9000fba
+.word 0xf90013a0
+.word 0xaa0103fa
+.word 0xfd0017a0
+.word 0xfd001ba1
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #408]
-.word 0xf90033b0
+ldr x16, [x16, #400]
+.word 0xf90037b0
 .word 0xf9400a11
-.word 0xf90037b1
-.word 0xf94033b1
-.word 0xf9403e31
+.word 0xf9003bb1
+.word 0xd2800018
+.word 0x910283a0
+.word 0xd2800000
+.word 0xf90053a0
+.word 0xf90057a0
+.word 0xf94037b1
+.word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf94037b1
+.word 0xf9403bb1
 .word 0xf9400231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf94033b1
-.word 0xf9405e31
+.word 0xf94037b1
+.word 0xf9407a31
 .word 0xb4000051
 .word 0xd63f0220
 .loc 3 52 0
-.word 0xf94033b1
-.word 0xf9406e31
+.word 0xf94037b1
+.word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x0, [x16, #408]
+.word 0xf9007fa0
+.word 0xaa1a03e0
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x0, [x16, #376]
+.word 0xd2800281
+.word 0xd2800281
+bl _p_5
+.word 0xaa0003e1
+.word 0xf9407fa0
+.word 0xb900103a
+bl _p_6
+.word 0xf94037b1
+.word 0xf940d631
+.word 0xb4000051
+.word 0xd63f0220
+.loc 3 53 0
+.word 0xf94037b1
+.word 0xf940e631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013a0
+.word 0xf9401402
+.word 0xaa1a03e0
+.word 0xaa0203e0
+.word 0xaa1a03e1
+.word 0xf9400042
+.word 0xf9420050
+.word 0xd63f0200
+.word 0xf9007ba0
+.word 0xf94037b1
+.word 0xf9411a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9407ba0
+bl _p_7
+.word 0xf90077a0
+.word 0xf94037b1
+.word 0xf9413631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94077a0
+.word 0xf90073a0
+.word 0xaa0003f8
+.loc 3 55 0
+.word 0xf94037b1
+.word 0xf9415231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94073a1
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x0, [x16, #416]
-.word 0xf90043a0
-.word 0xb9801ba0
-.word 0xf90047a0
+.word 0xf90063a0
+.word 0xaa0103e0
+.word 0x910243a0
+.word 0xf9005ba0
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf940e430
+.word 0xd63f0200
+.word 0xf9405bbe
+.word 0xfd0003c0
+.word 0xfd0007c1
+.word 0xf94037b1
+.word 0xf9419e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910243a0
+.word 0x910283a0
+.word 0xf9404ba0
+.word 0xf90053a0
+.word 0xf9404fa0
+.word 0xf90057a0
+.word 0x910283a0
+bl _p_8
+.word 0xfd006fa0
+.word 0xf94037b1
+.word 0xf941d231
+.word 0xb4000051
+.word 0xd63f0220
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #384]
-.word 0xd2800281
-.word 0xd2800281
-bl _p_6
-.word 0xaa0003e1
+ldr x0, [x16, #424]
+.word 0xd2800301
+.word 0xd2800301
+bl _p_5
+.word 0xfd406fa0
+.word 0xfd000800
+.word 0xf90067a0
+.word 0xaa1803e1
+.word 0x910203a0
+.word 0xf9005ba0
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf940e430
+.word 0xd63f0200
+.word 0xf9405bbe
+.word 0xfd0003c0
+.word 0xfd0007c1
+.word 0xf94037b1
+.word 0xf9422e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910203a0
+.word 0x910283a0
 .word 0xf94043a0
-.word 0xf94047a2
-.word 0xb9001022
-bl _p_7
-.word 0xf94033b1
-.word 0xf940c231
+.word 0xf90053a0
+.word 0xf94047a0
+.word 0xf90057a0
+.word 0x910283a0
+bl _p_9
+.word 0xfd006ba0
+.word 0xf94037b1
+.word 0xf9426231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 53 0
-.word 0xf94033b1
-.word 0xf940d231
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x0, [x16, #424]
+.word 0xd2800301
+.word 0xd2800301
+bl _p_5
+.word 0xaa0003e2
+.word 0xf94063a0
+.word 0xf94067a1
+.word 0xfd406ba0
+.word 0xfd000840
+bl _p_10
+.word 0xf94037b1
+.word 0xf942a231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf94033b1
-.word 0xf940e231
+.loc 3 56 0
+.word 0xf94037b1
+.word 0xf942b231
 .word 0xb4000051
 .word 0xd63f0220
+.word 0xf94037b1
+.word 0xf942c231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400bb8
+.word 0xf9400fba
 .word 0x910003bf
-.word 0xa8c97bfd
+.word 0xa8d07bfd
 .word 0xd65f03c0
 
 Lme_11:
@@ -1066,7 +1209,7 @@ Lme_11:
 	.align 4
 	.no_dead_strip ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint:
-.loc 3 56 0 prologue_end
+.loc 3 59 0 prologue_end
 .word 0xa9b67bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -1077,7 +1220,7 @@ ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoi
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #424]
+ldr x16, [x16, #432]
 .word 0xf90037b0
 .word 0xf9400a11
 .word 0xf9003bb1
@@ -1093,7 +1236,7 @@ ldr x16, [x16, #424]
 .word 0xf9406231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 57 0
+.loc 3 60 0
 .word 0xf94037b1
 .word 0xf9407231
 .word 0xb4000051
@@ -1101,17 +1244,17 @@ ldr x16, [x16, #424]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #432]
+ldr x0, [x16, #440]
 .word 0xf90043a0
 .word 0xb9801ba0
 .word 0xf9004fa0
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #384]
+ldr x0, [x16, #376]
 .word 0xd2800281
 .word 0xd2800281
-bl _p_6
+bl _p_5
 .word 0xf9404fa1
 .word 0xb9001001
 .word 0xf90047a0
@@ -1120,21 +1263,21 @@ bl _p_6
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #384]
+ldr x0, [x16, #376]
 .word 0xd2800281
 .word 0xd2800281
-bl _p_6
+bl _p_5
 .word 0xaa0003e2
 .word 0xf94043a0
 .word 0xf94047a1
 .word 0xf9404ba3
 .word 0xb9001043
-bl _p_8
+bl _p_10
 .word 0xf94037b1
 .word 0xf940f631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 58 0
+.loc 3 61 0
 .word 0xf94037b1
 .word 0xf9410631
 .word 0xb4000051
@@ -1152,7 +1295,7 @@ Lme_12:
 	.align 4
 	.no_dead_strip ReaderXamarin_ViewController__ctor_intptr
 ReaderXamarin_ViewController__ctor_intptr:
-.loc 3 156 0 prologue_end
+.loc 3 160 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -1160,7 +1303,7 @@ ReaderXamarin_ViewController__ctor_intptr:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #440]
+ldr x16, [x16, #448]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1178,17 +1321,17 @@ ldr x16, [x16, #440]
 .word 0xd63f0220
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_9
+bl _p_11
 .word 0xf94013b1
 .word 0xf9407231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 157 0
+.loc 3 161 0
 .word 0xf94013b1
 .word 0xf9408231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 159 0
+.loc 3 163 0
 .word 0xf94013b1
 .word 0xf9409231
 .word 0xb4000051
@@ -1206,7 +1349,7 @@ Lme_13:
 	.align 4
 	.no_dead_strip ReaderXamarin_ViewController_ViewDidLoad
 ReaderXamarin_ViewController_ViewDidLoad:
-.loc 3 162 0 prologue_end
+.loc 3 166 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf9000bba
@@ -1214,7 +1357,7 @@ ReaderXamarin_ViewController_ViewDidLoad:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #448]
+ldr x16, [x16, #456]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1230,19 +1373,19 @@ ldr x16, [x16, #448]
 .word 0xf9405631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 163 0
+.loc 3 167 0
 .word 0xf9400fb1
 .word 0xf9406631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_10
+bl _p_12
 .word 0xf9400fb1
 .word 0xf9408231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 165 0
+.loc 3 169 0
 .word 0xf9400fb1
 .word 0xf9409231
 .word 0xb4000051
@@ -1251,16 +1394,16 @@ bl _p_10
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x1, [x16, #456]
+ldr x1, [x16, #464]
 .word 0xaa1a03e0
 .word 0xf9400342
-.word 0xf9411450
+.word 0xf9412050
 .word 0xd63f0200
 .word 0xf9400fb1
 .word 0xf940c231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 166 0
+.loc 3 170 0
 .word 0xf9400fb1
 .word 0xf940d231
 .word 0xb4000051
@@ -1279,14 +1422,14 @@ Lme_14:
 	.align 4
 	.no_dead_strip ReaderXamarin_ViewController_DidReceiveMemoryWarning
 ReaderXamarin_ViewController_DidReceiveMemoryWarning:
-.loc 3 169 0 prologue_end
+.loc 3 173 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf9000ba0
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #464]
+ldr x16, [x16, #472]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1302,18 +1445,18 @@ ldr x16, [x16, #464]
 .word 0xf9405231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 170 0
+.loc 3 174 0
 .word 0xf9400fb1
 .word 0xf9406231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400ba0
-bl _p_11
+bl _p_13
 .word 0xf9400fb1
 .word 0xf9407a31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 172 0
+.loc 3 176 0
 .word 0xf9400fb1
 .word 0xf9408a31
 .word 0xb4000051
@@ -1339,7 +1482,7 @@ ReaderXamarin_ViewController_get_openBtn:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #472]
+ldr x16, [x16, #480]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1371,14 +1514,14 @@ Lme_16:
 	.no_dead_strip ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
 ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton:
 .loc 4 19 0 prologue_end
-.word 0xa9bb7bfd
+.word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xf9000fa1
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #480]
+ldr x16, [x16, #488]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1394,19 +1537,27 @@ ldr x16, [x16, #480]
 .word 0xf9405631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba0
-.word 0xf9400fa1
-.word 0xf90023a1
-.word 0xf9002001
-.word 0x91010000
-bl _p_2
-.word 0xf94023a0
+.word 0xf9400ba1
+.word 0xf9400fa0
+.word 0xf9002020
+.word 0x91010021
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
 .word 0xf94013b1
-.word 0xf9408231
+.word 0xf9409e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
-.word 0xa8c57bfd
+.word 0xa8c47bfd
 .word 0xd65f03c0
 
 Lme_17:
@@ -1414,8 +1565,8 @@ Lme_17:
 	.align 4
 	.no_dead_strip ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
 ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton:
-.loc 3 67 0 prologue_end
-.word 0xa9b37bfd
+.loc 3 70 0 prologue_end
+.word 0xa9a97bfd
 .word 0x910003fd
 .word 0xa90163b7
 .word 0xa9026bb9
@@ -1424,15 +1575,25 @@ ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #488]
+ldr x16, [x16, #496]
 .word 0xf9001fb0
 .word 0xf9400a11
 .word 0xf90023b1
 .word 0xd2800019
 .word 0xd2800018
+.word 0x910303a0
+.word 0xd2800000
+.word 0xf90063a0
+.word 0xf90067a0
+.word 0xf9006ba0
+.word 0xf9006fa0
+.word 0x9102c3a0
+.word 0xd2800000
+.word 0xf9005ba0
+.word 0xf9005fa0
 .word 0xd2800017
 .word 0xf9401fb1
-.word 0xf9404a31
+.word 0xf9407231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94023b1
@@ -1440,30 +1601,38 @@ ldr x16, [x16, #488]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401fb1
-.word 0xf9406a31
+.word 0xf9409231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 69 0
+.loc 3 72 0
 .word 0xf9401fb1
-.word 0xf9407a31
+.word 0xf940a231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
-bl _p_12
-.word 0xf90063a0
-.word 0xf9401fb1
-.word 0xf9409631
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94063a0
-.word 0xf9005fa0
-.word 0xf9001f40
-.word 0x9100e340
-bl _p_2
-.word 0xf9405fa0
-.loc 3 72 0
+bl _p_14
+.word 0xf900aba0
 .word 0xf9401fb1
 .word 0xf940be31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf940aba0
+.word 0xf9001f40
+.word 0x9100e341
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.loc 3 75 0
+.word 0xf9401fb1
+.word 0xf9410231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1471,19 +1640,19 @@ bl _p_2
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x1, [x16, #496]
+ldr x1, [x16, #504]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x2, [x16, #504]
+ldr x2, [x16, #512]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x3, [x16, #512]
+ldr x3, [x16, #520]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x4, [x16, #520]
+ldr x4, [x16, #528]
 .word 0xd2800040
 .word 0xaa0603e0
 .word 0xd2800045
@@ -1491,12 +1660,12 @@ ldr x4, [x16, #520]
 .word 0xf9420cd0
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9411e31
+.word 0xf9416231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 85 0
+.loc 3 88 0
 .word 0xf9401fb1
-.word 0xf9412e31
+.word 0xf9417231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1509,12 +1678,12 @@ ldr x4, [x16, #520]
 .word 0xd63f0200
 .word 0x53001c00
 .word 0xf9401fb1
-.word 0xf9416231
+.word 0xf941a631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 86 0
+.loc 3 89 0
 .word 0xf9401fb1
-.word 0xf9417231
+.word 0xf941b631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1526,12 +1695,12 @@ ldr x4, [x16, #520]
 .word 0xf941d050
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf941a231
+.word 0xf941e631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 87 0
+.loc 3 90 0
 .word 0xf9401fb1
-.word 0xf941b231
+.word 0xf941f631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1543,12 +1712,12 @@ ldr x4, [x16, #520]
 .word 0xf941e050
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf941e231
+.word 0xf9422631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 88 0
+.loc 3 91 0
 .word 0xf9401fb1
-.word 0xf941f231
+.word 0xf9423631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1560,43 +1729,43 @@ ldr x4, [x16, #520]
 .word 0xf941b450
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9422231
+.word 0xf9426631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 91 0
+.loc 3 94 0
 .word 0xf9401fb1
-.word 0xf9423231
+.word 0xf9427631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xf9401f40
-.word 0xf9005ba0
+.word 0xf900a7a0
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #528]
+ldr x0, [x16, #536]
 .word 0xd2800201
 .word 0xd2800201
-bl _p_13
+bl _p_15
 .word 0x93407c00
-.word 0xf90057a0
+.word 0xf900a3a0
 .word 0xf9401fb1
-.word 0xf9426e31
+.word 0xf942b231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf94057a1
-.word 0xf9405ba2
+.word 0xf940a3a1
+.word 0xf940a7a2
 .word 0xaa0203e0
 .word 0xf9400042
 .word 0xf941c050
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9429631
+.word 0xf942da31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 97 0
+.loc 3 100 0
 .word 0xf9401fb1
-.word 0xf942a631
+.word 0xf942ea31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1609,12 +1778,12 @@ bl _p_13
 .word 0xf941c430
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf942da31
+.word 0xf9431e31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 100 0
+.loc 3 103 0
 .word 0xf9401fb1
-.word 0xf942ea31
+.word 0xf9432e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1626,39 +1795,47 @@ bl _p_13
 .word 0xf941dc50
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9431a31
+.word 0xf9435e31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 123 0
+.loc 3 126 0
 .word 0xf9401fb1
-.word 0xf9432a31
+.word 0xf9436e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
 .word 0xf9401f40
-.word 0xf90053a0
+.word 0xf9009fa0
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #536]
-bl _p_14
-.word 0xf94053a1
-.word 0xf9004fa0
-bl _p_15
+ldr x0, [x16, #544]
+bl _p_16
+.word 0xf9409fa1
+.word 0xf9009ba0
+bl _p_17
 .word 0xf9401fb1
-.word 0xf9436631
+.word 0xf943aa31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9404fa0
-.word 0xf9004ba0
+.word 0xf9409ba0
 .word 0xf9001b40
-.word 0x9100c340
-bl _p_2
-.word 0xf9404ba0
-.loc 3 124 0
+.word 0x9100c341
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.loc 3 127 0
 .word 0xf9401fb1
-.word 0xf9438e31
+.word 0xf943ee31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1670,94 +1847,94 @@ bl _p_2
 .word 0xf941e450
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf943be31
-.word 0xb4000051
-.word 0xd63f0220
-.loc 3 126 0
-.word 0xf9401fb1
-.word 0xf943ce31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1a03e0
-.word 0xaa1a03e0
-.word 0xf9400341
-.word 0xf9412030
-.word 0xd63f0200
-.word 0xf90047a0
-.word 0xf9401fb1
-.word 0xf943f631
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94047a1
-.word 0xaa0103e0
-.word 0xf9400021
-.word 0xf9415830
-.word 0xd63f0200
-.word 0xf90043a0
-.word 0xf9401fb1
 .word 0xf9441e31
-.word 0xb4000051
-.word 0xd63f0220
-bl _p_16
-.word 0xf9003fa0
-.word 0xf9401fb1
-.word 0xf9443631
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf9403fa1
-.word 0xf94043a2
-.word 0xaa0203e0
-.word 0xf9400042
-.word 0xf9418450
-.word 0xd63f0200
-.word 0xf9401fb1
-.word 0xf9445e31
-.word 0xb4000051
-.word 0xd63f0220
-.loc 3 127 0
-.word 0xf9401fb1
-.word 0xf9446e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1a03e0
-.word 0xaa1a03e0
-.word 0xf9400341
-.word 0xf9412030
-.word 0xd63f0200
-.word 0xf9003ba0
-.word 0xf9401fb1
-.word 0xf9449631
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf9403ba1
-.word 0xaa0103e0
-.word 0xf9400021
-.word 0xf9415830
-.word 0xd63f0200
-.word 0xf90037a0
-.word 0xf9401fb1
-.word 0xf944be31
-.word 0xb4000051
-.word 0xd63f0220
-bl _p_17
-.word 0xf90033a0
-.word 0xf9401fb1
-.word 0xf944d631
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94033a1
-.word 0xf94037a2
-.word 0xaa0203e0
-.word 0xf9400042
-.word 0xf9413450
-.word 0xd63f0200
-.word 0xf9401fb1
-.word 0xf944fe31
 .word 0xb4000051
 .word 0xd63f0220
 .loc 3 129 0
 .word 0xf9401fb1
-.word 0xf9450e31
+.word 0xf9442e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xaa1a03e0
+.word 0xf9400341
+.word 0xf9412c30
+.word 0xd63f0200
+.word 0xf90097a0
+.word 0xf9401fb1
+.word 0xf9445631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94097a1
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf9416430
+.word 0xd63f0200
+.word 0xf90093a0
+.word 0xf9401fb1
+.word 0xf9447e31
+.word 0xb4000051
+.word 0xd63f0220
+bl _p_18
+.word 0xf9008fa0
+.word 0xf9401fb1
+.word 0xf9449631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9408fa1
+.word 0xf94093a2
+.word 0xaa0203e0
+.word 0xf9400042
+.word 0xf9419050
+.word 0xd63f0200
+.word 0xf9401fb1
+.word 0xf944be31
+.word 0xb4000051
+.word 0xd63f0220
+.loc 3 130 0
+.word 0xf9401fb1
+.word 0xf944ce31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xaa1a03e0
+.word 0xf9400341
+.word 0xf9412c30
+.word 0xd63f0200
+.word 0xf9008ba0
+.word 0xf9401fb1
+.word 0xf944f631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9408ba1
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf9416430
+.word 0xd63f0200
+.word 0xf90087a0
+.word 0xf9401fb1
+.word 0xf9451e31
+.word 0xb4000051
+.word 0xd63f0220
+bl _p_19
+.word 0xf90083a0
+.word 0xf9401fb1
+.word 0xf9453631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94083a1
+.word 0xf94087a2
+.word 0xaa0203e0
+.word 0xf9400042
+.word 0xf9414050
+.word 0xd63f0200
+.word 0xf9401fb1
+.word 0xf9455e31
+.word 0xb4000051
+.word 0xd63f0220
+.loc 3 132 0
+.word 0xf9401fb1
+.word 0xf9456e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
@@ -1765,188 +1942,345 @@ bl _p_17
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x1, [x16, #544]
+ldr x1, [x16, #552]
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x2, [x16, #552]
+ldr x2, [x16, #560]
 .word 0xaa0303e0
 .word 0xf9400063
 .word 0xf941f470
 .word 0xd63f0200
-.word 0xf9002fa0
+.word 0xf9007fa0
 .word 0xf9401fb1
-.word 0xf9455231
+.word 0xf945b231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9402fa0
-.word 0xf9002ba0
+.word 0xf9407fa0
+.word 0xf9007ba0
 .word 0xaa0003f9
-.loc 3 140 0
+.loc 3 143 0
 .word 0xf9401fb1
-.word 0xf9456e31
+.word 0xf945ce31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9402ba0
+.word 0xf9407ba0
 .word 0xaa0003e1
 .word 0xd2800001
 .word 0xeb1f001f
 .word 0x9a9f97e0
 .word 0xaa0003f8
 .word 0xaa1803e0
-.word 0x340004a0
-.loc 3 141 0
+.word 0x340017c0
+.loc 3 144 0
 .word 0xf9401fb1
-.word 0xf9459e31
+.word 0xf945fe31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 143 0
+.loc 3 146 0
 .word 0xf9401fb1
-.word 0xf945ae31
+.word 0xf9460e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
 .word 0xf9400341
-.word 0xf9412030
+.word 0xf9412c30
 .word 0xd63f0200
-.word 0xf9002ba0
+.word 0xf90093a0
 .word 0xf9401fb1
-.word 0xf945d631
+.word 0xf9463631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9402ba3
+.word 0xf94093a3
 .word 0xaa1903e0
 .word 0xd2800020
 .word 0xaa0303e0
 .word 0xaa1903e1
 .word 0xd2800022
 .word 0xf9400063
-.word 0xf9415c70
+.word 0xf9416870
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9460a31
+.word 0xf9466a31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 144 0
+.loc 3 147 0
 .word 0xf9401fb1
-.word 0xf9461a31
+.word 0xf9467a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x14000056
-.loc 3 146 0
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x0, [x16, #568]
+.word 0xf9007ba0
+.word 0xaa1903e0
+.word 0xaa1903e0
+.word 0xf9400321
+.word 0xf9411830
+.word 0xd63f0200
+.word 0xf9008fa0
 .word 0xf9401fb1
-.word 0xf9462e31
+.word 0xf946b231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9408fa1
+.word 0x910243a0
+.word 0xf90073a0
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf9414830
+.word 0xd63f0200
+.word 0xf94073be
+.word 0xfd0003c0
+.word 0xfd0007c1
+.word 0xfd000bc2
+.word 0xfd000fc3
+.word 0xf9401fb1
+.word 0xf946f231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910243a0
+.word 0x910303a0
+.word 0xf9404ba0
+.word 0xf90063a0
+.word 0xf9404fa0
+.word 0xf90067a0
+.word 0xf94053a0
+.word 0xf9006ba0
+.word 0xf94057a0
+.word 0xf9006fa0
+.word 0x910303a0
+.word 0x910203a1
+.word 0xf90073a1
+bl _p_20
+.word 0xf94073be
+.word 0xfd0003c0
+.word 0xfd0007c1
+.word 0xf9401fb1
+.word 0xf9474631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910203a0
+.word 0x9102c3a0
+.word 0xf94043a0
+.word 0xf9005ba0
+.word 0xf94047a0
+.word 0xf9005fa0
+.word 0x9102c3a0
+bl _p_8
+.word 0xfd00b3a0
+.word 0xf9401fb1
+.word 0xf9477a31
+.word 0xb4000051
+.word 0xd63f0220
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x0, [x16, #424]
+.word 0xd2800301
+.word 0xd2800301
+bl _p_5
+.word 0xfd40b3a0
+.word 0xfd000800
+.word 0xf9007fa0
+.word 0xaa1903e0
+.word 0xaa1903e0
+.word 0xf9400321
+.word 0xf9411830
+.word 0xd63f0200
+.word 0xf90087a0
+.word 0xf9401fb1
+.word 0xf947c631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94087a1
+.word 0x910183a0
+.word 0xf90073a0
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf9414830
+.word 0xd63f0200
+.word 0xf94073be
+.word 0xfd0003c0
+.word 0xfd0007c1
+.word 0xfd000bc2
+.word 0xfd000fc3
+.word 0xf9401fb1
+.word 0xf9480631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910183a0
+.word 0x910303a0
+.word 0xf94033a0
+.word 0xf90063a0
+.word 0xf94037a0
+.word 0xf90067a0
+.word 0xf9403ba0
+.word 0xf9006ba0
+.word 0xf9403fa0
+.word 0xf9006fa0
+.word 0x910303a0
+.word 0x910143a1
+.word 0xf90073a1
+bl _p_20
+.word 0xf94073be
+.word 0xfd0003c0
+.word 0xfd0007c1
+.word 0xf9401fb1
+.word 0xf9485a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910143a0
+.word 0x9102c3a0
+.word 0xf9402ba0
+.word 0xf9005ba0
+.word 0xf9402fa0
+.word 0xf9005fa0
+.word 0x9102c3a0
+bl _p_9
+.word 0xfd00afa0
+.word 0xf9401fb1
+.word 0xf9488e31
+.word 0xb4000051
+.word 0xd63f0220
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x0, [x16, #424]
+.word 0xd2800301
+.word 0xd2800301
+bl _p_5
+.word 0xaa0003e2
+.word 0xf9407ba0
+.word 0xf9407fa1
+.word 0xfd40afa0
+.word 0xfd000840
+bl _p_10
+.word 0xf9401fb1
+.word 0xf948ce31
 .word 0xb4000051
 .word 0xd63f0220
 .loc 3 148 0
 .word 0xf9401fb1
-.word 0xf9463e31
+.word 0xf948de31
 .word 0xb4000051
 .word 0xd63f0220
-
-adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
-add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x0, [x16, #560]
-bl _p_14
-.word 0xf9002ba0
-bl _p_18
-.word 0xf9401fb1
-.word 0xf9466631
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf9402ba0
-.word 0xaa0003f7
-.loc 3 149 0
-.word 0xf9401fb1
-.word 0xf9467e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1703e0
-
-adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
-add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x1, [x16, #568]
-.word 0xaa1703e0
-.word 0xf94002e2
-.word 0xf9418050
-.word 0xd63f0200
-.word 0xf9401fb1
-.word 0xf946ae31
-.word 0xb4000051
-.word 0xd63f0220
+.word 0x14000056
 .loc 3 150 0
 .word 0xf9401fb1
-.word 0xf946be31
+.word 0xf948f231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xaa1703e2
+.loc 3 152 0
+.word 0xf9401fb1
+.word 0xf9490231
+.word 0xb4000051
+.word 0xd63f0220
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x1, [x16, #576]
-.word 0xaa0203e0
-.word 0xf9400042
-.word 0xf9418450
-.word 0xd63f0200
+ldr x0, [x16, #576]
+bl _p_16
+.word 0xf9007ba0
+bl _p_21
 .word 0xf9401fb1
-.word 0xf946ee31
+.word 0xf9492a31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 151 0
+.word 0xf9407ba0
+.word 0xaa0003f7
+.loc 3 153 0
 .word 0xf9401fb1
-.word 0xf946fe31
+.word 0xf9494231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xaa1703e2
+.word 0xaa1703e0
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x1, [x16, #584]
+.word 0xaa1703e0
+.word 0xf94002e2
+.word 0xf9418c50
+.word 0xd63f0200
+.word 0xf9401fb1
+.word 0xf9497231
+.word 0xb4000051
+.word 0xd63f0220
+.loc 3 154 0
+.word 0xf9401fb1
+.word 0xf9498231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1703e2
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x1, [x16, #592]
 .word 0xaa0203e0
 .word 0xf9400042
 .word 0xf9419050
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9472e31
+.word 0xf949b231
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 152 0
+.loc 3 155 0
 .word 0xf9401fb1
-.word 0xf9473e31
+.word 0xf949c231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1703e2
+
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x1, [x16, #600]
+.word 0xaa0203e0
+.word 0xf9400042
+.word 0xf9419c50
+.word 0xd63f0200
+.word 0xf9401fb1
+.word 0xf949f231
+.word 0xb4000051
+.word 0xd63f0220
+.loc 3 156 0
+.word 0xf9401fb1
+.word 0xf94a0231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1703e1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9418830
+.word 0xf9419430
 .word 0xd63f0200
 .word 0xf9401fb1
-.word 0xf9476231
+.word 0xf94a2631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 153 0
+.loc 3 157 0
 .word 0xf9401fb1
-.word 0xf9477231
+.word 0xf94a3631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 3 154 0
+.loc 3 158 0
 .word 0xf94023b1
 .word 0xf9400231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401fb1
-.word 0xf9479231
+.word 0xf94a5631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401fb1
-.word 0xf947a231
+.word 0xf94a6631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xa94163b7
 .word 0xa9426bb9
 .word 0x910003bf
-.word 0xa8cd7bfd
+.word 0xa8d77bfd
 .word 0xd65f03c0
 
 Lme_18:
@@ -1962,7 +2296,7 @@ ReaderXamarin_ViewController_ReleaseDesignerOutlets:
 
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #592]
+ldr x16, [x16, #608]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1986,7 +2320,7 @@ ldr x16, [x16, #592]
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_19
+bl _p_22
 .word 0xf90023a0
 .word 0xf94013b1
 .word 0xf9408a31
@@ -2010,7 +2344,7 @@ bl _p_19
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_19
+bl _p_22
 .word 0xf90023a0
 .word 0xf94013b1
 .word 0xf940e631
@@ -2019,7 +2353,7 @@ bl _p_19
 .word 0xf94023a1
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_20
+bl _p_23
 .word 0xf94013b1
 .word 0xf9410631
 .word 0xb4000051
@@ -2033,7 +2367,7 @@ bl _p_20
 .word 0xd2800000
 .word 0xaa1a03e0
 .word 0xd2800001
-bl _p_21
+bl _p_24
 .word 0xf94013b1
 .word 0xf9413a31
 .word 0xb4000051
@@ -2115,12 +2449,12 @@ unbox_trampoline_addresses:
 	.align 3
 unwind_info:
 
-	.byte 13,12,31,0,68,14,48,157,6,158,5,68,13,29,13,12,31,0,68,14,80,157,10,158,9,68,13,29,16,12,31,0
-	.byte 68,14,80,157,10,158,9,68,13,29,68,154,8,13,12,31,0,68,14,64,157,8,158,7,68,13,29,16,12,31,0,68
-	.byte 14,80,157,10,158,9,68,13,29,68,153,8,14,12,31,0,68,14,144,1,157,18,158,17,68,13,29,14,12,31,0,68
-	.byte 14,160,1,157,20,158,19,68,13,29,16,12,31,0,68,14,48,157,6,158,5,68,13,29,68,154,4,24,12,31,0,68
-	.byte 14,208,1,157,26,158,25,68,13,29,68,151,24,152,23,68,153,22,154,21,18,12,31,0,68,14,80,157,10,158,9,68
-	.byte 13,29,68,153,8,154,7
+	.byte 13,12,31,0,68,14,48,157,6,158,5,68,13,29,13,12,31,0,68,14,64,157,8,158,7,68,13,29,16,12,31,0
+	.byte 68,14,80,157,10,158,9,68,13,29,68,154,8,16,12,31,0,68,14,64,157,8,158,7,68,13,29,68,153,6,13,12
+	.byte 31,0,68,14,80,157,10,158,9,68,13,29,20,12,31,0,68,14,128,2,157,32,158,31,68,13,29,68,152,30,68,154
+	.byte 29,14,12,31,0,68,14,160,1,157,20,158,19,68,13,29,16,12,31,0,68,14,48,157,6,158,5,68,13,29,68,154
+	.byte 4,24,12,31,0,68,14,240,2,157,46,158,45,68,13,29,68,151,44,152,43,68,153,42,154,41,18,12,31,0,68,14
+	.byte 80,157,10,158,9,68,13,29,68,153,8,154,7
 
 .text
 	.align 4
@@ -2131,173 +2465,197 @@ plt_UIKit_UIApplication_Main_string___string_string:
 _p_1:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #608]
-br x16
-.word 479
-	.no_dead_strip plt_wrapper_write_barrier_object_wbarrier_conc_intptr
-plt_wrapper_write_barrier_object_wbarrier_conc_intptr:
-_p_2:
-adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
-add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
-ldr x16, [x16, #616]
-br x16
-.word 484
-	.no_dead_strip plt_UIKit_UIApplicationDelegate__ctor
-plt_UIKit_UIApplicationDelegate__ctor:
-_p_3:
-adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
-add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #624]
 br x16
-.word 491
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPluginDelegate__ctor
-plt_RadaeeLib_RadaeePDFPluginDelegate__ctor:
-_p_4:
+.word 520
+	.no_dead_strip plt_UIKit_UIApplicationDelegate__ctor
+plt_UIKit_UIApplicationDelegate__ctor:
+_p_2:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #632]
 br x16
-.word 496
-	.no_dead_strip plt_System_Console_WriteLine_string
-plt_System_Console_WriteLine_string:
-_p_5:
+.word 525
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPluginDelegate__ctor
+plt_RadaeeLib_RadaeePDFPluginDelegate__ctor:
+_p_3:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #640]
 br x16
-.word 501
-	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
-plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
-_p_6:
+.word 530
+	.no_dead_strip plt_System_Console_WriteLine_string
+plt_System_Console_WriteLine_string:
+_p_4:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #648]
 br x16
-.word 506
-	.no_dead_strip plt_System_Console_WriteLine_string_object
-plt_System_Console_WriteLine_string_object:
-_p_7:
+.word 535
+	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
+plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
+_p_5:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #656]
 br x16
-.word 514
-	.no_dead_strip plt_System_Console_WriteLine_string_object_object
-plt_System_Console_WriteLine_string_object_object:
-_p_8:
+.word 540
+	.no_dead_strip plt_System_Console_WriteLine_string_object
+plt_System_Console_WriteLine_string_object:
+_p_6:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #664]
 br x16
-.word 519
-	.no_dead_strip plt_UIKit_UIViewController__ctor_intptr
-plt_UIKit_UIViewController__ctor_intptr:
-_p_9:
+.word 548
+	.no_dead_strip plt_UIKit_UIImage_LoadFromData_Foundation_NSData
+plt_UIKit_UIImage_LoadFromData_Foundation_NSData:
+_p_7:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #672]
 br x16
-.word 524
-	.no_dead_strip plt_UIKit_UIViewController_ViewDidLoad
-plt_UIKit_UIViewController_ViewDidLoad:
-_p_10:
+.word 553
+	.no_dead_strip plt_CoreGraphics_CGSize_get_Width
+plt_CoreGraphics_CGSize_get_Width:
+_p_8:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #680]
 br x16
-.word 529
-	.no_dead_strip plt_UIKit_UIViewController_DidReceiveMemoryWarning
-plt_UIKit_UIViewController_DidReceiveMemoryWarning:
-_p_11:
+.word 558
+	.no_dead_strip plt_CoreGraphics_CGSize_get_Height
+plt_CoreGraphics_CGSize_get_Height:
+_p_9:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #688]
 br x16
-.word 534
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit
-plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit:
-_p_12:
+.word 563
+	.no_dead_strip plt_System_Console_WriteLine_string_object_object
+plt_System_Console_WriteLine_string_object_object:
+_p_10:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #696]
 br x16
-.word 539
-	.no_dead_strip plt_System_Convert_ToInt32_string_int
-plt_System_Convert_ToInt32_string_int:
-_p_13:
+.word 568
+	.no_dead_strip plt_UIKit_UIViewController__ctor_intptr
+plt_UIKit_UIViewController__ctor_intptr:
+_p_11:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #704]
 br x16
-.word 544
-	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
-plt__jit_icall_ves_icall_object_new_specific:
-_p_14:
+.word 573
+	.no_dead_strip plt_UIKit_UIViewController_ViewDidLoad
+plt_UIKit_UIViewController_ViewDidLoad:
+_p_12:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #712]
 br x16
-.word 549
-	.no_dead_strip plt_ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin
-plt_ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin:
-_p_15:
+.word 578
+	.no_dead_strip plt_UIKit_UIViewController_DidReceiveMemoryWarning
+plt_UIKit_UIViewController_DidReceiveMemoryWarning:
+_p_13:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #720]
 br x16
-.word 581
-	.no_dead_strip plt_UIKit_UIColor_get_Black
-plt_UIKit_UIColor_get_Black:
-_p_16:
+.word 583
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit
+plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit:
+_p_14:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #728]
 br x16
-.word 583
-	.no_dead_strip plt_UIKit_UIColor_get_Red
-plt_UIKit_UIColor_get_Red:
-_p_17:
+.word 588
+	.no_dead_strip plt_System_Convert_ToInt32_string_int
+plt_System_Convert_ToInt32_string_int:
+_p_15:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #736]
 br x16
-.word 588
-	.no_dead_strip plt_UIKit_UIAlertView__ctor
-plt_UIKit_UIAlertView__ctor:
-_p_18:
+.word 593
+	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
+plt__jit_icall_ves_icall_object_new_specific:
+_p_16:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #744]
 br x16
-.word 593
-	.no_dead_strip plt_ReaderXamarin_ViewController_get_openBtn
-plt_ReaderXamarin_ViewController_get_openBtn:
-_p_19:
+.word 598
+	.no_dead_strip plt_ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin
+plt_ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin:
+_p_17:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #752]
 br x16
-.word 598
-	.no_dead_strip plt_Foundation_NSObject_Dispose
-plt_Foundation_NSObject_Dispose:
-_p_20:
+.word 630
+	.no_dead_strip plt_UIKit_UIColor_get_Black
+plt_UIKit_UIColor_get_Black:
+_p_18:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #760]
 br x16
-.word 600
-	.no_dead_strip plt_ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
-plt_ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton:
-_p_21:
+.word 632
+	.no_dead_strip plt_UIKit_UIColor_get_Red
+plt_UIKit_UIColor_get_Red:
+_p_19:
 adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
 add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
 ldr x16, [x16, #768]
 br x16
-.word 605
+.word 637
+	.no_dead_strip plt_CoreGraphics_CGRect_get_Size
+plt_CoreGraphics_CGRect_get_Size:
+_p_20:
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x16, [x16, #776]
+br x16
+.word 642
+	.no_dead_strip plt_UIKit_UIAlertView__ctor
+plt_UIKit_UIAlertView__ctor:
+_p_21:
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x16, [x16, #784]
+br x16
+.word 647
+	.no_dead_strip plt_ReaderXamarin_ViewController_get_openBtn
+plt_ReaderXamarin_ViewController_get_openBtn:
+_p_22:
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x16, [x16, #792]
+br x16
+.word 652
+	.no_dead_strip plt_Foundation_NSObject_Dispose
+plt_Foundation_NSObject_Dispose:
+_p_23:
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x16, [x16, #800]
+br x16
+.word 654
+	.no_dead_strip plt_ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
+plt_ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton:
+_p_24:
+adrp x16, mono_aot_ReaderXamarin_got@PAGE+0
+add x16, x16, mono_aot_ReaderXamarin_got@PAGEOFF
+ldr x16, [x16, #808]
+br x16
+.word 659
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_ReaderXamarin_got, 776
+.lcomm mono_aot_ReaderXamarin_got, 816
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -2320,7 +2678,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "8BB58432-9FE8-468B-8DA5-E2095918AC01"
+	.asciz "7E8146FF-1E39-48DA-8481-C4C60FC1CA35"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -2397,13 +2755,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 75,776,22,27,70,391195135,0,3758
-	.long 128,8,8,10,0,26,4592,824
+	.long 77,816,25,27,70,391195135,0,4204
+	.long 128,8,8,10,0,25,5040,824
 	.long 480,208,0,384,448,264,0,200
 	.long 56,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 172,87,187,233,194,20,63,146,206,6,83,40,207,71,135,115
+	.byte 43,185,144,194,47,154,235,61,151,98,54,95,181,245,126,232
 	.globl _mono_aot_module_ReaderXamarin_info
 	.align 3
 _mono_aot_module_ReaderXamarin_info:
@@ -2735,7 +3093,7 @@ Lfde2_start:
 LDIFF_SYM48=Lme_2 - ReaderXamarin_AppDelegate_set_Window_UIKit_UIWindow
 	.long LDIFF_SYM48
 	.long 0
-	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
 Lfde2_end:
 
@@ -3226,7 +3584,7 @@ Lfde10_start:
 LDIFF_SYM112=Lme_a - ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin
 	.long LDIFF_SYM112
 	.long 0
-	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,153,8
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,153,6
 	.align 3
 Lfde10_end:
 
@@ -3477,7 +3835,29 @@ LDIFF_SYM138=Lme_10 - ReaderXamarin_RadaeeDelegate_DidSearchTerm_string_bool
 Lfde16_end:
 
 .section __DWARF, __debug_info,regular,debug
+LTDIE_16:
 
+	.byte 5
+	.asciz "UIKit_UIImage"
+
+	.byte 40,16
+LDIFF_SYM139=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM139
+	.byte 2,35,0,0,7
+	.asciz "UIKit_UIImage"
+
+LDIFF_SYM140=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM140
+LTDIE_16_POINTER:
+
+	.byte 13
+LDIFF_SYM141=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM141
+LTDIE_16_REFERENCE:
+
+	.byte 14
+LDIFF_SYM142=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM142
 	.byte 2
 	.asciz "ReaderXamarin.RadaeeDelegate:DidTapOnPage"
 	.asciz "ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint"
@@ -3489,34 +3869,44 @@ Lfde16_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM139=LTDIE_12_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM139
-	.byte 2,141,16,3
+LDIFF_SYM143=LTDIE_12_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM143
+	.byte 2,141,32,3
 	.asciz "page"
 
-LDIFF_SYM140=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM140
-	.byte 2,141,24,3
+LDIFF_SYM144=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM144
+	.byte 1,106,3
 	.asciz "point"
 
-LDIFF_SYM141=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM141
-	.byte 2,141,32,0
+LDIFF_SYM145=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM145
+	.byte 2,141,40,11
+	.asciz "im"
+
+LDIFF_SYM146=LTDIE_16_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM146
+	.byte 1,104,11
+	.asciz "V_1"
+
+LDIFF_SYM147=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM147
+	.byte 3,141,160,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM142=Lfde17_end - Lfde17_start
-	.long LDIFF_SYM142
+LDIFF_SYM148=Lfde17_end - Lfde17_start
+	.long LDIFF_SYM148
 Lfde17_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
 
-LDIFF_SYM143=Lme_11 - ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
-	.long LDIFF_SYM143
+LDIFF_SYM149=Lme_11 - ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM149
 	.long 0
-	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29
+	.byte 12,31,0,68,14,128,2,157,32,158,31,68,13,29,68,152,30,68,154,29
 	.align 3
 Lfde17_end:
 
@@ -3526,194 +3916,194 @@ Lfde17_end:
 	.asciz "ReaderXamarin.RadaeeDelegate:DidTapOnAnnotationOfType"
 	.asciz "ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint"
 
-	.byte 3,56
+	.byte 3,59
 	.quad ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 	.quad Lme_12
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM144=LTDIE_12_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM144
+LDIFF_SYM150=LTDIE_12_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM150
 	.byte 2,141,16,3
 	.asciz "type"
 
-LDIFF_SYM145=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM145
+LDIFF_SYM151=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM151
 	.byte 2,141,24,3
 	.asciz "page"
 
-LDIFF_SYM146=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM146
+LDIFF_SYM152=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM152
 	.byte 2,141,32,3
 	.asciz "point"
 
-LDIFF_SYM147=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM147
+LDIFF_SYM153=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM153
 	.byte 2,141,40,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM148=Lfde18_end - Lfde18_start
-	.long LDIFF_SYM148
+LDIFF_SYM154=Lfde18_end - Lfde18_start
+	.long LDIFF_SYM154
 Lfde18_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 
-LDIFF_SYM149=Lme_12 - ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
-	.long LDIFF_SYM149
+LDIFF_SYM155=Lme_12 - ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM155
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29
 	.align 3
 Lfde18_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_17:
-
-	.byte 5
-	.asciz "UIKit_UIViewController"
-
-	.byte 48,16
-LDIFF_SYM150=LTDIE_7 - Ldebug_info_start
-	.long LDIFF_SYM150
-	.byte 2,35,0,6
-	.asciz "__mt_PreferredFocusedView_var"
-
-LDIFF_SYM151=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM151
-	.byte 2,35,40,0,7
-	.asciz "UIKit_UIViewController"
-
-LDIFF_SYM152=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM152
-LTDIE_17_POINTER:
-
-	.byte 13
-LDIFF_SYM153=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM153
-LTDIE_17_REFERENCE:
-
-	.byte 14
-LDIFF_SYM154=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM154
-LTDIE_19:
-
-	.byte 5
-	.asciz "UIKit_UIControl"
-
-	.byte 48,16
-LDIFF_SYM155=LTDIE_6 - Ldebug_info_start
-	.long LDIFF_SYM155
-	.byte 2,35,0,0,7
-	.asciz "UIKit_UIControl"
-
-LDIFF_SYM156=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM156
-LTDIE_19_POINTER:
-
-	.byte 13
-LDIFF_SYM157=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM157
-LTDIE_19_REFERENCE:
-
-	.byte 14
-LDIFF_SYM158=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM158
 LTDIE_18:
 
 	.byte 5
-	.asciz "UIKit_UIButton"
+	.asciz "UIKit_UIViewController"
 
 	.byte 48,16
-LDIFF_SYM159=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM159
-	.byte 2,35,0,0,7
-	.asciz "UIKit_UIButton"
+LDIFF_SYM156=LTDIE_7 - Ldebug_info_start
+	.long LDIFF_SYM156
+	.byte 2,35,0,6
+	.asciz "__mt_PreferredFocusedView_var"
 
-LDIFF_SYM160=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM160
+LDIFF_SYM157=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM157
+	.byte 2,35,40,0,7
+	.asciz "UIKit_UIViewController"
+
+LDIFF_SYM158=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM158
 LTDIE_18_POINTER:
 
 	.byte 13
-LDIFF_SYM161=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM161
+LDIFF_SYM159=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM159
 LTDIE_18_REFERENCE:
 
 	.byte 14
-LDIFF_SYM162=LTDIE_18 - Ldebug_info_start
+LDIFF_SYM160=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM160
+LTDIE_20:
+
+	.byte 5
+	.asciz "UIKit_UIControl"
+
+	.byte 48,16
+LDIFF_SYM161=LTDIE_6 - Ldebug_info_start
+	.long LDIFF_SYM161
+	.byte 2,35,0,0,7
+	.asciz "UIKit_UIControl"
+
+LDIFF_SYM162=LTDIE_20 - Ldebug_info_start
 	.long LDIFF_SYM162
-LTDIE_16:
+LTDIE_20_POINTER:
+
+	.byte 13
+LDIFF_SYM163=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM163
+LTDIE_20_REFERENCE:
+
+	.byte 14
+LDIFF_SYM164=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM164
+LTDIE_19:
+
+	.byte 5
+	.asciz "UIKit_UIButton"
+
+	.byte 48,16
+LDIFF_SYM165=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM165
+	.byte 2,35,0,0,7
+	.asciz "UIKit_UIButton"
+
+LDIFF_SYM166=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM166
+LTDIE_19_POINTER:
+
+	.byte 13
+LDIFF_SYM167=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM167
+LTDIE_19_REFERENCE:
+
+	.byte 14
+LDIFF_SYM168=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM168
+LTDIE_17:
 
 	.byte 5
 	.asciz "ReaderXamarin_ViewController"
 
 	.byte 72,16
-LDIFF_SYM163=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM163
+LDIFF_SYM169=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM169
 	.byte 2,35,0,6
 	.asciz "selector"
 
-LDIFF_SYM164=LTDIE_12_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM164
+LDIFF_SYM170=LTDIE_12_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM170
 	.byte 2,35,48,6
 	.asciz "plugin"
 
-LDIFF_SYM165=LTDIE_14_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM165
+LDIFF_SYM171=LTDIE_14_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM171
 	.byte 2,35,56,6
 	.asciz "<openBtn>k__BackingField"
 
-LDIFF_SYM166=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM166
+LDIFF_SYM172=LTDIE_19_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM172
 	.byte 2,35,64,0,7
 	.asciz "ReaderXamarin_ViewController"
 
-LDIFF_SYM167=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM167
-LTDIE_16_POINTER:
+LDIFF_SYM173=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM173
+LTDIE_17_POINTER:
 
 	.byte 13
-LDIFF_SYM168=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM168
-LTDIE_16_REFERENCE:
+LDIFF_SYM174=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM174
+LTDIE_17_REFERENCE:
 
 	.byte 14
-LDIFF_SYM169=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM169
+LDIFF_SYM175=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM175
 	.byte 2
 	.asciz "ReaderXamarin.ViewController:.ctor"
 	.asciz "ReaderXamarin_ViewController__ctor_intptr"
 
-	.byte 3,156,1
+	.byte 3,160,1
 	.quad ReaderXamarin_ViewController__ctor_intptr
 	.quad Lme_13
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM170=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM170
+LDIFF_SYM176=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM176
 	.byte 2,141,16,3
 	.asciz "handle"
 
-LDIFF_SYM171=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM171
+LDIFF_SYM177=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM177
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM172=Lfde19_end - Lfde19_start
-	.long LDIFF_SYM172
+LDIFF_SYM178=Lfde19_end - Lfde19_start
+	.long LDIFF_SYM178
 Lfde19_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController__ctor_intptr
 
-LDIFF_SYM173=Lme_13 - ReaderXamarin_ViewController__ctor_intptr
-	.long LDIFF_SYM173
+LDIFF_SYM179=Lme_13 - ReaderXamarin_ViewController__ctor_intptr
+	.long LDIFF_SYM179
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -3725,29 +4115,29 @@ Lfde19_end:
 	.asciz "ReaderXamarin.ViewController:ViewDidLoad"
 	.asciz "ReaderXamarin_ViewController_ViewDidLoad"
 
-	.byte 3,162,1
+	.byte 3,166,1
 	.quad ReaderXamarin_ViewController_ViewDidLoad
 	.quad Lme_14
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM174=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM174
+LDIFF_SYM180=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM180
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM175=Lfde20_end - Lfde20_start
-	.long LDIFF_SYM175
+LDIFF_SYM181=Lfde20_end - Lfde20_start
+	.long LDIFF_SYM181
 Lfde20_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController_ViewDidLoad
 
-LDIFF_SYM176=Lme_14 - ReaderXamarin_ViewController_ViewDidLoad
-	.long LDIFF_SYM176
+LDIFF_SYM182=Lme_14 - ReaderXamarin_ViewController_ViewDidLoad
+	.long LDIFF_SYM182
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,154,4
 	.align 3
@@ -3759,29 +4149,29 @@ Lfde20_end:
 	.asciz "ReaderXamarin.ViewController:DidReceiveMemoryWarning"
 	.asciz "ReaderXamarin_ViewController_DidReceiveMemoryWarning"
 
-	.byte 3,169,1
+	.byte 3,173,1
 	.quad ReaderXamarin_ViewController_DidReceiveMemoryWarning
 	.quad Lme_15
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM177=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM177
+LDIFF_SYM183=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM183
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM178=Lfde21_end - Lfde21_start
-	.long LDIFF_SYM178
+LDIFF_SYM184=Lfde21_end - Lfde21_start
+	.long LDIFF_SYM184
 Lfde21_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController_DidReceiveMemoryWarning
 
-LDIFF_SYM179=Lme_15 - ReaderXamarin_ViewController_DidReceiveMemoryWarning
-	.long LDIFF_SYM179
+LDIFF_SYM185=Lme_15 - ReaderXamarin_ViewController_DidReceiveMemoryWarning
+	.long LDIFF_SYM185
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -3800,22 +4190,22 @@ Lfde21_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM180=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM180
+LDIFF_SYM186=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM186
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM181=Lfde22_end - Lfde22_start
-	.long LDIFF_SYM181
+LDIFF_SYM187=Lfde22_end - Lfde22_start
+	.long LDIFF_SYM187
 Lfde22_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController_get_openBtn
 
-LDIFF_SYM182=Lme_16 - ReaderXamarin_ViewController_get_openBtn
-	.long LDIFF_SYM182
+LDIFF_SYM188=Lme_16 - ReaderXamarin_ViewController_get_openBtn
+	.long LDIFF_SYM188
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -3834,105 +4224,115 @@ Lfde22_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM183=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM183
+LDIFF_SYM189=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM189
 	.byte 2,141,16,3
 	.asciz "value"
 
-LDIFF_SYM184=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM184
+LDIFF_SYM190=LTDIE_19_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM190
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM185=Lfde23_end - Lfde23_start
-	.long LDIFF_SYM185
+LDIFF_SYM191=Lfde23_end - Lfde23_start
+	.long LDIFF_SYM191
 Lfde23_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
 
-LDIFF_SYM186=Lme_17 - ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
-	.long LDIFF_SYM186
+LDIFF_SYM192=Lme_17 - ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
+	.long LDIFF_SYM192
 	.long 0
-	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
 Lfde23_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_20:
+LTDIE_21:
 
 	.byte 5
 	.asciz "UIKit_UIAlertView"
 
 	.byte 48,16
-LDIFF_SYM187=LTDIE_6 - Ldebug_info_start
-	.long LDIFF_SYM187
+LDIFF_SYM193=LTDIE_6 - Ldebug_info_start
+	.long LDIFF_SYM193
 	.byte 2,35,0,0,7
 	.asciz "UIKit_UIAlertView"
 
-LDIFF_SYM188=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM188
-LTDIE_20_POINTER:
+LDIFF_SYM194=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM194
+LTDIE_21_POINTER:
 
 	.byte 13
-LDIFF_SYM189=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM189
-LTDIE_20_REFERENCE:
+LDIFF_SYM195=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM195
+LTDIE_21_REFERENCE:
 
 	.byte 14
-LDIFF_SYM190=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM190
+LDIFF_SYM196=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM196
 	.byte 2
 	.asciz "ReaderXamarin.ViewController:OpenBtn_TouchUpInside"
 	.asciz "ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton"
 
-	.byte 3,67
+	.byte 3,70
 	.quad ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
 	.quad Lme_18
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM191=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM191
+LDIFF_SYM197=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM197
 	.byte 1,106,3
 	.asciz "sender"
 
-LDIFF_SYM192=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM192
+LDIFF_SYM198=LTDIE_19_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM198
 	.byte 2,141,48,11
 	.asciz "controller"
 
-LDIFF_SYM193=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM193
+LDIFF_SYM199=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM199
 	.byte 1,105,11
 	.asciz "V_1"
 
-LDIFF_SYM194=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM194
+LDIFF_SYM200=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM200
 	.byte 1,104,11
+	.asciz "V_2"
+
+LDIFF_SYM201=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM201
+	.byte 3,141,192,1,11
+	.asciz "V_3"
+
+LDIFF_SYM202=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM202
+	.byte 3,141,176,1,11
 	.asciz "alert"
 
-LDIFF_SYM195=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM195
+LDIFF_SYM203=LTDIE_21_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM203
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM196=Lfde24_end - Lfde24_start
-	.long LDIFF_SYM196
+LDIFF_SYM204=Lfde24_end - Lfde24_start
+	.long LDIFF_SYM204
 Lfde24_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
 
-LDIFF_SYM197=Lme_18 - ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
-	.long LDIFF_SYM197
+LDIFF_SYM205=Lme_18 - ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
+	.long LDIFF_SYM205
 	.long 0
-	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,68,151,24,152,23,68,153,22,154,21
+	.byte 12,31,0,68,14,240,2,157,46,158,45,68,13,29,68,151,44,152,43,68,153,42,154,41
 	.align 3
 Lfde24_end:
 
@@ -3949,27 +4349,27 @@ Lfde24_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM198=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM198
+LDIFF_SYM206=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM206
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM199=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM199
+LDIFF_SYM207=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM207
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM200=Lfde25_end - Lfde25_start
-	.long LDIFF_SYM200
+LDIFF_SYM208=Lfde25_end - Lfde25_start
+	.long LDIFF_SYM208
 Lfde25_start:
 
 	.long 0
 	.align 3
 	.quad ReaderXamarin_ViewController_ReleaseDesignerOutlets
 
-LDIFF_SYM201=Lme_19 - ReaderXamarin_ViewController_ReleaseDesignerOutlets
-	.long LDIFF_SYM201
+LDIFF_SYM209=Lme_19 - ReaderXamarin_ViewController_ReleaseDesignerOutlets
+	.long LDIFF_SYM209
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,153,8,154,7
 	.align 3
