@@ -7,7 +7,6 @@
 	--executable \
 	ReaderXamarin \
 	--debug \
-	--nolink \
 	--sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--sdk \
@@ -16,7 +15,7 @@
 	9.3 \
 	--aot-options=-O=-float32 \
 	--http-message-handler=HttpClientHandler \
-	--abi=i386 \
+	"--abi=i386,x86_64" \
 	--symbollist \
 	/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
 	--dsym=no \

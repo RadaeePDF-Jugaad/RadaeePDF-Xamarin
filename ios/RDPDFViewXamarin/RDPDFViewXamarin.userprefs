@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{7EB5E7D1-4011-406E-BB5B-46A350442CEA}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/ViewController.cs">
     <Files>
-      <File FileName="ReaderXamarin/ViewController.cs" Line="1" Column="1" />
+      <File FileName="ReaderXamarin/ViewController.cs" Line="127" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.066e3d1819b38f2122ad7d5c4f3995a62d8f013f" />
+  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C26B985D-0080-4D01-838D-FF389B143B96" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,5 +1,0 @@
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.pdb
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewLib.csproj.CoreCompileInputs.cache
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewXamarin.dll
-/Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewXamarin.pdb
