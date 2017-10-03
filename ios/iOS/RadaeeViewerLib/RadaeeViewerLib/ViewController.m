@@ -124,6 +124,16 @@
     NSLog(@"tapped at page: %i x: %f y:%f", page, point.x, point.y);
 }
 
+- (void)didDoubleTapOnPage:(int)page atPoint:(CGPoint)point
+{
+    NSLog(@"double tapped at page: %i x: %f y:%f", page, point.x, point.y);
+}
+
+- (void)didLongPressOnPage:(int)page atPoint:(CGPoint)point
+{
+    NSLog(@"long pressed at page: %i x: %f y:%f", page, point.x, point.y);
+}
+
 - (void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point
 {
     NSLog(@"annot type: %i", type);

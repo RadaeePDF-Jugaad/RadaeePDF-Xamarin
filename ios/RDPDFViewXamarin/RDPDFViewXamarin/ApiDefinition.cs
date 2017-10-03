@@ -45,6 +45,16 @@ namespace RadaeeLib
 		[Export ("didTapOnPage:atPoint:")]
 		void DidTapOnPage (int page, CGPoint point);
 
+		// @required -(void)didDoubleTapOnPage:(int)page atPoint:(CGPoint)point;
+		[Abstract]
+		[Export("didDoubleTapOnPage:atPoint:")]
+		void DidDoubleTapOnPage(int page, CGPoint point);
+
+		// @required -(void)didLongPressOnPage:(int)page atPoint:(CGPoint)point;
+		[Abstract]
+		[Export("didLongPressOnPage:atPoint:")]
+		void DidLongPressOnPage(int page, CGPoint point);
+
 		// @required -(void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point;
 		[Abstract]
 		[Export ("didTapOnAnnotationOfType:atPage:atPoint:")]

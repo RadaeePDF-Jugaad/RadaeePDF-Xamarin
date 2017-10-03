@@ -754,6 +754,20 @@
     }
 }
 
+- (void)didDoubleTapOnPage:(int)page atPoint:(CGPoint)point
+{
+    if (delegate) {
+        [delegate didDoubleTapOnPage:page atPoint:point];
+    }
+}
+
+- (void)didLongPressOnPage:(int)page atPoint:(CGPoint)point
+{
+    if (delegate) {
+        [delegate didLongPressOnPage:page atPoint:point];
+    }
+}
+
 - (void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point
 {
     if (delegate) {

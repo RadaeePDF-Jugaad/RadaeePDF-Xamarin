@@ -30,6 +30,8 @@
 - (void)didChangePage:(int)page;
 - (void)didSearchTerm:(NSString *)term found:(BOOL)found;
 - (void)didTapOnPage:(int)page atPoint:(CGPoint)point;
+- (void)didDoubleTapOnPage:(int)page atPoint:(CGPoint)point;
+- (void)didLongPressOnPage:(int)page atPoint:(CGPoint)point;
 - (void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point;
 @end;
 

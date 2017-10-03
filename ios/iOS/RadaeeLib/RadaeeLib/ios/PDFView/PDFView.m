@@ -976,6 +976,17 @@ extern bool g_double_page_enabled;
     }
     else
     {
+        bool long_press = true;
+        if( dx > 5 || dx < -5 )
+            long_press = false;
+        if( dy > 5 || dy < -5 )
+            long_press = false;
+        if( long_press )
+        {
+            if( m_delegate )
+                [m_delegate OnLongPressed:point.x :point.x];
+        }
+        
         if([self paginAvailable])
         {
             struct PDFV_POS pos;

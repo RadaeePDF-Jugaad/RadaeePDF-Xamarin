@@ -1423,7 +1423,11 @@ extern uint g_oval_color;
 
 - (void)OnDoubleTapped:(float)x :(float)y
 {
-    
+    if (_delegate) {
+        struct PDFV_POS pos;
+        [m_view vGetPos:&pos x:x y:y];
+        [_delegate didDoubleTapOnPage:pos.pageno atPoint:CGPointMake(x, y)];
+    }
 }
 
 - (void)OnFound:(bool)found
@@ -1629,6 +1633,10 @@ extern uint g_oval_color;
 
 -(void)OnLongPressed:(float)x :(float)y
 {
+    if (_delegate) {
+        [_delegate didLongPressOnPage:(self.pagenow - 1) atPoint:CGPointMake(x, y)];
+    }
+    
     [m_view vSelStart];//start to select
     m_bSel = true;
 }

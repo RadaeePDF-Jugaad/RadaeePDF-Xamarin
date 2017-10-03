@@ -52,6 +52,16 @@ namespace ReaderXamarin
 			Console.WriteLine("did tap page {0}", page);
 		}
 
+		public override void DidDoubleTapOnPage(int page, CGPoint point)
+		{
+			Console.WriteLine("did double tap page {0}", page);
+		}
+
+		public override void DidLongPressOnPage(int page, CGPoint point)
+		{
+			Console.WriteLine("did long press page {0}", page);
+		}
+
 		public override void DidTapOnAnnotationOfType(int type, int page, CGPoint point)
 		{
 			Console.WriteLine("did tap annot of type {0} at page {1}", type, page);
