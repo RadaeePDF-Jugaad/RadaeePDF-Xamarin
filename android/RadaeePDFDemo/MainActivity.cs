@@ -69,9 +69,9 @@ namespace RadaeePDFDemo
             };
         }
 
-        public void DidChangePage(int p0)
+        public void DidChangePage(int page)
         {
-            Log.Debug(TAG, "Page changed to " + p0);
+            Log.Debug(TAG, "Page changed to " + page);
         }
 
         public void DidCloseReader()
@@ -79,9 +79,9 @@ namespace RadaeePDFDemo
             Log.Debug(TAG, "Did close reader");
         }
 
-        public void DidSearchTerm(string p0, bool p1)
+        public void DidSearchTerm(string term, bool found)
         {
-            Log.Debug(TAG, "Did search term " + p0 + " and the result = " + p1);
+            Log.Debug(TAG, "Did search term " + term + " and the result = " + found);
         }
 
         public void DidShowReader()
@@ -100,6 +100,22 @@ namespace RadaeePDFDemo
         public void WillShowReader()
         {
             Log.Debug(TAG, "Will show reader");
+        }
+
+        public void OnAnnotTapped(Page.Annotation annot)
+        {
+        }
+
+        public void OnBlankTapped(int page)
+        {
+        }
+
+        public void OnDoubleTapped(int page, float x, float y)
+        {
+        }
+
+        public void OnLongPressed(int page, float x, float y)
+        {
         }
     }
 }
