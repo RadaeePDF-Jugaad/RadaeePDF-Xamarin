@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{7EB5E7D1-4011-406E-BB5B-46A350442CEA}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RDPDFViewXamarin/ApiDefinition.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Main.cs">
     <Files>
-      <File FileName="ReaderXamarin/ViewController.cs" Line="50" Column="36" />
-      <File FileName="RDPDFViewXamarin/ApiDefinition.cs" Line="51" Column="46" />
+      <File FileName="ReaderXamarin/ViewController.cs" Line="132" Column="3" />
+      <File FileName="ReaderXamarin/Main.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C26B985D-0080-4D01-838D-FF389B143B96" />
+  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.f2930fdfb9a4013c8a1ff827329724291defc69b" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A814D4D11E43852D00B4063A /* RDFormManager.h */; };
 		A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A814D4D21E43852D00B4063A /* RDFormManager.m */; };
+		A845ACDA1FDFDD3100ABFACB /* ReaderHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACC51FDFDC6300ABFACB /* ReaderHandler.h */; };
+		A845ACDB1FDFDD3100ABFACB /* RDExtendedSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACC81FDFDC6300ABFACB /* RDExtendedSearch.h */; };
+		A845ACDC1FDFDD3100ABFACB /* SearchResultTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACCB1FDFDC6300ABFACB /* SearchResultTableViewController.h */; };
+		A845ACDD1FDFDD3100ABFACB /* RDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACD81FDFDC6300ABFACB /* RDUtils.h */; };
+		A845ACE11FDFE9C300ABFACB /* ReaderHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A845ACC61FDFDC6300ABFACB /* ReaderHandler.m */; };
+		A845ACE21FDFE9C900ABFACB /* RDExtendedSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = A845ACC91FDFDC6300ABFACB /* RDExtendedSearch.m */; };
+		A845ACE31FDFEA4900ABFACB /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A845ACCC1FDFDC6300ABFACB /* SearchResultTableViewController.m */; };
+		A845ACE41FDFED5500ABFACB /* RDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A845ACD91FDFDC6300ABFACB /* RDUtils.m */; };
 		A84A2D501D2284F000B2A4F2 /* ViewModeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */; };
 		A84A2D511D2284F000B2A4F2 /* ViewModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */; };
 		A864EEF81D17EAB600F4B976 /* RadaeeLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; };
@@ -57,8 +65,6 @@
 		A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF5A1D17EBA300F4B976 /* RadaeePDFPlugin.m */; };
 		A88EBD3E1D1828070084C9A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EBD3D1D1828070084C9A9 /* Foundation.framework */; };
-		A8A212D91E3B4432000E24AC /* ReaderHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A8A212D71E3B4432000E24AC /* ReaderHandler.h */; };
-		A8A212DA1E3B4432000E24AC /* ReaderHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A212D81E3B4432000E24AC /* ReaderHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +83,16 @@
 /* Begin PBXFileReference section */
 		A814D4D11E43852D00B4063A /* RDFormManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDFormManager.h; sourceTree = "<group>"; };
 		A814D4D21E43852D00B4063A /* RDFormManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDFormManager.m; sourceTree = "<group>"; };
+		A845ACC51FDFDC6300ABFACB /* ReaderHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReaderHandler.h; sourceTree = "<group>"; };
+		A845ACC61FDFDC6300ABFACB /* ReaderHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderHandler.m; sourceTree = "<group>"; };
+		A845ACC81FDFDC6300ABFACB /* RDExtendedSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDExtendedSearch.h; sourceTree = "<group>"; };
+		A845ACC91FDFDC6300ABFACB /* RDExtendedSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDExtendedSearch.m; sourceTree = "<group>"; };
+		A845ACCA1FDFDC6300ABFACB /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		A845ACCB1FDFDC6300ABFACB /* SearchResultTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
+		A845ACCC1FDFDC6300ABFACB /* SearchResultTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
+		A845ACCD1FDFDC6300ABFACB /* SearchResultTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewController.xib; sourceTree = "<group>"; };
+		A845ACD81FDFDC6300ABFACB /* RDUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDUtils.h; sourceTree = "<group>"; };
+		A845ACD91FDFDC6300ABFACB /* RDUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDUtils.m; sourceTree = "<group>"; };
 		A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModeTableViewController.h; sourceTree = "<group>"; };
 		A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModeTableViewController.m; sourceTree = "<group>"; };
 		A864EEF41D17EAB600F4B976 /* libRadaeeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRadaeeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,8 +144,6 @@
 		A88014541D245E47000EADD4 /* cmaps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cmaps; sourceTree = "<group>"; };
 		A88014551D245E47000EADD4 /* fdat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fdat; sourceTree = "<group>"; };
 		A88EBD3D1D1828070084C9A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A8A212D71E3B4432000E24AC /* ReaderHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderHandler.h; sourceTree = "<group>"; };
-		A8A212D81E3B4432000E24AC /* ReaderHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,15 +160,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A82CCC4D1E2E6EE70013AD08 /* RDUtils */ = {
+		A845ACA61FDFDC6300ABFACB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A845ACC41FDFDC6300ABFACB /* ReaderHandler */,
+				A845ACC71FDFDC6300ABFACB /* SearchList */,
+				A845ACD71FDFDC6300ABFACB /* Utils */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A845ACC41FDFDC6300ABFACB /* ReaderHandler */ = {
+			isa = PBXGroup;
+			children = (
+				A845ACC51FDFDC6300ABFACB /* ReaderHandler.h */,
+				A845ACC61FDFDC6300ABFACB /* ReaderHandler.m */,
+			);
+			path = ReaderHandler;
+			sourceTree = "<group>";
+		};
+		A845ACC71FDFDC6300ABFACB /* SearchList */ = {
+			isa = PBXGroup;
+			children = (
+				A845ACC81FDFDC6300ABFACB /* RDExtendedSearch.h */,
+				A845ACC91FDFDC6300ABFACB /* RDExtendedSearch.m */,
+				A845ACCA1FDFDC6300ABFACB /* SearchResultTableViewCell.xib */,
+				A845ACCB1FDFDC6300ABFACB /* SearchResultTableViewController.h */,
+				A845ACCC1FDFDC6300ABFACB /* SearchResultTableViewController.m */,
+				A845ACCD1FDFDC6300ABFACB /* SearchResultTableViewController.xib */,
+			);
+			path = SearchList;
+			sourceTree = "<group>";
+		};
+		A845ACD71FDFDC6300ABFACB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A845ACD81FDFDC6300ABFACB /* RDUtils.h */,
+				A845ACD91FDFDC6300ABFACB /* RDUtils.m */,
 				A814D4D11E43852D00B4063A /* RDFormManager.h */,
 				A814D4D21E43852D00B4063A /* RDFormManager.m */,
-				A8A212D71E3B4432000E24AC /* ReaderHandler.h */,
-				A8A212D81E3B4432000E24AC /* ReaderHandler.m */,
 			);
-			path = RDUtils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A864EEEB1D17EAB600F4B976 = {
@@ -189,7 +235,7 @@
 		A864EF041D17EBA300F4B976 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				A82CCC4D1E2E6EE70013AD08 /* RDUtils */,
+				A845ACA61FDFDC6300ABFACB /* Modules */,
 				A864EF2A1D17EBA300F4B976 /* PDFLib */,
 				A864EF2F1D17EBA300F4B976 /* PDFView */,
 				A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */,
@@ -280,12 +326,15 @@
 			files = (
 				A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */,
 				A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */,
+				A845ACDA1FDFDD3100ABFACB /* ReaderHandler.h in Headers */,
+				A845ACDB1FDFDD3100ABFACB /* RDExtendedSearch.h in Headers */,
+				A845ACDC1FDFDD3100ABFACB /* SearchResultTableViewController.h in Headers */,
+				A845ACDD1FDFDD3100ABFACB /* RDUtils.h in Headers */,
 				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
 				A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */,
 				A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */,
 				A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */,
 				A864EF871D17EBA400F4B976 /* PopupMenu.h in Headers */,
-				A8A212D91E3B4432000E24AC /* ReaderHandler.h in Headers */,
 				A864EF791D17EBA400F4B976 /* PDFVCanvas.h in Headers */,
 				A864EF7B1D17EBA400F4B976 /* PDFVFinder.h in Headers */,
 				A864EF6B1D17EBA400F4B976 /* BookmarkTableViewController.h in Headers */,
@@ -365,16 +414,18 @@
 			files = (
 				A864EF8A1D17EBA400F4B976 /* PopupMenuItem.m in Sources */,
 				A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */,
+				A845ACE21FDFE9C900ABFACB /* RDExtendedSearch.m in Sources */,
 				A864EF821D17EBA400F4B976 /* PDFVPage.m in Sources */,
+				A845ACE31FDFEA4900ABFACB /* SearchResultTableViewController.m in Sources */,
 				A864EF7E1D17EBA400F4B976 /* PDFVGlobal.m in Sources */,
 				A864EF6C1D17EBA400F4B976 /* BookmarkTableViewController.m in Sources */,
+				A845ACE11FDFE9C300ABFACB /* ReaderHandler.m in Sources */,
 				A864EF701D17EBA400F4B976 /* OutLineViewController.m in Sources */,
 				A864EF741D17EBA400F4B976 /* PDFReflowView.m in Sources */,
 				A864EF841D17EBA400F4B976 /* PDFVThread.m in Sources */,
 				A864EF8E1D17EBA400F4B976 /* RDPDFViewController.m in Sources */,
 				A864EF881D17EBA400F4B976 /* PopupMenu.m in Sources */,
 				A864EF901D17EBA400F4B976 /* TextAnnotViewController.m in Sources */,
-				A8A212DA1E3B4432000E24AC /* ReaderHandler.m in Sources */,
 				A864EF721D17EBA400F4B976 /* PDFHttpStream.m in Sources */,
 				A864EF801D17EBA400F4B976 /* PDFView.m in Sources */,
 				A864EF6A1D17EBA400F4B976 /* PDFObjc.m in Sources */,
@@ -382,6 +433,7 @@
 				A864EF7C1D17EBA400F4B976 /* PDFVFinder.m in Sources */,
 				A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */,
 				A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */,
+				A845ACE41FDFED5500ABFACB /* RDUtils.m in Sources */,
 				A864EF8C1D17EBA400F4B976 /* PopupMenuOverlayView.m in Sources */,
 				A84A2D511D2284F000B2A4F2 /* ViewModeTableViewController.m in Sources */,
 				A864EF6E1D17EBA400F4B976 /* OUTLINE_ITEM.m in Sources */,
@@ -484,6 +536,7 @@
 					"IS_DEMO=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RadaeeLib/ios/PDFLib",
@@ -502,6 +555,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "IS_DEMO=1";
+				HEADER_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RadaeeLib/ios/PDFLib",

@@ -127,7 +127,7 @@ namespace ReaderXamarin
 			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
 			//Open from url
-			//UIViewController controller = plugin.Show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "");
+			UIViewController controller = plugin.Show("test.pdf", "");
 
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);
@@ -136,7 +136,7 @@ namespace ReaderXamarin
 			this.NavigationController.NavigationBar.BarTintColor = UIColor.Black;
 			this.NavigationController.NavigationBar.TintColor = UIColor.Red;
 
-			UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
+			//UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
 
 			//Create image of a specific page (needs a valid pdf opened instance)
 			/*

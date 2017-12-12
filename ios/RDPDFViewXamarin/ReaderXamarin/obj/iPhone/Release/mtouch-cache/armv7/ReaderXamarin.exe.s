@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Fri Aug 18 15:56:20 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "ReaderXamarin.exe"
 	.asciz ""
 
@@ -125,7 +125,7 @@ ReaderXamarin_Application_Main_string__:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,32,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 88
+	.long mono_aot_ReaderXamarin_got - . + 84
 	.byte 2,32,159,231,0,0,157,229,0,31,160,227
 bl _p_1
 
@@ -256,7 +256,7 @@ ReaderXamarin_RadaeeDelegate_WillShowReader:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 92
+	.long mono_aot_ReaderXamarin_got - . + 88
 	.byte 0,0,159,231
 bl _p_4
 
@@ -270,7 +270,7 @@ ReaderXamarin_RadaeeDelegate_DidShowReader:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 96
+	.long mono_aot_ReaderXamarin_got - . + 92
 	.byte 0,0,159,231
 bl _p_4
 
@@ -284,7 +284,7 @@ ReaderXamarin_RadaeeDelegate_WillCloseReader:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 100
+	.long mono_aot_ReaderXamarin_got - . + 96
 	.byte 0,0,159,231
 bl _p_4
 
@@ -298,7 +298,7 @@ ReaderXamarin_RadaeeDelegate_DidCloseReader:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 104
+	.long mono_aot_ReaderXamarin_got - . + 100
 	.byte 0,0,159,231
 bl _p_4
 
@@ -312,9 +312,9 @@ ReaderXamarin_RadaeeDelegate_DidChangePage_int:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,4,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 108
+	.long mono_aot_ReaderXamarin_got - . + 104
 	.byte 0,0,159,231,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 112
+	.long mono_aot_ReaderXamarin_got - . + 108
 	.byte 0,0,159,231,3,31,160,227
 bl _p_5
 
@@ -335,7 +335,7 @@ ReaderXamarin_RadaeeDelegate_DidSearchTerm_string_bool:
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,0,0,141,229,4,16,141,229,8,32,205,229,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 116
+	.long mono_aot_ReaderXamarin_got - . + 112
 	.byte 0,0,159,231,4,16,157,229
 bl _p_6
 
@@ -348,45 +348,60 @@ Lme_11:
 ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint:
 .loc 1 1 0
 
-	.byte 128,64,45,233,13,112,160,225,0,9,45,233,18,223,77,226,13,176,160,225,16,0,139,229,20,16,139,229,24,32,139,229
-	.byte 28,48,139,229,0,15,160,227,0,0,139,229,0,15,160,227,4,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 120
-	.byte 0,0,159,231,64,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 112
+	.byte 128,64,45,233,13,112,160,225,0,9,45,233,6,223,77,226,13,176,160,225,0,0,139,229,4,16,139,229,8,32,139,229
+	.byte 12,48,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 116
+	.byte 0,0,159,231,16,0,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 108
 	.byte 0,0,159,231,3,31,160,227
 bl _p_5
 
-	.byte 0,16,160,225,64,0,155,229,20,32,155,229,8,32,129,229
+	.byte 0,16,160,225,16,0,155,229,4,32,155,229,8,32,129,229
 bl _p_6
 
-	.byte 16,0,155,229,20,32,144,229,2,0,160,225,20,16,155,229,0,224,210,229
-bl _p_8
-bl _p_9
-
-	.byte 0,32,160,225,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 124
-	.byte 0,0,159,231,32,0,139,229,11,16,160,225,2,0,160,225,0,224,210,229,48,32,139,229
-bl _p_10
-
-	.byte 0,42,155,237,2,42,139,237,2,42,155,237,14,43,139,237,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 128
-	.byte 0,0,159,231,3,31,160,227
-bl _p_5
-
-	.byte 48,32,155,229,14,43,155,237,2,42,128,237,36,0,139,229,11,16,160,225,2,0,160,225,0,224,210,229
-bl _p_10
-
-	.byte 1,42,155,237,3,42,139,237,3,42,155,237,10,43,139,237,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 128
-	.byte 0,0,159,231,3,31,160,227
-bl _p_5
-
-	.byte 0,32,160,225,32,0,155,229,36,16,155,229,10,43,155,237,2,42,130,237
-bl _p_11
-
-	.byte 18,223,139,226,0,9,189,232,128,128,189,232
+	.byte 6,223,139,226,0,9,189,232,128,128,189,232
 
 Lme_12:
+.text
+	.align 2
+	.no_dead_strip ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint:
+.loc 1 1 0
+
+	.byte 128,64,45,233,13,112,160,225,0,9,45,233,6,223,77,226,13,176,160,225,0,0,139,229,4,16,139,229,8,32,139,229
+	.byte 12,48,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 120
+	.byte 0,0,159,231,16,0,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 108
+	.byte 0,0,159,231,3,31,160,227
+bl _p_5
+
+	.byte 0,16,160,225,16,0,155,229,4,32,155,229,8,32,129,229
+bl _p_6
+
+	.byte 6,223,139,226,0,9,189,232,128,128,189,232
+
+Lme_13:
+.text
+	.align 2
+	.no_dead_strip ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint
+ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint:
+.loc 1 1 0
+
+	.byte 128,64,45,233,13,112,160,225,0,9,45,233,6,223,77,226,13,176,160,225,0,0,139,229,4,16,139,229,8,32,139,229
+	.byte 12,48,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 124
+	.byte 0,0,159,231,16,0,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 108
+	.byte 0,0,159,231,3,31,160,227
+bl _p_5
+
+	.byte 0,16,160,225,16,0,155,229,4,32,155,229,8,32,129,229
+bl _p_6
+
+	.byte 6,223,139,226,0,9,189,232,128,128,189,232
+
+Lme_14:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
@@ -395,23 +410,23 @@ ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoi
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,8,223,77,226,13,176,160,225,0,0,139,229,4,16,139,229,8,32,139,229
 	.byte 12,48,139,229,48,224,157,229,16,224,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 132
+	.long mono_aot_ReaderXamarin_got - . + 128
 	.byte 0,0,159,231,24,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 112
+	.long mono_aot_ReaderXamarin_got - . + 108
 	.byte 0,0,159,231,3,31,160,227
 bl _p_5
 
 	.byte 4,16,155,229,8,16,128,229,28,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 112
+	.long mono_aot_ReaderXamarin_got - . + 108
 	.byte 0,0,159,231,3,31,160,227
 bl _p_5
 
 	.byte 0,32,160,225,24,0,155,229,28,16,155,229,8,48,155,229,8,48,130,229
-bl _p_11
+bl _p_8
 
 	.byte 8,223,139,226,0,9,189,232,128,128,189,232
 
-Lme_13:
+Lme_15:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController__ctor_intptr
@@ -419,11 +434,11 @@ ReaderXamarin_ViewController__ctor_intptr:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,4,16,141,229,0,0,157,229,4,16,157,229
-bl _p_12
+bl _p_9
 
 	.byte 3,223,141,226,0,1,189,232,128,128,189,232
 
-Lme_14:
+Lme_16:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController_ViewDidLoad
@@ -431,13 +446,13 @@ ReaderXamarin_ViewController_ViewDidLoad:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,0,160,160,225,10,0,160,225
-bl _p_13
+bl _p_10
 
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 136
-	.byte 1,16,159,231,10,0,160,225,0,32,154,229,15,224,160,225,224,240,146,229,0,223,141,226,0,5,189,232,128,128,189,232
+	.long mono_aot_ReaderXamarin_got - . + 132
+	.byte 1,16,159,231,10,0,160,225,0,32,154,229,15,224,160,225,236,240,146,229,0,223,141,226,0,5,189,232,128,128,189,232
 
-Lme_15:
+Lme_17:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController_DidReceiveMemoryWarning
@@ -445,11 +460,11 @@ ReaderXamarin_ViewController_DidReceiveMemoryWarning:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229
-bl _p_14
+bl _p_11
 
 	.byte 3,223,141,226,0,1,189,232,128,128,189,232
 
-Lme_16:
+Lme_18:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController_get_openBtn
@@ -459,7 +474,7 @@ ReaderXamarin_ViewController_get_openBtn:
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,32,0,144,229,3,223,141,226
 	.byte 0,1,189,232,128,128,189,232
 
-Lme_17:
+Lme_19:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
@@ -471,168 +486,135 @@ ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton:
 	.long mono_aot_ReaderXamarin_got - . -4
 	.byte 2,32,159,231,2,16,129,224,64,35,160,227,0,32,193,229,3,223,141,226,0,1,189,232,128,128,189,232
 
-Lme_18:
+Lme_1a:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
 ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton:
 .loc 1 1 0
 
-	.byte 128,64,45,233,13,112,160,225,64,13,45,233,34,223,77,226,13,176,160,225,0,160,160,225,80,16,139,229,0,15,160,227
-	.byte 16,0,139,229,0,15,160,227,20,0,139,229,0,15,160,227,24,0,139,229,0,15,160,227,28,0,139,229,0,15,160,227
-	.byte 32,0,139,229,0,15,160,227,36,0,139,229
-bl _p_15
+	.byte 128,64,45,233,13,112,160,225,64,13,45,233,14,223,77,226,13,176,160,225,0,160,160,225,16,16,139,229
+bl _p_12
 
 	.byte 28,0,138,229,7,31,138,226,161,20,160,225,0,32,159,229,0,0,0,234
 	.long mono_aot_ReaderXamarin_got - . -4
 	.byte 2,32,159,231,2,16,129,224,64,35,160,227,0,32,193,229,28,192,154,229,0,16,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 140
+	.long mono_aot_ReaderXamarin_got - . + 136
 	.byte 1,16,159,231,0,32,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 144
+	.long mono_aot_ReaderXamarin_got - . + 140
 	.byte 2,32,159,231,0,48,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 148
+	.long mono_aot_ReaderXamarin_got - . + 144
 	.byte 3,48,159,231,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 152
-	.byte 0,0,159,231,112,0,139,229,12,0,160,225,108,0,139,229,112,0,155,229,0,0,141,229,128,3,160,227,4,0,141,229
-	.byte 108,0,155,229,0,224,220,229
+	.long mono_aot_ReaderXamarin_got - . + 148
+	.byte 0,0,159,231,48,0,139,229,12,0,160,225,44,0,139,229,48,0,155,229,0,0,141,229,128,3,160,227,4,0,141,229
+	.byte 44,0,155,229,0,224,220,229
+bl _p_13
+
+	.byte 28,32,154,229,2,0,160,225,0,31,160,227,0,224,210,229
+bl _p_14
+
+	.byte 28,32,154,229,2,0,160,225,64,19,160,227,0,224,210,229
+bl _p_15
+
+	.byte 28,32,154,229,2,0,160,225,64,19,160,227,0,224,210,229
 bl _p_16
 
 	.byte 28,32,154,229,2,0,160,225,0,31,160,227,0,224,210,229
 bl _p_17
 
-	.byte 28,32,154,229,2,0,160,225,64,19,160,227,0,224,210,229
+	.byte 28,0,154,229,40,0,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 152
+	.byte 0,0,159,231,4,31,160,227
 bl _p_18
 
-	.byte 28,32,154,229,2,0,160,225,64,19,160,227,0,224,210,229
+	.byte 0,16,160,225,40,32,155,229,2,0,160,225,0,224,210,229
 bl _p_19
 
-	.byte 28,32,154,229,2,0,160,225,0,31,160,227,0,224,210,229
+	.byte 28,32,154,229,0,42,159,237,0,0,0,234,0,0,200,66,2,0,160,225,0,42,141,237,0,16,157,229,0,224,210,229
 bl _p_20
 
-	.byte 28,0,154,229,104,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 156
-	.byte 0,0,159,231,4,31,160,227
+	.byte 28,32,154,229,2,0,160,225,64,19,160,227,0,224,210,229
 bl _p_21
 
-	.byte 0,16,160,225,104,32,155,229,2,0,160,225,0,224,210,229
+	.byte 28,48,154,229,0,16,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 156
+	.byte 1,16,159,231,0,32,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 160
+	.byte 2,32,159,231,3,0,160,225,0,224,211,229
 bl _p_22
 
-	.byte 28,32,154,229,0,42,159,237,0,0,0,234,0,0,200,66,2,0,160,225,0,42,141,237,0,16,157,229,0,224,210,229
+	.byte 0,96,160,225,28,0,154,229,36,0,139,229,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 164
+	.byte 0,0,159,231
 bl _p_23
 
-	.byte 28,32,154,229,2,0,160,225,64,19,160,227,0,224,210,229
-bl _p_24
-
-	.byte 28,0,154,229,100,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 160
-	.byte 0,0,159,231
-bl _p_25
-
-	.byte 100,16,155,229,96,0,139,229
+	.byte 36,16,155,229,32,0,139,229
 bl ReaderXamarin_RadaeeDelegate__ctor_RadaeeLib_RadaeePDFPlugin
 
-	.byte 96,0,155,229,24,0,138,229,6,31,138,226,161,20,160,225,0,32,159,229,0,0,0,234
+	.byte 32,0,155,229,24,0,138,229,6,31,138,226,161,20,160,225,0,32,159,229,0,0,0,234
 	.long mono_aot_ReaderXamarin_got - . -4
 	.byte 2,32,159,231,2,16,129,224,64,35,160,227,0,32,193,229,28,32,154,229,24,16,154,229,2,0,160,225,0,224,210,229
-bl _p_26
+bl _p_24
 
 	.byte 10,0,160,225,0,224,218,229
-bl _p_27
-
-	.byte 0,16,160,225,0,224,209,229
-bl _p_28
-
-	.byte 92,0,139,229
-bl _p_29
-
-	.byte 0,16,160,225,92,32,155,229,2,0,160,225,0,224,210,229
-bl _p_30
-
-	.byte 10,0,160,225,0,224,218,229
-bl _p_27
-
-	.byte 0,16,160,225,0,224,209,229
-bl _p_28
-
-	.byte 88,0,139,229
-bl _p_31
-
-	.byte 0,16,160,225,88,32,155,229,2,0,160,225,0,224,210,229
-bl _p_32
-
-	.byte 28,48,154,229,0,16,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 164
-	.byte 1,16,159,231,0,32,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 168
-	.byte 2,32,159,231,3,0,160,225,0,224,211,229
-bl _p_33
-
-	.byte 0,96,160,225,0,15,80,227,88,0,0,10,10,0,160,225,0,224,218,229
-bl _p_27
-
-	.byte 0,48,160,225,6,16,160,225,64,35,160,227,0,224,211,229
-bl _p_34
-
-	.byte 0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 172
-	.byte 0,0,159,231,88,0,139,229,6,0,160,225,0,224,214,229
-bl _p_35
-
-	.byte 0,32,160,225,4,31,139,226,2,0,160,225,0,224,210,229
-bl _p_36
-
-	.byte 4,15,139,226,2,58,144,237,7,42,155,237,0,15,160,227,40,0,139,229,0,15,160,227,44,0,139,229,12,58,139,237
-	.byte 13,42,139,237,10,58,139,237,11,42,139,237,40,0,155,229,32,0,139,229,44,0,155,229,36,0,139,229,8,42,155,237
-	.byte 14,42,139,237,14,42,155,237,32,43,139,237,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 128
-	.byte 0,0,159,231,3,31,160,227
-bl _p_5
-
-	.byte 32,43,155,237,2,42,128,237,92,0,139,229,6,0,160,225,0,224,214,229
-bl _p_35
-
-	.byte 0,32,160,225,4,31,139,226,2,0,160,225,0,224,210,229
-bl _p_36
-
-	.byte 4,15,139,226,2,58,144,237,7,42,155,237,0,15,160,227,60,0,139,229,0,15,160,227,64,0,139,229,17,58,139,237
-	.byte 18,42,139,237,15,58,139,237,16,42,139,237,60,0,155,229,32,0,139,229,64,0,155,229,36,0,139,229,9,42,155,237
-	.byte 19,42,139,237,19,42,155,237,30,43,139,237,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 128
-	.byte 0,0,159,231,3,31,160,227
-bl _p_5
-
-	.byte 0,32,160,225,88,0,155,229,92,16,155,229,30,43,155,237,2,42,130,237
-bl _p_11
-
-	.byte 40,0,0,234,0,0,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 176
-	.byte 0,0,159,231
 bl _p_25
 
-	.byte 100,0,139,229
-bl _p_37
+	.byte 0,16,160,225,0,224,209,229
+bl _p_26
 
-	.byte 100,32,155,229,2,0,160,225,96,0,139,229,0,16,159,229,0,0,0,234
+	.byte 28,0,139,229
+bl _p_27
+
+	.byte 0,16,160,225,28,32,155,229,2,0,160,225,0,224,210,229
+bl _p_28
+
+	.byte 10,0,160,225,0,224,218,229
+bl _p_25
+
+	.byte 0,16,160,225,0,224,209,229
+bl _p_26
+
+	.byte 24,0,139,229
+bl _p_29
+
+	.byte 0,16,160,225,24,32,155,229,2,0,160,225,0,224,210,229
+bl _p_30
+
+	.byte 0,15,86,227,8,0,0,10,10,0,160,225,0,224,218,229
+bl _p_25
+
+	.byte 0,48,160,225,6,16,160,225,64,35,160,227,0,224,211,229
+bl _p_31
+
+	.byte 40,0,0,234,0,0,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 168
+	.byte 0,0,159,231
+bl _p_23
+
+	.byte 36,0,139,229
+bl _p_32
+
+	.byte 36,32,155,229,2,0,160,225,32,0,139,229,0,16,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 172
+	.byte 1,16,159,231,2,0,160,225,0,224,210,229
+bl _p_33
+
+	.byte 32,32,155,229,2,0,160,225,28,0,139,229,0,16,159,229,0,0,0,234
+	.long mono_aot_ReaderXamarin_got - . + 176
+	.byte 1,16,159,231,2,0,160,225,0,224,210,229
+bl _p_34
+
+	.byte 28,32,155,229,2,0,160,225,24,0,139,229,0,16,159,229,0,0,0,234
 	.long mono_aot_ReaderXamarin_got - . + 180
 	.byte 1,16,159,231,2,0,160,225,0,224,210,229
-bl _p_38
+bl _p_35
 
-	.byte 96,32,155,229,2,0,160,225,92,0,139,229,0,16,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 184
-	.byte 1,16,159,231,2,0,160,225,0,224,210,229
-bl _p_39
+	.byte 24,16,155,229,1,0,160,225,0,224,209,229
+bl _p_36
 
-	.byte 92,32,155,229,2,0,160,225,88,0,139,229,0,16,159,229,0,0,0,234
-	.long mono_aot_ReaderXamarin_got - . + 188
-	.byte 1,16,159,231,2,0,160,225,0,224,210,229
-bl _p_40
+	.byte 14,223,139,226,64,13,189,232,128,128,189,232
 
-	.byte 88,16,155,229,1,0,160,225,0,224,209,229
-bl _p_41
-
-	.byte 34,223,139,226,64,13,189,232,128,128,189,232
-
-Lme_19:
+Lme_1b:
 .text
 	.align 2
 	.no_dead_strip ReaderXamarin_ViewController_ReleaseDesignerOutlets
@@ -641,13 +623,13 @@ ReaderXamarin_ViewController_ReleaseDesignerOutlets:
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,0,160,160,225,32,0,154,229,0,15,80,227,15,0,0,10,32,16,154,229
 	.byte 1,0,160,225,0,224,209,229
-bl _p_42
+bl _p_37
 
 	.byte 0,15,160,227,0,31,160,227,32,16,138,229,8,31,138,226,161,20,160,225,0,32,159,229,0,0,0,234
 	.long mono_aot_ReaderXamarin_got - . -4
 	.byte 2,32,159,231,2,16,129,224,64,35,160,227,0,32,193,229,0,223,141,226,0,5,189,232,128,128,189,232
 
-Lme_1a:
+Lme_1c:
 .text
 	.align 3
 jit_code_end:
@@ -676,6 +658,8 @@ bl ReaderXamarin_RadaeeDelegate_DidCloseReader
 bl ReaderXamarin_RadaeeDelegate_DidChangePage_int
 bl ReaderXamarin_RadaeeDelegate_DidSearchTerm_string_bool
 bl ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
+bl ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+bl ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint
 bl ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 bl ReaderXamarin_ViewController__ctor_intptr
 bl ReaderXamarin_ViewController_ViewDidLoad
@@ -711,15 +695,15 @@ unwind_info:
 	.byte 68,14,8,135,2,72,14,16,134,4,136,3,142,1,68,14,24,2,60,10,68,14,16,68,8,6,8,8,14,8,68,11
 	.byte 30,12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,88,10,68,14,12,68,8,8,14,8,68,11,31
 	.byte 12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,32,2,96,10,68,14,12,68,8,8,14,8,68,11,31
-	.byte 12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,32,2,36,10,68,14,12,68,8,8,14,8,68,11,41
-	.byte 12,13,0,68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,88,68,13,11,3,48,1,10,68,13,13,14,16
-	.byte 68,8,8,8,11,14,8,68,11,40,12,13,0,68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,48,68,13
-	.byte 11,2,128,10,68,13,13,14,16,68,8,8,8,11,14,8,68,11,30,12,13,0,68,14,8,135,2,72,14,12,136,3
-	.byte 142,1,68,14,24,84,10,68,14,12,68,8,8,14,8,68,11,32,12,13,0,68,14,8,135,2,72,14,16,136,4,138
-	.byte 3,142,1,2,44,10,68,14,16,68,8,8,8,10,14,8,68,11,50,12,13,0,68,14,8,135,2,72,14,24,134,6
-	.byte 136,5,138,4,139,3,142,1,68,14,160,1,68,13,11,3,160,4,10,68,13,13,14,24,68,8,6,8,8,8,10,8
-	.byte 11,14,8,68,11,32,12,13,0,68,14,8,135,2,72,14,16,136,4,138,3,142,1,2,80,10,68,14,16,68,8,8
-	.byte 8,10,14,8,68,11
+	.byte 12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,32,2,36,10,68,14,12,68,8,8,14,8,68,11,40
+	.byte 12,13,0,68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,40,68,13,11,2,80,10,68,13,13,14,16,68
+	.byte 8,8,8,11,14,8,68,11,40,12,13,0,68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,48,68,13,11
+	.byte 2,128,10,68,13,13,14,16,68,8,8,8,11,14,8,68,11,30,12,13,0,68,14,8,135,2,72,14,12,136,3,142
+	.byte 1,68,14,24,84,10,68,14,12,68,8,8,14,8,68,11,32,12,13,0,68,14,8,135,2,72,14,16,136,4,138,3
+	.byte 142,1,2,44,10,68,14,16,68,8,8,8,10,14,8,68,11,49,12,13,0,68,14,8,135,2,72,14,24,134,6,136
+	.byte 5,138,4,139,3,142,1,68,14,80,68,13,11,3,48,3,10,68,13,13,14,24,68,8,6,8,8,8,10,8,11,14
+	.byte 8,68,11,32,12,13,0,68,14,8,135,2,72,14,16,136,4,138,3,142,1,2,80,10,68,14,16,68,8,8,8,10
+	.byte 14,8,68,11
 
 .text
 	.align 4
@@ -730,257 +714,227 @@ plt_UIKit_UIApplication_Main_string___string_string:
 _p_1:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 204,470
+	.long mono_aot_ReaderXamarin_got - . + 196,441
 	.no_dead_strip plt_UIKit_UIApplicationDelegate__ctor
 plt_UIKit_UIApplicationDelegate__ctor:
 _p_2:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 208,475
+	.long mono_aot_ReaderXamarin_got - . + 200,446
 	.no_dead_strip plt_RadaeeLib_RadaeePDFPluginDelegate__ctor
 plt_RadaeeLib_RadaeePDFPluginDelegate__ctor:
 _p_3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 212,480
+	.long mono_aot_ReaderXamarin_got - . + 204,451
 	.no_dead_strip plt_System_Console_WriteLine_string
 plt_System_Console_WriteLine_string:
 _p_4:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 216,485
+	.long mono_aot_ReaderXamarin_got - . + 208,456
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_5:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 220,490
+	.long mono_aot_ReaderXamarin_got - . + 212,461
 	.no_dead_strip plt_System_Console_WriteLine_string_object
 plt_System_Console_WriteLine_string_object:
 _p_6:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 224,498
+	.long mono_aot_ReaderXamarin_got - . + 216,469
 	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetImmersive_bool
 plt_RadaeeLib_RadaeePDFPlugin_SetImmersive_bool:
 _p_7:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 228,503
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_GetImageForPage_int
-plt_RadaeeLib_RadaeePDFPlugin_GetImageForPage_int:
+	.long mono_aot_ReaderXamarin_got - . + 220,474
+	.no_dead_strip plt_System_Console_WriteLine_string_object_object
+plt_System_Console_WriteLine_string_object_object:
 _p_8:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 232,508
-	.no_dead_strip plt_UIKit_UIImage_LoadFromData_Foundation_NSData
-plt_UIKit_UIImage_LoadFromData_Foundation_NSData:
+	.long mono_aot_ReaderXamarin_got - . + 224,479
+	.no_dead_strip plt_UIKit_UIViewController__ctor_intptr
+plt_UIKit_UIViewController__ctor_intptr:
 _p_9:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 236,513
-	.no_dead_strip plt_UIKit_UIImage_get_Size
-plt_UIKit_UIImage_get_Size:
+	.long mono_aot_ReaderXamarin_got - . + 228,484
+	.no_dead_strip plt_UIKit_UIViewController_ViewDidLoad
+plt_UIKit_UIViewController_ViewDidLoad:
 _p_10:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 240,518
-	.no_dead_strip plt_System_Console_WriteLine_string_object_object
-plt_System_Console_WriteLine_string_object_object:
+	.long mono_aot_ReaderXamarin_got - . + 232,489
+	.no_dead_strip plt_UIKit_UIViewController_DidReceiveMemoryWarning
+plt_UIKit_UIViewController_DidReceiveMemoryWarning:
 _p_11:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 244,523
-	.no_dead_strip plt_UIKit_UIViewController__ctor_intptr
-plt_UIKit_UIViewController__ctor_intptr:
+	.long mono_aot_ReaderXamarin_got - . + 236,494
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit
+plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit:
 _p_12:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 248,528
-	.no_dead_strip plt_UIKit_UIViewController_ViewDidLoad
-plt_UIKit_UIViewController_ViewDidLoad:
+	.long mono_aot_ReaderXamarin_got - . + 240,499
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_ActivateLicenseWithBundleId_string_string_string_string_int
+plt_RadaeeLib_RadaeePDFPlugin_ActivateLicenseWithBundleId_string_string_string_string_int:
 _p_13:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 252,533
-	.no_dead_strip plt_UIKit_UIViewController_DidReceiveMemoryWarning
-plt_UIKit_UIViewController_DidReceiveMemoryWarning:
+	.long mono_aot_ReaderXamarin_got - . + 244,504
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetReaderViewMode_int
+plt_RadaeeLib_RadaeePDFPlugin_SetReaderViewMode_int:
 _p_14:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 256,538
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit
-plt_RadaeeLib_RadaeePDFPlugin_get_PluginInit:
+	.long mono_aot_ReaderXamarin_got - . + 248,509
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetPagingEnabled_bool
+plt_RadaeeLib_RadaeePDFPlugin_SetPagingEnabled_bool:
 _p_15:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 260,543
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_ActivateLicenseWithBundleId_string_string_string_string_int
-plt_RadaeeLib_RadaeePDFPlugin_ActivateLicenseWithBundleId_string_string_string_string_int:
+	.long mono_aot_ReaderXamarin_got - . + 252,514
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetDoublePageEnabled_bool
+plt_RadaeeLib_RadaeePDFPlugin_SetDoublePageEnabled_bool:
 _p_16:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 264,548
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetReaderViewMode_int
-plt_RadaeeLib_RadaeePDFPlugin_SetReaderViewMode_int:
+	.long mono_aot_ReaderXamarin_got - . + 256,519
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_ToggleThumbSeekBar_int
+plt_RadaeeLib_RadaeePDFPlugin_ToggleThumbSeekBar_int:
 _p_17:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 268,553
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetPagingEnabled_bool
-plt_RadaeeLib_RadaeePDFPlugin_SetPagingEnabled_bool:
+	.long mono_aot_ReaderXamarin_got - . + 260,524
+	.no_dead_strip plt_System_Convert_ToInt32_string_int
+plt_System_Convert_ToInt32_string_int:
 _p_18:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 272,558
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetDoublePageEnabled_bool
-plt_RadaeeLib_RadaeePDFPlugin_SetDoublePageEnabled_bool:
+	.long mono_aot_ReaderXamarin_got - . + 264,529
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetThumbnailBGColor_int
+plt_RadaeeLib_RadaeePDFPlugin_SetThumbnailBGColor_int:
 _p_19:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 276,563
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_ToggleThumbSeekBar_int
-plt_RadaeeLib_RadaeePDFPlugin_ToggleThumbSeekBar_int:
+	.long mono_aot_ReaderXamarin_got - . + 268,534
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetThumbHeight_single
+plt_RadaeeLib_RadaeePDFPlugin_SetThumbHeight_single:
 _p_20:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 280,568
-	.no_dead_strip plt_System_Convert_ToInt32_string_int
-plt_System_Convert_ToInt32_string_int:
+	.long mono_aot_ReaderXamarin_got - . + 272,539
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetFirstPageCover_bool
+plt_RadaeeLib_RadaeePDFPlugin_SetFirstPageCover_bool:
 _p_21:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 284,573
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetThumbnailBGColor_int
-plt_RadaeeLib_RadaeePDFPlugin_SetThumbnailBGColor_int:
+	.long mono_aot_ReaderXamarin_got - . + 276,544
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_Show_string_string
+plt_RadaeeLib_RadaeePDFPlugin_Show_string_string:
 _p_22:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 288,578
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetThumbHeight_single
-plt_RadaeeLib_RadaeePDFPlugin_SetThumbHeight_single:
+	.long mono_aot_ReaderXamarin_got - . + 280,549
+	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
+plt__jit_icall_ves_icall_object_new_specific:
 _p_23:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 292,583
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetFirstPageCover_bool
-plt_RadaeeLib_RadaeePDFPlugin_SetFirstPageCover_bool:
+	.long mono_aot_ReaderXamarin_got - . + 284,554
+	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetDelegate_Foundation_NSObject
+plt_RadaeeLib_RadaeePDFPlugin_SetDelegate_Foundation_NSObject:
 _p_24:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 296,588
-	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
-plt__jit_icall_ves_icall_object_new_specific:
+	.long mono_aot_ReaderXamarin_got - . + 288,586
+	.no_dead_strip plt_UIKit_UIViewController_get_NavigationController
+plt_UIKit_UIViewController_get_NavigationController:
 _p_25:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 300,593
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_SetDelegate_Foundation_NSObject
-plt_RadaeeLib_RadaeePDFPlugin_SetDelegate_Foundation_NSObject:
+	.long mono_aot_ReaderXamarin_got - . + 292,591
+	.no_dead_strip plt_UIKit_UINavigationController_get_NavigationBar
+plt_UIKit_UINavigationController_get_NavigationBar:
 _p_26:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 304,625
-	.no_dead_strip plt_UIKit_UIViewController_get_NavigationController
-plt_UIKit_UIViewController_get_NavigationController:
+	.long mono_aot_ReaderXamarin_got - . + 296,596
+	.no_dead_strip plt_UIKit_UIColor_get_Black
+plt_UIKit_UIColor_get_Black:
 _p_27:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 308,630
-	.no_dead_strip plt_UIKit_UINavigationController_get_NavigationBar
-plt_UIKit_UINavigationController_get_NavigationBar:
+	.long mono_aot_ReaderXamarin_got - . + 300,601
+	.no_dead_strip plt_UIKit_UINavigationBar_set_BarTintColor_UIKit_UIColor
+plt_UIKit_UINavigationBar_set_BarTintColor_UIKit_UIColor:
 _p_28:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 312,635
-	.no_dead_strip plt_UIKit_UIColor_get_Black
-plt_UIKit_UIColor_get_Black:
+	.long mono_aot_ReaderXamarin_got - . + 304,606
+	.no_dead_strip plt_UIKit_UIColor_get_Red
+plt_UIKit_UIColor_get_Red:
 _p_29:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 316,640
-	.no_dead_strip plt_UIKit_UINavigationBar_set_BarTintColor_UIKit_UIColor
-plt_UIKit_UINavigationBar_set_BarTintColor_UIKit_UIColor:
+	.long mono_aot_ReaderXamarin_got - . + 308,611
+	.no_dead_strip plt_UIKit_UIView_set_TintColor_UIKit_UIColor
+plt_UIKit_UIView_set_TintColor_UIKit_UIColor:
 _p_30:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 320,645
-	.no_dead_strip plt_UIKit_UIColor_get_Red
-plt_UIKit_UIColor_get_Red:
+	.long mono_aot_ReaderXamarin_got - . + 312,616
+	.no_dead_strip plt_UIKit_UINavigationController_PushViewController_UIKit_UIViewController_bool
+plt_UIKit_UINavigationController_PushViewController_UIKit_UIViewController_bool:
 _p_31:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 324,650
-	.no_dead_strip plt_UIKit_UIView_set_TintColor_UIKit_UIColor
-plt_UIKit_UIView_set_TintColor_UIKit_UIColor:
+	.long mono_aot_ReaderXamarin_got - . + 316,621
+	.no_dead_strip plt_UIKit_UIAlertView__ctor
+plt_UIKit_UIAlertView__ctor:
 _p_32:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 328,655
-	.no_dead_strip plt_RadaeeLib_RadaeePDFPlugin_OpenFromAssets_string_string
-plt_RadaeeLib_RadaeePDFPlugin_OpenFromAssets_string_string:
+	.long mono_aot_ReaderXamarin_got - . + 320,626
+	.no_dead_strip plt_UIKit_UIAlertView_set_Title_string
+plt_UIKit_UIAlertView_set_Title_string:
 _p_33:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 332,660
-	.no_dead_strip plt_UIKit_UINavigationController_PushViewController_UIKit_UIViewController_bool
-plt_UIKit_UINavigationController_PushViewController_UIKit_UIViewController_bool:
+	.long mono_aot_ReaderXamarin_got - . + 324,631
+	.no_dead_strip plt_UIKit_UIAlertView_set_Message_string
+plt_UIKit_UIAlertView_set_Message_string:
 _p_34:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 336,665
-	.no_dead_strip plt_UIKit_UIViewController_get_View
-plt_UIKit_UIViewController_get_View:
+	.long mono_aot_ReaderXamarin_got - . + 328,636
+	.no_dead_strip plt_UIKit_UIAlertView_AddButton_string
+plt_UIKit_UIAlertView_AddButton_string:
 _p_35:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 340,670
-	.no_dead_strip plt_UIKit_UIView_get_Frame
-plt_UIKit_UIView_get_Frame:
+	.long mono_aot_ReaderXamarin_got - . + 332,641
+	.no_dead_strip plt_UIKit_UIAlertView_Show
+plt_UIKit_UIAlertView_Show:
 _p_36:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 344,675
-	.no_dead_strip plt_UIKit_UIAlertView__ctor
-plt_UIKit_UIAlertView__ctor:
+	.long mono_aot_ReaderXamarin_got - . + 336,646
+	.no_dead_strip plt_Foundation_NSObject_Dispose
+plt_Foundation_NSObject_Dispose:
 _p_37:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 348,680
-	.no_dead_strip plt_UIKit_UIAlertView_set_Title_string
-plt_UIKit_UIAlertView_set_Title_string:
-_p_38:
-
-	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 352,685
-	.no_dead_strip plt_UIKit_UIAlertView_set_Message_string
-plt_UIKit_UIAlertView_set_Message_string:
-_p_39:
-
-	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 356,690
-	.no_dead_strip plt_UIKit_UIAlertView_AddButton_string
-plt_UIKit_UIAlertView_AddButton_string:
-_p_40:
-
-	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 360,695
-	.no_dead_strip plt_UIKit_UIAlertView_Show
-plt_UIKit_UIAlertView_Show:
-_p_41:
-
-	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 364,700
-	.no_dead_strip plt_Foundation_NSObject_Dispose
-plt_Foundation_NSObject_Dispose:
-_p_42:
-
-	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_ReaderXamarin_got - . + 368,705
+	.long mono_aot_ReaderXamarin_got - . + 340,651
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_ReaderXamarin_got, 376
+.lcomm mono_aot_ReaderXamarin_got, 348
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -1003,7 +957,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "CAA895C0-0408-4E5C-B857-D5EB37297FCA"
+	.asciz "68AB5F54-CF84-427B-8122-C2970C591A04"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -1012,7 +966,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 139,0
+	.long 140,0
 	.align 2
 	.long mono_aot_ReaderXamarin_got
 	.align 2
@@ -1080,13 +1034,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 51,376,43,28,66,391195135,0,1354
-	.long 128,4,4,10,0,25,2152,792
-	.long 448,208,0,352,416,264,0,200
-	.long 56,0,0,0,0,0,0,0
+	.long 49,348,38,30,66,391195135,0,1324
+	.long 128,4,4,10,0,24,2128,792
+	.long 448,216,0,352,416,272,0,208
+	.long 64,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 89,0,31,17,18,73,130,84,185,130,179,182,118,49,28,77
+	.byte 78,226,44,173,148,96,136,240,93,146,43,1,228,244,72,89
 	.globl _mono_aot_module_ReaderXamarin_info
 	.align 2
 _mono_aot_module_ReaderXamarin_info:
@@ -2192,29 +2146,7 @@ LDIFF_SYM144=Lme_11 - ReaderXamarin_RadaeeDelegate_DidSearchTerm_string_bool
 Lfde17_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_17:
 
-	.byte 5
-	.asciz "UIKit_UIImage"
-
-	.byte 20,16
-LDIFF_SYM145=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM145
-	.byte 2,35,0,0,7
-	.asciz "UIKit_UIImage"
-
-LDIFF_SYM146=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM146
-LTDIE_17_POINTER:
-
-	.byte 13
-LDIFF_SYM147=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM147
-LTDIE_17_REFERENCE:
-
-	.byte 14
-LDIFF_SYM148=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM148
 	.byte 2
 	.asciz "ReaderXamarin.RadaeeDelegate:DidTapOnPage"
 	.asciz "ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint"
@@ -2226,46 +2158,124 @@ LDIFF_SYM148=LTDIE_17 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM149=LTDIE_11_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM149
-	.byte 2,123,16,3
+LDIFF_SYM145=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM145
+	.byte 0,3
 	.asciz "page"
 
-LDIFF_SYM150=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM150
-	.byte 2,123,20,3
+LDIFF_SYM146=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM146
+	.byte 2,123,4,3
 	.asciz "point"
 
-LDIFF_SYM151=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM151
-	.byte 0,11
-	.asciz "V_0"
-
-LDIFF_SYM152=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM152
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM153=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM153
-	.byte 2,123,0,0
+LDIFF_SYM147=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM147
+	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM154=Lfde18_end - Lfde18_start
-	.long LDIFF_SYM154
+LDIFF_SYM148=Lfde18_end - Lfde18_start
+	.long LDIFF_SYM148
 Lfde18_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
 
-LDIFF_SYM155=Lme_12 - ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
-	.long LDIFF_SYM155
-	.byte 68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,88,68,13,11,3,48,1,10,68,13,13,14,16,68,8,8
-	.byte 8,11,14,8,68,11
+LDIFF_SYM149=Lme_12 - ReaderXamarin_RadaeeDelegate_DidTapOnPage_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM149
+	.byte 68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,40,68,13,11,2,80,10,68,13,13,14,16,68,8,8,8
+	.byte 11,14,8,68,11
 	.align 2
 Lfde18_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "ReaderXamarin.RadaeeDelegate:DidDoubleTapOnPage"
+	.asciz "ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint"
+
+	.byte 0,0
+	.long ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+	.long Lme_13
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM150=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM150
+	.byte 0,3
+	.asciz "page"
+
+LDIFF_SYM151=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM151
+	.byte 2,123,4,3
+	.asciz "point"
+
+LDIFF_SYM152=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM152
+	.byte 0,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM153=Lfde19_end - Lfde19_start
+	.long LDIFF_SYM153
+Lfde19_start:
+
+	.long 0
+	.align 2
+	.long ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+
+LDIFF_SYM154=Lme_13 - ReaderXamarin_RadaeeDelegate_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM154
+	.byte 68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,40,68,13,11,2,80,10,68,13,13,14,16,68,8,8,8
+	.byte 11,14,8,68,11
+	.align 2
+Lfde19_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "ReaderXamarin.RadaeeDelegate:DidLongPressOnPage"
+	.asciz "ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint"
+
+	.byte 0,0
+	.long ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint
+	.long Lme_14
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM155=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM155
+	.byte 0,3
+	.asciz "page"
+
+LDIFF_SYM156=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM156
+	.byte 2,123,4,3
+	.asciz "point"
+
+LDIFF_SYM157=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM157
+	.byte 0,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM158=Lfde20_end - Lfde20_start
+	.long LDIFF_SYM158
+Lfde20_start:
+
+	.long 0
+	.align 2
+	.long ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint
+
+LDIFF_SYM159=Lme_14 - ReaderXamarin_RadaeeDelegate_DidLongPressOnPage_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM159
+	.byte 68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,40,68,13,11,2,80,10,68,13,13,14,16,68,8,8,8
+	.byte 11,14,8,68,11
+	.align 2
+Lfde20_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2275,109 +2285,86 @@ Lfde18_end:
 
 	.byte 0,0
 	.long ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
-	.long Lme_13
+	.long Lme_15
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM156=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM156
+LDIFF_SYM160=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM160
 	.byte 0,3
 	.asciz "type"
 
-LDIFF_SYM157=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM157
+LDIFF_SYM161=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM161
 	.byte 2,123,4,3
 	.asciz "page"
 
-LDIFF_SYM158=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM158
+LDIFF_SYM162=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM162
 	.byte 2,123,8,3
 	.asciz "point"
 
-LDIFF_SYM159=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM159
+LDIFF_SYM163=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM163
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM160=Lfde19_end - Lfde19_start
-	.long LDIFF_SYM160
-Lfde19_start:
+LDIFF_SYM164=Lfde21_end - Lfde21_start
+	.long LDIFF_SYM164
+Lfde21_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 
-LDIFF_SYM161=Lme_13 - ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
-	.long LDIFF_SYM161
+LDIFF_SYM165=Lme_15 - ReaderXamarin_RadaeeDelegate_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM165
 	.byte 68,14,8,135,2,72,14,16,136,4,139,3,142,1,68,14,48,68,13,11,2,128,10,68,13,13,14,16,68,8,8,8
 	.byte 11,14,8,68,11
 	.align 2
-Lfde19_end:
+Lfde21_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_19:
+LTDIE_18:
 
 	.byte 5
 	.asciz "UIKit_UIViewController"
 
 	.byte 24,16
-LDIFF_SYM162=LTDIE_8 - Ldebug_info_start
-	.long LDIFF_SYM162
+LDIFF_SYM166=LTDIE_8 - Ldebug_info_start
+	.long LDIFF_SYM166
 	.byte 2,35,0,6
 	.asciz "__mt_PreferredFocusedView_var"
 
-LDIFF_SYM163=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM163
+LDIFF_SYM167=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM167
 	.byte 2,35,20,0,7
 	.asciz "UIKit_UIViewController"
 
-LDIFF_SYM164=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM164
-LTDIE_19_POINTER:
-
-	.byte 13
-LDIFF_SYM165=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM165
-LTDIE_19_REFERENCE:
-
-	.byte 14
-LDIFF_SYM166=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM166
-LTDIE_21:
-
-	.byte 5
-	.asciz "UIKit_UIControl"
-
-	.byte 24,16
-LDIFF_SYM167=LTDIE_7 - Ldebug_info_start
-	.long LDIFF_SYM167
-	.byte 2,35,0,0,7
-	.asciz "UIKit_UIControl"
-
-LDIFF_SYM168=LTDIE_21 - Ldebug_info_start
+LDIFF_SYM168=LTDIE_18 - Ldebug_info_start
 	.long LDIFF_SYM168
-LTDIE_21_POINTER:
+LTDIE_18_POINTER:
 
 	.byte 13
-LDIFF_SYM169=LTDIE_21 - Ldebug_info_start
+LDIFF_SYM169=LTDIE_18 - Ldebug_info_start
 	.long LDIFF_SYM169
-LTDIE_21_REFERENCE:
+LTDIE_18_REFERENCE:
 
 	.byte 14
-LDIFF_SYM170=LTDIE_21 - Ldebug_info_start
+LDIFF_SYM170=LTDIE_18 - Ldebug_info_start
 	.long LDIFF_SYM170
 LTDIE_20:
 
 	.byte 5
-	.asciz "UIKit_UIButton"
+	.asciz "UIKit_UIControl"
 
 	.byte 24,16
-LDIFF_SYM171=LTDIE_21 - Ldebug_info_start
+LDIFF_SYM171=LTDIE_7 - Ldebug_info_start
 	.long LDIFF_SYM171
 	.byte 2,35,0,0,7
-	.asciz "UIKit_UIButton"
+	.asciz "UIKit_UIControl"
 
 LDIFF_SYM172=LTDIE_20 - Ldebug_info_start
 	.long LDIFF_SYM172
@@ -2391,79 +2378,102 @@ LTDIE_20_REFERENCE:
 	.byte 14
 LDIFF_SYM174=LTDIE_20 - Ldebug_info_start
 	.long LDIFF_SYM174
-LTDIE_18:
+LTDIE_19:
+
+	.byte 5
+	.asciz "UIKit_UIButton"
+
+	.byte 24,16
+LDIFF_SYM175=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM175
+	.byte 2,35,0,0,7
+	.asciz "UIKit_UIButton"
+
+LDIFF_SYM176=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM176
+LTDIE_19_POINTER:
+
+	.byte 13
+LDIFF_SYM177=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM177
+LTDIE_19_REFERENCE:
+
+	.byte 14
+LDIFF_SYM178=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM178
+LTDIE_17:
 
 	.byte 5
 	.asciz "ReaderXamarin_ViewController"
 
 	.byte 36,16
-LDIFF_SYM175=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM175
+LDIFF_SYM179=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM179
 	.byte 2,35,0,6
 	.asciz "selector"
 
-LDIFF_SYM176=LTDIE_11_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM176
+LDIFF_SYM180=LTDIE_11_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM180
 	.byte 2,35,24,6
 	.asciz "plugin"
 
-LDIFF_SYM177=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM177
+LDIFF_SYM181=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM181
 	.byte 2,35,28,6
 	.asciz "<openBtn>k__BackingField"
 
-LDIFF_SYM178=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM178
+LDIFF_SYM182=LTDIE_19_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM182
 	.byte 2,35,32,0,7
 	.asciz "ReaderXamarin_ViewController"
 
-LDIFF_SYM179=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM179
-LTDIE_18_POINTER:
+LDIFF_SYM183=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM183
+LTDIE_17_POINTER:
 
 	.byte 13
-LDIFF_SYM180=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM180
-LTDIE_18_REFERENCE:
+LDIFF_SYM184=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM184
+LTDIE_17_REFERENCE:
 
 	.byte 14
-LDIFF_SYM181=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM181
+LDIFF_SYM185=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM185
 	.byte 2
 	.asciz "ReaderXamarin.ViewController:.ctor"
 	.asciz "ReaderXamarin_ViewController__ctor_intptr"
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController__ctor_intptr
-	.long Lme_14
+	.long Lme_16
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM182=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM182
+LDIFF_SYM186=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM186
 	.byte 2,125,0,3
 	.asciz "handle"
 
-LDIFF_SYM183=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM183
+LDIFF_SYM187=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM187
 	.byte 2,125,4,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM184=Lfde20_end - Lfde20_start
-	.long LDIFF_SYM184
-Lfde20_start:
+LDIFF_SYM188=Lfde22_end - Lfde22_start
+	.long LDIFF_SYM188
+Lfde22_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController__ctor_intptr
 
-LDIFF_SYM185=Lme_14 - ReaderXamarin_ViewController__ctor_intptr
-	.long LDIFF_SYM185
+LDIFF_SYM189=Lme_16 - ReaderXamarin_ViewController__ctor_intptr
+	.long LDIFF_SYM189
 	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,84,10,68,14,12,68,8,8,14,8,68,11
 	.align 2
-Lfde20_end:
+Lfde22_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2473,30 +2483,30 @@ Lfde20_end:
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController_ViewDidLoad
-	.long Lme_15
+	.long Lme_17
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM186=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM186
+LDIFF_SYM190=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM190
 	.byte 1,90,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM187=Lfde21_end - Lfde21_start
-	.long LDIFF_SYM187
-Lfde21_start:
+LDIFF_SYM191=Lfde23_end - Lfde23_start
+	.long LDIFF_SYM191
+Lfde23_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController_ViewDidLoad
 
-LDIFF_SYM188=Lme_15 - ReaderXamarin_ViewController_ViewDidLoad
-	.long LDIFF_SYM188
+LDIFF_SYM192=Lme_17 - ReaderXamarin_ViewController_ViewDidLoad
+	.long LDIFF_SYM192
 	.byte 68,14,8,135,2,72,14,16,136,4,138,3,142,1,2,44,10,68,14,16,68,8,8,8,10,14,8,68,11
 	.align 2
-Lfde21_end:
+Lfde23_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2506,30 +2516,30 @@ Lfde21_end:
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController_DidReceiveMemoryWarning
-	.long Lme_16
+	.long Lme_18
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM189=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM189
+LDIFF_SYM193=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM193
 	.byte 2,125,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM190=Lfde22_end - Lfde22_start
-	.long LDIFF_SYM190
-Lfde22_start:
+LDIFF_SYM194=Lfde24_end - Lfde24_start
+	.long LDIFF_SYM194
+Lfde24_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController_DidReceiveMemoryWarning
 
-LDIFF_SYM191=Lme_16 - ReaderXamarin_ViewController_DidReceiveMemoryWarning
-	.long LDIFF_SYM191
+LDIFF_SYM195=Lme_18 - ReaderXamarin_ViewController_DidReceiveMemoryWarning
+	.long LDIFF_SYM195
 	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,76,10,68,14,12,68,8,8,14,8,68,11
 	.align 2
-Lfde22_end:
+Lfde24_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2539,30 +2549,30 @@ Lfde22_end:
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController_get_openBtn
-	.long Lme_17
+	.long Lme_19
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM192=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM192
+LDIFF_SYM196=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM196
 	.byte 2,125,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM193=Lfde23_end - Lfde23_start
-	.long LDIFF_SYM193
-Lfde23_start:
+LDIFF_SYM197=Lfde25_end - Lfde25_start
+	.long LDIFF_SYM197
+Lfde25_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController_get_openBtn
 
-LDIFF_SYM194=Lme_17 - ReaderXamarin_ViewController_get_openBtn
-	.long LDIFF_SYM194
+LDIFF_SYM198=Lme_19 - ReaderXamarin_ViewController_get_openBtn
+	.long LDIFF_SYM198
 	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,76,10,68,14,12,68,8,8,14,8,68,11
 	.align 2
-Lfde23_end:
+Lfde25_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2572,35 +2582,35 @@ Lfde23_end:
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
-	.long Lme_18
+	.long Lme_1a
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM195=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM195
+LDIFF_SYM199=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM199
 	.byte 2,125,0,3
 	.asciz "value"
 
-LDIFF_SYM196=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM196
+LDIFF_SYM200=LTDIE_19_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM200
 	.byte 2,125,4,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM197=Lfde24_end - Lfde24_start
-	.long LDIFF_SYM197
-Lfde24_start:
+LDIFF_SYM201=Lfde26_end - Lfde26_start
+	.long LDIFF_SYM201
+Lfde26_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
 
-LDIFF_SYM198=Lme_18 - ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
-	.long LDIFF_SYM198
+LDIFF_SYM202=Lme_1a - ReaderXamarin_ViewController_set_openBtn_UIKit_UIButton
+	.long LDIFF_SYM202
 	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,2,56,10,68,14,12,68,8,8,14,8,68,11
 	.align 2
-Lfde24_end:
+Lfde26_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2610,51 +2620,41 @@ Lfde24_end:
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
-	.long Lme_19
+	.long Lme_1b
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM199=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM199
+LDIFF_SYM203=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM203
 	.byte 1,90,3
 	.asciz "sender"
 
-LDIFF_SYM200=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM200
+LDIFF_SYM204=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM204
 	.byte 0,11
 	.asciz "V_0"
 
-LDIFF_SYM201=LTDIE_19_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM201
-	.byte 1,86,11
-	.asciz "V_1"
-
-LDIFF_SYM202=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM202
-	.byte 2,123,16,11
-	.asciz "V_2"
-
-LDIFF_SYM203=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM203
-	.byte 2,123,32,0
+LDIFF_SYM205=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM205
+	.byte 1,86,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM204=Lfde25_end - Lfde25_start
-	.long LDIFF_SYM204
-Lfde25_start:
+LDIFF_SYM206=Lfde27_end - Lfde27_start
+	.long LDIFF_SYM206
+Lfde27_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
 
-LDIFF_SYM205=Lme_19 - ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
-	.long LDIFF_SYM205
-	.byte 68,14,8,135,2,72,14,24,134,6,136,5,138,4,139,3,142,1,68,14,160,1,68,13,11,3,160,4,10,68,13,13
-	.byte 14,24,68,8,6,8,8,8,10,8,11,14,8,68,11
+LDIFF_SYM207=Lme_1b - ReaderXamarin_ViewController_OpenBtn_TouchUpInside_UIKit_UIButton
+	.long LDIFF_SYM207
+	.byte 68,14,8,135,2,72,14,24,134,6,136,5,138,4,139,3,142,1,68,14,80,68,13,11,3,48,3,10,68,13,13,14
+	.byte 24,68,8,6,8,8,8,10,8,11,14,8,68,11
 	.align 2
-Lfde25_end:
+Lfde27_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -2664,30 +2664,30 @@ Lfde25_end:
 
 	.byte 0,0
 	.long ReaderXamarin_ViewController_ReleaseDesignerOutlets
-	.long Lme_1a
+	.long Lme_1c
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM206=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM206
+LDIFF_SYM208=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM208
 	.byte 1,90,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM207=Lfde26_end - Lfde26_start
-	.long LDIFF_SYM207
-Lfde26_start:
+LDIFF_SYM209=Lfde28_end - Lfde28_start
+	.long LDIFF_SYM209
+Lfde28_start:
 
 	.long 0
 	.align 2
 	.long ReaderXamarin_ViewController_ReleaseDesignerOutlets
 
-LDIFF_SYM208=Lme_1a - ReaderXamarin_ViewController_ReleaseDesignerOutlets
-	.long LDIFF_SYM208
+LDIFF_SYM210=Lme_1c - ReaderXamarin_ViewController_ReleaseDesignerOutlets
+	.long LDIFF_SYM210
 	.byte 68,14,8,135,2,72,14,16,136,4,138,3,142,1,2,80,10,68,14,16,68,8,8,8,10,14,8,68,11
 	.align 2
-Lfde26_end:
+Lfde28_end:
 
 .section __DWARF, __debug_info,regular,debug
 

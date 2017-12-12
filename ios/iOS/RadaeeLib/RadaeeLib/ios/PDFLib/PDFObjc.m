@@ -861,6 +861,18 @@ extern uint annotStrikeoutColor;
 {
 	Page_setAnnotLock( m_page, m_handle, lock );
 }
+-(NSString *)getName
+{
+    char *stmp = (char *)malloc(1024);
+    if(!Page_getAnnotName(m_page, m_handle, stmp, 1023))
+    {
+        free(stmp);
+        return nil;
+    }
+    NSString *ret = [NSString stringWithUTF8String:stmp];
+    free(stmp);
+    return ret;
+}
 -(bool)setName:(NSString *)name
 {
 	if(!name) return false;
@@ -895,6 +907,19 @@ extern uint annotStrikeoutColor;
 {
 	Page_setAnnotRect( m_page, m_handle, rect );
 }
+
+-(NSString *)getModDate
+{
+	const char *sval = Page_getAnnotModifyDate(m_page, m_handle);
+	if(!sval) return nil;
+	return [NSString stringWithUTF8String:sval];
+}
+
+-(bool)setModDate:(NSString *)mdate
+{
+	return Page_setAnnotModifyDate(m_page, m_handle, [mdate UTF8String]);
+}
+
 -(int)getMarkupRects:(PDF_RECT *)rects :(int)cnt
 {
 	return Page_getAnnotMarkupRects(m_page, m_handle, rects, cnt);
@@ -1204,6 +1229,10 @@ extern uint annotStrikeoutColor;
 {
 	return Page_setAnnotComboItem( m_page, m_handle, index );
 }
+-(bool)isMultiSel
+{
+    return Page_isAnnotListMultiSel(m_page, m_handle);
+}
 -(int)getListItemCount
 {
 	return Page_getAnnotListItemCount( m_page, m_handle );
@@ -1284,6 +1313,7 @@ extern uint annotStrikeoutColor;
 {
     return (self.type == 4 || self.type == 5 || self.type == 6 || self.type == 15);
 }
+
 @end
 
 @implementation PDFPage
@@ -1371,6 +1401,7 @@ extern uint annotStrikeoutColor;
 -(NSString *)objsString:(int)from :(int)to
 {
     if( to <= from ) return NULL;
+    to++;
     char *buf = (char *)malloc(4 * (to - from) + 8);
     Page_objsGetString(m_page, from, to, buf, 4 * (to - from) + 4);
     NSString *str = [NSString stringWithUTF8String:buf];
@@ -1515,13 +1546,6 @@ extern uint annotStrikeoutColor;
     PDF_PAGE tmp_page = m_page;
     m_page = NULL;
     Page_close(tmp_page);
-}
--(void)close
-{
-    PDF_PAGE tmp_page = m_page;
-    m_page = NULL;
-    Page_close(tmp_page);
-    tmp_page = NULL;
 }
 @end
 

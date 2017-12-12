@@ -74,7 +74,7 @@
     
     //UIViewController *controller = (UIViewController *)[plugin openFromMem:[NSData dataWithContentsOfFile:[[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"]] withPassword:@""];
     
-    UIViewController *controller = (UIViewController *)[plugin show:[[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"] withPassword:@""];
+    UIViewController *controller = (UIViewController *)[plugin show:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"help.pdf"] withPassword:@""];
     
     //self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
     //self.navigationController.navigationBar.tintColor = [UIColor redColor];

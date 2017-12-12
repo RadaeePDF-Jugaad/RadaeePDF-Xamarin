@@ -7,9 +7,9 @@
 #include <objc/message.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
-#import <QuartzCore/CAEmitterBehavior.h>
 #import <CloudKit/CloudKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import <Intents/Intents.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 @class __MonoMac_NSActionDispatcher;
@@ -19,10 +19,10 @@
 @protocol RadaeePDFPluginDelegate;
 @class ReaderXamarin_RadaeeDelegate;
 @class ViewController;
-@class __NSObject_Disposer;
 @class __UIGestureRecognizerToken;
 @class __UIGestureRecognizerParameterlessToken;
 @class __UIGestureRecognizerParametrizedToken;
+@class __NSObject_Disposer;
 @class __UILongPressGestureRecognizer;
 @class __UIPanGestureRecognizer;
 @class __UIRotationGestureRecognizer;
@@ -58,6 +58,8 @@
 	@required -(void) didChangePage:(int)p0;
 	@required -(void) didSearchTerm:(NSString *)p0 found:(BOOL)p1;
 	@required -(void) didTapOnPage:(int)p0 atPoint:(CGPoint)p1;
+	@required -(void) didDoubleTapOnPage:(int)p0 atPoint:(CGPoint)p1;
+	@required -(void) didLongPressOnPage:(int)p0 atPoint:(CGPoint)p1;
 	@required -(void) didTapOnAnnotationOfType:(int)p0 atPage:(int)p1 atPoint:(CGPoint)p2;
 @end
 
@@ -74,6 +76,8 @@
 	-(void) didChangePage:(int)p0;
 	-(void) didSearchTerm:(NSString *)p0 found:(BOOL)p1;
 	-(void) didTapOnPage:(int)p0 atPoint:(CGPoint)p1;
+	-(void) didDoubleTapOnPage:(int)p0 atPoint:(CGPoint)p1;
+	-(void) didLongPressOnPage:(int)p0 atPoint:(CGPoint)p1;
 	-(void) didTapOnAnnotationOfType:(int)p0 atPage:(int)p1 atPoint:(CGPoint)p2;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end

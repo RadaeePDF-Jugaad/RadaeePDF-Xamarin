@@ -628,6 +628,7 @@
  * @param lock lock status to be set.
  */
 -(void)setLocked:(bool)lock;
+-(NSString *)getName;
 -(bool)setName:(NSString *)name;
 -(bool)isReadonly;
 -(void)setReadonly:(bool)readonly;
@@ -657,6 +658,8 @@
  * @param rect rect in PDF coordinate system
  */
 -(void)setRect:(const PDF_RECT *)rect;
+-(NSString *)getModDate;
+-(bool)setModDate:(NSString *)mdate;
 /**
 * @brief get markup annotation's rectangles.
 * this method valid in professional or premium version.
@@ -997,6 +1000,7 @@
  * @return true or false.
  */
 -(bool)setComboSel:(int)index;
+-(bool)isMultiSel;
 /**
  * @brief get item count of list-box.
  * this method valid in premium version
@@ -1085,7 +1089,7 @@
 -(int)getSignStatus;
 -(PDFSign *)getSign;
 -(bool)MoveToPage:(PDFPage *)page :(const PDF_RECT *)rect;
-- (BOOL)canMoveAnnot;
+-(BOOL)canMoveAnnot;
 @end
 
 @interface PDFPage : NSObject
@@ -1392,7 +1396,6 @@
  * @return true or false.
  */
 -(bool)addContent:(PDFPageContent *)content :(bool)flush;
--(void)close;
 @end
 
 @interface PDFImportCtx : NSObject

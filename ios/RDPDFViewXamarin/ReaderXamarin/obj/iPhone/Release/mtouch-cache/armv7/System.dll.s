@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Fri Aug 18 15:56:20 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "System.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 2
 	.no_dead_strip System_CodeDom_Compiler_GeneratedCodeAttribute__ctor_string_string
 System_CodeDom_Compiler_GeneratedCodeAttribute__ctor_string_string:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/10.12.0.20/src/mono/mcs/class/referencesource/System/compmod/system/codedom/compiler/GeneratedCodeAttribute.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/System/compmod/system/codedom/compiler/GeneratedCodeAttribute.cs"
 .loc 1 16 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,32,1,45,233,2,223,77,226,0,80,160,225,0,16,141,229,4,32,141,229,0,0,157,229
@@ -176,7 +176,7 @@ mono_aot_System_plt:
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_System_got, 104
+.lcomm mono_aot_System_got, 100
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -199,7 +199,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "AB923E97-C683-4D69-A080-44EA18CAFB2A"
+	.asciz "FC81BC57-986F-4D1E-B3CC-F442A0589629"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -208,7 +208,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 139,0
+	.long 140,0
 	.align 2
 	.long mono_aot_System_got
 	.align 2
@@ -276,13 +276,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 25,104,1,2,66,391195135,0,319
-	.long 128,4,4,10,0,25,848,520
+	.long 24,100,1,2,66,391195135,0,292
+	.long 128,4,4,10,0,24,824,520
 	.long 336,184,0,280,312,232,0,176
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 16,179,222,55,250,74,234,135,246,51,156,172,223,168,0,254
+	.byte 12,34,223,38,222,61,173,251,242,194,184,192,68,18,42,151
 	.globl _mono_aot_module_System_info
 	.align 2
 _mono_aot_module_System_info:

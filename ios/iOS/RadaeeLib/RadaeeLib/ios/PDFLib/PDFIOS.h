@@ -969,7 +969,9 @@ bool Page_isAnnotHide( PDF_PAGE page, PDF_ANNOT annot );
  *	@param 	hide 	true or false
  */
 void Page_setAnnotHide( PDF_PAGE page, PDF_ANNOT annot, bool hide );
+bool Page_getAnnotName(PDF_PAGE page, PDF_ANNOT annot, char *name, int name_len);
 bool Page_setAnnotName(PDF_PAGE page, PDF_ANNOT annot, const char *name);
+
 PDF_ANNOT Page_getAnnotByName(PDF_PAGE page, const char *name);
 /**
  *	@brief	get annotation type.
@@ -1084,6 +1086,8 @@ void Page_getAnnotRect( PDF_PAGE page, PDF_ANNOT annot, PDF_RECT *rect );
  *	@param 	rect 	rect of annotation area, in PDF coordinate.
  */
 void Page_setAnnotRect( PDF_PAGE page, PDF_ANNOT annot, const PDF_RECT *rect );
+const char *Page_getAnnotModifyDate(PDF_PAGE page, PDF_ANNOT annot);
+bool Page_setAnnotModifyDate(PDF_PAGE page, PDF_ANNOT annot, const char *val);
 PDF_PATH Page_getAnnotInkPath( PDF_PAGE page, PDF_ANNOT annot );
 bool Page_setAnnotInkPath( PDF_PAGE page, PDF_ANNOT annot, PDF_PATH path );
 PDF_PATH Page_getAnnotPolygonPath( PDF_PAGE page, PDF_ANNOT annot );
@@ -1636,6 +1640,7 @@ bool Page_setAnnotComboItem( PDF_PAGE page, PDF_ANNOT annot, int item );
  *	@return	-1: this is not list-box. otherwise: items count.
  */
 int Page_getAnnotListItemCount( PDF_PAGE page, PDF_ANNOT annot );
+bool Page_isAnnotListMultiSel(PDF_PAGE page, PDF_ANNOT annot);
 
 /**
  *	@brief	get item text by index.

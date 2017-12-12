@@ -31,7 +31,7 @@ void xamarin_setup_impl ()
 	xamarin_init_mono_debug = FALSE;
 	xamarin_executable_name = "ReaderXamarin.exe";
 	mono_use_llvm = FALSE;
-	xamarin_log_level = 2;
+	xamarin_log_level = 0;
 	xamarin_arch_name = "arm64";
 	xamarin_marshal_objectivec_exception_mode = MarshalObjectiveCExceptionModeDisable;
 	setenv ("MONO_GC_PARAMS", "nursery-size=512k,major=marksweep", 1);

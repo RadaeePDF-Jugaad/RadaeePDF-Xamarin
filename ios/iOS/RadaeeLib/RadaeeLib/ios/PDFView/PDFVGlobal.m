@@ -87,8 +87,8 @@
 int g_def_view = 0;
 int g_render_quality;
 
-int g_MatchWholeWord;
-int g_CaseSensitive;
+bool g_MatchWholeWord;
+bool g_CaseSensitive;
 NSMutableString *pdfName;
 NSMutableString *pdfPath;
 
@@ -106,6 +106,8 @@ uint annotHighlightColor = 0xFFFFFF00;
 uint annotUnderlineColor = 0xFF0000FF;
 uint annotStrikeoutColor = 0xFFFF0000;
 uint annotSquigglyColor = 0xFF00FF00;
+
+NSString *g_author = @"";
 
 bool g_double_page_enabled = false;
 

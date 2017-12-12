@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RDUtils/ReaderHandler.m \
-  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/RDUtils/ReaderHandler.h \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/Modules/ReaderHandler/ReaderHandler.m \
+  /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/Modules/ReaderHandler/ReaderHandler.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFLib/PDFObjc.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFLib/PDFIOS.h \
   /Users/emanuele/Documents/Progetti/Radaee/git/Xamarin/RadaeePDF-Xamarin/ios/iOS/RadaeeLib/RadaeeLib/ios/PDFView/PDFV.h \

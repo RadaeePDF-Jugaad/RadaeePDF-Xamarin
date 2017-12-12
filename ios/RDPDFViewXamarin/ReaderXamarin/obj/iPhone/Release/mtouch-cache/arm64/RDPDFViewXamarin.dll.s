@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Fri Aug 18 15:56:24 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "RDPDFViewXamarin.dll"
 	.asciz ""
 
@@ -129,7 +129,7 @@ RadaeeLib_RadaeePDFPlugin_get_ClassHandle:
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9400000
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -148,7 +148,7 @@ RadaeeLib_RadaeePDFPlugin__ctor:
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #208]
+ldr x0, [x16, #200]
 .word 0xf9400001
 .word 0xaa1a03e0
 bl _p_1
@@ -156,12 +156,12 @@ bl _p_1
 .word 0xf9400c01
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #216]
+ldr x1, [x16, #208]
 .word 0xf9400021
 bl _p_2
 .word 0x53001c01
@@ -176,7 +176,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x2, [x16, #224]
+ldr x2, [x16, #216]
 .word 0xaa1a03e0
 bl _p_5
 .word 0xf9400bba
@@ -202,12 +202,12 @@ bl _p_1
 .word 0xf9400c01
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #216]
+ldr x1, [x16, #208]
 .word 0xf9400021
 bl _p_2
 .word 0x53001c01
@@ -235,12 +235,12 @@ bl _p_6
 .word 0xf9400c01
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #216]
+ldr x1, [x16, #208]
 .word 0xf9400021
 bl _p_2
 .word 0x53001c01
@@ -313,7 +313,7 @@ ldr x0, [x16, #0]
 .word 0xd28003a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -324,7 +324,7 @@ ldr x0, [x16, #0]
 .word 0xd28005a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -335,7 +335,7 @@ ldr x0, [x16, #0]
 .word 0xd2800721
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -346,7 +346,7 @@ ldr x0, [x16, #0]
 .word 0xd2800161
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -375,7 +375,7 @@ bl _p_7
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9400000
 adrp x1, L_OBJC_SELECTOR_REFERENCES_2@PAGE
 add x1, x1, L_OBJC_SELECTOR_REFERENCES_2@PAGEOFF
@@ -403,7 +403,7 @@ ldr x0, [x16, #0]
 .word 0xd28018e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -414,7 +414,7 @@ ldr x0, [x16, #0]
 .word 0xd28016e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -488,7 +488,7 @@ ldr x0, [x16, #0]
 .word 0xd2802261
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -499,7 +499,7 @@ ldr x0, [x16, #0]
 .word 0xd2802461
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -510,7 +510,7 @@ ldr x0, [x16, #0]
 .word 0xd28026a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -521,7 +521,7 @@ ldr x0, [x16, #0]
 .word 0xd2802121
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -565,7 +565,7 @@ bl _p_7
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9400000
 adrp x1, L_OBJC_SELECTOR_REFERENCES_5@PAGE
 add x1, x1, L_OBJC_SELECTOR_REFERENCES_5@PAGEOFF
@@ -588,7 +588,7 @@ ldr x0, [x16, #0]
 .word 0xd28016e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -613,7 +613,7 @@ bl _p_15
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #232]
+ldr x15, [x16, #224]
 bl _p_17
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -678,7 +678,7 @@ bl _p_7
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9400000
 adrp x1, L_OBJC_SELECTOR_REFERENCES_9@PAGE
 add x1, x1, L_OBJC_SELECTOR_REFERENCES_9@PAGEOFF
@@ -688,7 +688,7 @@ bl _p_16
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #240]
+ldr x15, [x16, #232]
 bl _p_18
 .word 0xf90013a0
 .word 0xaa1a03e0
@@ -705,7 +705,7 @@ ldr x0, [x16, #0]
 .word 0xd2804f21
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -742,7 +742,7 @@ bl _p_19
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #248]
+ldr x15, [x16, #240]
 bl _p_20
 .word 0xaa0003f8
 .word 0xaa1903e0
@@ -762,7 +762,7 @@ ldr x0, [x16, #0]
 .word 0xd2805761
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -773,7 +773,7 @@ ldr x0, [x16, #0]
 .word 0xd2805621
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -810,7 +810,7 @@ bl _p_19
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #248]
+ldr x15, [x16, #240]
 bl _p_20
 .word 0xaa0003f8
 .word 0xaa1903e0
@@ -830,7 +830,7 @@ ldr x0, [x16, #0]
 .word 0xd2805761
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -841,7 +841,7 @@ ldr x0, [x16, #0]
 .word 0xd2802121
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -883,7 +883,7 @@ bl _p_7
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9400000
 adrp x1, L_OBJC_SELECTOR_REFERENCES_13@PAGE
 add x1, x1, L_OBJC_SELECTOR_REFERENCES_13@PAGEOFF
@@ -904,7 +904,7 @@ ldr x0, [x16, #0]
 .word 0xd28016e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -963,7 +963,7 @@ ldr x0, [x16, #0]
 .word 0xd2807721
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1048,7 +1048,7 @@ ldr x0, [x16, #0]
 .word 0xd2808761
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1212,7 +1212,7 @@ bl _p_19
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #248]
+ldr x15, [x16, #240]
 bl _p_20
 .word 0xaa0003f8
 .word 0xaa1903e0
@@ -1232,7 +1232,7 @@ ldr x0, [x16, #0]
 .word 0xd2805761
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1243,7 +1243,7 @@ ldr x0, [x16, #0]
 .word 0xd2805621
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1287,7 +1287,7 @@ bl _p_29
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #248]
+ldr x15, [x16, #240]
 bl _p_20
 .word 0xaa0003fa
 .word 0xaa1603e0
@@ -1308,7 +1308,7 @@ ldr x0, [x16, #0]
 .word 0xd2805761
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1319,7 +1319,7 @@ ldr x0, [x16, #0]
 .word 0xd2805621
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1363,7 +1363,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -1400,7 +1400,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1423,7 +1423,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -1460,7 +1460,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1483,7 +1483,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -1520,7 +1520,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1543,7 +1543,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -1580,7 +1580,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1623,7 +1623,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -1660,7 +1660,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2130,7 +2130,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2153,7 +2153,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2190,7 +2190,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2213,7 +2213,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2250,7 +2250,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2273,7 +2273,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2310,7 +2310,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2366,7 +2366,7 @@ RadaeeLib_RadaeePDFPlugin_get_PluginInit:
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9400000
 adrp x1, L_OBJC_SELECTOR_REFERENCES_69@PAGE
 add x1, x1, L_OBJC_SELECTOR_REFERENCES_69@PAGEOFF
@@ -2375,7 +2375,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #264]
+ldr x15, [x16, #256]
 bl _p_33
 .word 0x910003bf
 .word 0xa8c17bfd
@@ -2399,7 +2399,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2436,7 +2436,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2459,7 +2459,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2496,7 +2496,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2519,7 +2519,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2556,7 +2556,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2579,7 +2579,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2616,7 +2616,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2639,7 +2639,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2676,7 +2676,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2699,7 +2699,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #248]
+ldr x15, [x16, #240]
 bl _p_20
 .word 0xf90013a0
 .word 0xaa1a03e0
@@ -2768,7 +2768,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2832,7 +2832,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x15, [x16, #256]
+ldr x15, [x16, #248]
 bl _p_30
 .word 0x910003bf
 .word 0xa8c27bfd
@@ -2869,7 +2869,7 @@ ldr x0, [x16, #0]
 .word 0xd280c0e1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -2892,7 +2892,7 @@ bl _p_35
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #272]
+ldr x1, [x16, #264]
 .word 0xf9400021
 .word 0xeb01001f
 .word 0x9a9f17e0
@@ -2914,13 +2914,13 @@ RadaeeLib_RadaeePDFPlugin__cctor:
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #280]
+ldr x0, [x16, #272]
 bl _p_36
 .word 0xaa0003e1
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #200]
+ldr x0, [x16, #192]
 .word 0xf9000001
 .word 0x910003bf
 .word 0xa8c17bfd
@@ -2945,7 +2945,7 @@ bl _p_37
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_63:
+Lme_65:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_WillShowReader
@@ -2964,7 +2964,7 @@ bl _p_21
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_64:
+Lme_66:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidShowReader
@@ -2983,7 +2983,7 @@ bl _p_21
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_65:
+Lme_67:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_WillCloseReader
@@ -3002,7 +3002,7 @@ bl _p_21
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_66:
+Lme_68:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidCloseReader
@@ -3021,7 +3021,7 @@ bl _p_21
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_67:
+Lme_69:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidChangePage_int
@@ -3042,7 +3042,7 @@ bl _p_26
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_68:
+Lme_6a:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidSearchTerm_string_bool
@@ -3079,12 +3079,12 @@ ldr x0, [x16, #0]
 .word 0xd281b321
 bl _p_10
 .word 0xaa0003e1
-.word 0xd28007c0
+.word 0xd2800860
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
 
-Lme_69:
+Lme_6b:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnPage_int_CoreGraphics_CGPoint
@@ -3109,7 +3109,57 @@ bl _p_39
 .word 0xa8c67bfd
 .word 0xd65f03c0
 
-Lme_6a:
+Lme_6c:
+.text
+	.align 4
+	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint:
+.loc 1 1 0
+.word 0xa9ba7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xf9000fa1
+.word 0xfd0013a0
+.word 0xfd0017a1
+.word 0xf9400ba0
+.word 0xf9400800
+adrp x1, L_OBJC_SELECTOR_REFERENCES_93@PAGE
+add x1, x1, L_OBJC_SELECTOR_REFERENCES_93@PAGEOFF
+ldr x1, [x1]
+.word 0xb9801ba2
+.word 0xfd4013a0
+.word 0xfd4017a1
+bl _p_39
+.word 0x910003bf
+.word 0xa8c67bfd
+.word 0xd65f03c0
+
+Lme_6d:
+.text
+	.align 4
+	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint
+RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint:
+.loc 1 1 0
+.word 0xa9ba7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xf9000fa1
+.word 0xfd0013a0
+.word 0xfd0017a1
+.word 0xf9400ba0
+.word 0xf9400800
+adrp x1, L_OBJC_SELECTOR_REFERENCES_94@PAGE
+add x1, x1, L_OBJC_SELECTOR_REFERENCES_94@PAGEOFF
+ldr x1, [x1]
+.word 0xb9801ba2
+.word 0xfd4013a0
+.word 0xfd4017a1
+bl _p_39
+.word 0x910003bf
+.word 0xa8c67bfd
+.word 0xd65f03c0
+
+Lme_6e:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
@@ -3124,8 +3174,8 @@ RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGr
 .word 0xfd001ba1
 .word 0xf9400ba0
 .word 0xf9400800
-adrp x1, L_OBJC_SELECTOR_REFERENCES_93@PAGE
-add x1, x1, L_OBJC_SELECTOR_REFERENCES_93@PAGEOFF
+adrp x1, L_OBJC_SELECTOR_REFERENCES_95@PAGE
+add x1, x1, L_OBJC_SELECTOR_REFERENCES_95@PAGEOFF
 ldr x1, [x1]
 .word 0xb9801ba2
 .word 0xb98023a3
@@ -3136,7 +3186,7 @@ bl _p_40
 .word 0xa8c77bfd
 .word 0xd65f03c0
 
-Lme_6b:
+Lme_6f:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegate__ctor
@@ -3149,7 +3199,7 @@ RadaeeLib_RadaeePDFPluginDelegate__ctor:
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #208]
+ldr x0, [x16, #200]
 .word 0xf9400001
 .word 0xaa1a03e0
 bl _p_1
@@ -3157,12 +3207,12 @@ bl _p_1
 .word 0xf9400c01
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #216]
+ldr x1, [x16, #208]
 .word 0xf9400021
 bl _p_2
 .word 0x53001c01
@@ -3185,7 +3235,7 @@ bl _p_4
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x2, [x16, #224]
+ldr x2, [x16, #216]
 .word 0xaa1a03e0
 bl _p_5
 .word 0x1400000d
@@ -3199,7 +3249,7 @@ bl _p_42
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x2, [x16, #224]
+ldr x2, [x16, #216]
 .word 0xaa1a03e0
 bl _p_5
 .word 0xf9400bba
@@ -3207,7 +3257,7 @@ bl _p_5
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_6c:
+Lme_70:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegate__ctor_Foundation_NSObjectFlag
@@ -3225,12 +3275,12 @@ bl _p_1
 .word 0xf9400c01
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #216]
+ldr x1, [x16, #208]
 .word 0xf9400021
 bl _p_2
 .word 0x53001c01
@@ -3240,7 +3290,7 @@ bl _p_3
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_6d:
+Lme_71:
 .text
 	.align 4
 	.no_dead_strip RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
@@ -3258,12 +3308,12 @@ bl _p_6
 .word 0xf9400c01
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #216]
+ldr x1, [x16, #208]
 .word 0xf9400021
 bl _p_2
 .word 0x53001c01
@@ -3273,7 +3323,7 @@ bl _p_3
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_6e:
+Lme_72:
 .text
 	.align 4
 	.no_dead_strip ApiDefinition_Messaging__cctor
@@ -3284,22 +3334,22 @@ ApiDefinition_Messaging__cctor:
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x1, [x16, #288]
+ldr x1, [x16, #280]
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9415430
+.word 0xf9415830
 .word 0xd63f0200
 .word 0xaa0003e1
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #216]
+ldr x0, [x16, #208]
 .word 0xf9000001
 .word 0x910003bf
 .word 0xa8c17bfd
 .word 0xd65f03c0
 
-Lme_8d:
+Lme_93:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
@@ -3336,7 +3386,7 @@ bl _p_43
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -3355,7 +3405,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_8f:
+Lme_95:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
@@ -3392,7 +3442,7 @@ bl _p_45
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -3411,7 +3461,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_90:
+Lme_96:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
@@ -3450,7 +3500,7 @@ bl _p_46
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -3469,7 +3519,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_91:
+Lme_97:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
@@ -3507,7 +3557,7 @@ bl _p_47
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -3526,7 +3576,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_92:
+Lme_98:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
@@ -3564,7 +3614,7 @@ bl _p_48
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -3582,7 +3632,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_93:
+Lme_99:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
@@ -3620,7 +3670,7 @@ bl _p_49
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -3638,7 +3688,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_94:
+Lme_9a:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
@@ -3675,7 +3725,7 @@ bl _p_50
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -3694,7 +3744,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_95:
+Lme_9b:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
@@ -3735,7 +3785,7 @@ bl _p_51
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000120
 .word 0x14000001
@@ -3752,7 +3802,7 @@ bl _p_44
 .word 0xaa1a03e0
 bl _p_11
 
-Lme_96:
+Lme_9c:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
@@ -3788,7 +3838,7 @@ bl _p_52
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -3806,7 +3856,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_97:
+Lme_9d:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
@@ -3847,7 +3897,7 @@ bl _p_53
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -3866,7 +3916,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_98:
+Lme_9e:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
@@ -3921,7 +3971,7 @@ bl _p_54
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -3940,7 +3990,7 @@ bl _p_44
 .word 0xaa1803e0
 bl _p_11
 
-Lme_99:
+Lme_9f:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
@@ -3986,7 +4036,7 @@ bl _p_55
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -4004,7 +4054,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_9a:
+Lme_a0:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
@@ -4043,7 +4093,7 @@ bl _p_56
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -4062,7 +4112,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_9b:
+Lme_a1:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
@@ -4112,7 +4162,7 @@ bl _p_57
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -4131,7 +4181,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_9c:
+Lme_a2:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
@@ -4174,7 +4224,7 @@ bl _p_58
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -4193,7 +4243,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_9d:
+Lme_a3:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
@@ -4233,7 +4283,7 @@ bl _p_59
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -4251,7 +4301,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_9e:
+Lme_a4:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
@@ -4290,7 +4340,7 @@ bl _p_60
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000180
 .word 0x14000001
@@ -4309,7 +4359,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff3
 
-Lme_9f:
+Lme_a5:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
@@ -4349,7 +4399,7 @@ bl _p_61
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -4367,7 +4417,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_a0:
+Lme_a6:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
@@ -4405,7 +4455,7 @@ bl _p_62
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -4423,7 +4473,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_a1:
+Lme_a7:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
@@ -4466,7 +4516,7 @@ bl _p_63
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000120
 .word 0x14000001
@@ -4483,7 +4533,7 @@ bl _p_44
 .word 0xaa1a03e0
 bl _p_11
 
-Lme_a2:
+Lme_a8:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
@@ -4525,7 +4575,7 @@ bl _p_64
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -4543,7 +4593,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_a3:
+Lme_a9:
 .text
 	.align 4
 	.no_dead_strip wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
@@ -4587,7 +4637,7 @@ bl _p_65
 
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #288]
 .word 0xb9400000
 .word 0x35000160
 .word 0x14000001
@@ -4605,7 +4655,7 @@ bl _p_44
 .word 0xb5ffff80
 .word 0x17fffff4
 
-Lme_a4:
+Lme_aa:
 .text
 	.align 3
 jit_code_end:
@@ -4714,6 +4764,8 @@ bl method_addresses
 bl method_addresses
 bl method_addresses
 bl method_addresses
+bl method_addresses
+bl method_addresses
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper__ctor_intptr_bool
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper_WillShowReader
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidShowReader
@@ -4722,10 +4774,14 @@ bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidCloseReader
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidChangePage_int
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidSearchTerm_string_bool
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnPage_int_CoreGraphics_CGPoint
+bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint
 bl RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 bl RadaeeLib_RadaeePDFPluginDelegate__ctor
 bl RadaeeLib_RadaeePDFPluginDelegate__ctor_Foundation_NSObjectFlag
 bl RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
+bl method_addresses
+bl method_addresses
 bl method_addresses
 bl method_addresses
 bl method_addresses
@@ -4827,525 +4883,525 @@ plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag:
 _p_1:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #312]
+ldr x16, [x16, #304]
 br x16
-.word 1139
+.word 1121
 	.no_dead_strip plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly
 plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly:
 _p_2:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #320]
+ldr x16, [x16, #312]
 br x16
-.word 1144
+.word 1126
 	.no_dead_strip plt_Foundation_NSObject_set_IsDirectBinding_bool
 plt_Foundation_NSObject_set_IsDirectBinding_bool:
 _p_3:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #328]
+ldr x16, [x16, #320]
 br x16
-.word 1149
+.word 1131
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr:
 _p_4:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #336]
+ldr x16, [x16, #328]
 br x16
-.word 1154
+.word 1136
 	.no_dead_strip plt_Foundation_NSObject_InitializeHandle_intptr_string
 plt_Foundation_NSObject_InitializeHandle_intptr_string:
 _p_5:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #344]
+ldr x16, [x16, #336]
 br x16
-.word 1156
+.word 1138
 	.no_dead_strip plt_Foundation_NSObject__ctor_intptr
 plt_Foundation_NSObject__ctor_intptr:
 _p_6:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #352]
+ldr x16, [x16, #344]
 br x16
-.word 1161
+.word 1143
 	.no_dead_strip plt_Foundation_NSString_CreateNative_string
 plt_Foundation_NSString_CreateNative_string:
 _p_7:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #360]
+ldr x16, [x16, #352]
 br x16
-.word 1166
+.word 1148
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int:
 _p_8:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #368]
+ldr x16, [x16, #360]
 br x16
-.word 1171
+.word 1153
 	.no_dead_strip plt_Foundation_NSString_ReleaseNative_intptr
 plt_Foundation_NSString_ReleaseNative_intptr:
 _p_9:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #376]
+ldr x16, [x16, #368]
 br x16
-.word 1174
+.word 1156
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_10:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #384]
+ldr x16, [x16, #376]
 br x16
-.word 1179
+.word 1161
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_11:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #392]
+ldr x16, [x16, #384]
 br x16
-.word 1199
+.word 1181
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr:
 _p_12:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #400]
+ldr x16, [x16, #392]
 br x16
-.word 1227
+.word 1209
 	.no_dead_strip plt_Foundation_NSString_FromHandle_intptr
 plt_Foundation_NSString_FromHandle_intptr:
 _p_13:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #408]
+ldr x16, [x16, #400]
 br x16
-.word 1230
+.word 1212
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr:
 _p_14:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #416]
+ldr x16, [x16, #408]
 br x16
-.word 1235
+.word 1217
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int:
 _p_15:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #424]
+ldr x16, [x16, #416]
 br x16
-.word 1238
+.word 1220
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr:
 _p_16:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #432]
+ldr x16, [x16, #424]
 br x16
-.word 1241
+.word 1223
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSData_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSData_intptr:
 _p_17:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #440]
+ldr x16, [x16, #432]
 br x16
-.word 1243
+.word 1226
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSMutableArray_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSMutableArray_intptr:
 _p_18:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #448]
+ldr x16, [x16, #440]
 br x16
-.word 1255
+.word 1238
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr:
 _p_19:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #456]
+ldr x16, [x16, #448]
 br x16
-.word 1267
+.word 1250
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_UIKit_UIViewController_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_UIKit_UIViewController_intptr:
 _p_20:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #464]
+ldr x16, [x16, #456]
 br x16
-.word 1270
+.word 1253
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0:
 _p_21:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #472]
+ldr x16, [x16, #464]
 br x16
-.word 1282
+.word 1265
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr:
 _p_22:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #480]
+ldr x16, [x16, #472]
 br x16
-.word 1285
+.word 1268
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int:
 _p_23:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #488]
+ldr x16, [x16, #480]
 br x16
-.word 1288
+.word 1271
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0:
 _p_24:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #496]
+ldr x16, [x16, #488]
 br x16
-.word 1291
+.word 1274
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool:
 _p_25:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #504]
+ldr x16, [x16, #496]
 br x16
-.word 1293
+.word 1277
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0:
 _p_26:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #512]
+ldr x16, [x16, #504]
 br x16
-.word 1295
+.word 1280
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1:
 _p_27:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #520]
+ldr x16, [x16, #512]
 br x16
-.word 1297
+.word 1283
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single:
 _p_28:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #528]
+ldr x16, [x16, #520]
 br x16
-.word 1300
+.word 1286
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool:
 _p_29:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #536]
+ldr x16, [x16, #528]
 br x16
-.word 1303
+.word 1289
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_UIKit_UIImage_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_UIKit_UIImage_intptr:
 _p_30:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #544]
+ldr x16, [x16, #536]
 br x16
-.word 1306
+.word 1292
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1:
 _p_31:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #552]
+ldr x16, [x16, #544]
 br x16
-.word 1318
+.word 1304
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2:
 _p_32:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #560]
+ldr x16, [x16, #552]
 br x16
-.word 1320
+.word 1307
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_RadaeeLib_RadaeePDFPlugin_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_RadaeeLib_RadaeePDFPlugin_intptr:
 _p_33:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #568]
+ldr x16, [x16, #560]
 br x16
-.word 1322
+.word 1310
 	.no_dead_strip plt_Foundation_NSObject_MarkDirty
 plt_Foundation_NSObject_MarkDirty:
 _p_34:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #576]
+ldr x16, [x16, #568]
 br x16
-.word 1334
+.word 1322
 	.no_dead_strip plt_Foundation_NSObject_Dispose_bool
 plt_Foundation_NSObject_Dispose_bool:
 _p_35:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #584]
+ldr x16, [x16, #576]
 br x16
-.word 1339
+.word 1327
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_string
 plt_ObjCRuntime_Class_GetHandle_string:
 _p_36:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #592]
+ldr x16, [x16, #584]
 br x16
-.word 1344
+.word 1332
 	.no_dead_strip plt_ObjCRuntime_BaseWrapper__ctor_intptr_bool
 plt_ObjCRuntime_BaseWrapper__ctor_intptr_bool:
 _p_37:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #600]
+ldr x16, [x16, #592]
 br x16
-.word 1349
+.word 1337
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool:
 _p_38:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #608]
+ldr x16, [x16, #600]
 br x16
-.word 1354
+.word 1342
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint:
 _p_39:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #616]
+ldr x16, [x16, #608]
 br x16
-.word 1357
+.word 1345
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
 plt_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint:
 _p_40:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #624]
+ldr x16, [x16, #616]
 br x16
-.word 1360
+.word 1348
 	.no_dead_strip plt_Foundation_NSObject_get_SuperHandle
 plt_Foundation_NSObject_get_SuperHandle:
 _p_41:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #632]
+ldr x16, [x16, #624]
 br x16
-.word 1363
+.word 1351
 	.no_dead_strip plt_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
 plt_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr:
 _p_42:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #640]
+ldr x16, [x16, #632]
 br x16
-.word 1368
+.word 1356
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr:
 _p_43:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #648]
+ldr x16, [x16, #640]
 br x16
-.word 1370
+.word 1358
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_44:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #656]
+ldr x16, [x16, #648]
 br x16
-.word 1372
+.word 1360
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr:
 _p_45:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #664]
+ldr x16, [x16, #656]
 br x16
-.word 1410
+.word 1398
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr:
 _p_46:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #672]
+ldr x16, [x16, #664]
 br x16
-.word 1412
+.word 1400
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0:
 _p_47:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #680]
+ldr x16, [x16, #672]
 br x16
-.word 1414
+.word 1403
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int:
 _p_48:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #688]
+ldr x16, [x16, #680]
 br x16
-.word 1416
+.word 1406
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0:
 _p_49:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #696]
+ldr x16, [x16, #688]
 br x16
-.word 1418
+.word 1409
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1:
 _p_50:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #704]
+ldr x16, [x16, #696]
 br x16
-.word 1420
+.word 1412
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool:
 _p_51:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #712]
+ldr x16, [x16, #704]
 br x16
-.word 1422
+.word 1415
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2:
 _p_52:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #720]
+ldr x16, [x16, #712]
 br x16
-.word 1424
+.word 1418
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr:
 _p_53:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #728]
+ldr x16, [x16, #720]
 br x16
-.word 1427
+.word 1421
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool:
 _p_54:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #736]
+ldr x16, [x16, #728]
 br x16
-.word 1430
+.word 1424
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int:
 _p_55:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #744]
+ldr x16, [x16, #736]
 br x16
-.word 1433
+.word 1427
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0:
 _p_56:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #752]
+ldr x16, [x16, #744]
 br x16
-.word 1436
+.word 1430
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr:
 _p_57:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #760]
+ldr x16, [x16, #752]
 br x16
-.word 1439
+.word 1433
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr:
 _p_58:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #768]
+ldr x16, [x16, #760]
 br x16
-.word 1442
+.word 1436
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr:
 _p_59:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #776]
+ldr x16, [x16, #768]
 br x16
-.word 1445
+.word 1439
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1:
 _p_60:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #784]
+ldr x16, [x16, #776]
 br x16
-.word 1448
+.word 1442
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int:
 _p_61:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #792]
+ldr x16, [x16, #784]
 br x16
-.word 1451
+.word 1445
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single:
 _p_62:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #800]
+ldr x16, [x16, #792]
 br x16
-.word 1454
+.word 1448
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool:
 _p_63:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #808]
+ldr x16, [x16, #800]
 br x16
-.word 1457
+.word 1451
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint:
 _p_64:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #816]
+ldr x16, [x16, #808]
 br x16
-.word 1460
+.word 1454
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
 plt__icall_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint:
 _p_65:
 adrp x16, mono_aot_RDPDFViewXamarin_got@PAGE+0
 add x16, x16, mono_aot_RDPDFViewXamarin_got@PAGEOFF
-ldr x16, [x16, #824]
+ldr x16, [x16, #816]
 br x16
-.word 1463
+.word 1457
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_RDPDFViewXamarin_got, 832
+.lcomm mono_aot_RDPDFViewXamarin_got, 824
 got_end:
 .section	__DATA,__objc_selrefs,literal_pointers,no_dead_strip
 .align	3
@@ -5631,6 +5687,12 @@ L_OBJC_SELECTOR_REFERENCES_92:
 L_OBJC_SELECTOR_REFERENCES_93:
 	.align 3
 	.quad L_OBJC_METH_VAR_NAME_93
+L_OBJC_SELECTOR_REFERENCES_94:
+	.align 3
+	.quad L_OBJC_METH_VAR_NAME_94
+L_OBJC_SELECTOR_REFERENCES_95:
+	.align 3
+	.quad L_OBJC_METH_VAR_NAME_95
 .section	__TEXT,__cstring,cstring_literals
 L_OBJC_METH_VAR_NAME_0:
 .asciz "init"
@@ -5819,6 +5881,10 @@ L_OBJC_METH_VAR_NAME_91:
 L_OBJC_METH_VAR_NAME_92:
 .asciz "didTapOnPage:atPoint:"
 L_OBJC_METH_VAR_NAME_93:
+.asciz "didDoubleTapOnPage:atPoint:"
+L_OBJC_METH_VAR_NAME_94:
+.asciz "didLongPressOnPage:atPoint:"
+L_OBJC_METH_VAR_NAME_95:
 .asciz "didTapOnAnnotationOfType:atPage:atPoint:"
 .section	__DATA,__objc_imageinfo,regular,no_dead_strip
 .align	3
@@ -5846,7 +5912,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "D63E9F1F-1844-4120-8B24-39EFE3E4DCD0"
+	.asciz "94BB1EBA-EC07-4BEB-A722-E06CD2E0CBC0"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -5855,7 +5921,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 139,0
+	.long 140,0
 	.align 3
 	.quad mono_aot_RDPDFViewXamarin_got
 	.align 3
@@ -5923,13 +5989,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 38,832,66,165,66,391195135,0,2252
-	.long 128,8,8,10,0,25,3848,1584
-	.long 1320,912,0,1040,1288,968,0,728
-	.long 248,0,0,0,0,0,0,0
+	.long 37,824,66,171,66,391195135,0,2260
+	.long 128,8,8,10,0,24,3872,1600
+	.long 1336,920,0,1048,1304,976,0,736
+	.long 256,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 148,78,152,115,220,105,44,233,234,81,194,52,156,0,172,10
+	.byte 76,133,8,174,132,115,51,26,1,58,97,152,94,109,181,238
 	.globl _mono_aot_module_RDPDFViewXamarin_info
 	.align 3
 _mono_aot_module_RDPDFViewXamarin_info:
@@ -9976,7 +10042,7 @@ LDIFF_SYM452=LTDIE_12 - Ldebug_info_start
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper__ctor_intptr_bool
-	.quad Lme_63
+	.quad Lme_65
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10005,7 +10071,7 @@ Lfde91_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper__ctor_intptr_bool
 
-LDIFF_SYM457=Lme_63 - RadaeeLib_RadaeePDFPluginDelegateWrapper__ctor_intptr_bool
+LDIFF_SYM457=Lme_65 - RadaeeLib_RadaeePDFPluginDelegateWrapper__ctor_intptr_bool
 	.long LDIFF_SYM457
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -10020,7 +10086,7 @@ Lfde91_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_WillShowReader
-	.quad Lme_64
+	.quad Lme_66
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10039,7 +10105,7 @@ Lfde92_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_WillShowReader
 
-LDIFF_SYM460=Lme_64 - RadaeeLib_RadaeePDFPluginDelegateWrapper_WillShowReader
+LDIFF_SYM460=Lme_66 - RadaeeLib_RadaeePDFPluginDelegateWrapper_WillShowReader
 	.long LDIFF_SYM460
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
@@ -10054,7 +10120,7 @@ Lfde92_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidShowReader
-	.quad Lme_65
+	.quad Lme_67
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10073,7 +10139,7 @@ Lfde93_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidShowReader
 
-LDIFF_SYM463=Lme_65 - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidShowReader
+LDIFF_SYM463=Lme_67 - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidShowReader
 	.long LDIFF_SYM463
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
@@ -10088,7 +10154,7 @@ Lfde93_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_WillCloseReader
-	.quad Lme_66
+	.quad Lme_68
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10107,7 +10173,7 @@ Lfde94_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_WillCloseReader
 
-LDIFF_SYM466=Lme_66 - RadaeeLib_RadaeePDFPluginDelegateWrapper_WillCloseReader
+LDIFF_SYM466=Lme_68 - RadaeeLib_RadaeePDFPluginDelegateWrapper_WillCloseReader
 	.long LDIFF_SYM466
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
@@ -10122,7 +10188,7 @@ Lfde94_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidCloseReader
-	.quad Lme_67
+	.quad Lme_69
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10141,7 +10207,7 @@ Lfde95_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidCloseReader
 
-LDIFF_SYM469=Lme_67 - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidCloseReader
+LDIFF_SYM469=Lme_69 - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidCloseReader
 	.long LDIFF_SYM469
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
@@ -10156,7 +10222,7 @@ Lfde95_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidChangePage_int
-	.quad Lme_68
+	.quad Lme_6a
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10180,7 +10246,7 @@ Lfde96_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidChangePage_int
 
-LDIFF_SYM473=Lme_68 - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidChangePage_int
+LDIFF_SYM473=Lme_6a - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidChangePage_int
 	.long LDIFF_SYM473
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
@@ -10195,7 +10261,7 @@ Lfde96_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidSearchTerm_string_bool
-	.quad Lme_69
+	.quad Lme_6b
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10229,7 +10295,7 @@ Lfde97_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidSearchTerm_string_bool
 
-LDIFF_SYM479=Lme_69 - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidSearchTerm_string_bool
+LDIFF_SYM479=Lme_6b - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidSearchTerm_string_bool
 	.long LDIFF_SYM479
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,153,4
@@ -10244,7 +10310,7 @@ Lfde97_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnPage_int_CoreGraphics_CGPoint
-	.quad Lme_6a
+	.quad Lme_6c
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10273,7 +10339,7 @@ Lfde98_start:
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnPage_int_CoreGraphics_CGPoint
 
-LDIFF_SYM484=Lme_6a - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnPage_int_CoreGraphics_CGPoint
+LDIFF_SYM484=Lme_6c - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnPage_int_CoreGraphics_CGPoint
 	.long LDIFF_SYM484
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29
@@ -10283,12 +10349,12 @@ Lfde98_end:
 .section __DWARF, __debug_info,regular,debug
 
 	.byte 2
-	.asciz "RadaeeLib.RadaeePDFPluginDelegateWrapper:DidTapOnAnnotationOfType"
-	.asciz "RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint"
+	.asciz "RadaeeLib.RadaeePDFPluginDelegateWrapper:DidDoubleTapOnPage"
+	.asciz "RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint"
 
 	.byte 0,0
-	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
-	.quad Lme_6b
+	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+	.quad Lme_6d
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -10305,29 +10371,117 @@ LDIFF_SYM486=LDIE_I4 - Ldebug_info_start
 
 LDIFF_SYM487=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM487
+	.byte 2,141,32,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM488=Lfde99_end - Lfde99_start
+	.long LDIFF_SYM488
+Lfde99_start:
+
+	.long 0
+	.align 3
+	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+
+LDIFF_SYM489=Lme_6d - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidDoubleTapOnPage_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM489
+	.long 0
+	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29
+	.align 3
+Lfde99_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "RadaeeLib.RadaeePDFPluginDelegateWrapper:DidLongPressOnPage"
+	.asciz "RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint"
+
+	.byte 0,0
+	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint
+	.quad Lme_6e
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM490=LTDIE_12_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM490
+	.byte 2,141,16,3
+	.asciz "param0"
+
+LDIFF_SYM491=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM491
+	.byte 2,141,24,3
+	.asciz "param1"
+
+LDIFF_SYM492=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM492
+	.byte 2,141,32,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM493=Lfde100_end - Lfde100_start
+	.long LDIFF_SYM493
+Lfde100_start:
+
+	.long 0
+	.align 3
+	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint
+
+LDIFF_SYM494=Lme_6e - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidLongPressOnPage_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM494
+	.long 0
+	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29
+	.align 3
+Lfde100_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "RadaeeLib.RadaeePDFPluginDelegateWrapper:DidTapOnAnnotationOfType"
+	.asciz "RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint"
+
+	.byte 0,0
+	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
+	.quad Lme_6f
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM495=LTDIE_12_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM495
+	.byte 2,141,16,3
+	.asciz "param0"
+
+LDIFF_SYM496=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM496
+	.byte 2,141,24,3
+	.asciz "param1"
+
+LDIFF_SYM497=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM497
 	.byte 2,141,32,3
 	.asciz "param2"
 
-LDIFF_SYM488=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM488
+LDIFF_SYM498=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM498
 	.byte 2,141,40,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM489=Lfde99_end - Lfde99_start
-	.long LDIFF_SYM489
-Lfde99_start:
+LDIFF_SYM499=Lfde101_end - Lfde101_start
+	.long LDIFF_SYM499
+Lfde101_start:
 
 	.long 0
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
 
-LDIFF_SYM490=Lme_6b - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
-	.long LDIFF_SYM490
+LDIFF_SYM500=Lme_6f - RadaeeLib_RadaeePDFPluginDelegateWrapper_DidTapOnAnnotationOfType_int_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM500
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29
 	.align 3
-Lfde99_end:
+Lfde101_end:
 
 .section __DWARF, __debug_info,regular,debug
 LTDIE_14:
@@ -10336,54 +10490,54 @@ LTDIE_14:
 	.asciz "RadaeeLib_RadaeePDFPluginDelegate"
 
 	.byte 40,16
-LDIFF_SYM491=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM491
+LDIFF_SYM501=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM501
 	.byte 2,35,0,0,7
 	.asciz "RadaeeLib_RadaeePDFPluginDelegate"
 
-LDIFF_SYM492=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM492
+LDIFF_SYM502=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM502
 LTDIE_14_POINTER:
 
 	.byte 13
-LDIFF_SYM493=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM493
+LDIFF_SYM503=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM503
 LTDIE_14_REFERENCE:
 
 	.byte 14
-LDIFF_SYM494=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM494
+LDIFF_SYM504=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM504
 	.byte 2
 	.asciz "RadaeeLib.RadaeePDFPluginDelegate:.ctor"
 	.asciz "RadaeeLib_RadaeePDFPluginDelegate__ctor"
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor
-	.quad Lme_6c
+	.quad Lme_70
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM495=LTDIE_14_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM495
+LDIFF_SYM505=LTDIE_14_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM505
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM496=Lfde100_end - Lfde100_start
-	.long LDIFF_SYM496
-Lfde100_start:
+LDIFF_SYM506=Lfde102_end - Lfde102_start
+	.long LDIFF_SYM506
+Lfde102_start:
 
 	.long 0
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor
 
-LDIFF_SYM497=Lme_6c - RadaeeLib_RadaeePDFPluginDelegate__ctor
-	.long LDIFF_SYM497
+LDIFF_SYM507=Lme_70 - RadaeeLib_RadaeePDFPluginDelegate__ctor
+	.long LDIFF_SYM507
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29,68,154,2
 	.align 3
-Lfde100_end:
+Lfde102_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -10393,36 +10547,36 @@ Lfde100_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor_Foundation_NSObjectFlag
-	.quad Lme_6d
+	.quad Lme_71
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM498=LTDIE_14_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM498
+LDIFF_SYM508=LTDIE_14_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM508
 	.byte 2,141,16,3
 	.asciz "param0"
 
-LDIFF_SYM499=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM499
+LDIFF_SYM509=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM509
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM500=Lfde101_end - Lfde101_start
-	.long LDIFF_SYM500
-Lfde101_start:
+LDIFF_SYM510=Lfde103_end - Lfde103_start
+	.long LDIFF_SYM510
+Lfde103_start:
 
 	.long 0
 	.align 3
 	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor_Foundation_NSObjectFlag
 
-LDIFF_SYM501=Lme_6d - RadaeeLib_RadaeePDFPluginDelegate__ctor_Foundation_NSObjectFlag
-	.long LDIFF_SYM501
+LDIFF_SYM511=Lme_71 - RadaeeLib_RadaeePDFPluginDelegate__ctor_Foundation_NSObjectFlag
+	.long LDIFF_SYM511
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde101_end:
+Lfde103_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -10432,107 +10586,19 @@ Lfde101_end:
 
 	.byte 0,0
 	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
-	.quad Lme_6e
+	.quad Lme_72
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM502=LTDIE_14_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM502
+LDIFF_SYM512=LTDIE_14_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM512
 	.byte 2,141,16,3
 	.asciz "param0"
 
-LDIFF_SYM503=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM503
-	.byte 2,141,24,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM504=Lfde102_end - Lfde102_start
-	.long LDIFF_SYM504
-Lfde102_start:
-
-	.long 0
-	.align 3
-	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
-
-LDIFF_SYM505=Lme_6e - RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
-	.long LDIFF_SYM505
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde102_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "ApiDefinition.Messaging:.cctor"
-	.asciz "ApiDefinition_Messaging__cctor"
-
-	.byte 0,0
-	.quad ApiDefinition_Messaging__cctor
-	.quad Lme_8d
-
-	.byte 2,118,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM506=Lfde103_end - Lfde103_start
-	.long LDIFF_SYM506
-Lfde103_start:
-
-	.long 0
-	.align 3
-	.quad ApiDefinition_Messaging__cctor
-
-LDIFF_SYM507=Lme_8d - ApiDefinition_Messaging__cctor
-	.long LDIFF_SYM507
-	.long 0
-	.byte 12,31,0,68,14,16,157,2,158,1,68,13,29
-	.align 3
-Lfde103_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
-	.quad Lme_8f
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM508=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM508
-	.byte 1,105,3
-	.asciz "param1"
-
-LDIFF_SYM509=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM509
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM510=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM510
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM511=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM511
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM512=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM512
-	.byte 0,11
-	.asciz "V_3"
-
 LDIFF_SYM513=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM513
-	.byte 1,106,0
+	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -10542,15 +10608,103 @@ Lfde104_start:
 
 	.long 0
 	.align 3
+	.quad RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
+
+LDIFF_SYM515=Lme_72 - RadaeeLib_RadaeePDFPluginDelegate__ctor_intptr
+	.long LDIFF_SYM515
+	.long 0
+	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
+	.align 3
+Lfde104_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "ApiDefinition.Messaging:.cctor"
+	.asciz "ApiDefinition_Messaging__cctor"
+
+	.byte 0,0
+	.quad ApiDefinition_Messaging__cctor
+	.quad Lme_93
+
+	.byte 2,118,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM516=Lfde105_end - Lfde105_start
+	.long LDIFF_SYM516
+Lfde105_start:
+
+	.long 0
+	.align 3
+	.quad ApiDefinition_Messaging__cctor
+
+LDIFF_SYM517=Lme_93 - ApiDefinition_Messaging__cctor
+	.long LDIFF_SYM517
+	.long 0
+	.byte 12,31,0,68,14,16,157,2,158,1,68,13,29
+	.align 3
+Lfde105_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
+	.quad Lme_95
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM518=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM518
+	.byte 1,105,3
+	.asciz "param1"
+
+LDIFF_SYM519=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM519
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM520=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM520
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM521=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM521
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM522=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM522
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM523=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM523
+	.byte 1,106,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM524=Lfde106_end - Lfde106_start
+	.long LDIFF_SYM524
+Lfde106_start:
+
+	.long 0
+	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
 
-LDIFF_SYM515=Lme_8f - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
-	.long LDIFF_SYM515
+LDIFF_SYM525=Lme_95 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr
+	.long LDIFF_SYM525
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
 	.byte 154,6,68,155,5,156,4
 	.align 3
-Lfde104_end:
+Lfde106_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -10560,177 +10714,52 @@ Lfde104_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
-	.quad Lme_90
+	.quad Lme_96
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM516=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM516
+LDIFF_SYM526=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM526
 	.byte 1,105,3
 	.asciz "param1"
 
-LDIFF_SYM517=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM517
+LDIFF_SYM527=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM527
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM518=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM518
+LDIFF_SYM528=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM528
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM519=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM519
+LDIFF_SYM529=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM529
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM520=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM520
+LDIFF_SYM530=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM530
 	.byte 0,11
 	.asciz "V_3"
 
-LDIFF_SYM521=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM521
+LDIFF_SYM531=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM531
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM522=Lfde105_end - Lfde105_start
-	.long LDIFF_SYM522
-Lfde105_start:
+LDIFF_SYM532=Lfde107_end - Lfde107_start
+	.long LDIFF_SYM532
+Lfde107_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
 
-LDIFF_SYM523=Lme_90 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
-	.long LDIFF_SYM523
-	.long 0
-	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
-	.byte 154,6,68,155,5,156,4
-	.align 3
-Lfde105_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
-	.quad Lme_91
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM524=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM524
-	.byte 2,141,16,3
-	.asciz "param1"
-
-LDIFF_SYM525=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM525
-	.byte 1,105,3
-	.asciz "param2"
-
-LDIFF_SYM526=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM526
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM527=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM527
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM528=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM528
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM529=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM529
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM530=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM530
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM531=Lfde106_end - Lfde106_start
-	.long LDIFF_SYM531
-Lfde106_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
-
-LDIFF_SYM532=Lme_91 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
-	.long LDIFF_SYM532
-	.long 0
-	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
-	.byte 154,5,68,155,4,156,3
-	.align 3
-Lfde106_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
-	.quad Lme_92
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM533=LDIE_I - Ldebug_info_start
+LDIFF_SYM533=Lme_96 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSendSuper_intptr_intptr
 	.long LDIFF_SYM533
-	.byte 1,105,3
-	.asciz "param1"
-
-LDIFF_SYM534=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM534
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM535=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM535
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM536=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM536
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM537=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM537
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM538=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM538
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM539=Lfde107_end - Lfde107_start
-	.long LDIFF_SYM539
-Lfde107_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
-
-LDIFF_SYM540=Lme_92 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
-	.long LDIFF_SYM540
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
 	.byte 154,6,68,155,5,156,4
@@ -10741,61 +10770,186 @@ Lfde107_end:
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
-	.quad Lme_93
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
+	.quad Lme_97
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM541=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM541
+LDIFF_SYM534=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM534
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM542=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM542
-	.byte 2,141,24,3
+LDIFF_SYM535=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM535
+	.byte 1,105,3
 	.asciz "param2"
 
-LDIFF_SYM543=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM543
+LDIFF_SYM536=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM536
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM544=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM544
+LDIFF_SYM537=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM537
 	.byte 0,11
 	.asciz "V_1"
+
+LDIFF_SYM538=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM538
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM539=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM539
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM540=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM540
+	.byte 1,106,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM541=Lfde108_end - Lfde108_start
+	.long LDIFF_SYM541
+Lfde108_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
+
+LDIFF_SYM542=Lme_97 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr
+	.long LDIFF_SYM542
+	.long 0
+	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
+	.byte 154,5,68,155,4,156,3
+	.align 3
+Lfde108_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
+	.quad Lme_98
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM543=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM543
+	.byte 1,105,3
+	.asciz "param1"
+
+LDIFF_SYM544=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM544
+	.byte 1,106,11
+	.asciz "V_0"
 
 LDIFF_SYM545=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM545
 	.byte 0,11
-	.asciz "V_2"
+	.asciz "V_1"
 
 LDIFF_SYM546=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM546
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM547=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM547
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM548=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM548
+	.byte 1,106,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM549=Lfde109_end - Lfde109_start
+	.long LDIFF_SYM549
+Lfde109_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
+
+LDIFF_SYM550=Lme_98 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_0
+	.long LDIFF_SYM550
+	.long 0
+	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
+	.byte 154,6,68,155,5,156,4
+	.align 3
+Lfde109_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
+	.quad Lme_99
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM551=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM551
+	.byte 2,141,16,3
+	.asciz "param1"
+
+LDIFF_SYM552=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM552
+	.byte 2,141,24,3
+	.asciz "param2"
+
+LDIFF_SYM553=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM553
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM554=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM554
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM555=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM555
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM556=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM556
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM547=Lfde108_end - Lfde108_start
-	.long LDIFF_SYM547
-Lfde108_start:
+LDIFF_SYM557=Lfde110_end - Lfde110_start
+	.long LDIFF_SYM557
+Lfde110_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
 
-LDIFF_SYM548=Lme_93 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
-	.long LDIFF_SYM548
+LDIFF_SYM558=Lme_99 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int
+	.long LDIFF_SYM558
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
 	.byte 154,6,68,155,5,156,4
 	.align 3
-Lfde108_end:
+Lfde110_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -10805,177 +10959,52 @@ Lfde108_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
-	.quad Lme_94
+	.quad Lme_9a
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM549=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM549
+LDIFF_SYM559=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM559
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM550=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM550
+LDIFF_SYM560=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM560
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM551=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM551
+LDIFF_SYM561=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM561
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM552=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM552
+LDIFF_SYM562=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM562
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM553=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM553
+LDIFF_SYM563=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM563
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM554=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM554
+LDIFF_SYM564=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM564
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM555=Lfde109_end - Lfde109_start
-	.long LDIFF_SYM555
-Lfde109_start:
+LDIFF_SYM565=Lfde111_end - Lfde111_start
+	.long LDIFF_SYM565
+Lfde111_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
 
-LDIFF_SYM556=Lme_94 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
-	.long LDIFF_SYM556
-	.long 0
-	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
-	.byte 154,6,68,155,5,156,4
-	.align 3
-Lfde109_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
-	.quad Lme_95
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM557=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM557
-	.byte 1,105,3
-	.asciz "param1"
-
-LDIFF_SYM558=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM558
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM559=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM559
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM560=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM560
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM561=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM561
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM562=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM562
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM563=Lfde110_end - Lfde110_start
-	.long LDIFF_SYM563
-Lfde110_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
-
-LDIFF_SYM564=Lme_95 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
-	.long LDIFF_SYM564
-	.long 0
-	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
-	.byte 154,6,68,155,5,156,4
-	.align 3
-Lfde110_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
-	.quad Lme_96
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM565=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM565
-	.byte 2,141,16,3
-	.asciz "param1"
-
-LDIFF_SYM566=LDIE_I - Ldebug_info_start
+LDIFF_SYM566=Lme_9a - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_0
 	.long LDIFF_SYM566
-	.byte 2,141,24,3
-	.asciz "param2"
-
-LDIFF_SYM567=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM567
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM568=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM568
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM569=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM569
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM570=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM570
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM571=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM571
-	.byte 1,103,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM572=Lfde111_end - Lfde111_start
-	.long LDIFF_SYM572
-Lfde111_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
-
-LDIFF_SYM573=Lme_96 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
-	.long LDIFF_SYM573
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
 	.byte 154,6,68,155,5,156,4
@@ -10986,54 +11015,59 @@ Lfde111_end:
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
-	.quad Lme_97
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
+	.quad Lme_9b
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM574=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM574
-	.byte 2,141,16,3
+LDIFF_SYM567=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM567
+	.byte 1,105,3
 	.asciz "param1"
 
-LDIFF_SYM575=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM575
+LDIFF_SYM568=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM568
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM576=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM576
+LDIFF_SYM569=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM569
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM577=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM577
+LDIFF_SYM570=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM570
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM578=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM578
-	.byte 0,0
+LDIFF_SYM571=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM571
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM572=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM572
+	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM579=Lfde112_end - Lfde112_start
-	.long LDIFF_SYM579
+LDIFF_SYM573=Lfde112_end - Lfde112_start
+	.long LDIFF_SYM573
 Lfde112_start:
 
 	.long 0
 	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
 
-LDIFF_SYM580=Lme_97 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
-	.long LDIFF_SYM580
+LDIFF_SYM574=Lme_9b - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_1
+	.long LDIFF_SYM574
 	.long 0
-	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
-	.byte 154,5,68,155,4,156,3
+	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
+	.byte 154,6,68,155,5,156,4
 	.align 3
 Lfde112_end:
 
@@ -11041,66 +11075,61 @@ Lfde112_end:
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
-	.quad Lme_98
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
+	.quad Lme_9c
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM581=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM581
+LDIFF_SYM575=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM575
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM582=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM582
+LDIFF_SYM576=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM576
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM583=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM583
-	.byte 1,105,3
-	.asciz "param3"
-
-LDIFF_SYM584=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM584
+LDIFF_SYM577=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM577
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM585=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM585
+LDIFF_SYM578=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM578
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM586=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM586
+LDIFF_SYM579=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM579
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM587=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM587
+LDIFF_SYM580=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM580
 	.byte 0,11
 	.asciz "V_3"
 
-LDIFF_SYM588=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM588
-	.byte 1,106,0
+LDIFF_SYM581=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM581
+	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM589=Lfde113_end - Lfde113_start
-	.long LDIFF_SYM589
+LDIFF_SYM582=Lfde113_end - Lfde113_start
+	.long LDIFF_SYM582
 Lfde113_start:
 
 	.long 0
 	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
 
-LDIFF_SYM590=Lme_98 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
-	.long LDIFF_SYM590
+LDIFF_SYM583=Lme_9c - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_bool
+	.long LDIFF_SYM583
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
 	.byte 154,6,68,155,5,156,4
@@ -11111,11 +11140,66 @@ Lfde113_end:
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
-	.quad Lme_99
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
+	.quad Lme_9d
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM584=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM584
+	.byte 2,141,16,3
+	.asciz "param1"
+
+LDIFF_SYM585=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM585
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM586=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM586
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM587=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM587
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM588=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM588
+	.byte 0,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM589=Lfde114_end - Lfde114_start
+	.long LDIFF_SYM589
+Lfde114_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
+
+LDIFF_SYM590=Lme_9d - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_2
+	.long LDIFF_SYM590
+	.long 0
+	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
+	.byte 154,5,68,155,4,156,3
+	.align 3
+Lfde114_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
+	.quad Lme_9e
 
 	.byte 2,118,16,3
 	.asciz "param0"
@@ -11132,75 +11216,145 @@ LDIFF_SYM592=LDIE_I - Ldebug_info_start
 
 LDIFF_SYM593=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM593
-	.byte 2,141,32,3
+	.byte 1,105,3
 	.asciz "param3"
 
-LDIFF_SYM594=LDIE_I4 - Ldebug_info_start
+LDIFF_SYM594=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM594
-	.byte 2,141,40,3
-	.asciz "param4"
-
-LDIFF_SYM595=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM595
-	.byte 1,104,3
-	.asciz "param5"
-
-LDIFF_SYM596=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM596
-	.byte 1,105,3
-	.asciz "param6"
-
-LDIFF_SYM597=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM597
-	.byte 2,141,48,11
+	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM598=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM598
+LDIFF_SYM595=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM595
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM599=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM599
+LDIFF_SYM596=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM596
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM600=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM600
+LDIFF_SYM597=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM597
 	.byte 0,11
 	.asciz "V_3"
 
+LDIFF_SYM598=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM598
+	.byte 1,106,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM599=Lfde115_end - Lfde115_start
+	.long LDIFF_SYM599
+Lfde115_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
+
+LDIFF_SYM600=Lme_9e - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr
+	.long LDIFF_SYM600
+	.long 0
+	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
+	.byte 154,6,68,155,5,156,4
+	.align 3
+Lfde115_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
+	.quad Lme_9f
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
 LDIFF_SYM601=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM601
+	.byte 2,141,16,3
+	.asciz "param1"
+
+LDIFF_SYM602=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM602
+	.byte 2,141,24,3
+	.asciz "param2"
+
+LDIFF_SYM603=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM603
+	.byte 2,141,32,3
+	.asciz "param3"
+
+LDIFF_SYM604=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM604
+	.byte 2,141,40,3
+	.asciz "param4"
+
+LDIFF_SYM605=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM605
+	.byte 1,104,3
+	.asciz "param5"
+
+LDIFF_SYM606=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM606
+	.byte 1,105,3
+	.asciz "param6"
+
+LDIFF_SYM607=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM607
+	.byte 2,141,48,11
+	.asciz "V_0"
+
+LDIFF_SYM608=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM608
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM609=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM609
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM610=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM610
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM611=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM611
 	.byte 1,105,11
 	.asciz "V_4"
 
-LDIFF_SYM602=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM602
+LDIFF_SYM612=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM612
 	.byte 1,99,11
 	.asciz "V_5"
 
-LDIFF_SYM603=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM603
+LDIFF_SYM613=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM613
 	.byte 3,141,176,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM604=Lfde114_end - Lfde114_start
-	.long LDIFF_SYM604
-Lfde114_start:
+LDIFF_SYM614=Lfde116_end - Lfde116_start
+	.long LDIFF_SYM614
+Lfde116_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
 
-LDIFF_SYM605=Lme_99 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
-	.long LDIFF_SYM605
+LDIFF_SYM615=Lme_9f - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr_bool_bool
+	.long LDIFF_SYM615
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,76,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8
 	.byte 154,7,68,155,6,156,5
 	.align 3
-Lfde114_end:
+Lfde116_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -11210,77 +11364,77 @@ Lfde114_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
-	.quad Lme_9a
+	.quad Lme_a0
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM606=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM606
+LDIFF_SYM616=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM616
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM607=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM607
+LDIFF_SYM617=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM617
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM608=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM608
+LDIFF_SYM618=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM618
 	.byte 2,141,32,3
 	.asciz "param3"
 
-LDIFF_SYM609=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM609
+LDIFF_SYM619=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM619
 	.byte 2,141,40,3
 	.asciz "param4"
 
-LDIFF_SYM610=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM610
+LDIFF_SYM620=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM620
 	.byte 2,141,48,3
 	.asciz "param5"
 
-LDIFF_SYM611=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM611
+LDIFF_SYM621=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM621
 	.byte 2,141,56,3
 	.asciz "param6"
 
-LDIFF_SYM612=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM612
+LDIFF_SYM622=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM622
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM613=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM613
+LDIFF_SYM623=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM623
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM614=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM614
+LDIFF_SYM624=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM624
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM615=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM615
+LDIFF_SYM625=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM625
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM616=Lfde115_end - Lfde115_start
-	.long LDIFF_SYM616
-Lfde115_start:
+LDIFF_SYM626=Lfde117_end - Lfde117_start
+	.long LDIFF_SYM626
+Lfde117_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
 
-LDIFF_SYM617=Lme_9a - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
-	.long LDIFF_SYM617
+LDIFF_SYM627=Lme_a0 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_intptr_int
+	.long LDIFF_SYM627
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
 	.byte 154,6,68,155,5,156,4
 	.align 3
-Lfde115_end:
+Lfde117_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -11290,62 +11444,62 @@ Lfde115_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
-	.quad Lme_9b
+	.quad Lme_a1
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM618=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM618
+LDIFF_SYM628=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM628
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM619=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM619
+LDIFF_SYM629=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM629
 	.byte 1,105,3
 	.asciz "param2"
 
-LDIFF_SYM620=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM620
+LDIFF_SYM630=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM630
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM621=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM621
+LDIFF_SYM631=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM631
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM622=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM622
+LDIFF_SYM632=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM632
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM623=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM623
+LDIFF_SYM633=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM633
 	.byte 0,11
 	.asciz "V_3"
 
-LDIFF_SYM624=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM624
+LDIFF_SYM634=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM634
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM625=Lfde116_end - Lfde116_start
-	.long LDIFF_SYM625
-Lfde116_start:
+LDIFF_SYM635=Lfde118_end - Lfde118_start
+	.long LDIFF_SYM635
+Lfde118_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
 
-LDIFF_SYM626=Lme_9b - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
-	.long LDIFF_SYM626
+LDIFF_SYM636=Lme_a1 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_0
+	.long LDIFF_SYM636
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
 	.byte 154,5,68,155,4,156,3
 	.align 3
-Lfde116_end:
+Lfde118_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -11355,87 +11509,87 @@ Lfde116_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
-	.quad Lme_9c
+	.quad Lme_a2
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM627=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM627
+LDIFF_SYM637=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM637
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM628=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM628
+LDIFF_SYM638=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM638
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM629=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM629
+LDIFF_SYM639=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM639
 	.byte 2,141,32,3
 	.asciz "param3"
 
-LDIFF_SYM630=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM630
+LDIFF_SYM640=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM640
 	.byte 2,141,40,3
 	.asciz "param4"
 
-LDIFF_SYM631=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM631
+LDIFF_SYM641=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM641
 	.byte 2,141,48,3
 	.asciz "param5"
 
-LDIFF_SYM632=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM632
+LDIFF_SYM642=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM642
 	.byte 2,141,56,3
 	.asciz "param6"
 
-LDIFF_SYM633=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM633
+LDIFF_SYM643=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM643
 	.byte 1,105,3
 	.asciz "param7"
 
-LDIFF_SYM634=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM634
+LDIFF_SYM644=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM644
 	.byte 3,141,192,0,11
 	.asciz "V_0"
 
-LDIFF_SYM635=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM635
+LDIFF_SYM645=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM645
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM636=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM636
+LDIFF_SYM646=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM646
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM637=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM637
+LDIFF_SYM647=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM647
 	.byte 0,11
 	.asciz "V_3"
 
-LDIFF_SYM638=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM638
+LDIFF_SYM648=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM648
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM639=Lfde117_end - Lfde117_start
-	.long LDIFF_SYM639
-Lfde117_start:
+LDIFF_SYM649=Lfde119_end - Lfde119_start
+	.long LDIFF_SYM649
+Lfde119_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
 
-LDIFF_SYM640=Lme_9c - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
-	.long LDIFF_SYM640
+LDIFF_SYM650=Lme_a2 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_intptr_intptr_int_int_intptr
+	.long LDIFF_SYM650
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8
 	.byte 154,7,68,155,6,156,5
 	.align 3
-Lfde117_end:
+Lfde119_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -11445,100 +11599,30 @@ Lfde117_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
-	.quad Lme_9d
+	.quad Lme_a3
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM641=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM641
+LDIFF_SYM651=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM651
 	.byte 2,141,16,3
 	.asciz "param1"
-
-LDIFF_SYM642=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM642
-	.byte 2,141,24,3
-	.asciz "param2"
-
-LDIFF_SYM643=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM643
-	.byte 2,141,32,3
-	.asciz "param3"
-
-LDIFF_SYM644=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM644
-	.byte 1,105,3
-	.asciz "param4"
-
-LDIFF_SYM645=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM645
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM646=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM646
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM647=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM647
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM648=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM648
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM649=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM649
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM650=Lfde118_end - Lfde118_start
-	.long LDIFF_SYM650
-Lfde118_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
-
-LDIFF_SYM651=Lme_9d - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
-	.long LDIFF_SYM651
-	.long 0
-	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
-	.byte 154,5,68,155,4,156,3
-	.align 3
-Lfde118_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
-	.quad Lme_9e
-
-	.byte 2,118,16,3
-	.asciz "param0"
 
 LDIFF_SYM652=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM652
-	.byte 2,141,16,3
-	.asciz "param1"
-
-LDIFF_SYM653=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM653
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM654=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM654
+LDIFF_SYM653=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM653
 	.byte 2,141,32,3
 	.asciz "param3"
+
+LDIFF_SYM654=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM654
+	.byte 1,105,3
+	.asciz "param4"
 
 LDIFF_SYM655=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM655
@@ -11557,25 +11641,95 @@ LDIFF_SYM657=LDIE_I4 - Ldebug_info_start
 
 LDIFF_SYM658=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM658
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM659=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM659
+	.byte 1,106,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM660=Lfde120_end - Lfde120_start
+	.long LDIFF_SYM660
+Lfde120_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
+
+LDIFF_SYM661=Lme_a3 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_int_intptr
+	.long LDIFF_SYM661
+	.long 0
+	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
+	.byte 154,5,68,155,4,156,3
+	.align 3
+Lfde120_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
+	.quad Lme_a4
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM662=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM662
+	.byte 2,141,16,3
+	.asciz "param1"
+
+LDIFF_SYM663=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM663
+	.byte 2,141,24,3
+	.asciz "param2"
+
+LDIFF_SYM664=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM664
+	.byte 2,141,32,3
+	.asciz "param3"
+
+LDIFF_SYM665=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM665
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM666=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM666
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM667=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM667
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM668=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM668
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM659=Lfde119_end - Lfde119_start
-	.long LDIFF_SYM659
-Lfde119_start:
+LDIFF_SYM669=Lfde121_end - Lfde121_start
+	.long LDIFF_SYM669
+Lfde121_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
 
-LDIFF_SYM660=Lme_9e - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
-	.long LDIFF_SYM660
+LDIFF_SYM670=Lme_a4 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_intptr
+	.long LDIFF_SYM670
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
 	.byte 154,5,68,155,4,156,3
 	.align 3
-Lfde119_end:
+Lfde121_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -11585,90 +11739,20 @@ Lfde119_end:
 
 	.byte 0,0
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
-	.quad Lme_9f
+	.quad Lme_a5
 
 	.byte 2,118,16,3
 	.asciz "param0"
-
-LDIFF_SYM661=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM661
-	.byte 2,141,16,3
-	.asciz "param1"
-
-LDIFF_SYM662=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM662
-	.byte 1,105,3
-	.asciz "param2"
-
-LDIFF_SYM663=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM663
-	.byte 1,106,11
-	.asciz "V_0"
-
-LDIFF_SYM664=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM664
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM665=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM665
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM666=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM666
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM667=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM667
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM668=Lfde120_end - Lfde120_start
-	.long LDIFF_SYM668
-Lfde120_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
-
-LDIFF_SYM669=Lme_9f - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
-	.long LDIFF_SYM669
-	.long 0
-	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
-	.byte 154,5,68,155,4,156,3
-	.align 3
-Lfde120_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
-	.quad Lme_a0
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM670=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM670
-	.byte 2,141,16,3
-	.asciz "param1"
 
 LDIFF_SYM671=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM671
-	.byte 2,141,24,3
-	.asciz "param2"
+	.byte 2,141,16,3
+	.asciz "param1"
 
-LDIFF_SYM672=LDIE_I4 - Ldebug_info_start
+LDIFF_SYM672=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM672
-	.byte 2,141,32,3
-	.asciz "param3"
+	.byte 1,105,3
+	.asciz "param2"
 
 LDIFF_SYM673=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM673
@@ -11687,83 +11771,28 @@ LDIFF_SYM675=LDIE_I4 - Ldebug_info_start
 
 LDIFF_SYM676=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM676
-	.byte 0,0
+	.byte 0,11
+	.asciz "V_3"
 
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM677=Lfde121_end - Lfde121_start
+LDIFF_SYM677=LDIE_BOOLEAN - Ldebug_info_start
 	.long LDIFF_SYM677
-Lfde121_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
-
-LDIFF_SYM678=Lme_a0 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
-	.long LDIFF_SYM678
-	.long 0
-	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
-	.byte 154,5,68,155,4,156,3
-	.align 3
-Lfde121_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single"
-
-	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
-	.quad Lme_a1
-
-	.byte 2,118,16,3
-	.asciz "param0"
-
-LDIFF_SYM679=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM679
-	.byte 2,141,16,3
-	.asciz "param1"
-
-LDIFF_SYM680=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM680
-	.byte 1,106,3
-	.asciz "param2"
-
-LDIFF_SYM681=LDIE_R4 - Ldebug_info_start
-	.long LDIFF_SYM681
-	.byte 2,141,24,11
-	.asciz "V_0"
-
-LDIFF_SYM682=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM682
-	.byte 0,11
-	.asciz "V_1"
-
-LDIFF_SYM683=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM683
-	.byte 0,11
-	.asciz "V_2"
-
-LDIFF_SYM684=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM684
-	.byte 0,0
+	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM685=Lfde122_end - Lfde122_start
-	.long LDIFF_SYM685
+LDIFF_SYM678=Lfde122_end - Lfde122_start
+	.long LDIFF_SYM678
 Lfde122_start:
 
 	.long 0
 	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
 
-LDIFF_SYM686=Lme_a1 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
-	.long LDIFF_SYM686
+LDIFF_SYM679=Lme_a5 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_1
+	.long LDIFF_SYM679
 	.long 0
-	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
-	.byte 154,6,68,155,5,156,4
+	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
+	.byte 154,5,68,155,4,156,3
 	.align 3
 Lfde122_end:
 
@@ -11771,66 +11800,61 @@ Lfde122_end:
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
-	.quad Lme_a2
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
+	.quad Lme_a6
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM687=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM687
+LDIFF_SYM680=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM680
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM688=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM688
+LDIFF_SYM681=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM681
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM689=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM689
+LDIFF_SYM682=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM682
 	.byte 2,141,32,3
 	.asciz "param3"
 
-LDIFF_SYM690=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM690
+LDIFF_SYM683=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM683
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM691=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM691
+LDIFF_SYM684=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM684
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM692=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM692
+LDIFF_SYM685=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM685
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM693=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM693
-	.byte 0,11
-	.asciz "V_3"
-
-LDIFF_SYM694=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM694
-	.byte 1,102,0
+LDIFF_SYM686=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM686
+	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM695=Lfde123_end - Lfde123_start
-	.long LDIFF_SYM695
+LDIFF_SYM687=Lfde123_end - Lfde123_start
+	.long LDIFF_SYM687
 Lfde123_start:
 
 	.long 0
 	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
 
-LDIFF_SYM696=Lme_a2 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
-	.long LDIFF_SYM696
+LDIFF_SYM688=Lme_a6 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int
+	.long LDIFF_SYM688
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
 	.byte 154,5,68,155,4,156,3
@@ -11841,11 +11865,71 @@ Lfde123_end:
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
-	.quad Lme_a3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
+	.quad Lme_a7
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM689=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM689
+	.byte 2,141,16,3
+	.asciz "param1"
+
+LDIFF_SYM690=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM690
+	.byte 1,106,3
+	.asciz "param2"
+
+LDIFF_SYM691=LDIE_R4 - Ldebug_info_start
+	.long LDIFF_SYM691
+	.byte 2,141,24,11
+	.asciz "V_0"
+
+LDIFF_SYM692=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM692
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM693=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM693
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM694=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM694
+	.byte 0,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM695=Lfde124_end - Lfde124_start
+	.long LDIFF_SYM695
+Lfde124_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
+
+LDIFF_SYM696=Lme_a7 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_single
+	.long LDIFF_SYM696
+	.long 0
+	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
+	.byte 154,6,68,155,5,156,4
+	.align 3
+Lfde124_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
+	.quad Lme_a8
 
 	.byte 2,118,16,3
 	.asciz "param0"
@@ -11860,14 +11944,14 @@ LDIFF_SYM698=LDIE_I - Ldebug_info_start
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM699=LDIE_I4 - Ldebug_info_start
+LDIFF_SYM699=LDIE_I - Ldebug_info_start
 	.long LDIFF_SYM699
-	.byte 1,106,3
+	.byte 2,141,32,3
 	.asciz "param3"
 
-LDIFF_SYM700=LDIE_I4 - Ldebug_info_start
+LDIFF_SYM700=LDIE_BOOLEAN - Ldebug_info_start
 	.long LDIFF_SYM700
-	.byte 2,141,32,11
+	.byte 1,106,11
 	.asciz "V_0"
 
 LDIFF_SYM701=LDIE_I4 - Ldebug_info_start
@@ -11882,62 +11966,62 @@ LDIFF_SYM702=LDIE_I4 - Ldebug_info_start
 
 LDIFF_SYM703=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM703
-	.byte 0,0
+	.byte 0,11
+	.asciz "V_3"
+
+LDIFF_SYM704=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM704
+	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM704=Lfde124_end - Lfde124_start
-	.long LDIFF_SYM704
-Lfde124_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
-
-LDIFF_SYM705=Lme_a3 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
+LDIFF_SYM705=Lfde125_end - Lfde125_start
 	.long LDIFF_SYM705
+Lfde125_start:
+
 	.long 0
-	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
-	.byte 154,6,68,155,5,156,4
 	.align 3
-Lfde124_end:
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
+
+LDIFF_SYM706=Lme_a8 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_intptr_bool
+	.long LDIFF_SYM706
+	.long 0
+	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
+	.byte 154,5,68,155,4,156,3
+	.align 3
+Lfde125_end:
 
 .section __DWARF, __debug_info,regular,debug
 
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
-	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint"
 
 	.byte 0,0
-	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
-	.quad Lme_a4
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
+	.quad Lme_a9
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM706=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM706
+LDIFF_SYM707=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM707
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM707=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM707
+LDIFF_SYM708=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM708
 	.byte 2,141,24,3
 	.asciz "param2"
-
-LDIFF_SYM708=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM708
-	.byte 2,141,32,3
-	.asciz "param3"
 
 LDIFF_SYM709=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM709
 	.byte 1,106,3
-	.asciz "param4"
+	.asciz "param3"
 
 LDIFF_SYM710=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM710
-	.byte 2,141,40,11
+	.byte 2,141,32,11
 	.asciz "V_0"
 
 LDIFF_SYM711=LDIE_I4 - Ldebug_info_start
@@ -11956,21 +12040,91 @@ LDIFF_SYM713=LDIE_I4 - Ldebug_info_start
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM714=Lfde125_end - Lfde125_start
+LDIFF_SYM714=Lfde126_end - Lfde126_start
 	.long LDIFF_SYM714
-Lfde125_start:
+Lfde126_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
+
+LDIFF_SYM715=Lme_a9 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM715
+	.long 0
+	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29,76,147,13,148,12,68,149,11,150,10,68,151,9,152,8,68,153,7
+	.byte 154,6,68,155,5,156,4
+	.align 3
+Lfde126_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:objc_msgSend"
+	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint"
+
+	.byte 0,0
+	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
+	.quad Lme_aa
+
+	.byte 2,118,16,3
+	.asciz "param0"
+
+LDIFF_SYM716=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM716
+	.byte 2,141,16,3
+	.asciz "param1"
+
+LDIFF_SYM717=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM717
+	.byte 2,141,24,3
+	.asciz "param2"
+
+LDIFF_SYM718=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM718
+	.byte 2,141,32,3
+	.asciz "param3"
+
+LDIFF_SYM719=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM719
+	.byte 1,106,3
+	.asciz "param4"
+
+LDIFF_SYM720=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM720
+	.byte 2,141,40,11
+	.asciz "V_0"
+
+LDIFF_SYM721=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM721
+	.byte 0,11
+	.asciz "V_1"
+
+LDIFF_SYM722=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM722
+	.byte 0,11
+	.asciz "V_2"
+
+LDIFF_SYM723=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM723
+	.byte 0,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM724=Lfde127_end - Lfde127_start
+	.long LDIFF_SYM724
+Lfde127_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
 
-LDIFF_SYM715=Lme_a4 - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
-	.long LDIFF_SYM715
+LDIFF_SYM725=Lme_aa - wrapper_managed_to_native_ApiDefinition_Messaging_objc_msgSend_intptr_intptr_int_int_CoreGraphics_CGPoint
+	.long LDIFF_SYM725
 	.long 0
 	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29,76,147,12,148,11,68,149,10,150,9,68,151,8,152,7,68,153,6
 	.byte 154,5,68,155,4,156,3
 	.align 3
-Lfde125_end:
+Lfde127_end:
 
 .section __DWARF, __debug_info,regular,debug
 
