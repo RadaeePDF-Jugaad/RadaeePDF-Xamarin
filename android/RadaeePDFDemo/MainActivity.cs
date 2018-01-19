@@ -30,6 +30,7 @@ namespace RadaeePDFDemo
             //mPdfManager.SetReaderViewMode(3);
             //mPdfManager.SetTitleBGColor(Convert.ToInt32("0xFFffff00", 16));
             //mPdfManager.SetIconsBGColor(Convert.ToInt32("0xFFFF0000", 16));
+            //RadaeePDFManager.SHidePrintButton = true;
 
             //bookmarks
             //Global.Init(this);
