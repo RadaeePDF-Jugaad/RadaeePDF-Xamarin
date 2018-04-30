@@ -1,0 +1,25 @@
+# Version: 11.9.1.24 (xcode9.3: f62de472)
+# [first argument, ignore] # --cache=/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-cache
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/lib/mtouch/mtouch.exe \
+	--dev=/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/bin/iPhone/Debug/device-builds/iphone9.4-11.3/ReaderXamarin.app \
+	--executable=ReaderXamarin \
+	--fastdev \
+	--debug \
+	--sdkroot=/Applications/Xcode.app/Contents/Developer \
+	--sdk=11.3 \
+	--targetver=9.3 \
+	--aot-options=-O=float32 \
+	--http-message-handler=HttpClientHandler \
+	--abi=arm64 \
+	--symbollist=/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-symbols.list \
+	--dsym=no \
+	--registrar:static \
+	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
+	-r=/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll \
+	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
+	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
+	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
+	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
+	-r=/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll \
+	'--target-framework=Xamarin.iOS,v1.0' \
+	--root-assembly=/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/bin/iPhone/Debug/ReaderXamarin.exe \

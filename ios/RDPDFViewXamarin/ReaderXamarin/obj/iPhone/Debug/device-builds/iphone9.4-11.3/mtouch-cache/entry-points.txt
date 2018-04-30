@@ -1,0 +1,11 @@
+Function=xamarin_timezone_get_data
+	/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_get_block_descriptor
+	/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-cache/Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-cache/Link/Xamarin.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_RadaeePDFPlugin
+	/Users/federico/Documents/GitHub/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhone/Debug/device-builds/iphone9.4-11.3/mtouch-cache/Link/RDPDFViewXamarin.dll
+Function=mono_pmip

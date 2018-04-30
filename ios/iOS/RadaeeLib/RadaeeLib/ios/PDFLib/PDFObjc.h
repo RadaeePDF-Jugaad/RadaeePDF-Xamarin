@@ -25,6 +25,9 @@
 {
     PDF_DIB m_dib;
 }
+
+@property (nonatomic) bool cached;
+
 @property (readonly) PDF_DIB handle;
 /**
  *	@brief	create a DIB object
@@ -56,6 +59,7 @@
  *	@return height in pixels
  */
 -(int)height;
+-(void)erase:(int)color;
 -(CGImageRef)image;
 @end
 
@@ -644,7 +648,7 @@
  * @param hide true or false.
  */
 -(bool)setHidden:(bool)hide;
--(bool)renderToBmp:(CGImageRef)img;
+-(bool)render:(PDFDIB *)dib :(int)back_color;
 /**
  * @brief get annotation's box rectangle.
  *			this method valid in professional or premium version
@@ -835,6 +839,7 @@
  */
 -(NSString *)getURI;
 -(NSString *)getJS;
+-(NSString *)getAdditionalJS :(int)idx;
 /**
  * @brief get annotation's 3D object name.
  * this method valid in professional or premium version
@@ -1026,7 +1031,7 @@
  * @param sels 0 based indexes of items.
  * @return true or false
  */
--(bool)setComboSel:(const int *)sels :(int)sels_cnt;
+-(bool)setListSels:(const int *)sels :(int)sels_cnt;
 /**
  * @brief get status of check-box and radio-box.
  * this method valid in premium version
@@ -1090,6 +1095,8 @@
 -(PDFSign *)getSign;
 -(bool)MoveToPage:(PDFPage *)page :(const PDF_RECT *)rect;
 -(BOOL)canMoveAnnot;
+-(PDF_OBJ_REF)getRef;
+
 @end
 
 @interface PDFPage : NSObject
@@ -1207,6 +1214,8 @@
 -(PDFAnnot *)annotAtPoint:(float)x :(float)y;
 -(PDFAnnot *)annotByName:(NSString *)name;
 -(bool)copyAnnot:(PDFAnnot *)annot :(const PDF_RECT *)rect;
+-(bool)addAnnot:(PDF_OBJ_REF)ref;
+
 -(bool)addAnnotPopup:(PDFAnnot *)parent :(const PDF_RECT *)rect :(bool)open;
 /**
  * @brief add a text-markup annotation to page.
@@ -1433,9 +1442,17 @@
  * -10:access denied or invalid file path
  * others:unknown error
  */
--(int)open:(NSString *)path : (NSString *)password;
--(int)openMem:(void *)data : (int)data_size : (NSString *)password;
--(int)openStream:(id<PDFStream>)stream : (NSString *)password;
+-(int)open:(NSString *)path :(NSString *)password;
+-(int)openMem:(void *)data :(int)data_size :(NSString *)password;
+-(int)openStream:(id<PDFStream>)stream :(NSString *)password;
+-(int)openWithCert:(NSString *)path :(NSString *)cert_file :(NSString *)password;
+-(int)openMemWithCert:(void *)data :(int)data_size : (NSString *)cert_file :(NSString *)password;
+-(int)openStreamWithCert:(id<PDFStream>)stream : (NSString *)cert_file :(NSString *)password;
+
+
+
+
+
 /**
  * @brief create a empty PDF document
  * @param path path to create

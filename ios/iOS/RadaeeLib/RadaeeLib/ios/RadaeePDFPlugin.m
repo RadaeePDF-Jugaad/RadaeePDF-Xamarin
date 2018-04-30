@@ -327,6 +327,9 @@
     [m_pdf setOutlineImage:[UIImage imageNamed:@"btn_outline.png"]];
     [m_pdf setPrintImage:[UIImage imageNamed:@"btn_print.png"]];
     [m_pdf setGridImage:[UIImage imageNamed:@"btn_grid.png"]];
+    [m_pdf setUndoImage:[UIImage imageNamed:@"btn_undo.png"]];
+    [m_pdf setRedoImage:[UIImage imageNamed:@"btn_redo.png"]];
+    [m_pdf setMoreImage:[UIImage imageNamed:@"btn_more.png"]];
     
     [m_pdf setRemoveImage:[UIImage imageNamed:@"annot_remove.png"]];
     
@@ -465,6 +468,28 @@
 - (NSData *)getImageForPage:(int)page
 {
     return UIImagePNGRepresentation([[UIImage alloc] initWithCGImage:[m_pdf imageForPage:page]]);
+}
+
+- (BOOL)renderAnnotToFile:(int)index atPage:(int)pageno savePath:(NSString *)path size:(CGSize)size
+{
+    PDFDoc *doc = [m_pdf getDoc];
+    
+    if (m_pdf == nil || doc == nil) {
+        return NO;
+    }
+    
+    return [m_pdf saveImageFromAnnotAtIndex:index atPage:pageno savePath:path size:size];
+}
+
+- (BOOL)addAnnotAttachment:(NSString *)path
+{
+    PDFDoc *doc = [m_pdf getDoc];
+    
+    if (m_pdf == nil || doc == nil) {
+        return NO;
+    }
+    
+    return [m_pdf addAttachmentFromPath:path];
 }
 
 - (void)refreshCurrentPage

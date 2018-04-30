@@ -66,7 +66,7 @@
 
     [plugin setColor:0xFFFF00FF forFeature:1];
     
-    [plugin setThumbHeight:50];
+    [plugin setThumbHeight:99];
     [plugin setThumbnailBGColor:0x88000000];
     
     [plugin setDoublePageEnabled:YES];
@@ -76,8 +76,8 @@
     
     UIViewController *controller = (UIViewController *)[plugin show:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"help.pdf"] withPassword:@""];
     
-    //self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-    //self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
     
     [self.navigationController pushViewController:controller animated:YES];
 }

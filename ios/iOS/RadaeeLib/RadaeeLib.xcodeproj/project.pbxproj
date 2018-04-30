@@ -19,6 +19,14 @@
 		A845ACE41FDFED5500ABFACB /* RDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A845ACD91FDFDC6300ABFACB /* RDUtils.m */; };
 		A84A2D501D2284F000B2A4F2 /* ViewModeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */; };
 		A84A2D511D2284F000B2A4F2 /* ViewModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */; };
+		A86489002052C4FE00937FB2 /* RDMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86488FD2052C4FE00937FB2 /* RDMoreTableViewController.m */; };
+		A86489012052C4FE00937FB2 /* RDMoreTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A86488FE2052C4FE00937FB2 /* RDMoreTableViewController.h */; };
+		A86489052052C53700937FB2 /* ViewModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86489032052C53700937FB2 /* ViewModeTableViewController.m */; };
+		A86489062052C53700937FB2 /* ViewModeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A86489042052C53700937FB2 /* ViewModeTableViewController.h */; };
+		A864890A2052C54300937FB2 /* DrawModeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A86489082052C54300937FB2 /* DrawModeTableViewController.h */; };
+		A864890B2052C54300937FB2 /* DrawModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86489092052C54300937FB2 /* DrawModeTableViewController.m */; };
+		A86489102052C58E00937FB2 /* RDAnnotListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A864890D2052C58E00937FB2 /* RDAnnotListViewController.h */; };
+		A86489112052C58E00937FB2 /* RDAnnotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A864890E2052C58E00937FB2 /* RDAnnotListViewController.m */; };
 		A864EEF81D17EAB600F4B976 /* RadaeeLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; };
 		A864EF011D17EAC000F4B976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864EF001D17EAC000F4B976 /* UIKit.framework */; };
 		A864EF031D17EB4900F4B976 /* RadaeeLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EEF71D17EAB600F4B976 /* RadaeeLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,6 +73,14 @@
 		A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF5A1D17EBA300F4B976 /* RadaeePDFPlugin.m */; };
 		A88EBD3E1D1828070084C9A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EBD3D1D1828070084C9A9 /* Foundation.framework */; };
+		A8B6AABD2021DE3500FADD2E /* ActionStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6AAB32021DE3400FADD2E /* ActionStackManager.m */; };
+		A8B6AABE2021DE3500FADD2E /* ActionStackManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B6AAB42021DE3400FADD2E /* ActionStackManager.h */; };
+		A8B6AABF2021DE3500FADD2E /* RDFormManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6AAB62021DE3400FADD2E /* RDFormManager.m */; };
+		A8B6AAC02021DE3500FADD2E /* RDFormManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B6AAB72021DE3400FADD2E /* RDFormManager.h */; };
+		A8B6AAC12021DE3500FADD2E /* SignatureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B6AAB92021DE3400FADD2E /* SignatureViewController.h */; };
+		A8B6AAC22021DE3500FADD2E /* UviSignatureView.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B6AABA2021DE3400FADD2E /* UviSignatureView.h */; };
+		A8B6AAC32021DE3500FADD2E /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6AABB2021DE3400FADD2E /* SignatureViewController.m */; };
+		A8B6AAC42021DE3500FADD2E /* UviSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6AABC2021DE3400FADD2E /* UviSignatureView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +111,14 @@
 		A845ACD91FDFDC6300ABFACB /* RDUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDUtils.m; sourceTree = "<group>"; };
 		A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModeTableViewController.h; sourceTree = "<group>"; };
 		A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModeTableViewController.m; sourceTree = "<group>"; };
+		A86488FD2052C4FE00937FB2 /* RDMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDMoreTableViewController.m; sourceTree = "<group>"; };
+		A86488FE2052C4FE00937FB2 /* RDMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDMoreTableViewController.h; sourceTree = "<group>"; };
+		A86489032052C53700937FB2 /* ViewModeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModeTableViewController.m; sourceTree = "<group>"; };
+		A86489042052C53700937FB2 /* ViewModeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModeTableViewController.h; sourceTree = "<group>"; };
+		A86489082052C54300937FB2 /* DrawModeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawModeTableViewController.h; sourceTree = "<group>"; };
+		A86489092052C54300937FB2 /* DrawModeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawModeTableViewController.m; sourceTree = "<group>"; };
+		A864890D2052C58E00937FB2 /* RDAnnotListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDAnnotListViewController.h; sourceTree = "<group>"; };
+		A864890E2052C58E00937FB2 /* RDAnnotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDAnnotListViewController.m; sourceTree = "<group>"; };
 		A864EEF41D17EAB600F4B976 /* libRadaeeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRadaeeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A864EEF71D17EAB600F4B976 /* RadaeeLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadaeeLib.h; sourceTree = "<group>"; };
 		A864EF001D17EAC000F4B976 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -144,6 +168,14 @@
 		A88014541D245E47000EADD4 /* cmaps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cmaps; sourceTree = "<group>"; };
 		A88014551D245E47000EADD4 /* fdat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fdat; sourceTree = "<group>"; };
 		A88EBD3D1D1828070084C9A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A8B6AAB32021DE3400FADD2E /* ActionStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionStackManager.m; sourceTree = "<group>"; };
+		A8B6AAB42021DE3400FADD2E /* ActionStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionStackManager.h; sourceTree = "<group>"; };
+		A8B6AAB62021DE3400FADD2E /* RDFormManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDFormManager.m; sourceTree = "<group>"; };
+		A8B6AAB72021DE3400FADD2E /* RDFormManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDFormManager.h; sourceTree = "<group>"; };
+		A8B6AAB92021DE3400FADD2E /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
+		A8B6AABA2021DE3400FADD2E /* UviSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UviSignatureView.h; sourceTree = "<group>"; };
+		A8B6AABB2021DE3400FADD2E /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
+		A8B6AABC2021DE3400FADD2E /* UviSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UviSignatureView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +195,10 @@
 		A845ACA61FDFDC6300ABFACB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A864890C2052C58E00937FB2 /* ListBox */,
+				A8B6AAB22021DE3400FADD2E /* ActionStack */,
+				A8B6AAB52021DE3400FADD2E /* FormManager */,
+				A8B6AAB82021DE3400FADD2E /* Signature */,
 				A845ACC41FDFDC6300ABFACB /* ReaderHandler */,
 				A845ACC71FDFDC6300ABFACB /* SearchList */,
 				A845ACD71FDFDC6300ABFACB /* Utils */,
@@ -203,6 +239,42 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A86488FC2052C4FE00937FB2 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				A86488FD2052C4FE00937FB2 /* RDMoreTableViewController.m */,
+				A86488FE2052C4FE00937FB2 /* RDMoreTableViewController.h */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		A86489022052C53700937FB2 /* ViewMode */ = {
+			isa = PBXGroup;
+			children = (
+				A86489032052C53700937FB2 /* ViewModeTableViewController.m */,
+				A86489042052C53700937FB2 /* ViewModeTableViewController.h */,
+			);
+			path = ViewMode;
+			sourceTree = "<group>";
+		};
+		A86489072052C54300937FB2 /* DrawMode */ = {
+			isa = PBXGroup;
+			children = (
+				A86489082052C54300937FB2 /* DrawModeTableViewController.h */,
+				A86489092052C54300937FB2 /* DrawModeTableViewController.m */,
+			);
+			path = DrawMode;
+			sourceTree = "<group>";
+		};
+		A864890C2052C58E00937FB2 /* ListBox */ = {
+			isa = PBXGroup;
+			children = (
+				A864890D2052C58E00937FB2 /* RDAnnotListViewController.h */,
+				A864890E2052C58E00937FB2 /* RDAnnotListViewController.m */,
+			);
+			path = ListBox;
+			sourceTree = "<group>";
+		};
 		A864EEEB1D17EAB600F4B976 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +308,9 @@
 			isa = PBXGroup;
 			children = (
 				A845ACA61FDFDC6300ABFACB /* Modules */,
+				A86489022052C53700937FB2 /* ViewMode */,
+				A86489072052C54300937FB2 /* DrawMode */,
+				A86488FC2052C4FE00937FB2 /* More */,
 				A864EF2A1D17EBA300F4B976 /* PDFLib */,
 				A864EF2F1D17EBA300F4B976 /* PDFView */,
 				A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */,
@@ -317,6 +392,35 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A8B6AAB22021DE3400FADD2E /* ActionStack */ = {
+			isa = PBXGroup;
+			children = (
+				A8B6AAB32021DE3400FADD2E /* ActionStackManager.m */,
+				A8B6AAB42021DE3400FADD2E /* ActionStackManager.h */,
+			);
+			path = ActionStack;
+			sourceTree = "<group>";
+		};
+		A8B6AAB52021DE3400FADD2E /* FormManager */ = {
+			isa = PBXGroup;
+			children = (
+				A8B6AAB62021DE3400FADD2E /* RDFormManager.m */,
+				A8B6AAB72021DE3400FADD2E /* RDFormManager.h */,
+			);
+			path = FormManager;
+			sourceTree = "<group>";
+		};
+		A8B6AAB82021DE3400FADD2E /* Signature */ = {
+			isa = PBXGroup;
+			children = (
+				A8B6AAB92021DE3400FADD2E /* SignatureViewController.h */,
+				A8B6AABA2021DE3400FADD2E /* UviSignatureView.h */,
+				A8B6AABB2021DE3400FADD2E /* SignatureViewController.m */,
+				A8B6AABC2021DE3400FADD2E /* UviSignatureView.m */,
+			);
+			path = Signature;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -333,22 +437,30 @@
 				A864EF681D17EBA300F4B976 /* PDFIOS.h in Headers */,
 				A864EF691D17EBA400F4B976 /* PDFObjc.h in Headers */,
 				A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */,
+				A8B6AAC22021DE3500FADD2E /* UviSignatureView.h in Headers */,
 				A864EF891D17EBA400F4B976 /* PopupMenuItem.h in Headers */,
 				A864EF871D17EBA400F4B976 /* PopupMenu.h in Headers */,
+				A8B6AABE2021DE3500FADD2E /* ActionStackManager.h in Headers */,
 				A864EF791D17EBA400F4B976 /* PDFVCanvas.h in Headers */,
 				A864EF7B1D17EBA400F4B976 /* PDFVFinder.h in Headers */,
 				A864EF6B1D17EBA400F4B976 /* BookmarkTableViewController.h in Headers */,
 				A864EF731D17EBA400F4B976 /* PDFReflowView.h in Headers */,
 				A864EF771D17EBA400F4B976 /* PDFV.h in Headers */,
 				A864EF8F1D17EBA400F4B976 /* TextAnnotViewController.h in Headers */,
+				A86489012052C4FE00937FB2 /* RDMoreTableViewController.h in Headers */,
 				A864EF831D17EBA400F4B976 /* PDFVThread.h in Headers */,
 				A864EF8B1D17EBA400F4B976 /* PopupMenuOverlayView.h in Headers */,
 				A864EF7D1D17EBA400F4B976 /* PDFVGlobal.h in Headers */,
 				A864EF711D17EBA400F4B976 /* PDFHttpStream.h in Headers */,
 				A864EF031D17EB4900F4B976 /* RadaeeLib.h in Headers */,
 				A864EF7F1D17EBA400F4B976 /* PDFView.h in Headers */,
+				A86489102052C58E00937FB2 /* RDAnnotListViewController.h in Headers */,
+				A8B6AAC02021DE3500FADD2E /* RDFormManager.h in Headers */,
 				A84A2D501D2284F000B2A4F2 /* ViewModeTableViewController.h in Headers */,
+				A8B6AAC12021DE3500FADD2E /* SignatureViewController.h in Headers */,
+				A864890A2052C54300937FB2 /* DrawModeTableViewController.h in Headers */,
 				A864EF6D1D17EBA400F4B976 /* OUTLINE_ITEM.h in Headers */,
+				A86489062052C53700937FB2 /* ViewModeTableViewController.h in Headers */,
 				A864EF6F1D17EBA400F4B976 /* OutLineViewController.h in Headers */,
 				A864EF811D17EBA400F4B976 /* PDFVPage.h in Headers */,
 				A864EF751D17EBA400F4B976 /* PDFThumbView.h in Headers */,
@@ -412,15 +524,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B6AAC42021DE3500FADD2E /* UviSignatureView.m in Sources */,
 				A864EF8A1D17EBA400F4B976 /* PopupMenuItem.m in Sources */,
 				A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */,
 				A845ACE21FDFE9C900ABFACB /* RDExtendedSearch.m in Sources */,
+				A8B6AABF2021DE3500FADD2E /* RDFormManager.m in Sources */,
 				A864EF821D17EBA400F4B976 /* PDFVPage.m in Sources */,
 				A845ACE31FDFEA4900ABFACB /* SearchResultTableViewController.m in Sources */,
 				A864EF7E1D17EBA400F4B976 /* PDFVGlobal.m in Sources */,
+				A86489002052C4FE00937FB2 /* RDMoreTableViewController.m in Sources */,
 				A864EF6C1D17EBA400F4B976 /* BookmarkTableViewController.m in Sources */,
 				A845ACE11FDFE9C300ABFACB /* ReaderHandler.m in Sources */,
 				A864EF701D17EBA400F4B976 /* OutLineViewController.m in Sources */,
+				A8B6AABD2021DE3500FADD2E /* ActionStackManager.m in Sources */,
 				A864EF741D17EBA400F4B976 /* PDFReflowView.m in Sources */,
 				A864EF841D17EBA400F4B976 /* PDFVThread.m in Sources */,
 				A864EF8E1D17EBA400F4B976 /* RDPDFViewController.m in Sources */,
@@ -434,10 +550,14 @@
 				A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */,
 				A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */,
 				A845ACE41FDFED5500ABFACB /* RDUtils.m in Sources */,
+				A864890B2052C54300937FB2 /* DrawModeTableViewController.m in Sources */,
 				A864EF8C1D17EBA400F4B976 /* PopupMenuOverlayView.m in Sources */,
 				A84A2D511D2284F000B2A4F2 /* ViewModeTableViewController.m in Sources */,
+				A8B6AAC32021DE3500FADD2E /* SignatureViewController.m in Sources */,
 				A864EF6E1D17EBA400F4B976 /* OUTLINE_ITEM.m in Sources */,
 				A864EF7A1D17EBA400F4B976 /* PDFVCanvas.m in Sources */,
+				A86489052052C53700937FB2 /* ViewModeTableViewController.m in Sources */,
+				A86489112052C58E00937FB2 /* RDAnnotListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

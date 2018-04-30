@@ -339,6 +339,9 @@ PDF_DOC Document_openMem( void *data, int data_size, const char *password, PDF_E
 -(bool)seek:(unsigned long long)pos;
 @end
 PDF_DOC Document_openStream( id<PDFStream> stream, const char *password, PDF_ERR *err );
+PDF_DOC Document_openWithCert(const char *path, const char *cert_file, const char *password, PDF_ERR *err);
+PDF_DOC Document_openMemWithCert(void *data, int data_size, const char *cert_file, const char *password, PDF_ERR *err);
+PDF_DOC Document_openStreamWithCert(id<PDFStream> stream, const char *cert_file, const char *password, PDF_ERR *err);
 
 /**
  *	@brief	create document and return Document object.
@@ -1067,7 +1070,7 @@ int Page_getAnnotFieldFullName( PDF_PAGE page, PDF_ANNOT annot, char *buf, int b
 int Page_getAnnotFieldFullName2( PDF_PAGE page, PDF_ANNOT annot, char *buf, int buf_size );
 bool Page_getAnnotFieldJS(PDF_PAGE page, PDF_ANNOT annot, int idx, char *text, int len);
 
-bool Page_renderAnnotToBmp(PDF_PAGE page, PDF_ANNOT annot, CGImageRef img);
+bool Page_renderAnnot(PDF_PAGE page, PDF_ANNOT annot, PDF_DIB dib);
 /**
  *	@brief	get annotation rect.
             to invoke this function, developers should call Page_objsStart or Page_render before.
@@ -1283,6 +1286,7 @@ int Page_getAnnotDest( PDF_PAGE page, PDF_ANNOT annot );
  */
 int Page_getAnnotURI( PDF_PAGE page, PDF_ANNOT annot, char *uri, int len );
 NSString *Page_getAnnotJS(PDF_PAGE page, PDF_ANNOT annot);
+NSString *Page_getAnnotAdditionalJS(PDF_PAGE page, PDF_ANNOT annot, int idx);
 /**
  *	@brief	get annotation's 3D play action.
             to invoke this function, developers should call Page_objsStart or Page_render before.
@@ -1544,6 +1548,8 @@ bool Page_setAnnotEditTextColor(PDF_PAGE page, PDF_ANNOT annot, int color);
 
 int Page_exportAnnot(PDF_PAGE page, PDF_ANNOT annot, unsigned char *data, int data_len);
 bool Page_importAnnot(PDF_PAGE page, const PDF_RECT *rect, const unsigned char *data, int data_len);
+PDF_OBJ_REF Page_getAnnotRef(PDF_PAGE page, PDF_ANNOT annot);
+bool Page_addAnnot(PDF_PAGE page, PDF_OBJ_REF ref);
 
 /**
  *	@brief	add an edit-box.

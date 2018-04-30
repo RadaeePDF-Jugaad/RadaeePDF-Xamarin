@@ -51,7 +51,9 @@ extern uint annotStrikeoutColor;
 {
     if( self = [super init] )
     {
+        _cached = false;
 	    m_dib = Global_dibGet(NULL, width, height);
+        memset([self data],255,width * height *4);
     }
     return self;
 }
@@ -86,6 +88,15 @@ extern uint annotStrikeoutColor;
     PDF_DIB tmp_dib = m_dib;
     m_dib = NULL;
     Global_dibFree(tmp_dib);
+}
+
+-(void)erase:(int)color
+{
+	int *pix = (int *)Global_dibGetData(m_dib);
+	int *pix_end = pix + Global_dibGetWidth(m_dib) * Global_dibGetHeight(m_dib) * 4;
+	while(pix < pix_end) *pix++ = color;
+
+
 }
 
 -(CGImageRef)image
@@ -895,9 +906,11 @@ extern uint annotStrikeoutColor;
 	Page_setAnnotHide( m_page, m_handle, hide );
 	return true;
 }
--(bool)renderToBmp:(CGImageRef)img
+
+-(bool)render:(PDFDIB *)dib :(int)back_color
 {
-	return Page_renderAnnotToBmp(m_page, m_handle, img);
+	[dib erase:back_color];
+	return Page_renderAnnot(m_page, m_handle, [dib handle]);
 }
 -(void)getRect:(PDF_RECT *)rect
 {
@@ -1027,6 +1040,12 @@ extern uint annotStrikeoutColor;
 {
 	return Page_getAnnotJS( m_page, m_handle );
 }
+
+-(NSString *)getAdditionalJS :(int)idx
+{
+	return Page_getAnnotAdditionalJS(m_page, m_handle, idx);
+}
+
 -(NSString *)get3D
 {
 	char buf[1024];
@@ -1231,7 +1250,7 @@ extern uint annotStrikeoutColor;
 }
 -(bool)isMultiSel
 {
-    return Page_isAnnotListMultiSel(m_page, m_handle);
+	return Page_isAnnotListMultiSel(m_page, m_handle);
 }
 -(int)getListItemCount
 {
@@ -1248,7 +1267,7 @@ extern uint annotStrikeoutColor;
 {
 	return Page_getAnnotListSels( m_page, m_handle, sels, sels_max );
 }
--(bool)setComboSel:(const int *)sels :(int)sels_cnt
+-(bool)setListSels:(const int *)sels :(int)sels_cnt
 {
 	return Page_setAnnotListSels( m_page, m_handle, sels, sels_cnt );
 }
@@ -1314,11 +1333,15 @@ extern uint annotStrikeoutColor;
     return (self.type == 4 || self.type == 5 || self.type == 6 || self.type == 15);
 }
 
+-(PDF_OBJ_REF)getRef
+{
+	return Page_getAnnotRef(m_page, m_handle);
+}
 @end
 
 @implementation PDFPage
 @synthesize handle = m_page;
--(id)init;
+-(id)init
 {
     if( self = [super init] )
     {
@@ -1452,6 +1475,10 @@ extern uint annotStrikeoutColor;
 -(bool)copyAnnot:(PDFAnnot *)annot :(const PDF_RECT *)rect
 {
 	return Page_copyAnnot( m_page, [annot handle], rect );
+}
+-(bool)addAnnot:(PDF_OBJ_REF)ref
+{
+	return Page_addAnnot(m_page, ref);
 }
 
 -(bool)addAnnotPopup:(PDFAnnot *)parent :(const PDF_RECT *)rect :(bool)open
@@ -1632,6 +1659,27 @@ extern uint annotStrikeoutColor;
         const char *pwd = [password UTF8String];
         m_doc = Document_openStream(stream, pwd, &err);
     }
+    return err;
+}
+
+-(int)openWithCert:(NSString *)path :(NSString *)cert_file :(NSString *)password
+{
+    PDF_ERR err;
+    m_doc = Document_openWithCert([path UTF8String], [cert_file UTF8String], [password UTF8String], &err);
+    return err;
+}
+
+-(int)openMemWithCert:(void *)data :(int)data_size :(NSString *)cert_file :(NSString *)password
+{
+    PDF_ERR err;
+    m_doc = Document_openMemWithCert(data, data_size, [cert_file UTF8String], [password UTF8String], &err);
+    return err;
+}
+
+-(int)openStreamWithCert:(id<PDFStream>)stream :(NSString *)cert_file :(NSString *)password
+{
+    PDF_ERR err;
+    m_doc = Document_openStreamWithCert(stream, [cert_file UTF8String], [password UTF8String], &err);
     return err;
 }
 

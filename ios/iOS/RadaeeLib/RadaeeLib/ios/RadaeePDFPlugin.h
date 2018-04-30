@@ -116,6 +116,8 @@
 - (NSString *)extractTextFromPage:(int)pageNum;
 - (BOOL)encryptDocAs:(NSString *)path userPwd:(NSString *)userPwd ownerPwd:(NSString *)ownerPwd permission:(int)permission method:(int)method idString:(NSString *)idString;
 - (NSData *)getImageForPage:(int)page;
+- (BOOL)addAnnotAttachment:(NSString *)path;
+- (BOOL)renderAnnotToFile:(int)index atPage:(int)pageno savePath:(NSString *)path size:(CGSize )size;
 
 // Form Manager
 

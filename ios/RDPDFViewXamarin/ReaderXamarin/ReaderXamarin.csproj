@@ -165,6 +165,27 @@
     <BundleResource Include="Resources\fdat\tinosb.ttf" />
     <BundleResource Include="Resources\fdat\tinosbi.ttf" />
     <BundleResource Include="Resources\fdat\tinosi.ttf" />
+    <BundleResource Include="Resources\annot_delete.png" />
+    <BundleResource Include="Resources\annot_done.png" />
+    <BundleResource Include="Resources\annot_ellipse.png" />
+    <BundleResource Include="Resources\annot_line.png" />
+    <BundleResource Include="Resources\annot_rect.png" />
+    <BundleResource Include="Resources\backImage.png" />
+    <BundleResource Include="Resources\btn_add.png" />
+    <BundleResource Include="Resources\btn_annot_line.png" />
+    <BundleResource Include="Resources\btn_annot_note.png" />
+    <BundleResource Include="Resources\btn_ink.png" />
+    <BundleResource Include="Resources\btn_more.png" />
+    <BundleResource Include="Resources\btn_redo.png" />
+    <BundleResource Include="Resources\btn_save.png" />
+    <BundleResource Include="Resources\btn_select.png" />
+    <BundleResource Include="Resources\btn_show.png" />
+    <BundleResource Include="Resources\btn_undo.png" />
+    <BundleResource Include="Resources\btn_view_horz.png" />
+    <BundleResource Include="Resources\export_annot.png" />
+    <BundleResource Include="Resources\left_arrow.png" />
+    <BundleResource Include="Resources\pdf_custom_stamp.png" />
+    <BundleResource Include="Resources\right_arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
