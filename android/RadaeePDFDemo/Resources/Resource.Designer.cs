@@ -74,6 +74,9 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f060000
 			public const int abc_action_bar_embed_tabs = 2131099648;
 			
+			// aapt resource value: 0x7f060001
+			public const int landscape_only = 2131099649;
+			
 			static Boolean()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -311,11 +314,11 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f020029
 			public const int notification_icon_background = 2130837545;
 			
-			// aapt resource value: 0x7f02002f
-			public const int notification_template_icon_bg = 2130837551;
-			
 			// aapt resource value: 0x7f020030
-			public const int notification_template_icon_low_bg = 2130837552;
+			public const int notification_template_icon_bg = 2130837552;
+			
+			// aapt resource value: 0x7f020031
+			public const int notification_template_icon_low_bg = 2130837553;
 			
 			// aapt resource value: 0x7f02002a
 			public const int notification_tile_bg = 2130837546;
@@ -331,6 +334,9 @@ namespace RadaeePDFDemo
 			
 			// aapt resource value: 0x7f02002e
 			public const int pt_start = 2130837550;
+			
+			// aapt resource value: 0x7f02002f
+			public const int save = 2130837551;
 			
 			static Drawable()
 			{
@@ -444,11 +450,17 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0014
 			public const int btn_view = 2131361812;
 			
+			// aapt resource value: 0x7f0a0060
+			public const int buttons_container = 2131361888;
+			
 			// aapt resource value: 0x7f0a002b
 			public const int chk_show = 2131361835;
 			
 			// aapt resource value: 0x7f0a0043
 			public const int chronometer = 2131361859;
+			
+			// aapt resource value: 0x7f0a0064
+			public const int clear_button = 2131361892;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int curl_view = 2131361863;
@@ -465,8 +477,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0007
 			public const int forever = 2131361799;
 			
-			// aapt resource value: 0x7f0a0059
-			public const int horz = 2131361881;
+			// aapt resource value: 0x7f0a005b
+			public const int horz = 2131361883;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int icon = 2131361852;
@@ -474,14 +486,14 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0046
 			public const int icon_group = 2131361862;
 			
-			// aapt resource value: 0x7f0a0057
-			public const int imageView1 = 2131361879;
-			
-			// aapt resource value: 0x7f0a005b
-			public const int imageView2 = 2131361883;
+			// aapt resource value: 0x7f0a0059
+			public const int imageView1 = 2131361881;
 			
 			// aapt resource value: 0x7f0a005d
-			public const int imageView3 = 2131361885;
+			public const int imageView2 = 2131361885;
+			
+			// aapt resource value: 0x7f0a005f
+			public const int imageView3 = 2131361887;
 			
 			// aapt resource value: 0x7f0a003f
 			public const int info = 2131361855;
@@ -543,11 +555,11 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0049
 			public const int pdf_view = 2131361865;
 			
-			// aapt resource value: 0x7f0a0054
-			public const int print = 2131361876;
+			// aapt resource value: 0x7f0a0056
+			public const int print = 2131361878;
 			
-			// aapt resource value: 0x7f0a0055
-			public const int print_icon = 2131361877;
+			// aapt resource value: 0x7f0a0057
+			public const int print_icon = 2131361879;
 			
 			// aapt resource value: 0x7f0a004a
 			public const int progress = 2131361866;
@@ -576,6 +588,15 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a003e
 			public const int right_side = 2131361854;
 			
+			// aapt resource value: 0x7f0a0054
+			public const int save = 2131361876;
+			
+			// aapt resource value: 0x7f0a0065
+			public const int save_button = 2131361893;
+			
+			// aapt resource value: 0x7f0a0055
+			public const int save_icon = 2131361877;
+			
 			// aapt resource value: 0x7f0a001f
 			public const int seek_page = 2131361823;
 			
@@ -585,14 +606,23 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0053
 			public const int show_bookmarks_icon = 2131361875;
 			
+			// aapt resource value: 0x7f0a0063
+			public const int signature_pad = 2131361891;
+			
+			// aapt resource value: 0x7f0a0061
+			public const int signature_pad_container = 2131361889;
+			
+			// aapt resource value: 0x7f0a0062
+			public const int signature_pad_description = 2131361890;
+			
 			// aapt resource value: 0x7f0a0002
 			public const int text = 2131361794;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int text2 = 2131361795;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int thumb_view = 2131361886;
+			// aapt resource value: 0x7f0a0066
+			public const int thumb_view = 2131361894;
 			
 			// aapt resource value: 0x7f0a0042
 			public const int time = 2131361858;
@@ -618,17 +648,17 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0025
 			public const int txt_subj = 2131361829;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int view_dual = 2131361884;
-			
-			// aapt resource value: 0x7f0a0058
-			public const int view_horz = 2131361880;
+			// aapt resource value: 0x7f0a005e
+			public const int view_dual = 2131361886;
 			
 			// aapt resource value: 0x7f0a005a
-			public const int view_single = 2131361882;
+			public const int view_horz = 2131361882;
 			
-			// aapt resource value: 0x7f0a0056
-			public const int view_vert = 2131361878;
+			// aapt resource value: 0x7f0a005c
+			public const int view_single = 2131361884;
+			
+			// aapt resource value: 0x7f0a0058
+			public const int view_vert = 2131361880;
 			
 			static Id()
 			{
@@ -741,7 +771,10 @@ namespace RadaeePDFDemo
 			public const int pop_view = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int thumb_view = 2130903067;
+			public const int signature_pad = 2130903067;
+			
+			// aapt resource value: 0x7f03001c
+			public const int thumb_view = 2130903068;
 			
 			static Layout()
 			{
@@ -823,11 +856,11 @@ namespace RadaeePDFDemo
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f05004c
-			public const int ApplicationName = 2131034188;
+			// aapt resource value: 0x7f050052
+			public const int ApplicationName = 2131034194;
 			
-			// aapt resource value: 0x7f05004b
-			public const int Hello = 2131034187;
+			// aapt resource value: 0x7f050051
+			public const int Hello = 2131034193;
 			
 			// aapt resource value: 0x7f050001
 			public const int about = 2131034113;
@@ -841,29 +874,29 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f050004
 			public const int app_name = 2131034116;
 			
-			// aapt resource value: 0x7f05003f
-			public const int bookmark_add = 2131034175;
-			
-			// aapt resource value: 0x7f050040
-			public const int bookmark_already_added = 2131034176;
-			
-			// aapt resource value: 0x7f050041
-			public const int bookmark_error = 2131034177;
-			
-			// aapt resource value: 0x7f050042
-			public const int bookmark_label = 2131034178;
-			
-			// aapt resource value: 0x7f050043
-			public const int bookmark_remove_error = 2131034179;
-			
-			// aapt resource value: 0x7f050044
-			public const int bookmark_show = 2131034180;
-			
-			// aapt resource value: 0x7f050045
-			public const int bookmark_success = 2131034181;
-			
 			// aapt resource value: 0x7f050046
-			public const int bookmarks = 2131034182;
+			public const int bookmark_add = 2131034182;
+			
+			// aapt resource value: 0x7f050047
+			public const int bookmark_already_added = 2131034183;
+			
+			// aapt resource value: 0x7f050048
+			public const int bookmark_error = 2131034184;
+			
+			// aapt resource value: 0x7f050049
+			public const int bookmark_label = 2131034185;
+			
+			// aapt resource value: 0x7f05004a
+			public const int bookmark_remove_error = 2131034186;
+			
+			// aapt resource value: 0x7f05004b
+			public const int bookmark_show = 2131034187;
+			
+			// aapt resource value: 0x7f05004c
+			public const int bookmark_success = 2131034188;
+			
+			// aapt resource value: 0x7f05004d
+			public const int bookmarks = 2131034189;
 			
 			// aapt resource value: 0x7f050005
 			public const int browse_open_file = 2131034117;
@@ -877,6 +910,12 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f050008
 			public const int catalog_not_found = 2131034120;
 			
+			// aapt resource value: 0x7f05003f
+			public const int clear = 2131034175;
+			
+			// aapt resource value: 0x7f050040
+			public const int confirm = 2131034176;
+			
 			// aapt resource value: 0x7f050009
 			public const int copy_text = 2131034121;
 			
@@ -889,8 +928,11 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f05000c
 			public const int curl_pages = 2131034124;
 			
-			// aapt resource value: 0x7f050047
-			public const int delete = 2131034183;
+			// aapt resource value: 0x7f050041
+			public const int delete = 2131034177;
+			
+			// aapt resource value: 0x7f050042
+			public const int delete_signature_message = 2131034178;
 			
 			// aapt resource value: 0x7f05000d
 			public const int dual_page = 2131034125;
@@ -937,8 +979,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f05001b
 			public const int javascript = 2131034139;
 			
-			// aapt resource value: 0x7f050048
-			public const int loading = 2131034184;
+			// aapt resource value: 0x7f05004e
+			public const int loading = 2131034190;
 			
 			// aapt resource value: 0x7f05001c
 			public const int loading_pdf = 2131034140;
@@ -946,8 +988,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f05001d
 			public const int no = 2131034141;
 			
-			// aapt resource value: 0x7f050049
-			public const int no_bookmarks = 2131034185;
+			// aapt resource value: 0x7f05004f
+			public const int no_bookmarks = 2131034191;
 			
 			// aapt resource value: 0x7f05001e
 			public const int no_more_found = 2131034142;
@@ -991,14 +1033,20 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f05002b
 			public const int please_wait = 2131034155;
 			
-			// aapt resource value: 0x7f05004a
-			public const int print = 2131034186;
+			// aapt resource value: 0x7f050050
+			public const int print = 2131034192;
 			
 			// aapt resource value: 0x7f05002c
 			public const int process_selected_text = 2131034156;
 			
+			// aapt resource value: 0x7f050043
+			public const int save = 2131034179;
+			
 			// aapt resource value: 0x7f05002d
 			public const int save_msg = 2131034157;
+			
+			// aapt resource value: 0x7f050044
+			public const int saved_message = 2131034180;
 			
 			// aapt resource value: 0x7f05002e
 			public const int simple_open_gl = 2131034158;
@@ -1050,6 +1098,9 @@ namespace RadaeePDFDemo
 			
 			// aapt resource value: 0x7f05003d
 			public const int view_pager = 2131034173;
+			
+			// aapt resource value: 0x7f050045
+			public const int warning = 2131034181;
 			
 			// aapt resource value: 0x7f05003e
 			public const int yes = 2131034174;
