@@ -12,6 +12,7 @@
 
 @property (nonatomic) int m_pageno;
 @property (nonatomic) int m_idx;
+@property (nonatomic) PDF_OBJ_REF hand;
 
 - (instancetype)initWithPage:(int)pgno index:(int)idx;
 - (void)undo:(PDFDoc *)doc;
@@ -21,15 +22,11 @@
 
 @interface ASDel : ASItem
 
-@property (nonatomic) PDF_OBJ_REF hand;
-
 - (instancetype)initWithPage:(int)pgno page:(PDFPage *)page index:(int)idx;
 
 @end
 
 @interface ASAdd : ASItem
-
-@property (nonatomic) PDF_OBJ_REF hand;
 
 - (instancetype)initWithPage:(int)pgno page:(PDFPage *)page index:(int)idx;
 
@@ -50,6 +47,7 @@
     
     NSMutableArray *m_stack;
     int m_pos;
+    BOOL busy;
 }
 
 - (void)push:(ASItem *)item;

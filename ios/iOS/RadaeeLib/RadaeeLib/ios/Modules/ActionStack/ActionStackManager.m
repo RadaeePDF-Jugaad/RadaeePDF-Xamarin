@@ -30,7 +30,7 @@
 - (instancetype)initWithPage:(int)pgno page:(PDFPage *)page index:(int)idx
 {
     self = [super initWithPage:pgno index:idx];
-    _hand = [[page annotAtIndex:idx] getRef];
+    self.hand = [[page annotAtIndex:idx] getRef];
 
     return self;
 }
@@ -40,7 +40,7 @@
 {
     PDFPage *page = [doc page:self.m_pageno];
     [page objsStart];
-    [page addAnnot:_hand];
+    [page addAnnot:self.hand];
     page = nil;
 }
 
@@ -60,7 +60,7 @@
 - (instancetype)initWithPage:(int)pgno page:(PDFPage *)page index:(int)idx
 {
     self = [super initWithPage:pgno index:idx];
-    _hand = [[page annotAtIndex:idx] getRef];
+    self.hand = [[page annotAtIndex:idx] getRef];
     
     return self;
 }
@@ -78,7 +78,7 @@
 {
     PDFPage *page = [doc page:self.m_pageno];
     [page objsStart];
-    bool b = [page addAnnot:_hand];
+    bool b = [page addAnnot:self.hand];
 }
 
 @end
@@ -155,28 +155,124 @@
 }
 
 - (void)push:(ASItem *)item
-{    
+{
+    if (busy) {
+        NSLog(@"Busy");
+        return;
+    }
+    
+    busy = YES;
+    
     m_pos++;
     for (int i = (int)(m_stack.count - 1); i >= m_pos; i--) {
         [m_stack removeObjectAtIndex:i];
     }
     [m_stack addObject:item];
+    
+    [self orderIndexes:item];
+    
+    busy = NO;
 }
 
 - (ASItem *)undo
 {
-    if (m_pos < 0) return nil;
+    if (busy) {
+        return nil;
+    }
+    
+    busy = YES;
+    
+    if (m_pos < 0) {
+        busy = NO;
+        return nil;
+    }
     ASItem *item = [m_stack objectAtIndex:m_pos];
     m_pos--;
+    
+    if ([item isKindOfClass:[ASDel class]] && m_pos > 0) {
+        // Get the higher index based on the current pos
+        item.m_idx = [self getMaxIndex];
+        
+        [self orderOnAdd:item];
+    } else if ([item isKindOfClass:[ASAdd class]])
+    {
+        [self orderOnDel:item];
+    }
+    
+    busy = NO;
+    
     return item;
 }
 
 - (ASItem *)redo
 {
-    if(m_pos > (int)(m_stack.count - 2)) return nil;
+    if (busy) {
+        return nil;
+    }
+    
+    busy = YES;
+    
+    if(m_pos > (int)(m_stack.count - 2)) {
+        busy = NO;
+        return nil;
+    }
     m_pos++;
     ASItem *item = [m_stack objectAtIndex:m_pos];
+    
+    if ([item isKindOfClass:[ASAdd class]] && m_pos > 0) {
+        // Get the higher index based on the current pos
+        item.m_idx = [self getMaxIndex];
+        
+        [self orderOnAdd:item];
+    } else if ([item isKindOfClass:[ASDel class]])
+    {
+        [self orderOnDel:item];
+    }
+    
+    busy = NO;
+    
     return item;
+}
+
+- (void)orderIndexes:(ASItem *)item
+{
+    // Re-order indexes in case of annot remove
+    if ([item isKindOfClass:[ASDel class]]) {
+        [self orderOnDel:item];
+    }
+    
+    if ([item isKindOfClass:[ASAdd class]]) {
+        [self orderOnAdd:item];
+    }
+}
+
+- (void)orderOnDel:(ASItem *)item
+{
+    for (int i = 0; i < m_stack.count; i++) {
+        ASItem *currentItem = [m_stack objectAtIndex:i];
+        // Re-order only item with index > deleted item's index
+        if (currentItem.m_idx > item.m_idx) {
+            currentItem.m_idx--;
+        }
+    }
+}
+
+- (void)orderOnAdd:(ASItem *)item
+{
+    for (int i = 0; i < m_stack.count; i++) {
+        ASItem *currentItem = [m_stack objectAtIndex:i];
+        // Set indexes of the same objects
+        if (item.hand == currentItem.hand) {
+            currentItem.m_idx = item.m_idx;
+        }
+    }
+}
+
+- (int)getMaxIndex
+{
+    // Get the index using the current position of the stack
+    ASItem *currentItem = [m_stack objectAtIndex:m_pos - 1];
+    return currentItem.m_idx + 1;
 }
 
 @end
