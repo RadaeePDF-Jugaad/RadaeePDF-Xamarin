@@ -31,7 +31,7 @@
 {
     self = [super initWithPage:pgno index:idx];
     self.hand = [[page annotAtIndex:idx] getRef];
-
+    
     return self;
 }
 
@@ -270,9 +270,21 @@
 
 - (int)getMaxIndex
 {
+    NSMutableArray *removed = [NSMutableArray array];
+    
     // Get the index using the current position of the stack
-    ASItem *currentItem = [m_stack objectAtIndex:m_pos - 1];
-    return currentItem.m_idx + 1;
+    for (int i = m_pos - 1; i >= 0; i--) {
+        ASItem *currentItem = [m_stack objectAtIndex:i];
+        if ([currentItem isKindOfClass:[ASDel class]]) {
+            [removed addObject:[NSNumber numberWithLong:currentItem.hand]];
+        } else {
+            if (![removed containsObject:[NSNumber numberWithLong:currentItem.hand]]) {
+                return currentItem.m_idx + 1;
+            }
+        }
+    }
+    
+    return 0;
 }
 
 @end
