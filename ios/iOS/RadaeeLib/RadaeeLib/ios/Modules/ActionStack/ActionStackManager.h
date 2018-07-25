@@ -55,4 +55,6 @@
 - (ASItem *)undo;
 - (ASItem *)redo;
 
+- (void)orderIndexes:(ASItem *)item;
+
 @end

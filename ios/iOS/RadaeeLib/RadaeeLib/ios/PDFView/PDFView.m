@@ -248,6 +248,7 @@ extern NSString *g_author;
     ASItem *item = [actionManger undo];
     if (item) {
         [item undo:m_doc];
+        [actionManger orderIndexes:item];
         [self refreshCurrentPage];
     }
 }
@@ -257,6 +258,7 @@ extern NSString *g_author;
     ASItem *item = [actionManger redo];
     if (item) {
         [item redo:m_doc];
+        [actionManger orderIndexes:item];
         [self refreshCurrentPage];
     }
 }

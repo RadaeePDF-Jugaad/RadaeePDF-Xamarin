@@ -31,7 +31,7 @@
 {
     self = [super initWithPage:pgno index:idx];
     self.hand = [[page annotAtIndex:idx] getRef];
-    
+
     return self;
 }
 
@@ -41,6 +41,7 @@
     PDFPage *page = [doc page:self.m_pageno];
     [page objsStart];
     [page addAnnot:self.hand];
+    self.m_idx = [page annotCount] - 1;
     page = nil;
 }
 
@@ -72,13 +73,16 @@
     [page objsStart];
     PDFAnnot *annot = [page annotAtIndex:self.m_idx];
     [annot removeFromPage];
+    page = nil;
 }
 
 - (void)redo:(PDFDoc *)doc
 {
     PDFPage *page = [doc page:self.m_pageno];
     [page objsStart];
-    bool b = [page addAnnot:self.hand];
+    [page addAnnot:self.hand];
+    self.m_idx = [page annotCount] - 1;
+    page = nil;
 }
 
 @end
@@ -189,16 +193,6 @@
     ASItem *item = [m_stack objectAtIndex:m_pos];
     m_pos--;
     
-    if ([item isKindOfClass:[ASDel class]] && m_pos > 0) {
-        // Get the higher index based on the current pos
-        item.m_idx = [self getMaxIndex];
-        
-        [self orderOnAdd:item];
-    } else if ([item isKindOfClass:[ASAdd class]])
-    {
-        [self orderOnDel:item];
-    }
-    
     busy = NO;
     
     return item;
@@ -218,17 +212,7 @@
     }
     m_pos++;
     ASItem *item = [m_stack objectAtIndex:m_pos];
-    
-    if ([item isKindOfClass:[ASAdd class]] && m_pos > 0) {
-        // Get the higher index based on the current pos
-        item.m_idx = [self getMaxIndex];
-        
-        [self orderOnAdd:item];
-    } else if ([item isKindOfClass:[ASDel class]])
-    {
-        [self orderOnDel:item];
-    }
-    
+
     busy = NO;
     
     return item;
@@ -241,9 +225,7 @@
         [self orderOnDel:item];
     }
     
-    if ([item isKindOfClass:[ASAdd class]]) {
-        [self orderOnAdd:item];
-    }
+    [self orderAll:item];
 }
 
 - (void)orderOnDel:(ASItem *)item
@@ -257,7 +239,7 @@
     }
 }
 
-- (void)orderOnAdd:(ASItem *)item
+- (void)orderAll:(ASItem *)item
 {
     for (int i = 0; i < m_stack.count; i++) {
         ASItem *currentItem = [m_stack objectAtIndex:i];
@@ -266,25 +248,6 @@
             currentItem.m_idx = item.m_idx;
         }
     }
-}
-
-- (int)getMaxIndex
-{
-    NSMutableArray *removed = [NSMutableArray array];
-    
-    // Get the index using the current position of the stack
-    for (int i = m_pos - 1; i >= 0; i--) {
-        ASItem *currentItem = [m_stack objectAtIndex:i];
-        if ([currentItem isKindOfClass:[ASDel class]]) {
-            [removed addObject:[NSNumber numberWithLong:currentItem.hand]];
-        } else {
-            if (![removed containsObject:[NSNumber numberWithLong:currentItem.hand]]) {
-                return currentItem.m_idx + 1;
-            }
-        }
-    }
-    
-    return 0;
 }
 
 @end
