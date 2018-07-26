@@ -248,6 +248,12 @@ extern NSString *g_author;
     ASItem *item = [actionManger undo];
     if (item) {
         [item undo:m_doc];
+        
+        // Re-order indexes in case of annot remove
+        if ([item isKindOfClass:[ASAdd class]]) {
+            [actionManger orderOnDel:item];
+        }
+        
         [actionManger orderIndexes:item];
         [self refreshCurrentPage];
     }
@@ -258,6 +264,12 @@ extern NSString *g_author;
     ASItem *item = [actionManger redo];
     if (item) {
         [item redo:m_doc];
+        
+        // Re-order indexes in case of annot remove
+        if ([item isKindOfClass:[ASDel class]]) {
+            [actionManger orderOnDel:item];
+        }
+        
         [actionManger orderIndexes:item];
         [self refreshCurrentPage];
     }

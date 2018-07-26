@@ -31,7 +31,7 @@
 {
     self = [super initWithPage:pgno index:idx];
     self.hand = [[page annotAtIndex:idx] getRef];
-
+    
     return self;
 }
 
@@ -173,6 +173,11 @@
     }
     [m_stack addObject:item];
     
+    // Re-order indexes in case of annot remove
+    if ([item isKindOfClass:[ASDel class]]) {
+        [self orderOnDel:item];
+    }
+    
     [self orderIndexes:item];
     
     busy = NO;
@@ -212,7 +217,7 @@
     }
     m_pos++;
     ASItem *item = [m_stack objectAtIndex:m_pos];
-
+    
     busy = NO;
     
     return item;
@@ -220,11 +225,6 @@
 
 - (void)orderIndexes:(ASItem *)item
 {
-    // Re-order indexes in case of annot remove
-    if ([item isKindOfClass:[ASDel class]]) {
-        [self orderOnDel:item];
-    }
-    
     [self orderAll:item];
 }
 

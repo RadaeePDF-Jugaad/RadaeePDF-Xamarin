@@ -56,5 +56,6 @@
 - (ASItem *)redo;
 
 - (void)orderIndexes:(ASItem *)item;
+- (void)orderOnDel:(ASItem *)item;
 
 @end
