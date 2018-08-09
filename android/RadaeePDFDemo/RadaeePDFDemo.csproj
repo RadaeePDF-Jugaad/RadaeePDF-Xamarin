@@ -94,6 +94,10 @@
       <Project>{e3488863-4745-4243-a19a-25c7ff3e5291}</Project>
       <Name>RadaeePDF-Xamarin</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SignaturePad\SignaturePad.csproj">
+      <Project>{9fafb460-5593-4ab5-9b93-b28d9daa0b26}</Project>
+      <Name>SignaturePad</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />

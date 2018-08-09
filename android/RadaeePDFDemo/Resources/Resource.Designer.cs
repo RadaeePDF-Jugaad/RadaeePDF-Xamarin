@@ -31,6 +31,9 @@ namespace RadaeePDFDemo
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f01000d
+			public const int clearOnDoubleClick = 2130771981;
+			
 			// aapt resource value: 0x7f010007
 			public const int font = 2130771975;
 			
@@ -57,6 +60,18 @@ namespace RadaeePDFDemo
 			
 			// aapt resource value: 0x7f010008
 			public const int fontWeight = 2130771976;
+			
+			// aapt resource value: 0x7f01000b
+			public const int penColor = 2130771979;
+			
+			// aapt resource value: 0x7f01000a
+			public const int penMaxWidth = 2130771978;
+			
+			// aapt resource value: 0x7f010009
+			public const int penMinWidth = 2130771977;
+			
+			// aapt resource value: 0x7f01000c
+			public const int velocityFilterWeight = 2130771980;
 			
 			static Attribute()
 			{
@@ -1203,6 +1218,28 @@ namespace RadaeePDFDemo
 			
 			// aapt resource value: 2
 			public const int FontFamilyFont_fontWeight = 2;
+			
+			public static int[] SignaturePad = new int[] {
+					2130771977,
+					2130771978,
+					2130771979,
+					2130771980,
+					2130771981};
+			
+			// aapt resource value: 4
+			public const int SignaturePad_clearOnDoubleClick = 4;
+			
+			// aapt resource value: 2
+			public const int SignaturePad_penColor = 2;
+			
+			// aapt resource value: 1
+			public const int SignaturePad_penMaxWidth = 1;
+			
+			// aapt resource value: 0
+			public const int SignaturePad_penMinWidth = 0;
+			
+			// aapt resource value: 3
+			public const int SignaturePad_velocityFilterWeight = 3;
 			
 			static Styleable()
 			{
