@@ -774,7 +774,10 @@ namespace RadaeePDFDemo
 			public const int signature_pad = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int thumb_view = 2130903068;
+			public const int thumb_grid_view = 2130903068;
+			
+			// aapt resource value: 0x7f03001d
+			public const int thumb_view = 2130903069;
 			
 			static Layout()
 			{

@@ -4,5 +4,6 @@
 	<application android:label="RadaeePDFDemo">
 		<activity android:name="com.radaee.reader.PDFViewAct" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar" />
     <activity android:name="com.radaee.util.PopupEditAct" android:theme="@android:style/Theme.Translucent" android:configChanges="orientation|keyboardHidden|screenSize"/>
+    <activity android:name="com.radaee.util.CaptureSignature" android:theme="@android:style/Theme.DeviceDefault.Dialog"/>
 	</application>
 </manifest>
