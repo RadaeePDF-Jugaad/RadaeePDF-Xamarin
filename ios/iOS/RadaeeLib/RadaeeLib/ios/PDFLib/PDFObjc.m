@@ -95,8 +95,6 @@ extern uint annotStrikeoutColor;
 	int *pix = (int *)Global_dibGetData(m_dib);
 	int *pix_end = pix + Global_dibGetWidth(m_dib) * Global_dibGetHeight(m_dib) * 4;
 	while(pix < pix_end) *pix++ = color;
-
-
 }
 
 -(CGImageRef)image
@@ -912,6 +910,7 @@ extern uint annotStrikeoutColor;
 	[dib erase:back_color];
 	return Page_renderAnnot(m_page, m_handle, [dib handle]);
 }
+
 -(void)getRect:(PDF_RECT *)rect
 {
 	Page_getAnnotRect( m_page, m_handle, rect );
@@ -1330,7 +1329,7 @@ extern uint annotStrikeoutColor;
 
 - (BOOL)canMoveAnnot
 {
-    return (self.type == 4 || self.type == 5 || self.type == 6 || self.type == 15);
+    return (self.type == 4 || self.type == 5 || self.type == 6 || self.type == 13 || self.type == 15);
 }
 
 -(PDF_OBJ_REF)getRef
@@ -1828,6 +1827,10 @@ extern uint annotStrikeoutColor;
 -(float)pageHeight:(int) pageno
 {
     return Document_getPageHeight(m_doc, pageno);
+}
+-(NSString *)pageLabel:(int) pageno
+{
+    return Document_getPageLabel(m_doc, pageno);
 }
 
 -(PDFOutline *)rootOutline

@@ -129,7 +129,7 @@ extern uint g_oval_color;
     
     gridButton.width =30;
     
-    UIBarButtonItem *viewMenuButton;
+    /*UIBarButtonItem *viewMenuButton;
     
     if (_outlineImage) {
         viewMenuButton = [[UIBarButtonItem alloc] initWithImage:_outlineImage style:UIBarButtonItemStylePlain target:self action:@selector(viewMenu:)];
@@ -137,7 +137,7 @@ extern uint g_oval_color;
     else
     {
         viewMenuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(viewMenu:)];
-    }
+    }*/
     
     UIBarButtonItem *undoButton=[[UIBarButtonItem alloc]initWithImage:_undoImage style:UIBarButtonItemStylePlain target:self action:@selector(undoAnnot)];
     undoButton.width =30;
@@ -147,9 +147,9 @@ extern uint g_oval_color;
     
     _moreButton = [[UIBarButtonItem alloc] initWithImage:_moreImage style:UIBarButtonItemStylePlain target:self action:@selector(showMoreButtons)];
     
-    NSMutableArray *hiddenItems = [NSMutableArray arrayWithObjects: [NSNumber numberWithBool:_hideViewModeImage], [NSNumber numberWithBool:_hideSearchImage], [NSNumber numberWithBool:_hideDrawImage], [NSNumber numberWithBool:_hideSelImage], [NSNumber numberWithBool:_hideOutlineImage], [NSNumber numberWithBool:_hideGridImage], [NSNumber numberWithBool:_hideUndoImage], [NSNumber numberWithBool:_hideRedoImage], [NSNumber numberWithBool:NO], [NSNumber numberWithBool:_hideMoreImage], nil];
+    NSMutableArray *hiddenItems = [NSMutableArray arrayWithObjects: [NSNumber numberWithBool:_hideViewModeImage], [NSNumber numberWithBool:_hideSearchImage], [NSNumber numberWithBool:_hideDrawImage], [NSNumber numberWithBool:_hideSelImage], [NSNumber numberWithBool:_hideGridImage], [NSNumber numberWithBool:_hideUndoImage], [NSNumber numberWithBool:_hideRedoImage], [NSNumber numberWithBool:NO], [NSNumber numberWithBool:_hideMoreImage], nil];
     
-    NSMutableArray *_toolBarItem = [[NSMutableArray alloc] initWithObjects:_viewModeButton, searchButton, _drawButton, _selButton, viewMenuButton, gridButton, undoButton, redoButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], _moreButton, nil];
+    NSMutableArray *_toolBarItem = [[NSMutableArray alloc] initWithObjects:_viewModeButton, searchButton, _drawButton, _selButton, gridButton, undoButton, redoButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], _moreButton, nil];
     
     if (!isActive || licenseType < 1) {
         [hiddenItems setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:3];
@@ -337,6 +337,8 @@ extern uint g_oval_color;
     if (_delegate) {
         [_delegate willShowReader];
     }
+    
+    [_toolBar removeFromSuperview];
     
     _toolBar = [UIToolbar new];
     [_toolBar setFrame:CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width, self.navigationController.navigationBar.frame.size.height)];
@@ -1484,8 +1486,6 @@ extern uint g_oval_color;
 
 -(void)PDFClose
 {
-    [_toolBar removeFromSuperview];
-    
     if (SEARCH_LIST == 1) {
         [[RDExtendedSearch sharedInstance] clearSearch];
     }
@@ -1498,6 +1498,7 @@ extern uint g_oval_color;
         m_view = NULL;
     }
     m_doc = NULL;
+    [_toolBar removeFromSuperview];
 }
 //Add Call Search API
 - (void)searchBarSearchButtonClicked:(UISearchBar *)_m_searchBar
@@ -1813,10 +1814,12 @@ extern uint g_oval_color;
 -(void)performAnnot
 {
     [m_view vAnnotPerform];
+    [self removeAnnotToolBar];
 }
 -(void)deleteAnnot
 {
     [m_view vAnnotRemove];
+    [self removeAnnotToolBar];
 }
 -(void)annotCancel
 {
@@ -1834,10 +1837,14 @@ extern uint g_oval_color;
         [_delegate didTapOnAnnotationOfType:annot.type atPage:page atPoint:point];
     }
 }
-
+-(void)removeAnnotToolBar
+{
+    [annotToolBar removeFromSuperview];
+}
 //enter annotation status.
 -(void)OnAnnotClicked:(PDFPage *)page :(PDFAnnot *)annot :(float)x :(float)y
 {
+    [self removeAnnotToolBar];
     annotTapped = CGPointMake(x, y);
     
     // Check if an empty signature field
@@ -2382,6 +2389,7 @@ extern uint g_oval_color;
 {
     if(!self.navigationController.navigationBar.hidden)
     {
+        [m_view vAnnotEnd];
         m_Thumbview.hidden =YES;
         [_pageNumLabel setHidden:true];
         [self.navigationController setNavigationBarHidden:YES animated:YES];

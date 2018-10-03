@@ -250,8 +250,16 @@ extern NSString *g_author;
         [item undo:m_doc];
         
         // Re-order indexes in case of annot remove
-        if ([item isKindOfClass:[ASAdd class]]) {
+        if ([item isKindOfClass:[ASAdd class]] || item.reorder) {
+            if ([item isKindOfClass:[ASMove class]]) {
+                item.m_pageno = [(ASMove *)item m_pageno1];
+            }
+            
             [actionManger orderOnDel:item];
+            
+            if ([item isKindOfClass:[ASMove class]]) {
+                item.m_pageno = [(ASMove *)item m_pageno0];
+            }
         }
         
         [actionManger orderIndexes:item];
@@ -266,8 +274,17 @@ extern NSString *g_author;
         [item redo:m_doc];
         
         // Re-order indexes in case of annot remove
-        if ([item isKindOfClass:[ASDel class]]) {
+        if ([item isKindOfClass:[ASDel class]] || item.reorder) {
+            
+            if ([item isKindOfClass:[ASMove class]]) {
+                item.m_pageno = [(ASMove *)item m_pageno0];
+            }
+            
             [actionManger orderOnDel:item];
+            
+            if ([item isKindOfClass:[ASMove class]]) {
+                item.m_pageno = [(ASMove *)item m_pageno1];
+            }
         }
         
         [actionManger orderIndexes:item];
@@ -926,38 +943,47 @@ extern NSString *g_author;
         [m_view vGetPos:&pos :point.x * m_scale :point.y * m_scale];
         if( pos.pageno == m_annot_pos.pageno )
         {
-	        PDFMatrix *mat = [vpage CreateInvertMatrix:self.contentOffset.x * m_scale :self.contentOffset.y * m_scale];
-	        [mat transformRect:&m_annot_rect];
+            PDFMatrix *mat = [vpage CreateInvertMatrix:self.contentOffset.x * m_scale :self.contentOffset.y * m_scale];
+            [mat transformRect:&m_annot_rect];
             
             //Action Stack Manger
             PDF_RECT rect;
             [m_annot getRect:&rect];
-            [actionManger push:[[ASMove alloc] initWithPage:pos.pageno initRect:rect destPage:pos.pageno destRect:m_annot_rect index:m_annot.getIndex]];
+            [actionManger push:[[ASMove alloc] initWithPage:pos.pageno initRect:rect destPage:pos.pageno destRect:m_annot_rect index:m_annot.getIndex ref:[m_annot getRef]]];
             
-	        [m_annot setRect:&m_annot_rect];
-	        [m_view vRenderSync:m_annot_pos.pageno];
-	        [self vAnnotEnd];
+            [m_annot setRect:&m_annot_rect];
+            [m_view vRenderSync:m_annot_pos.pageno];
+            [self vAnnotEnd];
         }
-	    else
-	    {
-        	PDFVPage *vdest = [m_view vGetPage:pos.pageno];
-        	PDFPage *dpage = [vdest GetPage];
-        	if( dpage )
-        	{
-		        PDFMatrix *mat = [vdest CreateInvertMatrix:self.contentOffset.x * m_scale :self.contentOffset.y * m_scale];
-		        [mat transformRect:&m_annot_rect];
+        else
+        {
+            PDFVPage *vdest = [m_view vGetPage:pos.pageno];
+            PDFPage *dpage = [vdest GetPage];
+            if( dpage )
+            {
+                PDFMatrix *mat = [vdest CreateInvertMatrix:self.contentOffset.x * m_scale :self.contentOffset.y * m_scale];
+                [mat transformRect:&m_annot_rect];
                 
                 //Action Stack Manger
                 PDF_RECT rect;
                 [m_annot getRect:&rect];
-                [actionManger push:[[ASMove alloc] initWithPage:m_annot_pos.pageno initRect:rect destPage:pos.pageno destRect:m_annot_rect index:m_annot.getIndex]];
                 
-		        [m_annot MoveToPage:dpage:&m_annot_rect];
-		        [m_view vRenderSync:m_annot_pos.pageno];
-		        [m_view vRenderSync:pos.pageno];
-		        [self vAnnotEnd];
-		    }
-	    }
+                PDF_OBJ_REF ref = [m_annot getRef];
+                
+                [m_annot MoveToPage:dpage:&m_annot_rect];
+                [m_view vRenderSync:m_annot_pos.pageno];
+                [m_view vRenderSync:pos.pageno];
+                
+                ASMove *item = [[ASMove alloc] initWithPage:m_annot_pos.pageno initRect:rect destPage:pos.pageno destRect:m_annot_rect index:([dpage annotCount] - 1) ref:ref];
+                [actionManger push:item];
+                item.m_pageno = item.m_pageno0;
+                [actionManger orderOnDel:item];
+                item.m_pageno = item.m_pageno1;
+                [actionManger orderIndexes:item];
+                
+                [self vAnnotEnd];
+            }
+        }
     }
     return true;
 }
@@ -2390,6 +2416,7 @@ extern NSString *g_author;
 
 -(void)vGetTextFromPoint:(CGPoint )point
 {
+    if (m_status == sta_annot) return;
     m_status = sta_sel;
     [m_view vSetSelWholeWord:m_tx: m_ty: point.x * m_scale: point.y * m_scale];
     NSString *s = [self vSelGetText];

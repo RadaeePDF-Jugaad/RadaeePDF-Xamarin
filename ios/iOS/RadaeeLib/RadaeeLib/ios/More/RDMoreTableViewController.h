@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RDPDFViewController.h"
 
 @protocol RDMoreTableViewControllerDelegate <NSObject>
 -(void) selectAction: (int) type;

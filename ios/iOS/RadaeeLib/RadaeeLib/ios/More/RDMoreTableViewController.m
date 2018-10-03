@@ -11,7 +11,6 @@
 {
     NSArray *actionTitle;
     NSArray *actionImage;
-    RDPDFViewController *container;
 }
 
 @end

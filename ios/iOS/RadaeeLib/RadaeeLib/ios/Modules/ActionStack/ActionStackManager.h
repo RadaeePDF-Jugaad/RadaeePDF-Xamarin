@@ -10,6 +10,7 @@
 
 @interface ASItem : NSObject
 
+@property (nonatomic) bool reorder;
 @property (nonatomic) int m_pageno;
 @property (nonatomic) int m_idx;
 @property (nonatomic) PDF_OBJ_REF hand;
@@ -33,13 +34,14 @@
 @end
 
 @interface ASMove : ASItem {
-    int m_pageno0;
-    int m_pageno1;
     PDF_RECT m_rect0;
     PDF_RECT m_rect1;
 }
 
-- (instancetype)initWithPage:(int)src_pageno initRect:(PDF_RECT)src_rect destPage:(int)dst_pageno destRect:(PDF_RECT)dst_rect index:(int)idx;
+@property (nonatomic) int m_pageno0;
+@property (nonatomic) int m_pageno1;
+
+- (instancetype)initWithPage:(int)src_pageno initRect:(PDF_RECT)src_rect destPage:(int)dst_pageno destRect:(PDF_RECT)dst_rect index:(int)idx ref:(PDF_OBJ_REF)ref;
 
 @end
 

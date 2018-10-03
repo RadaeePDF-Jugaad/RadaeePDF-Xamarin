@@ -127,7 +127,7 @@ namespace ReaderXamarin
 			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
 			//Open from url
-			UIViewController controller = plugin.Show("file://help.pdf", "");
+			UIViewController controller = plugin.Show("test.pdf", "");
 
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);

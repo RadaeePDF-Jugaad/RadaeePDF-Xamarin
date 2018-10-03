@@ -1448,11 +1448,6 @@
 -(int)openWithCert:(NSString *)path :(NSString *)cert_file :(NSString *)password;
 -(int)openMemWithCert:(void *)data :(int)data_size : (NSString *)cert_file :(NSString *)password;
 -(int)openStreamWithCert:(id<PDFStream>)stream : (NSString *)cert_file :(NSString *)password;
-
-
-
-
-
 /**
  * @brief create a empty PDF document
  * @param path path to create
@@ -1553,6 +1548,7 @@
  * @return height value.
  */
 -(float)pageHeight:(int) pageno;
+-(NSString *)pageLabel:(int)pageno;
 /**
  * @brief get first root outline item.
  * @return handle value of first root outline item. or null if no outlines.
