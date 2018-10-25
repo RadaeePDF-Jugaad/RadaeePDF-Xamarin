@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Resources\en.lproj\" />
+    <Folder Include="Resources\it.lproj\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -186,6 +188,8 @@
     <BundleResource Include="Resources\left_arrow.png" />
     <BundleResource Include="Resources\pdf_custom_stamp.png" />
     <BundleResource Include="Resources\right_arrow.png" />
+    <BundleResource Include="Resources\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\it.lproj\Localizable.strings" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -49,37 +49,37 @@
     switch (indexPath.row) {
         case 0:
         {
-            cell.textLabel.text = @"Ink";
+            cell.textLabel.text = NSLocalizedString(@"Ink", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_annot_ink"];
             break;
         }
         case 1:
         {
-            cell.textLabel.text = @"Line";
+            cell.textLabel.text = NSLocalizedString(@"Line", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_annot_line"];
             break;
         }
         case 2:
         {
-            cell.textLabel.text = @"Rect";
+            cell.textLabel.text = NSLocalizedString(@"Rect", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_annot_rect"];
             break;
         }
         case 3:
         {
-            cell.textLabel.text = @"Ellipse";
+            cell.textLabel.text = NSLocalizedString(@"Ellipse", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_annot_ellipse"];
             break;
         }
         case 4:
         {
-            cell.textLabel.text = @"Stamp";
+            cell.textLabel.text = NSLocalizedString(@"Stamp", nil);
             cell.imageView.image = [UIImage imageNamed:@"pdf_custom_stamp"];
             break;
         }
         case 5:
         {
-            cell.textLabel.text = @"Note";
+            cell.textLabel.text = NSLocalizedString(@"Note", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_annot_note"];
             break;
         }

@@ -181,36 +181,36 @@ extern uint g_oval_color;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         
         _moreItemsContainer = [UIAlertController
-                               alertControllerWithTitle:@"Select Action"
+                               alertControllerWithTitle:NSLocalizedString(@"Select Action", nil)
                                message:@""
                                preferredStyle:UIAlertControllerStyleActionSheet];
         
-        UIAlertAction *addBookMark = [UIAlertAction actionWithTitle:@"Add book mark" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+        UIAlertAction *addBookMark = [UIAlertAction actionWithTitle:NSLocalizedString(@"Add Bookmark", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                       {
                                           [self composeFile:nil];
                                       }];
         
-        UIAlertAction *bookMarkList = [UIAlertAction actionWithTitle:@"Book mark list" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+        UIAlertAction *bookMarkList = [UIAlertAction actionWithTitle:NSLocalizedString(@"Bookmark List", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                        {
                                            [self bookmarkList];
                                        }];
         
-        UIAlertAction *viewMenu =  [UIAlertAction actionWithTitle:@"View menu" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+        UIAlertAction *viewMenu =  [UIAlertAction actionWithTitle:NSLocalizedString(@"View Menu", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                     {
                                         [self viewMenu:nil];
                                     }];
         
-        UIAlertAction *savePDF = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+        UIAlertAction *savePDF = [UIAlertAction actionWithTitle:NSLocalizedString(@"Save", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                   {
                                       [self savePdf];
                                   }];
         
-        UIAlertAction *printPDF =  [UIAlertAction actionWithTitle:@"Print" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+        UIAlertAction *printPDF =  [UIAlertAction actionWithTitle:NSLocalizedString(@"Print", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                     {
                                         [self printPdf];
                                     }];
         
-        UIAlertAction *cancel =  [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action)
+        UIAlertAction *cancel =  [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action)
                                   {
                                       [_moreItemsContainer dismissViewControllerAnimated:YES completion:nil];
                                   }];
@@ -325,7 +325,7 @@ extern uint g_oval_color;
     [self.view addSubview:textFd];
     textFd.hidden = YES;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -412,12 +412,12 @@ extern uint g_oval_color;
 {
     if ([m_view isModified] && !autoSave) {
         
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Exiting"
-                                                                       message:@"Document modified.\r\nDo you want to save it?"
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Exiting", nil)
+                                                                       message:NSLocalizedString(@"Document modified.\r\nDo you want to save it?", nil)
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"Yes"
+                             actionWithTitle:NSLocalizedString(@"Yes", nil)
                              style:UIAlertActionStyleDefault
                              handler:^(UIAlertAction * action)
                              {
@@ -428,7 +428,7 @@ extern uint g_oval_color;
                                  
                              }];
         UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"No"
+                                 actionWithTitle:NSLocalizedString(@"No", nil)
                                  style:UIAlertActionStyleDefault
                                  handler:^(UIAlertAction * action)
                                  {
@@ -534,7 +534,7 @@ extern uint g_oval_color;
     //_m_searchBar.barStyle =UIBarStyleBlackTranslucent;
     _m_searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     _m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    _m_searchBar.placeholder = @"Search";
+    _m_searchBar.placeholder = NSLocalizedString(@"Search", nil);
     _m_searchBar.keyboardType = UIKeyboardTypeDefault;
     [self.view addSubview:_m_searchBar];
     
@@ -583,7 +583,7 @@ extern uint g_oval_color;
         
         vm.modalPresentationStyle = UIModalPresentationPopover;
         vm.delegate = self;
-        vm.preferredContentSize = CGSizeMake(150, (44 * 6) + 10);
+        vm.preferredContentSize = CGSizeMake(300, (44 * 6) + 10);
         vm.tableView.scrollEnabled = NO;
         
         UIPopoverPresentationController *pop = vm.popoverPresentationController;
@@ -594,39 +594,39 @@ extern uint g_oval_color;
     }
     else
     {
-        UIAlertController *action = [UIAlertController alertControllerWithTitle:@"Select Draw Mode" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *action = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Select Draw Mode", nil) message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
         
-        UIAlertAction *ink = [UIAlertAction actionWithTitle:@"Ink" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *ink = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ink", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self didSelectDrawMode:0];
         }];
         [ink setValue:[[UIImage imageNamed:@"btn_annot_ink.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *line = [UIAlertAction actionWithTitle:@"Line" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *line = [UIAlertAction actionWithTitle:NSLocalizedString(@"Line", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self didSelectDrawMode:1];
         }];
         [line setValue:[[UIImage imageNamed:@"btn_annot_line.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *rect = [UIAlertAction actionWithTitle:@"Rect" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *rect = [UIAlertAction actionWithTitle:NSLocalizedString(@"Rect", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self didSelectDrawMode:2];
         }];
         [rect setValue:[[UIImage imageNamed:@"btn_annot_rect.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *ellipse = [UIAlertAction actionWithTitle:@"Ellipse" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *ellipse = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ellipse", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self didSelectDrawMode:3];
         }];
         [ellipse setValue:[[UIImage imageNamed:@"btn_annot_ellipse.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *stamp = [UIAlertAction actionWithTitle:@"Stamp" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *stamp = [UIAlertAction actionWithTitle:NSLocalizedString(@"Stamp", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self didSelectDrawMode:4];
         }];
         [stamp setValue:[[UIImage imageNamed:@"pdf_custom_stamp.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *note = [UIAlertAction actionWithTitle:@"Note" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *note = [UIAlertAction actionWithTitle:NSLocalizedString(@"Note", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self didSelectDrawMode:5];
         }];
         [note setValue:[[UIImage imageNamed:@"btn_annot_note.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
         
@@ -1772,7 +1772,7 @@ extern uint g_oval_color;
     
     if( !found )
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Waring" message:@"Find Over" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Waring", nil) message:NSLocalizedString(@"Find Over", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
 }
@@ -1865,11 +1865,11 @@ extern uint g_oval_color;
         else
         {
             // Overwrite signature
-            UIAlertController *signAlert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Signature already exist. Do you want delete it?" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertController *signAlert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Waring", nil) message:NSLocalizedString(@"Signature already exist. Do you want delete it?", nil) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *delete = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [self presentSignatureViewController];
             }];
-            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 [m_view vAnnotEnd];
             }];
             [signAlert addAction:delete];
@@ -1997,7 +1997,7 @@ extern uint g_oval_color;
         [self presentMoviePlayerViewControllerAnimated:mpvc];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Couldn't find media file" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Couldn't find media file", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
         [alert show];
     }
 }
@@ -2338,7 +2338,7 @@ extern uint g_oval_color;
         [self presentMoviePlayerViewControllerAnimated:mpvc];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Couldn't find media file" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Couldn't find media file", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
         [alert show];
     }
     //END
@@ -2423,28 +2423,28 @@ extern uint g_oval_color;
     }
     else
     {
-        UIAlertController *action = [UIAlertController alertControllerWithTitle:@"Select View Mode" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *action = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Select View Mode", nil) message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
         
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
         
-        UIAlertAction *vert = [UIAlertAction actionWithTitle:@"Vertical" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *vert = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vertical", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self setReaderViewMode:0];
         }];
         [vert setValue:[[UIImage imageNamed:@"btn_view_vert"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *horz = [UIAlertAction actionWithTitle:@"Horizontal" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *horz = [UIAlertAction actionWithTitle:NSLocalizedString(@"Horizontal", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self setReaderViewMode:1];
         }];
         [horz setValue:[[UIImage imageNamed:@"btn_view_horz"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *singleP = [UIAlertAction actionWithTitle:@"Single Page" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *singleP = [UIAlertAction actionWithTitle:NSLocalizedString(@"Single Page", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self setReaderViewMode:3];
         }];
         [singleP setValue:[[UIImage imageNamed:@"btn_view_single"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         
-        UIAlertAction *doubleP = [UIAlertAction actionWithTitle:@"Double Page" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *doubleP = [UIAlertAction actionWithTitle:NSLocalizedString(@"Double Page", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self setReaderViewMode:4];
         }];
         [doubleP setValue:[[UIImage imageNamed:@"btn_view_dual"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
@@ -2592,7 +2592,7 @@ extern uint g_oval_color;
 - (void)printPdf
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:pdfPath]) {
-        UIAlertView *alter = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"PDF file not available"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alter = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"Couldn't find media file", nil)  delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
         [alter show];
         return;
     }
@@ -2628,12 +2628,12 @@ extern uint g_oval_color;
 {
     if([m_view forceSave])
     {
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Notice"
-                                                                       message:@"Document saved"
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Notice", nil)
+                                                                       message:NSLocalizedString(@"Document saved", nil)
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"OK"
+                             actionWithTitle:NSLocalizedString(@"OK", nil)
                              style:UIAlertActionStyleDefault
                              handler:nil];
         [alert addAction:ok];

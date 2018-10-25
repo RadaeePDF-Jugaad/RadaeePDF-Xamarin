@@ -1,8 +1,12 @@
 ﻿<Properties StartupConfiguration="{7EB5E7D1-4011-406E-BB5B-46A350442CEA}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Main.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Resources/en.lproj/Localizable.strings">
     <Files>
       <File FileName="ReaderXamarin/ViewController.cs" Line="130" Column="51" />
       <File FileName="ReaderXamarin/Main.storyboard" />
+      <File FileName="ReaderXamarin/Resources/AppResources.resx" Line="16" Column="20" />
+      <File FileName="ReaderXamarin/Resources/Localizable.strings" Line="41" Column="29" />
+      <File FileName="ReaderXamarin/Resources/it.lproj/Localizable.strings" Line="28" Column="47" />
+      <File FileName="ReaderXamarin/Resources/en.lproj/Localizable.strings" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
@@ -10,6 +14,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.f2930fdfb9a4013c8a1ff827329724291defc69b" />
+  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.528762778f2124b313191de298ea66ddb2e32d3a" />
   <MultiItemStartupConfigurations />
 </Properties>

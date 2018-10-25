@@ -36,7 +36,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 
@@ -51,19 +51,25 @@
     switch (indexPath.row) {
         case 0:
         {
-            cell.textLabel.text = @"Vertical";
+            cell.textLabel.text = NSLocalizedString(@"Vertical", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_view_vert.png"];
             break;
         }
         case 1:
         {
-            cell.textLabel.text = @"Single Page";
+            cell.textLabel.text = NSLocalizedString(@"Horizontal", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_view_single.png"];
             break;
         }
         case 2:
         {
-            cell.textLabel.text = @"Double Page";
+            cell.textLabel.text = NSLocalizedString(@"Single Page", nil);
+            cell.imageView.image = [UIImage imageNamed:@"btn_view_single.png"];
+            break;
+        }
+        case 3:
+        {
+            cell.textLabel.text = NSLocalizedString(@"Double Page", nil);
             cell.imageView.image = [UIImage imageNamed:@"btn_view_dual.png"];
             break;
         }
