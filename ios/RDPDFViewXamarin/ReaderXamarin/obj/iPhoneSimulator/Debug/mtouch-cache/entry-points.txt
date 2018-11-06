@@ -1,0 +1,17 @@
+Function=xamarin_timezone_get_data
+	/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/32/1-Link/mscorlib.dll
+Function=xamarin_log
+	/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/32/1-Link/mscorlib.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/32/1-Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
+	/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/32/1-Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/32/1-Link/Xamarin.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_RadaeePDFPlugin
+	/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/mtouch-cache/32/1-Link/RDPDFViewXamarin.dll
+Function=mono_pmip
+Function=xamarin_dyn_objc_msgSend
+Function=xamarin_dyn_objc_msgSendSuper
+Function=xamarin_dyn_objc_msgSend_stret
+Function=xamarin_dyn_objc_msgSendSuper_stret

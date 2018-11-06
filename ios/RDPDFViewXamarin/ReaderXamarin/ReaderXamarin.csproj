@@ -131,7 +131,7 @@
     <BundleResource Include="Resources\btn_view_dual.png" />
     <BundleResource Include="Resources\btn_view_single.png" />
     <BundleResource Include="Resources\btn_view_vert.png" />
-    <BundleResource Include="Resources\annot_remove.png" />
+    <BundleResource Include="Resources\btn_annot_remove.png" />
     <BundleResource Include="Resources\test.pdf" />
     <BundleResource Include="Resources\btn_grid.png" />
     <BundleResource Include="Resources\btn_back.png" />

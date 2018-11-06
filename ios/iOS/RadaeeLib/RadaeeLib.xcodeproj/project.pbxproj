@@ -73,6 +73,12 @@
 		A864EF911D17EBA400F4B976 /* RadaeePDFPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = A864EF591D17EBA300F4B976 /* RadaeePDFPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A864EF921D17EBA400F4B976 /* RadaeePDFPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A864EF5A1D17EBA300F4B976 /* RadaeePDFPlugin.m */; };
 		A88EBD3E1D1828070084C9A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EBD3D1D1828070084C9A9 /* Foundation.framework */; };
+		A898045E21909B1000D969ED /* PDFGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = A898045C21909B1000D969ED /* PDFGridView.h */; };
+		A898045F21909B1000D969ED /* PDFGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = A898045D21909B1000D969ED /* PDFGridView.m */; };
+		A898046221909B4500D969ED /* RDGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = A898046021909B4400D969ED /* RDGlobal.m */; };
+		A898046321909B4500D969ED /* RDGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = A898046121909B4500D969ED /* RDGlobal.h */; };
+		A898046621909BA600D969ED /* RDAnnotToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A898046421909BA600D969ED /* RDAnnotToolBar.m */; };
+		A898046721909BA600D969ED /* RDAnnotToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = A898046521909BA600D969ED /* RDAnnotToolBar.h */; };
 		A8B6AABD2021DE3500FADD2E /* ActionStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6AAB32021DE3400FADD2E /* ActionStackManager.m */; };
 		A8B6AABE2021DE3500FADD2E /* ActionStackManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B6AAB42021DE3400FADD2E /* ActionStackManager.h */; };
 		A8B6AABF2021DE3500FADD2E /* RDFormManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B6AAB62021DE3400FADD2E /* RDFormManager.m */; };
@@ -171,6 +177,12 @@
 		A88014541D245E47000EADD4 /* cmaps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cmaps; sourceTree = "<group>"; };
 		A88014551D245E47000EADD4 /* fdat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fdat; sourceTree = "<group>"; };
 		A88EBD3D1D1828070084C9A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A898045C21909B1000D969ED /* PDFGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFGridView.h; sourceTree = "<group>"; };
+		A898045D21909B1000D969ED /* PDFGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFGridView.m; sourceTree = "<group>"; };
+		A898046021909B4400D969ED /* RDGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDGlobal.m; sourceTree = "<group>"; };
+		A898046121909B4500D969ED /* RDGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDGlobal.h; sourceTree = "<group>"; };
+		A898046421909BA600D969ED /* RDAnnotToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDAnnotToolBar.m; sourceTree = "<group>"; };
+		A898046521909BA600D969ED /* RDAnnotToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDAnnotToolBar.h; sourceTree = "<group>"; };
 		A8B6AAB32021DE3400FADD2E /* ActionStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionStackManager.m; sourceTree = "<group>"; };
 		A8B6AAB42021DE3400FADD2E /* ActionStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionStackManager.h; sourceTree = "<group>"; };
 		A8B6AAB62021DE3400FADD2E /* RDFormManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDFormManager.m; sourceTree = "<group>"; };
@@ -337,6 +349,10 @@
 		A864EF2F1D17EBA300F4B976 /* PDFView */ = {
 			isa = PBXGroup;
 			children = (
+				A898046121909B4500D969ED /* RDGlobal.h */,
+				A898046021909B4400D969ED /* RDGlobal.m */,
+				A898046521909BA600D969ED /* RDAnnotToolBar.h */,
+				A898046421909BA600D969ED /* RDAnnotToolBar.m */,
 				A84A2D4D1D2284F000B2A4F2 /* ViewModeTableViewController.h */,
 				A84A2D4E1D2284F000B2A4F2 /* ViewModeTableViewController.m */,
 				A864EF301D17EBA300F4B976 /* BookmarkTableViewController.h */,
@@ -351,6 +367,8 @@
 				A864EF3A1D17EBA300F4B976 /* PDFReflowView.m */,
 				A864EF3B1D17EBA300F4B976 /* PDFThumbView.h */,
 				A864EF3C1D17EBA300F4B976 /* PDFThumbView.m */,
+				A898045C21909B1000D969ED /* PDFGridView.h */,
+				A898045D21909B1000D969ED /* PDFGridView.m */,
 				A864EF3D1D17EBA300F4B976 /* PDFV.h */,
 				A864EF3E1D17EBA300F4B976 /* PDFV.m */,
 				A864EF3F1D17EBA300F4B976 /* PDFVCanvas.h */,
@@ -435,6 +453,7 @@
 				A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */,
 				A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */,
 				A845ACDA1FDFDD3100ABFACB /* ReaderHandler.h in Headers */,
+				A898046721909BA600D969ED /* RDAnnotToolBar.h in Headers */,
 				A845ACDB1FDFDD3100ABFACB /* RDExtendedSearch.h in Headers */,
 				A845ACDC1FDFDD3100ABFACB /* SearchResultTableViewController.h in Headers */,
 				A845ACDD1FDFDD3100ABFACB /* RDUtils.h in Headers */,
@@ -450,8 +469,10 @@
 				A864EF6B1D17EBA400F4B976 /* BookmarkTableViewController.h in Headers */,
 				A864EF731D17EBA400F4B976 /* PDFReflowView.h in Headers */,
 				A864EF771D17EBA400F4B976 /* PDFV.h in Headers */,
+				A898045E21909B1000D969ED /* PDFGridView.h in Headers */,
 				A864EF8F1D17EBA400F4B976 /* TextAnnotViewController.h in Headers */,
 				A86489012052C4FE00937FB2 /* RDMoreTableViewController.h in Headers */,
+				A898046321909B4500D969ED /* RDGlobal.h in Headers */,
 				A864EF831D17EBA400F4B976 /* PDFVThread.h in Headers */,
 				A864EF8B1D17EBA400F4B976 /* PopupMenuOverlayView.h in Headers */,
 				A864EF7D1D17EBA400F4B976 /* PDFVGlobal.h in Headers */,
@@ -538,6 +559,7 @@
 				A864EF821D17EBA400F4B976 /* PDFVPage.m in Sources */,
 				A845ACE31FDFEA4900ABFACB /* SearchResultTableViewController.m in Sources */,
 				A864EF7E1D17EBA400F4B976 /* PDFVGlobal.m in Sources */,
+				A898046221909B4500D969ED /* RDGlobal.m in Sources */,
 				A86489002052C4FE00937FB2 /* RDMoreTableViewController.m in Sources */,
 				A864EF6C1D17EBA400F4B976 /* BookmarkTableViewController.m in Sources */,
 				A845ACE11FDFE9C300ABFACB /* ReaderHandler.m in Sources */,
@@ -552,9 +574,11 @@
 				A864EF801D17EBA400F4B976 /* PDFView.m in Sources */,
 				A864EF6A1D17EBA400F4B976 /* PDFObjc.m in Sources */,
 				A864EF781D17EBA400F4B976 /* PDFV.m in Sources */,
+				A898046621909BA600D969ED /* RDAnnotToolBar.m in Sources */,
 				A864EF7C1D17EBA400F4B976 /* PDFVFinder.m in Sources */,
 				A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */,
 				A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */,
+				A898045F21909B1000D969ED /* PDFGridView.m in Sources */,
 				A845ACE41FDFED5500ABFACB /* RDUtils.m in Sources */,
 				A864890B2052C54300937FB2 /* DrawModeTableViewController.m in Sources */,
 				A864EF8C1D17EBA400F4B976 /* PopupMenuOverlayView.m in Sources */,

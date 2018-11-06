@@ -1,0 +1,8 @@
+/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/bin/iPhoneSimulator/Debug/ReaderXamarin.exe
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mono/Xamarin.iOS/mscorlib.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mono/Xamarin.iOS/../../32bits/Xamarin.iOS.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mono/Xamarin.iOS/System.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mono/Xamarin.iOS/Mono.Security.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mono/Xamarin.iOS/System.Xml.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mono/Xamarin.iOS/System.Core.dll
+/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll

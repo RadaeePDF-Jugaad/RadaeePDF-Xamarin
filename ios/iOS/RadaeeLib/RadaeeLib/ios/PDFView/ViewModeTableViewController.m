@@ -82,7 +82,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_delegate setReaderViewMode:indexPath.row];
+    [_delegate setReaderViewMode:(int)indexPath.row];
 }
 
 /*

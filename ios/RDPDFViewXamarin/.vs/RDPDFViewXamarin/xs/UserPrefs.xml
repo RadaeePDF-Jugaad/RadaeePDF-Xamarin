@@ -1,19 +1,21 @@
 ﻿<Properties StartupConfiguration="{7EB5E7D1-4011-406E-BB5B-46A350442CEA}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Resources/en.lproj/Localizable.strings">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReaderXamarin/Main.cs">
     <Files>
-      <File FileName="ReaderXamarin/ViewController.cs" Line="130" Column="51" />
+      <File FileName="ReaderXamarin/ViewController.cs" Line="130" Column="45" />
       <File FileName="ReaderXamarin/Main.storyboard" />
-      <File FileName="ReaderXamarin/Resources/AppResources.resx" Line="16" Column="20" />
       <File FileName="ReaderXamarin/Resources/Localizable.strings" Line="41" Column="29" />
-      <File FileName="ReaderXamarin/Resources/it.lproj/Localizable.strings" Line="28" Column="47" />
-      <File FileName="ReaderXamarin/Resources/en.lproj/Localizable.strings" Line="1" Column="1" />
+      <File FileName="ReaderXamarin/Resources/it.lproj/Localizable.strings" Line="74" Column="40" />
+      <File FileName="ReaderXamarin/Resources/en.lproj/Localizable.strings" Line="74" Column="37" />
+      <File FileName="RDPDFViewXamarin/libRadaeeLibSDK.linkwith.cs" Line="1" Column="1" />
+      <File FileName="RDPDFViewXamarin/ApiDefinition.cs" Line="305" Column="69" />
+      <File FileName="ReaderXamarin/Main.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.528762778f2124b313191de298ea66ddb2e32d3a" />
+  <MonoDevelop.Ide.ItemProperties.ReaderXamarin PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.11029F4D-DD17-4CB3-9428-06857E1C8D36" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,0 +1,4 @@
+# Version: 12.1.0.15 (xcode10.1: cbfb047a)
+# [first argument, ignore] # @/Volumes/SSDManu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/ReaderXamarin/obj/iPhoneSimulator/Debug/response-file.rsp
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.1.0.15/lib/mtouch/mtouch.exe \
+	--registrar:static \

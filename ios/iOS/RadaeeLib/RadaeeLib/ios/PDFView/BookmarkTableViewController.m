@@ -60,7 +60,7 @@
     }
     
     NSArray *arr = [_items objectAtIndex:indexPath.row];
-
+    
     int pageno = [[arr objectAtIndex:0] intValue];
     pageno++;
     
@@ -87,21 +87,22 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        
-        NSArray *row_item = [_items objectAtIndex:indexPath.row];
-        NSString *path = [row_item objectAtIndex:1];
-        
-        NSFileManager *fm = [NSFileManager defaultManager];
-        [fm removeItemAtPath:path error:nil];
 
-        [_items removeObjectAtIndex:indexPath.row];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            // Delete the row from the data source
+            
+            NSArray *row_item = [_items objectAtIndex:indexPath.row];
+            NSString *path = [row_item objectAtIndex:1];
+            
+            NSFileManager *fm = [NSFileManager defaultManager];
+            [fm removeItemAtPath:path error:nil];
+            
+            [_items removeObjectAtIndex:indexPath.row];
+            
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
 }
 
 /*

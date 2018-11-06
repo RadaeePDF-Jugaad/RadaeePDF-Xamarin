@@ -49,9 +49,9 @@
 {
     switch( [page RenderPrepare] )
     {
-        case 1: break;
-        case 2: [self end_render: page]; [self start_render: page]; break;
-        default:
+		case 1: break;
+		case 2: [self end_render: page]; [self start_render: page]; break;
+		default:
         {
             PDFVCache *cache = [page Cache];
             dispatch_async(m_queue, ^{
