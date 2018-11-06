@@ -97,6 +97,8 @@ namespace ReaderXamarin
 			plugin.SetDoublePageEnabled(true); //double page render
 			plugin.ToggleThumbSeekBar(0); //Toggle Thumbnail/SeekBar
 
+            plugin.SearchImage = UIImage.FromBundle("btn_add.png");
+
 			//Set thumbnail view background
 			plugin.SetThumbnailBGColor(Convert.ToInt32("0x88000000", 16)); //AARRGGBB
 

@@ -1652,6 +1652,12 @@ extern NSMutableString *pdfPath;
 
 - (void)OnSingleTapped:(float)x :(float)y
 {
+    if (_delegate && [_delegate respondsToSelector:@selector(didTapOnPage:atPoint:)]) {
+        struct PDFV_POS pos;
+        [m_view vGetPos:&pos x:x y:y];
+        [_delegate didTapOnPage:pos.pageno atPoint:CGPointMake(x, y)];
+    }
+    
     if (b_noteAnnot) {
         posx = x;
         posy = y;
@@ -1891,12 +1897,6 @@ extern NSMutableString *pdfPath;
 
 -(void)OnSingleTapped:(float)x :(float)y :(NSString *)text
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(didTapOnPage:atPoint:)]) {
-        struct PDFV_POS pos;
-        [m_view vGetPos:&pos x:x y:y];
-        [_delegate didTapOnPage:pos.pageno atPoint:CGPointMake(x, y)];
-    }
-    
     [m_searchBar resignFirstResponder];
     [pageNumLabel setHidden:false];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
