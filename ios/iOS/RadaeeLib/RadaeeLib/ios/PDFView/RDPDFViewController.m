@@ -427,6 +427,10 @@ extern NSMutableString *pdfPath;
 
 - (void)pageNumLabelInit:(int)pageno
 {
+    if (pageNumLabel) {
+        [pageNumLabel removeFromSuperview];
+    }
+    
     pageNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, [self barHeightDistance], 65, 30)];
     pagenow = pageno;
     pageNumLabel.backgroundColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.4];
