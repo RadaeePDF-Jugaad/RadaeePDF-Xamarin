@@ -435,13 +435,18 @@ extern NSMutableString *pdfPath;
     pageNumLabel.textAlignment= NSTextAlignmentCenter;
     pageNumLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     pageNumLabel.layer.cornerRadius = 10;
-    NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pagecount];
-    pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
-    pageNumLabel.text = pagestr;
     pageNumLabel.font = [UIFont boldSystemFontOfSize:16];
+    [self updatePageNumLabel:pageno+1];
     [self.view addSubview:pageNumLabel];
     
-    [pageNumLabel setHidden:NO];
+    [pageNumLabel setHidden:self.navigationController.navigationBarHidden];
+}
+
+- (void)updatePageNumLabel:(int)page
+{
+    NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",page];
+    pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
+    pageNumLabel.text = pagestr;
 }
 
 #pragma mark - Grid View
@@ -1395,9 +1400,8 @@ extern NSMutableString *pdfPath;
     [m_view resetZoomLevel];
     [m_view vGoto:pageno];
     pagenow = pageno + 1;
-    NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pagenow];
-    pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
-    pageNumLabel.text = pagestr;
+    
+    [self updatePageNumLabel:pagenow];
     
     [self hideGridView];
 }
@@ -1429,9 +1433,7 @@ extern NSMutableString *pdfPath;
 -(IBAction)sliderValueChanged:(id)sender
 {
     pagenow = (int)round(sliderBar.value);
-    NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pagenow];
-    pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
-    pageNumLabel.text = pagestr;
+    [self updatePageNumLabel:pagenow];
 }
 -(IBAction)sliderDragUp:(id)sender
 {
@@ -1643,9 +1645,7 @@ extern NSMutableString *pdfPath;
     pagenow = pageno;
     
     pageno++;
-    NSString *pagestr = [[NSString alloc]initWithFormat:@"%d/",pageno];
-    pagestr = [pagestr stringByAppendingFormat:@"%d",pagecount];
-    pageNumLabel.text = pagestr;
+    [self updatePageNumLabel:pageno];
     
     [m_Thumbview vGoto:pageno-1];
 }
