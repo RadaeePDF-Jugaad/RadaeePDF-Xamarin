@@ -69,6 +69,7 @@ extern NSMutableString *pdfPath;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     PDFannot = [[PDFAnnot alloc] init];
     b_outline = false;
     b_findStart = NO;
@@ -2410,4 +2411,39 @@ extern NSMutableString *pdfPath;
     return [m_view addAttachmentFromPath:path];
 }
 
+#pragma mark - Form Manager
+
+- (NSString *)getJSONFormFields
+{
+    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:m_doc];
+    return [fe jsonInfoForAllPages];
+}
+
+- (NSString *)getJSONFormFieldsAtPage:(int)page
+{
+    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:m_doc];
+    return [fe jsonInfoForPage:page];
+}
+
+- (NSString *)setFormFieldWithJSON:(NSString *)json
+{
+    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:m_doc];
+    
+    NSError *error;
+    if (json && json.length > 0) {
+        [fe setInfoWithJson:json error:&error];
+        
+        if (error) {
+            return error.description;
+        } else
+        {
+            [self refreshCurrentPage];
+        }
+    } else
+    {
+        return @"JSON not valid";
+    }
+    
+    return @"";
+}
 @end

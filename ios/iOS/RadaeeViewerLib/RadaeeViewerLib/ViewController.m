@@ -74,7 +74,7 @@
     
     //UIViewController *controller = (UIViewController *)[plugin openFromMem:[NSData dataWithContentsOfFile:[[self getCustomPath] stringByAppendingPathComponent:@"test.pdf"]] withPassword:@""];
     
-    UIViewController *controller = (UIViewController *)[plugin show:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"help.pdf"] withPassword:@""];
+    UIViewController *controller = (UIViewController *)[plugin show:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"test_fields.pdf"] withPassword:@""];
     
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
@@ -95,6 +95,9 @@
     NSLog(@"didShowReader");
     //NSLog(@"JSON: %@", [plugin getJSONFormFieldsAtPage:1]);
     NSLog(@"page: %i", [plugin getPageNumber]);
+    NSLog(@"%@", [plugin getJSONFormFieldsAtPage:0]);
+    NSString *err = [plugin setFormFieldWithJSON:@"{ \"Pages\": [{ \"Page\": 0, \"Annots\": [{ \"FieldNameWithNO\": \"Text Field0\", \"ComboItemSel\": \"\", \"CheckStatus\": \"\", \"FieldName\": \"Text Field0\", \"Index\": \"10\", \"EditType\": \"1\", \"FieldFullName\": \"Text Field0\", \"PopupLabel\": \"\", \"SignStatus\": \"\", \"ComboItemCount\": \"\", \"FieldType\": \"2\", \"FieldFullName2\": \"Text Field0\", \"Type\": \"20\", \"ListItemCount\": \"\", \"EditText\": \"CIAO a tutt 1i\" }] }] }"];
+    NSLog(@"%@", err);
 }
 
 - (void)willCloseReader

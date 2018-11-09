@@ -173,4 +173,10 @@
 - (BOOL)addAttachmentFromPath:(NSString *)path;
 - (void)refreshCurrentPage;
 
+// Form Manager
+
+- (NSString *)getJSONFormFields;
+- (NSString *)getJSONFormFieldsAtPage:(int)page;
+- (NSString *)setFormFieldWithJSON:(NSString *)json;
+
 @end

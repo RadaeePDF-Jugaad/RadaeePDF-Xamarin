@@ -23,8 +23,12 @@ namespace ReaderXamarin
 	
 		public override void DidShowReader()
 		{
-			Console.WriteLine("did show reader");
-		}
+            Console.WriteLine("did show reader");
+            string originjson = plugin.JSONFormFields;
+            Console.WriteLine("{0}", originjson);
+            string json = "{\"Pages\":[{\"Page\": 0,\"Annots\":[{\"FieldNameWithNO\":\"Text Field0\",\"ComboItemSel\": \"\",\"CheckStatus\": \"\",\"FieldName\": \"Text Field0\",\"Index\": \"10\",\"EditType\": \"1\",\"FieldFullName\": \"Text Field0\",\"PopupLabel\": \"\",\"SignStatus\": \"\",\"ComboItemCount\": \"\",\"FieldType\": \"2\",\"FieldFullName2\": \"Text Field0\",\"Type\": \"20\",\"ListItemCount\": \"\",\"EditText\": \"CIAONE BESTIA\"}]}]}";
+            plugin.SetFormFieldWithJSON(json);
+        }
 
 		public override void WillCloseReader()
 		{
@@ -92,12 +96,12 @@ namespace ReaderXamarin
              3: Horizontal mixed (LRM): paging and doublePage feature are availble only in this mode
 
              */
-			plugin.SetReaderViewMode(0); //Set Reader Mode
+			plugin.SetReaderViewMode(4); //Set Reader Mode
 			plugin.SetPagingEnabled(true); //paging
 			plugin.SetDoublePageEnabled(true); //double page render
 			plugin.ToggleThumbSeekBar(0); //Toggle Thumbnail/SeekBar
 
-            plugin.SearchImage = UIImage.FromBundle("btn_add.png");
+            //plugin.SearchImage = UIImage.FromBundle("btn_add.png");
 
 			//Set thumbnail view background
 			plugin.SetThumbnailBGColor(Convert.ToInt32("0x88000000", 16)); //AARRGGBB
@@ -129,7 +133,7 @@ namespace ReaderXamarin
 			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
 			//Open from url
-			UIViewController controller = plugin.Show("test.pdf", "");
+            UIViewController controller = plugin.Show("file://test_fields.pdf", "");
 
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);

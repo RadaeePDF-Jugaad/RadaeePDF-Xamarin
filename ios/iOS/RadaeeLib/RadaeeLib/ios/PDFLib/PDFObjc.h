@@ -25,7 +25,6 @@
 {
     PDF_DIB m_dib;
 }
-
 @property (nonatomic) bool cached;
 
 @property (readonly) PDF_DIB handle;
@@ -973,6 +972,7 @@
  * @param text contents to be set.in MultiLine mode: '\r' or '\n' means change line.in password mode the edit box always display "*". 
  * @return true or false.
  */
+- (bool)addEditText:(PDFPage *)page rect:(PDF_RECT)rect;
 -(bool)setEditText:(NSString *)val;
 -(bool)setEditFont:(PDFDocFont *)font;
 
@@ -1094,7 +1094,7 @@
 -(int)getSignStatus;
 -(PDFSign *)getSign;
 -(bool)MoveToPage:(PDFPage *)page :(const PDF_RECT *)rect;
--(BOOL)canMoveAnnot;
+- (BOOL)canMoveAnnot;
 -(PDF_OBJ_REF)getRef;
 
 @end
@@ -1405,6 +1405,7 @@
  * @return true or false.
  */
 -(bool)addContent:(PDFPageContent *)content :(bool)flush;
+- (bool)addAnnotEditText:(const PDF_RECT *)rect;
 @end
 
 @interface PDFImportCtx : NSObject

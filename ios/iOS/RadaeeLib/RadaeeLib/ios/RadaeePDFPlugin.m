@@ -688,36 +688,17 @@
 
 - (NSString *)getJSONFormFields
 {
-    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
-    return [fe jsonInfoForAllPages];
+    return [m_pdf getJSONFormFields];
 }
 
 - (NSString *)getJSONFormFieldsAtPage:(int)page
 {
-    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
-    return [fe jsonInfoForPage:page];
+    return [m_pdf getJSONFormFieldsAtPage:0];
 }
 
 - (NSString *)setFormFieldWithJSON:(NSString *)json
 {
-    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
-    
-    NSError *error;
-    if (json && json.length > 0) {
-        [fe setInfoWithJson:json error:&error];
-        
-        if (error) {
-            return error.description;
-        } else
-        {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Radaee-Refresh-Page" object:nil];
-        }
-    } else
-    {
-        return @"JSON not valid";
-    }
-    
-    return @"";
+    return [m_pdf setFormFieldWithJSON:json];
 }
 
 #pragma mark - Reader Delegate
