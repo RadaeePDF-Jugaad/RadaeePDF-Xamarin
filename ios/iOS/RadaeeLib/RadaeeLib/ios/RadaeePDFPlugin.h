@@ -127,6 +127,9 @@
 - (NSData *)getImageForPage:(int)page;
 - (BOOL)addAnnotAttachment:(NSString *)path;
 - (BOOL)renderAnnotToFile:(int)index atPage:(int)pageno savePath:(NSString *)path size:(CGSize )size;
+- (BOOL)flatAnnots;
+- (BOOL)flatAnnotAtPage:(int)pageno;
+- (BOOL)saveDocumentToPath:(NSString *)path;
 
 // Form Manager
 

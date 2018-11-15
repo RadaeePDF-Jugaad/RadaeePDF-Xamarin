@@ -466,6 +466,37 @@
     return [m_pdf saveImageFromAnnotAtIndex:index atPage:pageno savePath:path size:size];
 }
 
+- (BOOL)flatAnnots
+{
+    
+    if([m_pdf flatAnnots])
+    {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+- (BOOL)flatAnnotAtPage:(int)pageno
+{
+    if([m_pdf flatAnnotAtPage:pageno])
+    {
+        return YES;
+    } else {
+        return NO;
+    }
+    
+}
+- (BOOL)saveDocumentToPath:(NSString *)path
+{
+    if([m_pdf saveDocumentToPath:path])
+    {
+        return YES;
+    } else {
+        return NO;
+    }
+    
+}
+
 - (BOOL)addAnnotAttachment:(NSString *)path
 {
     PDFDoc *doc = [m_pdf getDoc];
