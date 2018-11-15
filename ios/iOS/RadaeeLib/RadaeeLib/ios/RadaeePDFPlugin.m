@@ -468,33 +468,15 @@
 
 - (BOOL)flatAnnots
 {
-    
-    if([m_pdf flatAnnots])
-    {
-        return YES;
-    } else {
-        return NO;
-    }
+    return [m_pdf flatAnnots];
 }
 - (BOOL)flatAnnotAtPage:(int)pageno
 {
-    if([m_pdf flatAnnotAtPage:pageno])
-    {
-        return YES;
-    } else {
-        return NO;
-    }
-    
+    return [m_pdf flatAnnotAtPage:pageno];
 }
 - (BOOL)saveDocumentToPath:(NSString *)path
 {
-    if([m_pdf saveDocumentToPath:path])
-    {
-        return YES;
-    } else {
-        return NO;
-    }
-    
+    return [m_pdf saveDocumentToPath:path];
 }
 
 - (BOOL)addAnnotAttachment:(NSString *)path
