@@ -85,6 +85,8 @@ namespace ReaderXamarin
 			//Activate license
 			plugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO", 2);
 
+            plugin.HideSearchImage = true;
+
 			//General settings
 
 			//render type
@@ -133,7 +135,7 @@ namespace ReaderXamarin
 			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
 			//Open from url
-            UIViewController controller = plugin.Show("file://test_fields.pdf", "");
+            UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
 
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);

@@ -716,7 +716,10 @@ extern NSMutableString *pdfPath;
 
 - (void)setReaderViewMode:(int)mode
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
     
     int currentPage = [m_view vGetCurrentPage];
     if( m_view != nil )
@@ -966,7 +969,10 @@ extern NSMutableString *pdfPath;
 
 - (void)didSelectDrawMode:(int)mode
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
     
     switch (mode) {
         case 0:
@@ -1278,7 +1284,7 @@ extern NSMutableString *pdfPath;
 
 - (void)printPdf
 {
-    NSString *path = [pdfPath stringByAppendingString:pdfName];
+    NSString *path = [pdfPath stringByAppendingPathComponent:pdfName];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         UIAlertView *alter = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"PDF file not available"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -1624,9 +1630,8 @@ extern NSMutableString *pdfPath;
         [self.navigationController popViewControllerAnimated:YES];
         [self goToSearchResult:index];
     } else {
-        [self dismissViewControllerAnimated:YES completion:^{
-            [self goToSearchResult:index];
-        }];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) [self dismissViewControllerAnimated:YES completion:nil];
+        [self goToSearchResult:index];
     }
 }
 
