@@ -35,7 +35,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,37 +50,43 @@
         case 0:
         {
             cell.textLabel.text = NSLocalizedString(@"Ink", nil);
-            cell.imageView.image = [UIImage imageNamed:@"btn_annot_ink"];
+            cell.imageView.image = (_lineImage) ? _lineImage : [UIImage imageNamed:@"btn_annot_ink"];
             break;
         }
         case 1:
         {
             cell.textLabel.text = NSLocalizedString(@"Line", nil);
-            cell.imageView.image = [UIImage imageNamed:@"btn_annot_line"];
+            cell.imageView.image = (_rowImage) ? _rowImage : [UIImage imageNamed:@"btn_annot_line"];
             break;
         }
         case 2:
         {
             cell.textLabel.text = NSLocalizedString(@"Rect", nil);
-            cell.imageView.image = [UIImage imageNamed:@"btn_annot_rect"];
+            cell.imageView.image = (_rectImage) ? _rectImage : [UIImage imageNamed:@"btn_annot_rect"];
             break;
         }
         case 3:
         {
             cell.textLabel.text = NSLocalizedString(@"Ellipse", nil);
-            cell.imageView.image = [UIImage imageNamed:@"btn_annot_ellipse"];
+            cell.imageView.image = (_ellipseImage) ? _ellipseImage : [UIImage imageNamed:@"btn_annot_ellipse"];
             break;
         }
         case 4:
         {
             cell.textLabel.text = NSLocalizedString(@"Stamp", nil);
-            cell.imageView.image = [UIImage imageNamed:@"pdf_custom_stamp"];
+            cell.imageView.image = (_bitmapImage) ? _bitmapImage : [UIImage imageNamed:@"pdf_custom_stamp"];
             break;
         }
         case 5:
         {
             cell.textLabel.text = NSLocalizedString(@"Note", nil);
-            cell.imageView.image = [UIImage imageNamed:@"btn_annot_note"];
+            cell.imageView.image = (_noteImage) ? _noteImage : [UIImage imageNamed:@"btn_annot_note"];
+            break;
+        }
+        case 6:
+        {
+            cell.textLabel.text = NSLocalizedString(@"Signature", nil);
+            cell.imageView.image = (_signatureImage) ? _signatureImage : [UIImage imageNamed:@"btn_annot_ink"];
             break;
         }
         default:

@@ -23,8 +23,8 @@ namespace ReaderXamarin
 	
 		public override void DidShowReader()
 		{
-			Console.WriteLine("did show reader");
-		}
+            Console.WriteLine("did show reader");
+        }
 
 		public override void WillCloseReader()
 		{
@@ -92,10 +92,12 @@ namespace ReaderXamarin
              3: Horizontal mixed (LRM): paging and doublePage feature are availble only in this mode
 
              */
-			plugin.SetReaderViewMode(0); //Set Reader Mode
+			plugin.SetReaderViewMode(4); //Set Reader Mode
 			plugin.SetPagingEnabled(true); //paging
 			plugin.SetDoublePageEnabled(true); //double page render
 			plugin.ToggleThumbSeekBar(0); //Toggle Thumbnail/SeekBar
+
+            //plugin.SearchImage = UIImage.FromBundle("btn_add.png");
 
 			//Set thumbnail view background
 			plugin.SetThumbnailBGColor(Convert.ToInt32("0x88000000", 16)); //AARRGGBB
@@ -109,10 +111,10 @@ namespace ReaderXamarin
 			//In double page mode, show the first page as single page
 			plugin.SetFirstPageCover(true);
 
-			//Set immersive mode
-			//plugin.SetImmersive(true);
+            //Set immersive mode
+            //plugin.SetImmersive(true);
 
-			/*
+            /*
              SetColor, Available features
 
              0: inkColor
@@ -124,10 +126,10 @@ namespace ReaderXamarin
              6: selColor
             */
 
-			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
+            //plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
-			//Open from url
-			UIViewController controller = plugin.Show("test.pdf", "");
+            //Open from url
+            UIViewController controller = plugin.Show("file://help.pdf", "");
 
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);
@@ -154,7 +156,6 @@ namespace ReaderXamarin
 			}
 			else
 			{
-
 				UIAlertView alert = new UIAlertView();
 				alert.Title = "Error";
 				alert.Message = "PDF not found";

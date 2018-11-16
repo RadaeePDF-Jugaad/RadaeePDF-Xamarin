@@ -19,15 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *viewMode = [UIImage imageNamed:@"btn_view"];
-    UIImage *addBookMark = [UIImage imageNamed:@"btn_add"];
-    UIImage *bookMarkList = [UIImage imageNamed:@"btn_show"];
-    UIImage *viewMenu = [UIImage imageNamed:@"btn_outline"];
-    UIImage *savePDF = [UIImage imageNamed:@"btn_save"];
-    UIImage *printPDF = [UIImage imageNamed:@"btn_print"];
+    UIImage *viewMode = (_viewModeImage) ? _viewModeImage : [UIImage imageNamed:@"btn_view"];
+    UIImage *addBookMark = (_addBookmarkImage) ? _addBookmarkImage : [UIImage imageNamed:@"btn_add"];
+    UIImage *bookMarkList = (_bookmarkImage) ? _bookmarkImage : [UIImage imageNamed:@"btn_show"];
+    UIImage *viewMenu = (_outlineImage) ? _outlineImage : [UIImage imageNamed:@"btn_outline"];
+    UIImage *savePDF = (_saveImage) ? _saveImage : [UIImage imageNamed:@"btn_save"];
+    UIImage *printPDF = (_printImage) ? _printImage : [UIImage imageNamed:@"btn_print"];
     
-    actionTitle = [NSArray arrayWithObjects:NSLocalizedString(@"Add Bookmark", nil), NSLocalizedString(@"Bookmark List", nil), NSLocalizedString(@"View Mode", nil), NSLocalizedString(@"Save", nil), NSLocalizedString(@"Print", nil), nil];
-    actionImage = [NSArray arrayWithObjects:addBookMark, bookMarkList, viewMenu, savePDF, printPDF, nil];
+    actionTitle = [NSArray arrayWithObjects:NSLocalizedString(@"View Mode", nil),NSLocalizedString(@"Add Bookmark", nil), NSLocalizedString(@"Bookmark List", nil), NSLocalizedString(@"View Menu", nil), NSLocalizedString(@"Save", nil), NSLocalizedString(@"Print", nil), nil];
+    actionImage = [NSArray arrayWithObjects:viewMode, addBookMark, bookMarkList, viewMenu, savePDF, printPDF, nil];
     self.tableView.scrollEnabled = NO;
 }
 

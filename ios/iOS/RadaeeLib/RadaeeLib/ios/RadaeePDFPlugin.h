@@ -75,13 +75,19 @@
 @property (nonatomic) int viewMode;
 
 @property (strong, nonatomic) NSString *lastOpenedPath;
+@property (strong, nonatomic) UIImage *closeImage;
 @property (strong, nonatomic) UIImage *viewModeImage;
 @property (strong, nonatomic) UIImage *searchImage;
 @property (strong, nonatomic) UIImage *bookmarkImage;
+@property (strong, nonatomic) UIImage *addBookmarkImage;
 @property (strong, nonatomic) UIImage *outlineImage;
 @property (strong, nonatomic) UIImage *lineImage;
+@property (strong, nonatomic) UIImage *rowImage;
 @property (strong, nonatomic) UIImage *rectImage;
 @property (strong, nonatomic) UIImage *ellipseImage;
+@property (strong, nonatomic) UIImage *bitmapImage;
+@property (strong, nonatomic) UIImage *noteImage;
+@property (strong, nonatomic) UIImage *signatureImage;
 @property (strong, nonatomic) UIImage *printImage;
 @property (strong, nonatomic) UIImage *gridImage;
 @property (strong, nonatomic) UIImage *deleteImage;
@@ -89,21 +95,24 @@
 @property (strong, nonatomic) UIImage *removeImage;
 @property (strong, nonatomic) UIImage *prevImage;
 @property (strong, nonatomic) UIImage *nextImage;
+@property (strong, nonatomic) UIImage *undoImage;
+@property (strong, nonatomic) UIImage *redoImage;
+@property (strong, nonatomic) UIImage *performImage;
+@property (strong, nonatomic) UIImage *moreImage;
+@property (strong, nonatomic) UIImage *drawImage;
+@property (strong, nonatomic) UIImage *selectImage;
+@property (strong, nonatomic) UIImage *saveImage;
 
-@property (nonatomic) BOOL hideViewModeImage;
 @property (nonatomic) BOOL hideSearchImage;
-@property (nonatomic) BOOL hideBookmarkImage;
-@property (nonatomic) BOOL hideBookmarkListImage;
-@property (nonatomic) BOOL hideOutlineImage;
-@property (nonatomic) BOOL hideLineImage;
-@property (nonatomic) BOOL hideRectImage;
-@property (nonatomic) BOOL hideEllipseImage;
-@property (nonatomic) BOOL hidePrintImage;
+@property (nonatomic) BOOL hideDrawImage;
+@property (nonatomic) BOOL hideSelImage;
+@property (nonatomic) BOOL hideUndoImage;
+@property (nonatomic) BOOL hideRedoImage;
+@property (nonatomic) BOOL hideMoreImage;
 @property (nonatomic) BOOL hideGridImage;
 
 @property (nonatomic, weak) UIViewController *viewController;
 
-- (void)pluginInitialize;
 - (id)show:(NSString *)file withPassword:(NSString *)password;
 - (id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave;
 - (void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
@@ -118,12 +127,14 @@
 - (NSData *)getImageForPage:(int)page;
 - (BOOL)addAnnotAttachment:(NSString *)path;
 - (BOOL)renderAnnotToFile:(int)index atPage:(int)pageno savePath:(NSString *)path size:(CGSize )size;
+- (BOOL)flatAnnots;
+- (BOOL)flatAnnotAtPage:(int)pageno;
+- (BOOL)saveDocumentToPath:(NSString *)path;
 
 // Form Manager
 
 - (NSString *)getJSONFormFields;
 - (NSString *)getJSONFormFieldsAtPage:(int)page;
-
 - (NSString *)setFormFieldWithJSON:(NSString *)json;
 
 + (RadaeePDFPlugin *)pluginInit;

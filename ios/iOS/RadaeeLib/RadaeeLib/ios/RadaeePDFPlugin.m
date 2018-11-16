@@ -189,7 +189,7 @@
         //Open PDF file
         result = [m_pdf PDFopenMem: buffer :(int)filesize1 :nil];
     } else {
-        result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave];
+        result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave author:g_author];
     }
 
     NSLog(@"%d", result);
@@ -211,33 +211,43 @@
 
 - (void)setHiddenButtons
 {
-#if IS_DEMO == 1
-    //DEMO implementation
-    
-    [m_pdf setHideViewModeImage:_hideViewModeImage];
-    [m_pdf setHideSearchImage:_hideSearchImage];
-    [m_pdf setHideBookmarkImage:_hideBookmarkImage];
-    [m_pdf setHideBookmarkListImage:_hideBookmarkListImage];
-    [m_pdf setHideOutlineImage:_hideOutlineImage];
-    [m_pdf setHideLineImage:_hideLineImage];
-    [m_pdf setHideRectImage:_hideRectImage];
-    [m_pdf setHideEllipseImage:_hideEllipseImage];
-    [m_pdf setHidePrintImage:_hidePrintImage];
-    [m_pdf setHideGridImage:YES];
-#else
-    //Standard implemention
+    m_pdf.hideSearchImage = _hideSearchImage;
+    m_pdf.hideDrawImage = _hideDrawImage;
+    m_pdf.hideSelImage = _hideSelImage;
+    m_pdf.hideUndoImage = _hideUndoImage;
+    m_pdf.hideRedoImage = _hideRedoImage;
+    m_pdf.hideMoreImage = _hideMoreImage;
+    m_pdf.hideGridImage = YES;
+}
 
-    [m_pdf setHideViewModeImage:_hideViewModeImage];
-    [m_pdf setHideSearchImage:_hideSearchImage];
-    [m_pdf setHideBookmarkImage:YES];
-    [m_pdf setHideBookmarkListImage:YES];
-    [m_pdf setHideOutlineImage:YES];
-    [m_pdf setHideLineImage:YES];
-    [m_pdf setHideRectImage:YES];
-    [m_pdf setHideEllipseImage:YES];
-    [m_pdf setHidePrintImage:YES];
-    [m_pdf setHideGridImage:_hideGridImage];
-#endif
+- (void)setImageButtons
+{
+    [m_pdf setViewModeImage:_viewModeImage];
+    [m_pdf setSearchImage:_searchImage];
+    [m_pdf setLineImage:_lineImage];
+    [m_pdf setRectImage:_rectImage];
+    [m_pdf setRowImage:_rowImage];
+    [m_pdf setEllipseImage:_ellipseImage];
+    [m_pdf setBitmapImage:_bitmapImage];
+    [m_pdf setNoteImage:_noteImage];
+    [m_pdf setSignatureImage:_signatureImage];
+    [m_pdf setBookmarkImage:_bookmarkImage];
+    [m_pdf setAddBookmarkImage:_addBookmarkImage];
+    [m_pdf setOutlineImage:_outlineImage];
+    [m_pdf setPrintImage:_printImage];
+    [m_pdf setGridImage:_gridImage];
+    [m_pdf setUndoImage:_undoImage];
+    [m_pdf setRedoImage:_redoImage];
+    [m_pdf setMoreImage:_redoImage];
+    [m_pdf setRemoveImage:_redoImage];
+    [m_pdf setPrevImage:_prevImage];
+    [m_pdf setNextImage:_nextImage];
+    [m_pdf setPerformImage:_performImage];
+    [m_pdf setDeleteImage:_deleteImage];
+    [m_pdf setDoneImage:_doneImage];
+    [m_pdf setDrawImage:_drawImage];
+    [m_pdf setSelectImage:_selectImage];
+    [m_pdf setSaveImage:_saveImage];
 }
 
 - (void)setThumbnailBGColor:(int)color
@@ -311,35 +321,10 @@
     [self setDoublePageEnabled:g_double_page_enabled];
     
     [m_pdf setFirstPageCover:firstPageCover];
-    
-#if IS_DEMO == 1
-    [m_pdf setDoubleTapZoomMode:1];
-#else
     [m_pdf setDoubleTapZoomMode:doubleTapZoomMode];
-#endif
     [m_pdf setImmersive:isImmersive];
     
-    [m_pdf setViewModeImage:[UIImage imageNamed:@"btn_view.png"]];
-    [m_pdf setSearchImage:[UIImage imageNamed:@"btn_search.png"]];
-    [m_pdf setLineImage:[UIImage imageNamed:@"btn_annot_ink.png"]];
-    [m_pdf setRectImage:[UIImage imageNamed:@"btn_annot_rect.png"]];
-    [m_pdf setEllipseImage:[UIImage imageNamed:@"btn_annot_ellipse.png"]];
-    [m_pdf setOutlineImage:[UIImage imageNamed:@"btn_outline.png"]];
-    [m_pdf setPrintImage:[UIImage imageNamed:@"btn_print.png"]];
-    [m_pdf setGridImage:[UIImage imageNamed:@"btn_grid.png"]];
-    [m_pdf setUndoImage:[UIImage imageNamed:@"btn_undo.png"]];
-    [m_pdf setRedoImage:[UIImage imageNamed:@"btn_redo.png"]];
-    [m_pdf setMoreImage:[UIImage imageNamed:@"btn_more.png"]];
-    
-    [m_pdf setRemoveImage:[UIImage imageNamed:@"annot_remove.png"]];
-    
-    [m_pdf setPrevImage:[UIImage imageNamed:@"btn_left.png"]];
-    [m_pdf setNextImage:[UIImage imageNamed:@"btn_right.png"]];
-    
-    [m_pdf setPerformImage:[UIImage imageNamed:@"btn_perform.png"]];
-    [m_pdf setDeleteImage:[UIImage imageNamed:@"btn_remove.png"]];
-    
-    [m_pdf setDoneImage:[UIImage imageNamed:@"btn_done.png"]];
+    [self setImageButtons];
     
     [self setHiddenButtons];
     
@@ -479,6 +464,19 @@
     }
     
     return [m_pdf saveImageFromAnnotAtIndex:index atPage:pageno savePath:path size:size];
+}
+
+- (BOOL)flatAnnots
+{
+    return [m_pdf flatAnnots];
+}
+- (BOOL)flatAnnotAtPage:(int)pageno
+{
+    return [m_pdf flatAnnotAtPage:pageno];
+}
+- (BOOL)saveDocumentToPath:(NSString *)path
+{
+    return [m_pdf saveDocumentToPath:path];
 }
 
 - (BOOL)addAnnotAttachment:(NSString *)path
@@ -703,36 +701,17 @@
 
 - (NSString *)getJSONFormFields
 {
-    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
-    return [fe jsonInfoForAllPages];
+    return [m_pdf getJSONFormFields];
 }
 
 - (NSString *)getJSONFormFieldsAtPage:(int)page
 {
-    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
-    return [fe jsonInfoForPage:page];
+    return [m_pdf getJSONFormFieldsAtPage:0];
 }
 
 - (NSString *)setFormFieldWithJSON:(NSString *)json
 {
-    RDFormManager *fe = [[RDFormManager alloc] initWithDoc:[m_pdf getDoc]];
-    
-    NSError *error;
-    if (json && json.length > 0) {
-        [fe setInfoWithJson:json error:&error];
-        
-        if (error) {
-            return error.description;
-        } else
-        {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Radaee-Refresh-Page" object:nil];
-        }
-    } else
-    {
-        return @"JSON not valid";
-    }
-    
-    return @"";
+    return [m_pdf setFormFieldWithJSON:json];
 }
 
 #pragma mark - Reader Delegate
