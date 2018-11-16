@@ -1,6 +1,0 @@
-/Volumes/SSD Manu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.dll
-/Volumes/SSD Manu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/bin/Debug/RDPDFViewXamarin.pdb
-/Volumes/SSD Manu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewLib.csprojResolveAssemblyReference.cache
-/Volumes/SSD Manu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewLib.csproj.CoreCompileInputs.cache
-/Volumes/SSD Manu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewXamarin.dll
-/Volumes/SSD Manu/Progetti/Radaee/Xamarin/git/RadaeePDF-Xamarin/ios/RDPDFViewXamarin/RDPDFViewXamarin/obj/Debug/RDPDFViewXamarin.pdb
