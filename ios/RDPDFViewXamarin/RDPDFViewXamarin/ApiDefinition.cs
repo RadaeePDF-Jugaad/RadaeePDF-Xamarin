@@ -269,6 +269,18 @@ namespace RadaeeLib
         [Export("renderAnnotToFile:atPage:savePath:size:")]
         bool RenderAnnotToFile(int index, int pageno, string path, CGSize size);
 
+        // -(BOOL)flatAnnotAtPage:(int)pageno;
+        [Export("flatAnnotAtPage:")]
+        bool FlatAnnotAtPage(int page);
+
+        // -(BOOL)flatAnnots;
+        [Export("flatAnnots")]
+        bool FlatAnnots { get; }
+
+        // -(BOOL)saveDocumentToPath:(NSString *)path;
+        [Export("saveDocumentToPath:")]
+        bool SaveDocumentToPath(string path);
+
         // -(NSString *)getJSONFormFields;
         [Export("getJSONFormFields")]
         string JSONFormFields { get; }

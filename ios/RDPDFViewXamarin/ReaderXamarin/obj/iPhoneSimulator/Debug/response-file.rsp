@@ -3,7 +3,7 @@
 --executable=ReaderXamarin
 --debug
 --sdkroot=/Applications/Xcode.app/Contents/Developer
---sdk=12.0
+--sdk=12.1
 --targetver=9.3
 --aot-options=-O=-float32
 --http-message-handler=HttpClientHandler

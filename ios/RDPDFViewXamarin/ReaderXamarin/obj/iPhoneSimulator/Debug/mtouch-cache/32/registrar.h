@@ -105,6 +105,7 @@
 	-(BOOL) addAnnotAttachment:(NSString *)p0;
 	-(BOOL) encryptDocAs:(NSString *)p0 userPwd:(NSString *)p1 ownerPwd:(NSString *)p2 permission:(int)p3 method:(int)p4 idString:(NSString *)p5;
 	-(NSString *) extractTextFromPage:(int)p0;
+	-(BOOL) flatAnnotAtPage:(int)p0;
 	-(NSData *) getImageForPage:(int)p0;
 	-(NSString *) getJSONFormFieldsAtPage:(int)p0;
 	-(UIViewController *) openFromAssets:(NSString *)p0 withPassword:(NSString *)p1;
@@ -112,6 +113,7 @@
 	-(UIViewController *) openFromPath:(NSString *)p0 withPassword:(NSString *)p1;
 	-(void) refreshCurrentPage;
 	-(BOOL) renderAnnotToFile:(int)p0 atPage:(int)p1 savePath:(NSString *)p2 size:(CGSize)p3;
+	-(BOOL) saveDocumentToPath:(NSString *)p0;
 	-(void) setColor:(int)p0 forFeature:(int)p1;
 	-(void) setDelegate:(NSObject *)p0;
 	-(void) setDoublePageEnabled:(BOOL)p0;
@@ -143,6 +145,7 @@
 	-(UIImage *) ellipseImage;
 	-(void) setEllipseImage:(UIImage *)p0;
 	-(NSString *) fileState;
+	-(BOOL) flatAnnots;
 	-(UIImage *) gridImage;
 	-(void) setGridImage:(UIImage *)p0;
 	-(BOOL) hideDrawImage;

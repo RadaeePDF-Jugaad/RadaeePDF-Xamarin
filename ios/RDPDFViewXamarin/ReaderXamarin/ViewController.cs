@@ -24,10 +24,6 @@ namespace ReaderXamarin
 		public override void DidShowReader()
 		{
             Console.WriteLine("did show reader");
-            string originjson = plugin.JSONFormFields;
-            Console.WriteLine("{0}", originjson);
-            string json = "{\"Pages\":[{\"Page\": 0,\"Annots\":[{\"FieldNameWithNO\":\"Text Field0\",\"ComboItemSel\": \"\",\"CheckStatus\": \"\",\"FieldName\": \"Text Field0\",\"Index\": \"10\",\"EditType\": \"1\",\"FieldFullName\": \"Text Field0\",\"PopupLabel\": \"\",\"SignStatus\": \"\",\"ComboItemCount\": \"\",\"FieldType\": \"2\",\"FieldFullName2\": \"Text Field0\",\"Type\": \"20\",\"ListItemCount\": \"\",\"EditText\": \"CIAONE BESTIA\"}]}]}";
-            plugin.SetFormFieldWithJSON(json);
         }
 
 		public override void WillCloseReader()
@@ -85,8 +81,6 @@ namespace ReaderXamarin
 			//Activate license
 			plugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO", 2);
 
-            plugin.HideSearchImage = true;
-
 			//General settings
 
 			//render type
@@ -117,10 +111,10 @@ namespace ReaderXamarin
 			//In double page mode, show the first page as single page
 			plugin.SetFirstPageCover(true);
 
-			//Set immersive mode
-			//plugin.SetImmersive(true);
+            //Set immersive mode
+            //plugin.SetImmersive(true);
 
-			/*
+            /*
              SetColor, Available features
 
              0: inkColor
@@ -132,10 +126,10 @@ namespace ReaderXamarin
              6: selColor
             */
 
-			//plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
+            //plugin.SetColor(Convert.ToInt32("0xFF00FF00", 16), 0); //Set Ink Annotation color to green (ARGB)
 
-			//Open from url
-            UIViewController controller = plugin.OpenFromAssets("test.pdf", "");
+            //Open from url
+            UIViewController controller = plugin.Show("file://help.pdf", "");
 
 			//Set Callback for RadaeeDelegate
 			selector = new RadaeeDelegate(plugin);
@@ -162,7 +156,6 @@ namespace ReaderXamarin
 			}
 			else
 			{
-
 				UIAlertView alert = new UIAlertView();
 				alert.Title = "Error";
 				alert.Message = "PDF not found";

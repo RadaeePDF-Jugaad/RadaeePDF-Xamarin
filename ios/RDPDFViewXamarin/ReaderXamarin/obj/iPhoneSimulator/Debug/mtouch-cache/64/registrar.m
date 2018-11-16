@@ -195,7 +195,7 @@ static void native_to_managed_trampoline_5 (id self, SEL _cmd, MonoMethod **mana
 	nsobj0 = (NSObject *) p0;
 	if (nsobj0) {
 		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
-		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, &exception_gchandle);
+		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
 		if (exception_gchandle != 0) goto exception_handling;
 		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
 	}
@@ -248,7 +248,7 @@ static BOOL native_to_managed_trampoline_6 (id self, SEL _cmd, MonoMethod **mana
 	nsobj0 = (NSObject *) p0;
 	if (nsobj0) {
 		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
-		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, &exception_gchandle);
+		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
 		if (exception_gchandle != 0) goto exception_handling;
 		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
 	}
@@ -256,7 +256,7 @@ static BOOL native_to_managed_trampoline_6 (id self, SEL _cmd, MonoMethod **mana
 	nsobj1 = (NSObject *) p1;
 	if (nsobj1) {
 		paramtype1 = xamarin_get_parameter_type (managed_method, 1);
-		mobj1 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj1, false, paramtype1, &created1, &exception_gchandle);
+		mobj1 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj1, false, paramtype1, &created1, _cmd, managed_method, &exception_gchandle);
 		if (exception_gchandle != 0) goto exception_handling;
 		xamarin_verify_parameter (mobj1, _cmd, self, nsobj1, 1, mono_class_from_mono_type (paramtype1), managed_method);
 	}
@@ -305,7 +305,7 @@ static void native_to_managed_trampoline_7 (id self, SEL _cmd, MonoMethod **mana
 	nsobj0 = (NSObject *) p0;
 	if (nsobj0) {
 		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
-		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, &exception_gchandle);
+		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
 		if (exception_gchandle != 0) goto exception_handling;
 		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
 	}
@@ -549,7 +549,7 @@ static void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **man
 	nsobj0 = (NSObject *) p0;
 	if (nsobj0) {
 		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
-		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, &exception_gchandle);
+		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
 		if (exception_gchandle != 0) goto exception_handling;
 		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
 	}
@@ -589,7 +589,7 @@ static void native_to_managed_trampoline_14 (id self, SEL _cmd, MonoMethod **man
 	nsobj0 = (NSObject *) p0;
 	if (nsobj0) {
 		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
-		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, &exception_gchandle);
+		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
 		if (exception_gchandle != 0) goto exception_handling;
 		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
 	}
@@ -619,7 +619,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x1AB04);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x1B104);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -667,13 +667,13 @@ exception_handling:;
 	-(void) BridgeSelector
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x18304);
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x18904);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x22C04);
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x23204);
 	}
 @end
 
@@ -716,20 +716,20 @@ exception_handling:;
 	-(void) xamarinApplySelector
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x20A04);
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x21004);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x22C04);
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x23204);
 	}
 
 	-(id) init
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x20904);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x20F04);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -749,7 +749,7 @@ exception_handling:;
 	-(void) xamarinApplySelector
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x20D04);
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x21304);
 	}
 @end
 
@@ -765,14 +765,14 @@ exception_handling:;
 	-(void) xamarinApplySelector
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x20F04);
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x21504);
 	}
 
 	-(id) init
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x20E04);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x21404);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [Foundation_NSDispatcher class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -792,7 +792,7 @@ exception_handling:;
 	-(void) xamarinApplySelector
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x21104);
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x21704);
 	}
 @end
 
@@ -872,7 +872,7 @@ exception_handling:;
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x22C04);
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x23204);
 	}
 
 	-(id) init
@@ -900,7 +900,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x8806);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x8B06);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -998,7 +998,7 @@ exception_handling:;
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x22C04);
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x23204);
 	}
 @end
 
@@ -1060,7 +1060,7 @@ exception_handling:;
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x22C04);
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x23204);
 	}
 @end
 
@@ -1103,20 +1103,20 @@ exception_handling:;
 	+(void) drain:(NSObject *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x25304);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x25904);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x22C04);
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x23204);
 	}
 
 	-(id) init
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x25104);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x25704);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -1127,39 +1127,39 @@ exception_handling:;
 
 
 	static MTClassMap __xamarin_class_map [] = {
-		{ NULL, 0x6A04 /* #0 'NSObject' => 'Foundation.NSObject, Xamarin.iOS' */ },
-		{ NULL, 0x5104 /* #1 'UIApplicationDelegate' => 'UIKit.UIApplicationDelegate, Xamarin.iOS' */ },
-		{ NULL, 0x5304 /* #2 'UIResponder' => 'UIKit.UIResponder, Xamarin.iOS' */ },
-		{ NULL, 0x4F04 /* #3 'UIViewController' => 'UIKit.UIViewController, Xamarin.iOS' */ },
-		{ NULL, 0x4E04 /* #4 'UIView' => 'UIKit.UIView, Xamarin.iOS' */ },
-		{ NULL, 0x4304 /* #5 'UIAlertView' => 'UIKit.UIAlertView, Xamarin.iOS' */ },
-		{ NULL, 0x4504 /* #6 'UIApplication' => 'UIKit.UIApplication, Xamarin.iOS' */ },
-		{ NULL, 0x4904 /* #7 'UIControl' => 'UIKit.UIControl, Xamarin.iOS' */ },
-		{ NULL, 0x4604 /* #8 'UIButton' => 'UIKit.UIButton, Xamarin.iOS' */ },
-		{ NULL, 0x4704 /* #9 'UIColor' => 'UIKit.UIColor, Xamarin.iOS' */ },
-		{ NULL, 0x4804 /* #10 'UIKit_UIControlEventProxy' => 'UIKit.UIControlEventProxy, Xamarin.iOS' */ },
-		{ NULL, 0x4A04 /* #11 'UIImage' => 'UIKit.UIImage, Xamarin.iOS' */ },
-		{ NULL, 0x4C04 /* #12 'UINavigationBar' => 'UIKit.UINavigationBar, Xamarin.iOS' */ },
-		{ NULL, 0x4D04 /* #13 'UINavigationController' => 'UIKit.UINavigationController, Xamarin.iOS' */ },
-		{ NULL, 0x5004 /* #14 'UIWindow' => 'UIKit.UIWindow, Xamarin.iOS' */ },
-		{ NULL, 0x5504 /* #15 'NSArray' => 'Foundation.NSArray, Xamarin.iOS' */ },
-		{ NULL, 0x5A04 /* #16 'NSMutableArray' => 'Foundation.NSMutableArray, Xamarin.iOS' */ },
-		{ NULL, 0x5B04 /* #17 'NSNull' => 'Foundation.NSNull, Xamarin.iOS' */ },
-		{ NULL, 0x5C04 /* #18 'NSRunLoop' => 'Foundation.NSRunLoop, Xamarin.iOS' */ },
-		{ NULL, 0x5D04 /* #19 'NSString' => 'Foundation.NSString, Xamarin.iOS' */ },
-		{ NULL, 0x6404 /* #20 'Foundation_NSDispatcher' => 'Foundation.NSDispatcher, Xamarin.iOS' */ },
-		{ NULL, 0x6504 /* #21 '__MonoMac_NSSynchronizationContextDispatcher' => 'Foundation.NSSynchronizationContextDispatcher, Xamarin.iOS' */ },
-		{ NULL, 0x6604 /* #22 'Foundation_NSAsyncDispatcher' => 'Foundation.NSAsyncDispatcher, Xamarin.iOS' */ },
-		{ NULL, 0x6704 /* #23 '__MonoMac_NSAsyncSynchronizationContextDispatcher' => 'Foundation.NSAsyncSynchronizationContextDispatcher, Xamarin.iOS' */ },
-		{ NULL, 0x6804 /* #24 'NSAutoreleasePool' => 'Foundation.NSAutoreleasePool, Xamarin.iOS' */ },
-		{ NULL, 0x7104 /* #25 'NSException' => 'Foundation.NSException, Xamarin.iOS' */ },
-		{ NULL, 0x5604 /* #26 'NSData' => 'Foundation.NSData, Xamarin.iOS' */ },
-		{ NULL, 0x5804 /* #27 'NSDictionary' => 'Foundation.NSDictionary, Xamarin.iOS' */ },
+		{ NULL, 0x6B04 /* #0 'NSObject' => 'Foundation.NSObject, Xamarin.iOS' */ },
+		{ NULL, 0x5204 /* #1 'UIApplicationDelegate' => 'UIKit.UIApplicationDelegate, Xamarin.iOS' */ },
+		{ NULL, 0x5404 /* #2 'UIResponder' => 'UIKit.UIResponder, Xamarin.iOS' */ },
+		{ NULL, 0x5004 /* #3 'UIViewController' => 'UIKit.UIViewController, Xamarin.iOS' */ },
+		{ NULL, 0x4F04 /* #4 'UIView' => 'UIKit.UIView, Xamarin.iOS' */ },
+		{ NULL, 0x4404 /* #5 'UIAlertView' => 'UIKit.UIAlertView, Xamarin.iOS' */ },
+		{ NULL, 0x4604 /* #6 'UIApplication' => 'UIKit.UIApplication, Xamarin.iOS' */ },
+		{ NULL, 0x4A04 /* #7 'UIControl' => 'UIKit.UIControl, Xamarin.iOS' */ },
+		{ NULL, 0x4704 /* #8 'UIButton' => 'UIKit.UIButton, Xamarin.iOS' */ },
+		{ NULL, 0x4804 /* #9 'UIColor' => 'UIKit.UIColor, Xamarin.iOS' */ },
+		{ NULL, 0x4904 /* #10 'UIKit_UIControlEventProxy' => 'UIKit.UIControlEventProxy, Xamarin.iOS' */ },
+		{ NULL, 0x4B04 /* #11 'UIImage' => 'UIKit.UIImage, Xamarin.iOS' */ },
+		{ NULL, 0x4D04 /* #12 'UINavigationBar' => 'UIKit.UINavigationBar, Xamarin.iOS' */ },
+		{ NULL, 0x4E04 /* #13 'UINavigationController' => 'UIKit.UINavigationController, Xamarin.iOS' */ },
+		{ NULL, 0x5104 /* #14 'UIWindow' => 'UIKit.UIWindow, Xamarin.iOS' */ },
+		{ NULL, 0x5604 /* #15 'NSArray' => 'Foundation.NSArray, Xamarin.iOS' */ },
+		{ NULL, 0x5B04 /* #16 'NSMutableArray' => 'Foundation.NSMutableArray, Xamarin.iOS' */ },
+		{ NULL, 0x5C04 /* #17 'NSNull' => 'Foundation.NSNull, Xamarin.iOS' */ },
+		{ NULL, 0x5D04 /* #18 'NSRunLoop' => 'Foundation.NSRunLoop, Xamarin.iOS' */ },
+		{ NULL, 0x5E04 /* #19 'NSString' => 'Foundation.NSString, Xamarin.iOS' */ },
+		{ NULL, 0x6504 /* #20 'Foundation_NSDispatcher' => 'Foundation.NSDispatcher, Xamarin.iOS' */ },
+		{ NULL, 0x6604 /* #21 '__MonoMac_NSSynchronizationContextDispatcher' => 'Foundation.NSSynchronizationContextDispatcher, Xamarin.iOS' */ },
+		{ NULL, 0x6704 /* #22 'Foundation_NSAsyncDispatcher' => 'Foundation.NSAsyncDispatcher, Xamarin.iOS' */ },
+		{ NULL, 0x6804 /* #23 '__MonoMac_NSAsyncSynchronizationContextDispatcher' => 'Foundation.NSAsyncSynchronizationContextDispatcher, Xamarin.iOS' */ },
+		{ NULL, 0x6904 /* #24 'NSAutoreleasePool' => 'Foundation.NSAutoreleasePool, Xamarin.iOS' */ },
+		{ NULL, 0x7204 /* #25 'NSException' => 'Foundation.NSException, Xamarin.iOS' */ },
+		{ NULL, 0x5704 /* #26 'NSData' => 'Foundation.NSData, Xamarin.iOS' */ },
+		{ NULL, 0x5904 /* #27 'NSDictionary' => 'Foundation.NSDictionary, Xamarin.iOS' */ },
 		{ NULL, 0x300 /* #28 'AppDelegate' => 'ReaderXamarin.AppDelegate, ReaderXamarin' */ },
 		{ NULL, 0x506 /* #29 'RadaeePDFPluginDelegate' => 'RadaeeLib.RadaeePDFPluginDelegate, RDPDFViewXamarin' */ },
 		{ NULL, 0x400 /* #30 'ReaderXamarin_RadaeeDelegate' => 'ReaderXamarin.RadaeeDelegate, ReaderXamarin' */ },
 		{ NULL, 0x500 /* #31 'ViewController' => 'ReaderXamarin.ViewController, ReaderXamarin' */ },
-		{ NULL, 0x6C04 /* #32 '__NSObject_Disposer' => 'Foundation.NSObject+NSObject_Disposer, Xamarin.iOS' */ },
+		{ NULL, 0x6D04 /* #32 '__NSObject_Disposer' => 'Foundation.NSObject+NSObject_Disposer, Xamarin.iOS' */ },
 		{ NULL, 0x206 /* #33 'RadaeePDFPlugin' => 'RadaeeLib.RadaeePDFPlugin, RDPDFViewXamarin' */ },
 		{ NULL, 0 },
 	};
@@ -1173,7 +1173,7 @@ exception_handling:;
 
 	static const MTProtocolWrapperMap __xamarin_protocol_wrapper_map [] = {
 		{ 0x306 /* RadaeeLib.IRadaeePDFPluginDelegate */, 0x406 /* RadaeePDFPluginDelegateWrapper */ },
-		{ 0x7204 /* Foundation.INSObjectProtocol */, 0x7304 /* NSObjectProtocolWrapper */ },
+		{ 0x7304 /* Foundation.INSObjectProtocol */, 0x7404 /* NSObjectProtocolWrapper */ },
 	};
 
 	static struct MTRegistrationMap __xamarin_registration_map = {
