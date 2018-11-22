@@ -191,6 +191,7 @@
     <BundleResource Include="Resources\fdat\stdRes\11" />
     <BundleResource Include="Resources\fdat\stdRes\12" />
     <BundleResource Include="Resources\fdat\stdRes\13" />
+    <BundleResource Include="Resources\btn_share.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
