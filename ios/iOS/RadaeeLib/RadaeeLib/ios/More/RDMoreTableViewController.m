@@ -60,10 +60,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row < 6) {
+    if (indexPath.row < 7) {
         [_delegate selectAction:(int)indexPath.row];
-    } else {
-        [_delegate selectAction:6];
     }
 }
 
