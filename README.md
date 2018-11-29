@@ -13,7 +13,8 @@ This plugin is released under the Apache 2.0 license.
 http://www.radaeepdf.com/ecommerce/technical-specification   
 
 GEAR.it and Radaee Studio distribute the plugin as-is for free.
-GEAR.it is the maintainer of the plug-in project.
+GEAR.it is the maintainer of the plug-in's project.
+
 If you, as user and developer need new features or fixes you shall submit them here on GitHub.
 
 ## Usage
