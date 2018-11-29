@@ -15,7 +15,7 @@ http://www.radaeepdf.com/ecommerce/technical-specification
 GEAR.it and Radaee Studio distribute the plugin as-is for free.
 GEAR.it is the maintainer of the plug-in's project.
 
-If you, as user and developer need new features or fixes you shall submit them here on GitHub.
+If you, as user or developer need new features or fixes you shall submit them here on GitHub.
 
 ## Usage
 
