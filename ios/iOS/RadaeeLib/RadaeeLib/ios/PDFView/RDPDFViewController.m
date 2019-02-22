@@ -168,11 +168,7 @@ extern NSMutableString *pdfPath;
     {
         [self.navigationController.navigationBar setTranslucent:defaultTranslucent];
         
-        if (_delegate && [_delegate respondsToSelector:@selector(willCloseReader)]) {
-            [_delegate willCloseReader];
-        }
-        
-       //[m_ThumbView vClose] should before [m_view vClose]
+        //[m_ThumbView vClose] should before [m_view vClose]
         [m_Thumbview vClose];
         [m_Gridview vClose];
         [m_view vClose];
@@ -1331,7 +1327,7 @@ extern NSMutableString *pdfPath;
     }
 }
 
--(void) sharePDF
+-(void)sharePDF
 {
     NSURL *url = [NSURL fileURLWithPath:[pdfPath stringByAppendingPathComponent:pdfName]];
     if(url)
@@ -1506,6 +1502,10 @@ extern NSMutableString *pdfPath;
 
 -(void)PDFClose
 {
+    if (_delegate && [_delegate respondsToSelector:@selector(willCloseReader)] && m_doc != nil) {
+        [_delegate willCloseReader];
+    }
+    
     if( m_view != nil )
     {
         [m_view vClose];
@@ -2109,7 +2109,7 @@ extern NSMutableString *pdfPath;
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //2strikethrough
-        [m_view vSelMarkup:annotUnderlineColor :2];
+        [m_view vSelMarkup:annotStrikeoutColor :2];
         
         if(m_bSel)
         {
@@ -2468,12 +2468,20 @@ extern NSMutableString *pdfPath;
 
 #pragma mark - Flat annot
 
-- (bool)flatAnnotAtPage:(int)page
+- (bool)flatAnnotAtPage:(int)page doc:(PDFDoc *)doc
 {
-    if(page >= 0 && page < m_doc.pageCount)
+    if (doc == nil) {
+        doc = [[PDFDoc alloc] init];
+        [doc open:[pdfPath stringByAppendingPathComponent:pdfName] :@""];
+    }
+    
+    if(page >= 0 && page < doc.pageCount)
     {
-        PDFPage *ppage = [m_doc page:page];
-        return [ppage flatAnnots];
+        PDFPage *ppage = [doc page:page];
+        [ppage objsStart];
+        if ([ppage flatAnnots]) {
+            return [doc save];
+        }
     }
     
     return NO;
@@ -2481,8 +2489,14 @@ extern NSMutableString *pdfPath;
 
 - (bool)flatAnnots
 {
-    for (int page = 0; page != [m_doc pageCount]; page++) {
-        [self flatAnnotAtPage:page];
+    PDFDoc *doc = [[PDFDoc alloc] init];
+    if (m_doc == nil) {
+        [doc open:[pdfPath stringByAppendingPathComponent:pdfName] :@""];
+    } else {
+        doc = m_doc;
+    }
+    for (int page = 0; page != [doc pageCount]; page++) {
+        [self flatAnnotAtPage:page doc:doc];
         if (page == [m_view vGetCurrentPage]) [m_view refreshCurrentPage];
     }
     return nil;
@@ -2535,4 +2549,5 @@ extern NSMutableString *pdfPath;
     
     return @"";
 }
+
 @end

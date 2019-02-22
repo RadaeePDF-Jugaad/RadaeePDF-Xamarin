@@ -472,7 +472,7 @@
 }
 - (BOOL)flatAnnotAtPage:(int)pageno
 {
-    return [m_pdf flatAnnotAtPage:pageno];
+    return [m_pdf flatAnnotAtPage:pageno doc:nil];
 }
 - (BOOL)saveDocumentToPath:(NSString *)path
 {
