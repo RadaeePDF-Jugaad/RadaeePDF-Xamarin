@@ -94,6 +94,8 @@ bool g_cover_page_enabled = false;
 bool g_fit_signature_to_field = true;
 bool g_execute_annot_JS = true;
 bool g_dark_mode = false;
+bool g_annot_lock = false;
+bool g_annot_readonly = false;
 PDF_RENDER_MODE renderQuality = mode_normal;
 
 uint annotHighlightColor = 0xFFFFFF00;

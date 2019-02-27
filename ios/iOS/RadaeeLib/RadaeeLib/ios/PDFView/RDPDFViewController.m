@@ -21,7 +21,7 @@
 #import "SignatureViewController.h"
 #import "ViewModeTableViewController.h"
 
-@interface RDPDFViewController () <UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,RDToolBarDelegate,DrawModeDelegate,RDMoreTableViewControllerDelegate, SignatureDelegate, ViewModeDelegate, BookmarkTableViewDelegate, RDAnnotListViewControllerDelegate, SearchResultViewControllerDelegate,saveTextAnnotDelegate>
+@interface RDPDFViewController () <UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,UIDocumentInteractionControllerDelegate,RDToolBarDelegate,DrawModeDelegate,RDMoreTableViewControllerDelegate, SignatureDelegate, ViewModeDelegate, BookmarkTableViewDelegate, RDAnnotListViewControllerDelegate, SearchResultViewControllerDelegate,saveTextAnnotDelegate>
 {
     int             selectItem;
     UIPickerView    *pickerView;
@@ -1528,7 +1528,7 @@ extern NSMutableString *pdfPath;
     [m_SearchBar resignFirstResponder];
     if (m_SearchBar.text.length >40)
     {
-        return ;
+        return;
     }
     
     if (SEARCH_LIST == 1) {
@@ -1544,7 +1544,7 @@ extern NSMutableString *pdfPath;
     [m_searchBar resignFirstResponder];
     if (m_searchBar.text.length >40)
     {
-        return ;
+        return;
     }
     
     if (SEARCH_LIST == 1) {
@@ -1565,7 +1565,7 @@ extern NSMutableString *pdfPath;
     [m_searchBar resignFirstResponder];
     if (m_searchBar.text.length >40)
     {
-        return ;
+        return;
     }
     
     if (SEARCH_LIST == 1) {
@@ -1817,10 +1817,6 @@ extern NSMutableString *pdfPath;
 //enter annotation status.
 -(void)OnAnnotClicked:(PDFPage *)page :(PDFAnnot *)annot :(float)x :(float)y
 {
-    //TEST EditText method
-    //if([annot fieldType]==2){
-    //    [annot setEditText:@"123"];
-    //}
     m_Thumbview.hidden = NO;
     [pageNumLabel setHidden:false];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -1866,6 +1862,8 @@ extern NSMutableString *pdfPath;
         [textAnnotVC setPos_y:posy];
         [textAnnotVC setText:text];
         [textAnnotVC setSubject:subj];
+        if ([annot isAnnotReadOnly])
+            textAnnotVC.readOnly = YES;
         textAnnotVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         UINavigationController *navController = [[UINavigationController alloc]
                                                  initWithRootViewController:textAnnotVC];
