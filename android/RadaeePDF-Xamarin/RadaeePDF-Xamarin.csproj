@@ -12,7 +12,6 @@
     <RootNamespace>RadaeePDF_Xamarin</RootNamespace>
     <AssemblyName>RadaeePDF-Xamarin</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
