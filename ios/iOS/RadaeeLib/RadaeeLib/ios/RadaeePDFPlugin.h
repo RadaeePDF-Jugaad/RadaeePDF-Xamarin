@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-//#import "PDFView.h"
+#import "PDFView/RDGlobal.h"
 
 @class PDFDoc;
 @class RDPDFViewController;
@@ -172,4 +172,5 @@
 
 - (void)refreshCurrentPage;
 
+- (id)getGlobal;
 @end

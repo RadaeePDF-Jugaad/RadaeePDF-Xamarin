@@ -189,7 +189,7 @@
         //Open PDF file
         result = [m_pdf PDFopenMem: buffer :(int)filesize1 :nil];
     } else {
-        result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave author:g_author];
+        result = [m_pdf PDFOpen:filePath :password atPage:page readOnly:readOnly autoSave:autoSave author:GLOBAL.g_author];
     }
 
     NSLog(@"%d", result);
@@ -317,8 +317,8 @@
         [self setReaderViewMode:3];
     }
     
-    [self setPagingEnabled:g_paging_enabled];
-    [self setDoublePageEnabled:g_double_page_enabled];
+    [self setPagingEnabled:GLOBAL.g_paging_enabled];
+    [self setDoublePageEnabled:GLOBAL.g_double_page_enabled];
     
     [m_pdf setFirstPageCover:firstPageCover];
     [m_pdf setDoubleTapZoomMode:doubleTapZoomMode];
@@ -504,12 +504,12 @@
 
 - (void)setPagingEnabled:(BOOL)enabled
 {
-    g_paging_enabled = enabled;
+    GLOBAL.g_paging_enabled = enabled;
 }
 
 - (void)setDoublePageEnabled:(BOOL)enabled
 {
-    g_double_page_enabled = enabled;
+    GLOBAL.g_double_page_enabled = enabled;
 }
 
 - (BOOL)setReaderViewMode:(int)mode
@@ -581,17 +581,21 @@
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    g_def_view = _viewMode; //(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DefView"];
-    g_MatchWholeWord = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"MatchWholeWord"];
+    GLOBAL.g_def_view = _viewMode; //(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DefView"];
+    GLOBAL.g_MatchWholeWord = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"MatchWholeWord"];
     
-    g_rect_color = rectColor;
-    g_ink_color = inkColor;
-    g_sel_color = selColor;
-    g_oval_color = ovalColor;
-    annotHighlightColor = highlightColor;
-    annotUnderlineColor = underlineColor;
-    annotStrikeoutColor = strikeoutColor;
+    GLOBAL.g_rect_color = rectColor;
+    GLOBAL.g_ink_color = inkColor;
+    GLOBAL.g_sel_color = selColor;
+    GLOBAL.g_oval_color = ovalColor;
+    GLOBAL.annotHighlightColor = highlightColor;
+    GLOBAL.annotUnderlineColor = underlineColor;
+    GLOBAL.annotStrikeoutColor = strikeoutColor;
     //annotSquigglyColor = 0xFF00FF00;
+}
+
+- (id)getGlobal {
+    return GLOBAL;
 }
 
 #pragma mark - Bookmarks

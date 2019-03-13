@@ -365,5 +365,175 @@ namespace RadaeeLib
         // -(void)refreshCurrentPage;
         [Export("refreshCurrentPage")]
         void RefreshCurrentPage();
-	}
+
+        // -(id)getGlobal;
+        [Export("getGlobal")]
+        NSObject GetGlobal { get; }
+    }
+
+    // @interface RDGlobal : NSObject
+    [BaseType(typeof(NSObject))]
+    interface RDGlobal
+    {
+        // @property (nonatomic, strong) NSString * text;
+        [Export("text", ArgumentSemantic.Strong)]
+        string Text { get; set; }
+
+        // @property (nonatomic, strong) NSMutableString * pdfName;
+        [Export("pdfName", ArgumentSemantic.Strong)]
+        NSMutableString PdfName { get; set; }
+
+        // @property (nonatomic, strong) NSMutableString * pdfPath;
+        [Export("pdfPath", ArgumentSemantic.Strong)]
+        NSMutableString PdfPath { get; set; }
+
+        // @property (nonatomic, strong) NSString * g_author;
+        [Export("g_author", ArgumentSemantic.Strong)]
+        string G_author { get; set; }
+
+        // @property (nonatomic) int g_render_quality;
+        [Export("g_render_quality")]
+        int G_render_quality { get; set; }
+
+        // @property (nonatomic) uint g_rect_color;
+        [Export("g_rect_color")]
+        uint G_rect_color { get; set; }
+
+        // @property (nonatomic) uint g_line_color;
+        [Export("g_line_color")]
+        uint G_line_color { get; set; }
+
+        // @property (nonatomic) uint g_ink_color;
+        [Export("g_ink_color")]
+        uint G_ink_color { get; set; }
+
+        // @property (nonatomic) uint g_sel_color;
+        [Export("g_sel_color")]
+        uint G_sel_color { get; set; }
+
+        // @property (nonatomic) uint g_oval_color;
+        [Export("g_oval_color")]
+        uint G_oval_color { get; set; }
+
+        // @property (nonatomic) _Bool g_DarkMode;
+        [Export("g_DarkMode")]
+        bool G_DarkMode { get; set; }
+
+        // @property (nonatomic) _Bool g_CaseSensitive;
+        [Export("g_CaseSensitive")]
+        bool G_CaseSensitive { get; set; }
+
+        // @property (nonatomic) _Bool g_MatchWholeWord;
+        [Export("g_MatchWholeWord")]
+        bool G_MatchWholeWord { get; set; }
+
+        // @property (nonatomic) _Bool g_sel_right;
+        [Export("g_sel_right")]
+        bool G_sel_right { get; set; }
+
+        // @property (nonatomic) _Bool g_ScreenAwake;
+        [Export("g_ScreenAwake")]
+        bool G_ScreenAwake { get; set; }
+
+        // @property (nonatomic) float g_Ink_Width;
+        [Export("g_Ink_Width")]
+        float G_Ink_Width { get; set; }
+
+        // @property (nonatomic) float g_rect_Width;
+        [Export("g_rect_Width")]
+        float G_rect_Width { get; set; }
+
+        // @property (nonatomic) float g_line_Width;
+        [Export("g_line_Width")]
+        float G_line_Width { get; set; }
+
+        // @property (nonatomic) float g_swipe_speed;
+        [Export("g_swipe_speed")]
+        float G_swipe_speed { get; set; }
+
+        // @property (nonatomic) float g_swipe_distance;
+        [Export("g_swipe_distance")]
+        float G_swipe_distance { get; set; }
+
+        // @property (nonatomic) int g_def_view;
+        [Export("g_def_view")]
+        int G_def_view { get; set; }
+
+        // @property (nonatomic) float g_zoom_level;
+        [Export("g_zoom_level")]
+        float G_zoom_level { get; set; }
+
+        // @property (nonatomic) _Bool g_static_scale;
+        [Export("g_static_scale")]
+        bool G_static_scale { get; set; }
+
+        // @property (nonatomic) _Bool g_paging_enabled;
+        [Export("g_paging_enabled")]
+        bool G_paging_enabled { get; set; }
+
+        // @property (nonatomic) _Bool g_double_page_enabled;
+        [Export("g_double_page_enabled")]
+        bool G_double_page_enabled { get; set; }
+
+        // @property (nonatomic) _Bool g_curl_enabled;
+        [Export("g_curl_enabled")]
+        bool G_curl_enabled { get; set; }
+
+        // @property (nonatomic) _Bool g_cover_page_enabled;
+        [Export("g_cover_page_enabled")]
+        bool G_cover_page_enabled { get; set; }
+
+        // @property (nonatomic) _Bool g_fit_signature_to_field;
+        [Export("g_fit_signature_to_field")]
+        bool G_fit_signature_to_field { get; set; }
+
+        // @property (nonatomic) _Bool g_execute_annot_JS;
+        [Export("g_execute_annot_JS")]
+        bool G_execute_annot_JS { get; set; }
+
+        // @property (nonatomic) _Bool g_dark_mode;
+        [Export("g_dark_mode")]
+        bool G_dark_mode { get; set; }
+
+        // @property (nonatomic) _Bool g_annot_lock;
+        [Export("g_annot_lock")]
+        bool G_annot_lock { get; set; }
+
+        // @property (nonatomic) _Bool g_annot_readonly;
+        [Export("g_annot_readonly")]
+        bool G_annot_readonly { get; set; }
+
+        // @property (nonatomic) _Bool g_auto_launch_link;
+        [Export("g_auto_launch_link")]
+        bool G_auto_launch_link { get; set; }
+
+        // @property (nonatomic) int renderQuality;
+        [Export("renderQuality")]
+        int RenderQuality { get; set; }
+
+        // @property (nonatomic) uint annotHighlightColor;
+        [Export("annotHighlightColor")]
+        uint AnnotHighlightColor { get; set; }
+
+        // @property (nonatomic) uint annotUnderlineColor;
+        [Export("annotUnderlineColor")]
+        uint AnnotUnderlineColor { get; set; }
+
+        // @property (nonatomic) uint annotStrikeoutColor;
+        [Export("annotStrikeoutColor")]
+        uint AnnotStrikeoutColor { get; set; }
+
+        // @property (nonatomic) uint annotSquigglyColor;
+        [Export("annotSquigglyColor")]
+        uint AnnotSquigglyColor { get; set; }
+
+        // +(RDGlobal *)sharedInstance;
+        [Static]
+        [Export("sharedInstance")]
+        RDGlobal SharedInstance { get; }
+
+        // -(void)setup;
+        [Export("setup")]
+        void Setup();
+    }
 }
