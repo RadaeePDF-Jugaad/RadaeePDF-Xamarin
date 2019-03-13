@@ -8,6 +8,12 @@
 
 #import "PDFView.h"
 #import <QuartzCore/QuartzCore.h>
+#import <OpenGLES/ES1/gl.h>
+#import <OpenGLES/ES1/glext.h>
+#import "PDFV.h"
+#import "ReaderHandler.h"
+#import "RDUtils.h"
+#import "ActionStackManager.h"
 
 extern int g_def_view;
 extern float g_Ink_Width;
@@ -26,6 +32,94 @@ extern NSString *g_author;
 
 #define TEMP_SIGNATURE @"radaee_signature_temp.png"
 #define TEMP_SIGNATURE_EMPTY @"radaee_empty_signature_temp.png"
+
+@interface PDFView () <PDFVInnerDel, UIScrollViewDelegate, PDFJSDelegate> {
+#ifdef FTS_ENABLED
+    FTSOccurrence *currentOccurrence;
+#endif
+    UIView *aview;
+    ActionStackManager *actionManger;
+    
+    UIImageView *imgAnnot;
+    NSString *tmpImage;
+    double lastAngle;
+    
+    BOOL readOnlyEnabled;
+    BOOL autoSaveEnabled;
+    
+    BOOL coverPage;
+    
+    BOOL isResizing;
+    BOOL isRotating;
+    
+    int doubleTapZoomMode;
+    int readerBackgroundColor;
+    
+    PDFDoc *m_doc;
+    PDFV *m_view;
+    PDFInk *m_ink;
+    PDF_POINT *m_lines;
+    PDF_POINT *m_rects;
+    PDF_POINT *m_ellipse;
+    UIView *m_child;
+    
+    PDFAnnot *m_annot;
+    struct PDFV_POS m_annot_pos;
+    PDF_RECT m_annot_rect;
+    
+    int m_lines_cnt;
+    int m_lines_max;
+    bool m_lines_drawing;
+    
+    int m_rects_cnt;
+    int m_rects_max;
+    bool m_rects_drawing;
+    
+    int m_ellipse_cnt;
+    int m_ellipse_max;
+    bool m_ellipse_drawing;
+    
+    int m_type;
+    
+    NSTimer *m_timer;
+    bool m_modified;
+    int m_w;
+    int m_h;
+    int m_cur_page;
+    
+    CGPoint zoomPoint;
+    bool isDoubleTapping;
+    
+    BOOL pagingEnabled;
+    BOOL doublePage;
+    
+    enum STATUS
+    {
+        sta_none,
+        sta_zoom,
+        sta_sel,
+        sta_annot,
+        sta_note,
+        sta_ink,
+        sta_line,
+        sta_rect,
+        sta_ellipse,
+        sta_image,
+    };
+    enum STATUS m_status;
+    NSTimeInterval m_tstamp;
+    NSTimeInterval m_tstamp_tap;
+    float m_tx;
+    float m_ty;
+    float m_px;
+    float m_py;
+    float m_zoom;
+    struct PDFV_POS m_zoom_pos;
+    float m_scale;
+    id<PDFViewDelegate> m_delegate;
+}
+
+@end
 
 @implementation PDFView
 

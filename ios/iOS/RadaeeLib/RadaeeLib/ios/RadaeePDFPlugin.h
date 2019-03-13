@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-//#import "PDFObjc.h"
+//#import "PDFView.h"
 
 @class PDFDoc;
 @class RDPDFViewController;

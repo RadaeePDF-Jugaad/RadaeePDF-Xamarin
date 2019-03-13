@@ -20,6 +20,7 @@
 #import "RDAnnotListViewController.h"
 #import "SignatureViewController.h"
 #import "ViewModeTableViewController.h"
+#import "RDFormManager.h"
 
 @interface RDPDFViewController () <UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,UIDocumentInteractionControllerDelegate,RDToolBarDelegate,DrawModeDelegate,RDMoreTableViewControllerDelegate, SignatureDelegate, ViewModeDelegate, BookmarkTableViewDelegate, RDAnnotListViewControllerDelegate, SearchResultViewControllerDelegate,saveTextAnnotDelegate>
 {
