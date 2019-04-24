@@ -23,8 +23,7 @@
 @property (nonatomic) uint g_sel_color;
 @property (nonatomic) uint g_oval_color;
 
-@property (nonatomic) bool g_DarkMode;
-@property (nonatomic) bool  g_CaseSensitive;
+@property (nonatomic) bool g_CaseSensitive;
 @property (nonatomic) bool g_MatchWholeWord;
 @property (nonatomic) bool g_sel_right;
 @property (nonatomic) bool g_ScreenAwake;

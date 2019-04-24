@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A814D4D11E43852D00B4063A /* RDFormManager.h */; };
-		A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A814D4D21E43852D00B4063A /* RDFormManager.m */; };
 		A845ACDA1FDFDD3100ABFACB /* ReaderHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACC51FDFDC6300ABFACB /* ReaderHandler.h */; };
 		A845ACDB1FDFDD3100ABFACB /* RDExtendedSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACC81FDFDC6300ABFACB /* RDExtendedSearch.h */; };
 		A845ACDC1FDFDD3100ABFACB /* SearchResultTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A845ACCB1FDFDC6300ABFACB /* SearchResultTableViewController.h */; };
@@ -103,8 +101,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A814D4D11E43852D00B4063A /* RDFormManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDFormManager.h; sourceTree = "<group>"; };
-		A814D4D21E43852D00B4063A /* RDFormManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDFormManager.m; sourceTree = "<group>"; };
 		A845ACC51FDFDC6300ABFACB /* ReaderHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReaderHandler.h; sourceTree = "<group>"; };
 		A845ACC61FDFDC6300ABFACB /* ReaderHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderHandler.m; sourceTree = "<group>"; };
 		A845ACC81FDFDC6300ABFACB /* RDExtendedSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDExtendedSearch.h; sourceTree = "<group>"; };
@@ -248,8 +244,6 @@
 			children = (
 				A845ACD81FDFDC6300ABFACB /* RDUtils.h */,
 				A845ACD91FDFDC6300ABFACB /* RDUtils.m */,
-				A814D4D11E43852D00B4063A /* RDFormManager.h */,
-				A814D4D21E43852D00B4063A /* RDFormManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -450,7 +444,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A814D4D31E43852D00B4063A /* RDFormManager.h in Headers */,
 				A864EF8D1D17EBA400F4B976 /* RDPDFViewController.h in Headers */,
 				A845ACDA1FDFDD3100ABFACB /* ReaderHandler.h in Headers */,
 				A898046721909BA600D969ED /* RDAnnotToolBar.h in Headers */,
@@ -532,6 +525,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				"zh-Hans",
 				it,
@@ -576,7 +570,6 @@
 				A864EF781D17EBA400F4B976 /* PDFV.m in Sources */,
 				A898046621909BA600D969ED /* RDAnnotToolBar.m in Sources */,
 				A864EF7C1D17EBA400F4B976 /* PDFVFinder.m in Sources */,
-				A814D4D41E43852D00B4063A /* RDFormManager.m in Sources */,
 				A864EF761D17EBA400F4B976 /* PDFThumbView.m in Sources */,
 				A898045F21909B1000D969ED /* PDFGridView.m in Sources */,
 				A845ACE41FDFED5500ABFACB /* RDUtils.m in Sources */,

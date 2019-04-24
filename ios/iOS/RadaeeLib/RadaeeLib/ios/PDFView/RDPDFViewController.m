@@ -2526,7 +2526,7 @@ bool b_outline;
     return [fe jsonInfoForPage:page];
 }
 
-- (NSString *)setFormFieldWithJSON:(NSString *)json
+- (NSString *)setFormFieldsWithJSON:(NSString *)json
 {
     RDFormManager *fe = [[RDFormManager alloc] initWithDoc:m_doc];
     

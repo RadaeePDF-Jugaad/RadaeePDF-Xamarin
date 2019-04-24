@@ -289,9 +289,9 @@ namespace RadaeeLib
         [Export("getJSONFormFieldsAtPage:")]
         string GetJSONFormFieldsAtPage(int page);
 
-        // -(NSString *)setFormFieldWithJSON:(NSString *)json;
-        [Export("setFormFieldWithJSON:")]
-        string SetFormFieldWithJSON(string json);
+        // -(NSString *)setFormFieldsWithJSON:(NSString *)json;
+        [Export("setFormFieldsWithJSON:")]
+        string SetFormFieldsWithJSON(string json);
 
         // +(RadaeePDFPlugin *)pluginInit;
         [Static]

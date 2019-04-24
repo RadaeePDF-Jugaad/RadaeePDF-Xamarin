@@ -59,7 +59,6 @@
     _g_cover_page_enabled = false;
     _g_CaseSensitive = false;
     _g_MatchWholeWord = false;
-    _g_DarkMode =false;
     _g_sel_right=false;
     _g_ScreenAwake = false;
     _g_auto_launch_link = true;

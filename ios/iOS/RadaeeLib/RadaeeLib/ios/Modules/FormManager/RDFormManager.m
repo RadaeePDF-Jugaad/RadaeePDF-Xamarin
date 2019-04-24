@@ -71,7 +71,7 @@
                 [self parseAnnot:annot atPage:pdfPage error:error];
             }
         } else {
-           *error = [NSError errorWithDomain:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".ErrorDomain"] code:104 userInfo:@{@"annots-attribute": @"\"Annots\" attribute is missing"}];
+            *error = [NSError errorWithDomain:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".ErrorDomain"] code:104 userInfo:@{@"annots-attribute": @"\"Annots\" attribute is missing"}];
         }
     } else {
         *error = [NSError errorWithDomain:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".ErrorDomain"] code:103 userInfo:@{@"page-attribute": @"\"Page\" attribute is missing"}];
@@ -99,6 +99,12 @@
                 default:
                     break;
             }
+            
+            // Set readonly flag
+            [self setAnnot:annot readOnly:annotDict];
+            
+            // Set lock flag
+            [self setAnnot:annot locked:annotDict];
         } else {
             *error = [NSError errorWithDomain:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".ErrorDomain"] code:106 userInfo:@{@"annot-exist": [NSString stringWithFormat:@"Annot at index %i not exist", index]}];
         }
@@ -229,6 +235,22 @@
     }
 }
 
+// readonly
+
+- (void)setAnnot:(PDFAnnot *)annot readOnly:(NSDictionary *)dict {
+    if ([self isValidReadOnly:dict]) {
+        [annot setReadonly:[self getReadOnlyValue:dict]];
+    }
+}
+
+// locked
+
+- (void)setAnnot:(PDFAnnot *)annot locked:(NSDictionary *)dict {
+    if ([self isValidLock:dict]) {
+        [annot setLocked:[self getLockValue:dict]];
+    }
+}
+
 #pragma mark - Get Info
 
 //Get JSON string for a single page
@@ -322,20 +344,22 @@
             [dict setObject:[self valueForField:[NSNumber numberWithInt:[annot getComboItemCount]]] forKey:@"ComboItemCount"];
             
             /*
-            int count = [annot getListItemCount];
-            if (count > 0) {
-                int *sels = (int *)calloc( sizeof(int), [annot getListItemCount]);
-                int res = [annot getListSels:sels :count];
-                
-
-            }
-            */
+             int count = [annot getListItemCount];
+             if (count > 0) {
+             int *sels = (int *)calloc( sizeof(int), [annot getListItemCount]);
+             int res = [annot getListSels:sels :count];
+             
+             
+             }
+             */
             
             //[dict setObject:[self valueForField:[NSNumber numberWithInt:[annot getListSels:sels :count]]] forKey:@"ListSels"];
             [dict setObject:[self valueForField:[NSNumber numberWithInt:[annot getListItemCount]]] forKey:@"ListItemCount"];
             [dict setObject:[self valueForField:[NSNumber numberWithInt:[annot getEditType]]] forKey:@"EditType"];
             [dict setObject:[self valueForField:[NSNumber numberWithInt:[annot getSignStatus]]] forKey:@"SignStatus"];
             [dict setObject:[self valueForField:[annot getEditText]] forKey:@"EditText"];
+            [dict setObject:[self valueForField:[NSNumber numberWithBool:[annot isReadonly]]] forKey:@"ReadOnly"];
+            [dict setObject:[self valueForField:[NSNumber numberWithBool:[annot isLocked]]] forKey:@"Locked"];
         } @catch (NSException *exception) {
             dict = nil;
         }
@@ -398,6 +422,14 @@
     return NO;
 }
 
+- (BOOL)isValidReadOnly:(NSDictionary *)dict {
+    return ([dict objectForKey:@"ReadOnly"]) != nil;
+}
+
+- (BOOL)isValidLock:(NSDictionary *)dict {
+    return ([dict objectForKey:@"Locked"]) != nil;
+}
+
 - (NSString *)getEditTextValue:(NSDictionary *)dict
 {
     return [dict objectForKey:@"EditText"];
@@ -421,6 +453,16 @@
 - (int)getListSelValue:(NSDictionary *)dict
 {
     return [[dict objectForKey:@"ComboItemSel"] intValue];
+}
+
+- (BOOL)getReadOnlyValue:(NSDictionary *)dict
+{
+    return (BOOL)[[dict objectForKey:@"ReadOnly"] intValue];
+}
+
+- (BOOL)getLockValue:(NSDictionary *)dict
+{
+    return (BOOL)[[dict objectForKey:@"Locked"] intValue];
 }
 
 //Return string value for field

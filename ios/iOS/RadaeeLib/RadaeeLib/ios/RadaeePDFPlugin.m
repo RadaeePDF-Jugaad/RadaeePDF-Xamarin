@@ -713,9 +713,9 @@
     return [m_pdf getJSONFormFieldsAtPage:0];
 }
 
-- (NSString *)setFormFieldWithJSON:(NSString *)json
+- (NSString *)setFormFieldsWithJSON:(NSString *)json
 {
-    return [m_pdf setFormFieldWithJSON:json];
+    return [m_pdf setFormFieldsWithJSON:json];
 }
 
 #pragma mark - Reader Delegate
