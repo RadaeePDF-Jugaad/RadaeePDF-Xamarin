@@ -86,13 +86,14 @@
 
 void APP_Init()
 {
-    [[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:@"actBundleId"];
+    /*[[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:@"actBundleId"];
     [[NSUserDefaults standardUserDefaults] setObject:@"Radaee" forKey:@"actCompany"];
     [[NSUserDefaults standardUserDefaults] setObject:@"radaee_com@yahoo.cn" forKey:@"actEmail"];
     [[NSUserDefaults standardUserDefaults] setObject:@"89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO" forKey:@"actSerial"];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:2] forKey:@"actActivationType"];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
+     */
     
     BOOL isActive = NO;
     int licenseType = [[[NSUserDefaults standardUserDefaults] objectForKey:@"actActivationType"] intValue];
