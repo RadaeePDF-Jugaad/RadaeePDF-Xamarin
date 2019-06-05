@@ -135,7 +135,7 @@
 
 - (NSString *)getJSONFormFields;
 - (NSString *)getJSONFormFieldsAtPage:(int)page;
-- (NSString *)setFormFieldWithJSON:(NSString *)json;
+- (NSString *)setFormFieldsWithJSON:(NSString *)json;
 
 + (RadaeePDFPlugin *)pluginInit;
 

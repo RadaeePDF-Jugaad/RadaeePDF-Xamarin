@@ -468,7 +468,9 @@
         [m_view vRenderSync:m_cur_page + 1];
     }
     
-    [m_view vRenderSync:m_cur_page];
+    if (m_cur_page >= 0 && m_cur_page < [m_doc pageCount]) {
+        [m_view vRenderSync:m_cur_page];
+    }
     
     [self refresh];
 }
@@ -1968,7 +1970,7 @@
                 PDFMatrix *mat = [vpage CreateInvertMatrix:self.contentOffset.x * m_scale :self.contentOffset.y * m_scale];
                 [mat transformPoint:pt_cur];
                 [mat transformPoint:&pt_cur[1]];
-                [page addAnnotLine:pt_cur :&pt_cur[1] :GLOBAL.g_rect_Width :0 :1 :GLOBAL.g_rect_color :GLOBAL.g_rect_color];
+                [page addAnnotLine:pt_cur :&pt_cur[1] :GLOBAL.g_rect_Width :0 :1 :GLOBAL.g_line_color :GLOBAL.g_line_color];
                 
                 //Action Stack Manger
                 [actionManger push:[[ASAdd alloc] initWithPage:pos.pageno page:page index:(page.annotCount - 1)]];
