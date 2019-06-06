@@ -222,6 +222,7 @@
 
 - (void)setImageButtons
 {
+    [m_pdf setCloseImage:_closeImage];
     [m_pdf setViewModeImage:_viewModeImage];
     [m_pdf setSearchImage:_searchImage];
     [m_pdf setLineImage:_lineImage];
