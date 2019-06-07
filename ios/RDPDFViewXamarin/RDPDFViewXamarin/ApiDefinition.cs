@@ -5,375 +5,9 @@ using UIKit;
 
 namespace RadaeeLib
 {
-	// @protocol RadaeePDFPluginDelegate
-	[BaseType(typeof(NSObject))]
-	[Protocol, Model]
-	interface RadaeePDFPluginDelegate
-	{
-		// @required -(void)willShowReader;
-		[Abstract]
-		[Export ("willShowReader")]
-		void WillShowReader ();
-
-		// @required -(void)didShowReader;
-		[Abstract]
-		[Export ("didShowReader")]
-		void DidShowReader ();
-
-		// @required -(void)willCloseReader;
-		[Abstract]
-		[Export ("willCloseReader")]
-		void WillCloseReader ();
-
-		// @required -(void)didCloseReader;
-		[Abstract]
-		[Export ("didCloseReader")]
-		void DidCloseReader ();
-
-		// @required -(void)didChangePage:(int)page;
-		[Abstract]
-		[Export ("didChangePage:")]
-		void DidChangePage (int page);
-
-		// @required -(void)didSearchTerm:(NSString *)term found:(BOOL)found;
-		[Abstract]
-		[Export ("didSearchTerm:found:")]
-		void DidSearchTerm (string term, bool found);
-
-		// @required -(void)didTapOnPage:(int)page atPoint:(CGPoint)point;
-		[Abstract]
-		[Export ("didTapOnPage:atPoint:")]
-		void DidTapOnPage (int page, CGPoint point);
-
-		// @required -(void)didDoubleTapOnPage:(int)page atPoint:(CGPoint)point;
-		[Abstract]
-		[Export("didDoubleTapOnPage:atPoint:")]
-		void DidDoubleTapOnPage(int page, CGPoint point);
-
-		// @required -(void)didLongPressOnPage:(int)page atPoint:(CGPoint)point;
-		[Abstract]
-		[Export("didLongPressOnPage:atPoint:")]
-		void DidLongPressOnPage(int page, CGPoint point);
-
-		// @required -(void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point;
-		[Abstract]
-		[Export ("didTapOnAnnotationOfType:atPage:atPoint:")]
-		void DidTapOnAnnotationOfType (int type, int page, CGPoint point);
-	}
-
-	// @interface RadaeePDFPlugin : NSObject
-	[BaseType (typeof(NSObject))]
-	interface RadaeePDFPlugin
-	{
-		// @property (nonatomic) int viewMode;
-        [Export("viewMode")]
-        int ViewMode { get; set; }
-
-        // @property (nonatomic, strong) NSString * lastOpenedPath;
-        [Export("lastOpenedPath", ArgumentSemantic.Strong)]
-        string LastOpenedPath { get; set; }
-
-        // @property (nonatomic, strong) UIImage * closeImage;
-        [Export("closeImage", ArgumentSemantic.Strong)]
-        UIImage CloseImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * viewModeImage;
-        [Export("viewModeImage", ArgumentSemantic.Strong)]
-        UIImage ViewModeImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * searchImage;
-        [Export("searchImage", ArgumentSemantic.Strong)]
-        UIImage SearchImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * bookmarkImage;
-        [Export("bookmarkImage", ArgumentSemantic.Strong)]
-        UIImage BookmarkImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * addBookmarkImage;
-        [Export("addBookmarkImage", ArgumentSemantic.Strong)]
-        UIImage AddBookmarkImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * outlineImage;
-        [Export("outlineImage", ArgumentSemantic.Strong)]
-        UIImage OutlineImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * lineImage;
-        [Export("lineImage", ArgumentSemantic.Strong)]
-        UIImage LineImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * rowImage;
-        [Export("rowImage", ArgumentSemantic.Strong)]
-        UIImage RowImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * rectImage;
-        [Export("rectImage", ArgumentSemantic.Strong)]
-        UIImage RectImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * ellipseImage;
-        [Export("ellipseImage", ArgumentSemantic.Strong)]
-        UIImage EllipseImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * bitmapImage;
-        [Export("bitmapImage", ArgumentSemantic.Strong)]
-        UIImage BitmapImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * noteImage;
-        [Export("noteImage", ArgumentSemantic.Strong)]
-        UIImage NoteImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * signatureImage;
-        [Export("signatureImage", ArgumentSemantic.Strong)]
-        UIImage SignatureImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * printImage;
-        [Export("printImage", ArgumentSemantic.Strong)]
-        UIImage PrintImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * gridImage;
-        [Export("gridImage", ArgumentSemantic.Strong)]
-        UIImage GridImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * deleteImage;
-        [Export("deleteImage", ArgumentSemantic.Strong)]
-        UIImage DeleteImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * doneImage;
-        [Export("doneImage", ArgumentSemantic.Strong)]
-        UIImage DoneImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * removeImage;
-        [Export("removeImage", ArgumentSemantic.Strong)]
-        UIImage RemoveImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * prevImage;
-        [Export("prevImage", ArgumentSemantic.Strong)]
-        UIImage PrevImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * nextImage;
-        [Export("nextImage", ArgumentSemantic.Strong)]
-        UIImage NextImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * undoImage;
-        [Export("undoImage", ArgumentSemantic.Strong)]
-        UIImage UndoImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * redoImage;
-        [Export("redoImage", ArgumentSemantic.Strong)]
-        UIImage RedoImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * performImage;
-        [Export("performImage", ArgumentSemantic.Strong)]
-        UIImage PerformImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * moreImage;
-        [Export("moreImage", ArgumentSemantic.Strong)]
-        UIImage MoreImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * drawImage;
-        [Export("drawImage", ArgumentSemantic.Strong)]
-        UIImage DrawImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * selectImage;
-        [Export("selectImage", ArgumentSemantic.Strong)]
-        UIImage SelectImage { get; set; }
-
-        // @property (nonatomic, strong) UIImage * saveImage;
-        [Export("saveImage", ArgumentSemantic.Strong)]
-        UIImage SaveImage { get; set; }
-
-        // @property (nonatomic) BOOL hideSearchImage;
-        [Export("hideSearchImage")]
-        bool HideSearchImage { get; set; }
-
-        // @property (nonatomic) BOOL hideDrawImage;
-        [Export("hideDrawImage")]
-        bool HideDrawImage { get; set; }
-
-        // @property (nonatomic) BOOL hideSelImage;
-        [Export("hideSelImage")]
-        bool HideSelImage { get; set; }
-
-        // @property (nonatomic) BOOL hideUndoImage;
-        [Export("hideUndoImage")]
-        bool HideUndoImage { get; set; }
-
-        // @property (nonatomic) BOOL hideRedoImage;
-        [Export("hideRedoImage")]
-        bool HideRedoImage { get; set; }
-
-        // @property (nonatomic) BOOL hideMoreImage;
-        [Export("hideMoreImage")]
-        bool HideMoreImage { get; set; }
-
-        // @property (nonatomic) BOOL hideGridImage;
-        [Export("hideGridImage")]
-        bool HideGridImage { get; set; }
-
-        // @property (nonatomic, weak) UIViewController * viewController;
-        [Export("viewController", ArgumentSemantic.Weak)]
-        UIViewController ViewController { get; set; }
-
-        // -(id)show:(NSString *)file withPassword:(NSString *)password;
-        [Export("show:withPassword:")]
-		UIViewController Show(string file, string password);
-
-        // -(id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave;
-        [Export("show:atPage:withPassword:readOnly:autoSave:")]
-		UIViewController Show(string file, int page, string password, bool readOnly, bool autoSave);
-
-        // -(void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
-        [Export("activateLicenseWithBundleId:company:email:key:licenseType:")]
-        void ActivateLicenseWithBundleId(string bundleId, string company, string email, string key, int type);
-
-        // -(id)openFromAssets:(NSString *)file withPassword:(NSString *)password;
-        [Export("openFromAssets:withPassword:")]
-		UIViewController OpenFromAssets(string file, string password);
-
-        // -(id)openFromPath:(NSString *)path withPassword:(NSString *)password;
-        [Export("openFromPath:withPassword:")]
-		UIViewController OpenFromPath(string path, string password);
-
-        // -(id)openFromMem:(NSData *)data withPassword:(NSString *)password;
-        [Export("openFromMem:withPassword:")]
-		UIViewController OpenFromMem(NSData data, string password);
-
-        // -(NSString *)fileState;
-        [Export("fileState")]
-        string FileState { get; }
-
-        // -(int)getPageNumber;
-        [Export("getPageNumber")]
-        int PageNumber { get; }
-
-        // -(int)getPageCount;
-        [Export("getPageCount")]
-        int PageCount { get; }
-
-        // -(NSString *)extractTextFromPage:(int)pageNum;
-        [Export("extractTextFromPage:")]
-        string ExtractTextFromPage(int pageNum);
-
-        // -(BOOL)encryptDocAs:(NSString *)path userPwd:(NSString *)userPwd ownerPwd:(NSString *)ownerPwd permission:(int)permission method:(int)method idString:(NSString *)idString;
-        [Export("encryptDocAs:userPwd:ownerPwd:permission:method:idString:")]
-        bool EncryptDocAs(string path, string userPwd, string ownerPwd, int permission, int method, string idString);
-
-        // -(NSData *)getImageForPage:(int)page;
-        [Export("getImageForPage:")]
-        NSData GetImageForPage(int page);
-
-        // -(BOOL)addAnnotAttachment:(NSString *)path;
-        [Export("addAnnotAttachment:")]
-        bool AddAnnotAttachment(string path);
-
-        // -(BOOL)renderAnnotToFile:(int)index atPage:(int)pageno savePath:(NSString *)path size:(CGSize)size;
-        [Export("renderAnnotToFile:atPage:savePath:size:")]
-        bool RenderAnnotToFile(int index, int pageno, string path, CGSize size);
-
-        // -(BOOL)flatAnnotAtPage:(int)pageno;
-        [Export("flatAnnotAtPage:")]
-        bool FlatAnnotAtPage(int page);
-
-        // -(BOOL)flatAnnots;
-        [Export("flatAnnots")]
-        bool FlatAnnots { get; }
-
-        // -(BOOL)saveDocumentToPath:(NSString *)path;
-        [Export("saveDocumentToPath:")]
-        bool SaveDocumentToPath(string path);
-
-        // -(NSString *)getJSONFormFields;
-        [Export("getJSONFormFields")]
-        string JSONFormFields { get; }
-
-        // -(NSString *)getJSONFormFieldsAtPage:(int)page;
-        [Export("getJSONFormFieldsAtPage:")]
-        string GetJSONFormFieldsAtPage(int page);
-
-        // -(NSString *)setFormFieldsWithJSON:(NSString *)json;
-        [Export("setFormFieldsWithJSON:")]
-        string SetFormFieldsWithJSON(string json);
-
-        // +(RadaeePDFPlugin *)pluginInit;
-        [Static]
-        [Export("pluginInit")]
-        RadaeePDFPlugin PluginInit { get; }
-
-        // +(NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName withPath:(BOOL)withPath;
-        [Static]
-        [Export("loadBookmarkForPdf:withPath:")]
-        NSMutableArray LoadBookmarkForPdf(string pdfName, bool withPath);
-
-        // +(NSString *)addToBookmarks:(NSString *)pdfPath page:(int)page label:(NSString *)label;
-        [Static]
-        [Export("addToBookmarks:page:label:")]
-        string AddToBookmarks(string pdfPath, int page, string label);
-
-        // +(void)removeBookmark:(int)page pdfPath:(NSString *)pdfPath;
-        [Static]
-        [Export("removeBookmark:pdfPath:")]
-        void RemoveBookmark(int page, string pdfPath);
-
-        // +(NSString *)getBookmarks:(NSString *)pdfPath;
-        [Static]
-        [Export("getBookmarks:")]
-        string GetBookmarks(string pdfPath);
-
-        // -(void)setPagingEnabled:(BOOL)enabled;
-        [Export("setPagingEnabled:")]
-        void SetPagingEnabled(bool enabled);
-
-        // -(void)setDoublePageEnabled:(BOOL)enabled;
-        [Export("setDoublePageEnabled:")]
-        void SetDoublePageEnabled(bool enabled);
-
-        // -(BOOL)setReaderViewMode:(int)mode;
-        [Export("setReaderViewMode:")]
-        bool SetReaderViewMode(int mode);
-
-        // -(void)toggleThumbSeekBar:(int)mode;
-        [Export("toggleThumbSeekBar:")]
-        void ToggleThumbSeekBar(int mode);
-
-        // -(void)setColor:(int)color forFeature:(int)feature;
-        [Export("setColor:forFeature:")]
-        void SetColor(int color, int feature);
-
-        // -(void)setThumbnailBGColor:(int)color;
-        [Export("setThumbnailBGColor:")]
-        void SetThumbnailBGColor(int color);
-
-        // -(void)setReaderBGColor:(int)color;
-        [Export("setReaderBGColor:")]
-        void SetReaderBGColor(int color);
-
-        // -(void)setThumbHeight:(float)height;
-        [Export("setThumbHeight:")]
-        void SetThumbHeight(float height);
-
-        // -(void)setFirstPageCover:(BOOL)cover;
-        [Export("setFirstPageCover:")]
-        void SetFirstPageCover(bool cover);
-
-        // -(void)setImmersive:(BOOL)immersive;
-        [Export("setImmersive:")]
-        void SetImmersive(bool immersive);
-
-        // -(void)setDelegate:(id)myDelegate;
-        [Export("setDelegate:")]
-        void SetDelegate(NSObject myDelegate);
-
-        // -(void)refreshCurrentPage;
-        [Export("refreshCurrentPage")]
-        void RefreshCurrentPage();
-
-        // -(id)getGlobal;
-        [Export("getGlobal")]
-        NSObject GetGlobal { get; }
-    }
-
-    // @interface RDGlobal : NSObject
+    // @interface RDVGlobal : NSObject
     [BaseType(typeof(NSObject))]
-    interface RDGlobal
+    interface RDVGlobal
     {
         // @property (nonatomic, strong) NSString * text;
         [Export("text", ArgumentSemantic.Strong)]
@@ -415,37 +49,41 @@ namespace RadaeeLib
         [Export("g_oval_color")]
         uint G_oval_color { get; set; }
 
-        // @property (nonatomic) _Bool g_DarkMode;
-        [Export("g_DarkMode")]
-        bool G_DarkMode { get; set; }
+        // @property (nonatomic) _Bool g_case_sensitive;
+        [Export("g_case_sensitive")]
+        bool G_case_sensitive { get; set; }
 
-        // @property (nonatomic) _Bool g_CaseSensitive;
-        [Export("g_CaseSensitive")]
-        bool G_CaseSensitive { get; set; }
-
-        // @property (nonatomic) _Bool g_MatchWholeWord;
-        [Export("g_MatchWholeWord")]
-        bool G_MatchWholeWord { get; set; }
+        // @property (nonatomic) _Bool g_match_whole_word;
+        [Export("g_match_whole_word")]
+        bool G_match_whole_word { get; set; }
 
         // @property (nonatomic) _Bool g_sel_right;
         [Export("g_sel_right")]
         bool G_sel_right { get; set; }
 
-        // @property (nonatomic) _Bool g_ScreenAwake;
-        [Export("g_ScreenAwake")]
-        bool G_ScreenAwake { get; set; }
+        // @property (nonatomic) _Bool g_screen_awake;
+        [Export("g_screen_awake")]
+        bool G_screen_awake { get; set; }
 
-        // @property (nonatomic) float g_Ink_Width;
-        [Export("g_Ink_Width")]
-        float G_Ink_Width { get; set; }
+        // @property (nonatomic) _Bool g_save_doc;
+        [Export("g_save_doc")]
+        bool G_save_doc { get; set; }
 
-        // @property (nonatomic) float g_rect_Width;
-        [Export("g_rect_Width")]
-        float G_rect_Width { get; set; }
+        // @property (nonatomic) float g_ink_width;
+        [Export("g_ink_width")]
+        float G_ink_width { get; set; }
 
-        // @property (nonatomic) float g_line_Width;
-        [Export("g_line_Width")]
-        float G_line_Width { get; set; }
+        // @property (nonatomic) float g_rect_width;
+        [Export("g_rect_width")]
+        float G_rect_width { get; set; }
+
+        // @property (nonatomic) float g_line_width;
+        [Export("g_line_width")]
+        float G_line_width { get; set; }
+
+        // @property (nonatomic) float g_oval_width;
+        [Export("g_oval_width")]
+        float G_oval_width { get; set; }
 
         // @property (nonatomic) float g_swipe_speed;
         [Export("g_swipe_speed")]
@@ -455,9 +93,9 @@ namespace RadaeeLib
         [Export("g_swipe_distance")]
         float G_swipe_distance { get; set; }
 
-        // @property (nonatomic) int g_def_view;
-        [Export("g_def_view")]
-        int G_def_view { get; set; }
+        // @property (nonatomic) int g_render_mode;
+        [Export("g_render_mode")]
+        int G_render_mode { get; set; }
 
         // @property (nonatomic) float g_zoom_level;
         [Export("g_zoom_level")]
@@ -511,29 +149,373 @@ namespace RadaeeLib
         [Export("renderQuality")]
         int RenderQuality { get; set; }
 
-        // @property (nonatomic) uint annotHighlightColor;
-        [Export("annotHighlightColor")]
-        uint AnnotHighlightColor { get; set; }
+        // @property (nonatomic) uint g_annot_highlight_clr;
+        [Export("g_annot_highlight_clr")]
+        uint G_annot_highlight_clr { get; set; }
 
-        // @property (nonatomic) uint annotUnderlineColor;
-        [Export("annotUnderlineColor")]
-        uint AnnotUnderlineColor { get; set; }
+        // @property (nonatomic) uint g_annot_underline_clr;
+        [Export("g_annot_underline_clr")]
+        uint G_annot_underline_clr { get; set; }
 
-        // @property (nonatomic) uint annotStrikeoutColor;
-        [Export("annotStrikeoutColor")]
-        uint AnnotStrikeoutColor { get; set; }
+        // @property (nonatomic) uint g_annot_strikeout_clr;
+        [Export("g_annot_strikeout_clr")]
+        uint G_annot_strikeout_clr { get; set; }
 
-        // @property (nonatomic) uint annotSquigglyColor;
-        [Export("annotSquigglyColor")]
-        uint AnnotSquigglyColor { get; set; }
+        // @property (nonatomic) uint g_annot_squiggly_clr;
+        [Export("g_annot_squiggly_clr")]
+        uint G_annot_squiggly_clr { get; set; }
 
-        // +(RDGlobal *)sharedInstance;
+        // @property (nonatomic) uint g_annot_transparency;
+        [Export("g_annot_transparency")]
+        uint G_annot_transparency { get; set; }
+
+        // +(RDVGlobal *)sharedInstance;
         [Static]
         [Export("sharedInstance")]
-        RDGlobal SharedInstance { get; }
+        RDVGlobal SharedInstance { get; }
+
+        // +(void)Init;
+        [Static]
+        [Export("Init")]
+        void Init();
 
         // -(void)setup;
         [Export("setup")]
         void Setup();
+    }
+
+    // @protocol RadaeePDFPluginDelegate
+    [BaseType(typeof(NSObject))]
+    [Model]
+    interface RadaeePDFPluginDelegate
+    {
+        // @required -(void)willShowReader;
+        [Abstract]
+        [Export("willShowReader")]
+        void WillShowReader();
+
+        // @required -(void)didShowReader;
+        [Abstract]
+        [Export("didShowReader")]
+        void DidShowReader();
+
+        // @required -(void)willCloseReader;
+        [Abstract]
+        [Export("willCloseReader")]
+        void WillCloseReader();
+
+        // @required -(void)didCloseReader;
+        [Abstract]
+        [Export("didCloseReader")]
+        void DidCloseReader();
+
+        // @required -(void)didChangePage:(int)page;
+        [Abstract]
+        [Export("didChangePage:")]
+        void DidChangePage(int page);
+
+        // @required -(void)didSearchTerm:(NSString *)term found:(BOOL)found;
+        [Abstract]
+        [Export("didSearchTerm:found:")]
+        void DidSearchTerm(string term, bool found);
+
+        // @required -(void)didTapOnPage:(int)page atPoint:(CGPoint)point;
+        [Abstract]
+        [Export("didTapOnPage:atPoint:")]
+        void DidTapOnPage(int page, CGPoint point);
+
+        // @required -(void)didDoubleTapOnPage:(int)page atPoint:(CGPoint)point;
+        [Abstract]
+        [Export("didDoubleTapOnPage:atPoint:")]
+        void DidDoubleTapOnPage(int page, CGPoint point);
+
+        // @required -(void)didLongPressOnPage:(int)page atPoint:(CGPoint)point;
+        [Abstract]
+        [Export("didLongPressOnPage:atPoint:")]
+        void DidLongPressOnPage(int page, CGPoint point);
+
+        // @required -(void)didTapOnAnnotationOfType:(int)type atPage:(int)page atPoint:(CGPoint)point;
+        [Abstract]
+        [Export("didTapOnAnnotationOfType:atPage:atPoint:")]
+        void DidTapOnAnnotationOfType(int type, int page, CGPoint point);
+
+        // @required -(void)onAnnotExported:(NSString *)path;
+        [Abstract]
+        [Export("onAnnotExported:")]
+        void OnAnnotExported(string path);
+    }
+
+    // @interface RadaeePDFPlugin : NSObject
+    [BaseType(typeof(NSObject))]
+    interface RadaeePDFPlugin
+    {
+        // @property (nonatomic) int viewMode;
+        [Export("viewMode")]
+        int ViewMode { get; set; }
+
+        // @property (nonatomic, strong) NSString * lastOpenedPath;
+        [Export("lastOpenedPath", ArgumentSemantic.Strong)]
+        string LastOpenedPath { get; set; }
+
+        // @property (nonatomic, strong) UIImage * viewModeImage;
+        [Export("viewModeImage", ArgumentSemantic.Strong)]
+        UIImage ViewModeImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * searchImage;
+        [Export("searchImage", ArgumentSemantic.Strong)]
+        UIImage SearchImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * bookmarkImage;
+        [Export("bookmarkImage", ArgumentSemantic.Strong)]
+        UIImage BookmarkImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * outlineImage;
+        [Export("outlineImage", ArgumentSemantic.Strong)]
+        UIImage OutlineImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * lineImage;
+        [Export("lineImage", ArgumentSemantic.Strong)]
+        UIImage LineImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * rectImage;
+        [Export("rectImage", ArgumentSemantic.Strong)]
+        UIImage RectImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * ellipseImage;
+        [Export("ellipseImage", ArgumentSemantic.Strong)]
+        UIImage EllipseImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * printImage;
+        [Export("printImage", ArgumentSemantic.Strong)]
+        UIImage PrintImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * gridImage;
+        [Export("gridImage", ArgumentSemantic.Strong)]
+        UIImage GridImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * deleteImage;
+        [Export("deleteImage", ArgumentSemantic.Strong)]
+        UIImage DeleteImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * doneImage;
+        [Export("doneImage", ArgumentSemantic.Strong)]
+        UIImage DoneImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * removeImage;
+        [Export("removeImage", ArgumentSemantic.Strong)]
+        UIImage RemoveImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * exportImage;
+        [Export("exportImage", ArgumentSemantic.Strong)]
+        UIImage ExportImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * prevImage;
+        [Export("prevImage", ArgumentSemantic.Strong)]
+        UIImage PrevImage { get; set; }
+
+        // @property (nonatomic, strong) UIImage * nextImage;
+        [Export("nextImage", ArgumentSemantic.Strong)]
+        UIImage NextImage { get; set; }
+
+        // +(RadaeePDFPlugin *)pluginInit;
+        [Static]
+        [Export("pluginInit")]
+        RadaeePDFPlugin PluginInit { get; }
+
+        // -(id)show:(NSString *)file withPassword:(NSString *)password;
+        [Export("show:withPassword:")]
+        NSObject Show(string file, string password);
+
+        // -(id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave;
+        [Export("show:atPage:withPassword:readOnly:autoSave:")]
+        NSObject Show(string file, int page, string password, bool readOnly, bool autoSave);
+
+        // -(id)show:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave author:(NSString *)author;
+        [Export("show:atPage:withPassword:readOnly:autoSave:author:")]
+        NSObject Show(string file, int page, string password, bool readOnly, bool autoSave, string author);
+
+        // -(void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
+        [Export("activateLicenseWithBundleId:company:email:key:licenseType:")]
+        void ActivateLicenseWithBundleId(string bundleId, string company, string email, string key, int type);
+
+        // -(id)openFromAssets:(NSString *)file withPassword:(NSString *)password;
+        [Export("openFromAssets:withPassword:")]
+        NSObject OpenFromAssets(string file, string password);
+
+        // -(id)openFromAssets:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave;
+        [Export("openFromAssets:atPage:withPassword:readOnly:autoSave:")]
+        NSObject OpenFromAssets(string file, int page, string password, bool readOnly, bool autoSave);
+
+        // -(id)openFromAssets:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave author:(NSString *)author;
+        [Export("openFromAssets:atPage:withPassword:readOnly:autoSave:author:")]
+        NSObject OpenFromAssets(string file, int page, string password, bool readOnly, bool autoSave, string author);
+
+        // -(id)openFromPath:(NSString *)path withPassword:(NSString *)password;
+        [Export("openFromPath:withPassword:")]
+        NSObject OpenFromPath(string path, string password);
+
+        // -(id)openFromPath:(NSString *)file atPage:(int)page withPassword:(NSString *)password readOnly:(BOOL)readOnly autoSave:(BOOL)autoSave author:(NSString *)author;
+        [Export("openFromPath:atPage:withPassword:readOnly:autoSave:author:")]
+        NSObject OpenFromPath(string file, int page, string password, bool readOnly, bool autoSave, string author);
+
+        // -(id)openFromMem:(NSData *)data withPassword:(NSString *)password;
+        [Export("openFromMem:withPassword:")]
+        NSObject OpenFromMem(NSData data, string password);
+
+        // -(NSString *)fileState;
+        [Export("fileState")]
+        string FileState { get; }
+
+        // -(int)getPageNumber;
+        [Export("getPageNumber")]
+        int PageNumber { get; }
+
+        // -(int)getPageCount;
+        [Export("getPageCount")]
+        int PageCount { get; }
+
+        // -(void)setThumbnailBGColor:(int)color;
+        [Export("setThumbnailBGColor:")]
+        void SetThumbnailBGColor(int color);
+
+        // -(void)setThumbGridBGColor:(int)color;
+        [Export("setThumbGridBGColor:")]
+        void SetThumbGridBGColor(int color);
+
+        // -(void)setReaderBGColor:(int)color;
+        [Export("setReaderBGColor:")]
+        void SetReaderBGColor(int color);
+
+        // -(void)setThumbGridElementHeight:(float)height;
+        [Export("setThumbGridElementHeight:")]
+        void SetThumbGridElementHeight(float height);
+
+        // -(void)setThumbGridGap:(float)gap;
+        [Export("setThumbGridGap:")]
+        void SetThumbGridGap(float gap);
+
+        // -(void)setThumbGridViewMode:(int)mode;
+        [Export("setThumbGridViewMode:")]
+        void SetThumbGridViewMode(int mode);
+
+        // -(void)setTitleBGColor:(int)color;
+        [Export("setTitleBGColor:")]
+        void SetTitleBGColor(int color);
+
+        // -(void)setIconsBGColor:(int)color;
+        [Export("setIconsBGColor:")]
+        void SetIconsBGColor(int color);
+
+        // -(void)setThumbHeight:(float)height;
+        [Export("setThumbHeight:")]
+        void SetThumbHeight(float height);
+
+        // -(void)setFirstPageCover:(BOOL)cover;
+        [Export("setFirstPageCover:")]
+        void SetFirstPageCover(bool cover);
+
+        // -(void)setDoubleTapZoomMode:(int)mode;
+        [Export("setDoubleTapZoomMode:")]
+        void SetDoubleTapZoomMode(int mode);
+
+        // -(void)setImmersive:(BOOL)immersive;
+        [Export("setImmersive:")]
+        void SetImmersive(bool immersive);
+
+        // -(BOOL)setReaderViewMode:(int)mode;
+        [Export("setReaderViewMode:")]
+        bool SetReaderViewMode(int mode);
+
+        // -(void)setToolbarEnabled:(BOOL)enabled;
+        [Export("setToolbarEnabled:")]
+        void SetToolbarEnabled(bool enabled);
+
+        // -(NSString *)extractTextFromPage:(int)pageNum;
+        [Export("extractTextFromPage:")]
+        string ExtractTextFromPage(int pageNum);
+
+        // -(BOOL)encryptDocAs:(NSString *)path userPwd:(NSString *)userPwd ownerPwd:(NSString *)ownerPwd permission:(int)permission method:(int)method idString:(NSString *)idString;
+        [Export("encryptDocAs:userPwd:ownerPwd:permission:method:idString:")]
+        bool EncryptDocAs(string path, string userPwd, string ownerPwd, int permission, int method, string idString);
+
+        // -(BOOL)addAnnotAttachment:(NSString *)path;
+        [Export("addAnnotAttachment:")]
+        bool AddAnnotAttachment(string path);
+
+        // -(BOOL)renderAnnotToFile:(int)index atPage:(int)pageno savePath:(NSString *)path size:(CGSize)size;
+        [Export("renderAnnotToFile:atPage:savePath:size:")]
+        bool RenderAnnotToFile(int index, int pageno, string path, CGSize size);
+
+        // -(BOOL)flatAnnots;
+        [Export("flatAnnots")]
+        bool FlatAnnots { get; }
+
+        // -(BOOL)flatAnnotAtPage:(int)pageno;
+        [Export("flatAnnotAtPage:")]
+        bool FlatAnnotAtPage(int pageno);
+
+        // -(BOOL)saveDocumentToPath:(NSString *)path;
+        [Export("saveDocumentToPath:")]
+        bool SaveDocumentToPath(string path);
+
+        // -(NSString *)getJSONFormFields;
+        [Export("getJSONFormFields")]
+        string JSONFormFields { get; }
+
+        // -(NSString *)getJSONFormFieldsAtPage:(int)page;
+        [Export("getJSONFormFieldsAtPage:")]
+        string GetJSONFormFieldsAtPage(int page);
+
+        // -(NSString *)setFormFieldWithJSON:(NSString *)json;
+        [Export("setFormFieldWithJSON:")]
+        string SetFormFieldWithJSON(string json);
+
+        // +(NSMutableArray *)loadBookmarkForPdf:(NSString *)pdfName withPath:(BOOL)withPath;
+        [Static]
+        [Export("loadBookmarkForPdf:withPath:")]
+        NSMutableArray LoadBookmarkForPdf(string pdfName, bool withPath);
+
+        // +(NSString *)addToBookmarks:(NSString *)pdfPath page:(int)page label:(NSString *)label;
+        [Static]
+        [Export("addToBookmarks:page:label:")]
+        string AddToBookmarks(string pdfPath, int page, string label);
+
+        // +(void)removeBookmark:(int)page pdfPath:(NSString *)pdfPath;
+        [Static]
+        [Export("removeBookmark:pdfPath:")]
+        void RemoveBookmark(int page, string pdfPath);
+
+        // +(NSString *)getBookmarks:(NSString *)pdfPath;
+        [Static]
+        [Export("getBookmarks:")]
+        string GetBookmarks(string pdfPath);
+
+        // -(void)setPagingEnabled:(BOOL)enabled;
+        [Export("setPagingEnabled:")]
+        void SetPagingEnabled(bool enabled);
+
+        // -(void)setDoublePageEnabled:(BOOL)enabled;
+        [Export("setDoublePageEnabled:")]
+        void SetDoublePageEnabled(bool enabled);
+
+        // -(void)toggleThumbSeekBar:(int)mode;
+        [Export("toggleThumbSeekBar:")]
+        void ToggleThumbSeekBar(int mode);
+
+        // -(void)setColor:(int)color forFeature:(int)feature;
+        [Export("setColor:forFeature:")]
+        void SetColor(int color, int feature);
+
+        // -(void)setDelegate:(id)myDelegate;
+        [Export("setDelegate:")]
+        void SetDelegate(NSObject myDelegate);
+
+        // -(void)refreshCurrentPage;
+        [Export("refreshCurrentPage")]
+        void RefreshCurrentPage();
+
+        // -(id)getGlobal;
+        [Export("getGlobal")]
+        NSObject Global { get; }
     }
 }
