@@ -19,7 +19,7 @@ namespace ReaderXamarin
 		public override void WillShowReader()
 		{
 			Console.WriteLine("will show reader");
-		}
+        }
 	
 		public override void DidShowReader()
 		{
@@ -39,7 +39,6 @@ namespace ReaderXamarin
 		public override void DidChangePage(int page)
 		{
 			Console.WriteLine("did change page {0}", page);
-			plugin.SetImmersive(true);
 		}
 
 		public override void DidSearchTerm(string term, bool found)
@@ -50,19 +49,19 @@ namespace ReaderXamarin
 		public override void DidTapOnPage(int page, CGPoint point)
 		{ 
 			Console.WriteLine("did tap page {0}", page);
-		}
+        }
 
-		public override void DidDoubleTapOnPage(int page, CGPoint point)
-		{
-			Console.WriteLine("did double tap page {0}", page);
-		}
+        public override void DidDoubleTapOnPage(int page, CGPoint point)
+        {
+            Console.WriteLine("did double tap page {0}", page);
+        }
 
-		public override void DidLongPressOnPage(int page, CGPoint point)
-		{
-			Console.WriteLine("did long press page {0}", page);
-		}
+        public override void DidLongPressOnPage(int page, CGPoint point)
+        {
+            Console.WriteLine("did long press page {0}", page);
+        }
 
-		public override void DidTapOnAnnotationOfType(int type, int page, CGPoint point)
+        public override void DidTapOnAnnotationOfType(int type, int page, CGPoint point)
 		{
 			Console.WriteLine("did tap annot of type {0} at page {1}", type, page);
 		}
