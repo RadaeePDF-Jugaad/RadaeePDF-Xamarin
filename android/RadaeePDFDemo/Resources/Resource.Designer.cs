@@ -391,10 +391,13 @@ namespace RadaeePDFDemo
 			public const int activate = 2131361844;
 			
 			// aapt resource value: 0x7f0a0050
-			public const int add_bookmark = 2131361872;
+			public const int actual_content = 2131361872;
 			
 			// aapt resource value: 0x7f0a0051
-			public const int add_bookmark_icon = 2131361873;
+			public const int add_bookmark = 2131361873;
+			
+			// aapt resource value: 0x7f0a0052
+			public const int add_bookmark_icon = 2131361874;
 			
 			// aapt resource value: 0x7f0a004d
 			public const int annot_combo = 2131361869;
@@ -471,8 +474,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0014
 			public const int btn_view = 2131361812;
 			
-			// aapt resource value: 0x7f0a0062
-			public const int buttons_container = 2131361890;
+			// aapt resource value: 0x7f0a0063
+			public const int buttons_container = 2131361891;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int chk_show = 2131361835;
@@ -480,8 +483,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0043
 			public const int chronometer = 2131361859;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int clear_button = 2131361894;
+			// aapt resource value: 0x7f0a0067
+			public const int clear_button = 2131361895;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int curl_view = 2131361863;
@@ -498,8 +501,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0007
 			public const int forever = 2131361799;
 			
-			// aapt resource value: 0x7f0a005d
-			public const int horz = 2131361885;
+			// aapt resource value: 0x7f0a005e
+			public const int horz = 2131361886;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int icon = 2131361852;
@@ -507,14 +510,14 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0046
 			public const int icon_group = 2131361862;
 			
-			// aapt resource value: 0x7f0a005b
-			public const int imageView1 = 2131361883;
+			// aapt resource value: 0x7f0a005c
+			public const int imageView1 = 2131361884;
 			
-			// aapt resource value: 0x7f0a005f
-			public const int imageView2 = 2131361887;
+			// aapt resource value: 0x7f0a0060
+			public const int imageView2 = 2131361888;
 			
-			// aapt resource value: 0x7f0a0061
-			public const int imageView3 = 2131361889;
+			// aapt resource value: 0x7f0a0062
+			public const int imageView3 = 2131361890;
 			
 			// aapt resource value: 0x7f0a003f
 			public const int info = 2131361855;
@@ -576,11 +579,11 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0049
 			public const int pdf_view = 2131361865;
 			
-			// aapt resource value: 0x7f0a0056
-			public const int print = 2131361878;
-			
 			// aapt resource value: 0x7f0a0057
-			public const int print_icon = 2131361879;
+			public const int print = 2131361879;
+			
+			// aapt resource value: 0x7f0a0058
+			public const int print_icon = 2131361880;
 			
 			// aapt resource value: 0x7f0a004a
 			public const int progress = 2131361866;
@@ -609,38 +612,38 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a003e
 			public const int right_side = 2131361854;
 			
-			// aapt resource value: 0x7f0a0054
-			public const int save = 2131361876;
-			
-			// aapt resource value: 0x7f0a0067
-			public const int save_button = 2131361895;
-			
 			// aapt resource value: 0x7f0a0055
-			public const int save_icon = 2131361877;
+			public const int save = 2131361877;
+			
+			// aapt resource value: 0x7f0a0068
+			public const int save_button = 2131361896;
+			
+			// aapt resource value: 0x7f0a0056
+			public const int save_icon = 2131361878;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int seek_page = 2131361823;
 			
-			// aapt resource value: 0x7f0a0058
-			public const int share = 2131361880;
-			
 			// aapt resource value: 0x7f0a0059
-			public const int share_icon = 2131361881;
+			public const int share = 2131361881;
 			
-			// aapt resource value: 0x7f0a0052
-			public const int show_bookmarks = 2131361874;
+			// aapt resource value: 0x7f0a005a
+			public const int share_icon = 2131361882;
 			
 			// aapt resource value: 0x7f0a0053
-			public const int show_bookmarks_icon = 2131361875;
+			public const int show_bookmarks = 2131361875;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int signature_pad = 2131361893;
+			// aapt resource value: 0x7f0a0054
+			public const int show_bookmarks_icon = 2131361876;
 			
-			// aapt resource value: 0x7f0a0063
-			public const int signature_pad_container = 2131361891;
+			// aapt resource value: 0x7f0a0066
+			public const int signature_pad = 2131361894;
 			
 			// aapt resource value: 0x7f0a0064
-			public const int signature_pad_description = 2131361892;
+			public const int signature_pad_container = 2131361892;
+			
+			// aapt resource value: 0x7f0a0065
+			public const int signature_pad_description = 2131361893;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int text = 2131361794;
@@ -648,8 +651,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0003
 			public const int text2 = 2131361795;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int thumb_view = 2131361896;
+			// aapt resource value: 0x7f0a0069
+			public const int thumb_view = 2131361897;
 			
 			// aapt resource value: 0x7f0a0042
 			public const int time = 2131361858;
@@ -675,17 +678,17 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f0a0025
 			public const int txt_subj = 2131361829;
 			
-			// aapt resource value: 0x7f0a0060
-			public const int view_dual = 2131361888;
+			// aapt resource value: 0x7f0a0061
+			public const int view_dual = 2131361889;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int view_horz = 2131361884;
+			// aapt resource value: 0x7f0a005d
+			public const int view_horz = 2131361885;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int view_single = 2131361886;
+			// aapt resource value: 0x7f0a005f
+			public const int view_single = 2131361887;
 			
-			// aapt resource value: 0x7f0a005a
-			public const int view_vert = 2131361882;
+			// aapt resource value: 0x7f0a005b
+			public const int view_vert = 2131361883;
 			
 			static Id()
 			{
@@ -865,19 +868,31 @@ namespace RadaeePDFDemo
 			public const int symbol = 2130968589;
 			
 			// aapt resource value: 0x7f04000e
-			public const int tinos = 2130968590;
+			public const int texgy = 2130968590;
 			
 			// aapt resource value: 0x7f04000f
-			public const int tinosb = 2130968591;
+			public const int texgyb = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int tinosbi = 2130968592;
+			public const int texgybi = 2130968592;
 			
 			// aapt resource value: 0x7f040011
-			public const int tinosi = 2130968593;
+			public const int texgyi = 2130968593;
 			
 			// aapt resource value: 0x7f040012
-			public const int umaps = 2130968594;
+			public const int tinos = 2130968594;
+			
+			// aapt resource value: 0x7f040013
+			public const int tinosb = 2130968595;
+			
+			// aapt resource value: 0x7f040014
+			public const int tinosbi = 2130968596;
+			
+			// aapt resource value: 0x7f040015
+			public const int tinosi = 2130968597;
+			
+			// aapt resource value: 0x7f040016
+			public const int umaps = 2130968598;
 			
 			static Raw()
 			{
