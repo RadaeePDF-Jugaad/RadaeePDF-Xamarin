@@ -1,6 +1,6 @@
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
-PROJECT_ROOT=./RadaeeLib
-PROJECT=$(PROJECT_ROOT)/RadaeeLib.xcodeproj
+PROJECT_ROOT=./RadaeePDF-iOS-Tiled
+PROJECT=$(PROJECT_ROOT)/PDFViewer.xcodeproj
 TARGET=RadaeeLib
 
 all: libRDPDFLibSDK.a

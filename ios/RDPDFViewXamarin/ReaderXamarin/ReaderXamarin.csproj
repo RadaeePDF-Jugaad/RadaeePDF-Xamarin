@@ -69,24 +69,19 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
-    <MtouchFastDev>true</MtouchFastDev>
-    <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -116,51 +111,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\btn_annot_ellipse.png" />
-    <BundleResource Include="Resources\btn_annot_ink.png" />
-    <BundleResource Include="Resources\btn_annot_rect.png" />
-    <BundleResource Include="Resources\btn_done.png" />
-    <BundleResource Include="Resources\btn_left.png" />
-    <BundleResource Include="Resources\btn_outline.png" />
-    <BundleResource Include="Resources\btn_perform.png" />
-    <BundleResource Include="Resources\btn_print.png" />
-    <BundleResource Include="Resources\btn_remove.png" />
-    <BundleResource Include="Resources\btn_right.png" />
-    <BundleResource Include="Resources\btn_search.png" />
-    <BundleResource Include="Resources\btn_view.png" />
-    <BundleResource Include="Resources\btn_view_dual.png" />
-    <BundleResource Include="Resources\btn_view_single.png" />
-    <BundleResource Include="Resources\btn_view_vert.png" />
-    <BundleResource Include="Resources\btn_annot_remove.png" />
     <BundleResource Include="Resources\test.pdf" />
-    <BundleResource Include="Resources\btn_grid.png" />
-    <BundleResource Include="Resources\btn_back.png" />
+    <BundleResource Include="Resources\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\it.lproj\Localizable.strings" />
     <BundleResource Include="Resources\cmaps\cmaps.dat" />
     <BundleResource Include="Resources\cmaps\cmyk_rgb.dat" />
     <BundleResource Include="Resources\cmaps\umaps.dat" />
-    <BundleResource Include="Resources\annot_delete.png" />
-    <BundleResource Include="Resources\annot_done.png" />
-    <BundleResource Include="Resources\annot_ellipse.png" />
-    <BundleResource Include="Resources\annot_line.png" />
-    <BundleResource Include="Resources\annot_rect.png" />
-    <BundleResource Include="Resources\backImage.png" />
-    <BundleResource Include="Resources\btn_add.png" />
-    <BundleResource Include="Resources\btn_annot_line.png" />
-    <BundleResource Include="Resources\btn_annot_note.png" />
-    <BundleResource Include="Resources\btn_ink.png" />
-    <BundleResource Include="Resources\btn_more.png" />
-    <BundleResource Include="Resources\btn_redo.png" />
-    <BundleResource Include="Resources\btn_save.png" />
-    <BundleResource Include="Resources\btn_select.png" />
-    <BundleResource Include="Resources\btn_show.png" />
-    <BundleResource Include="Resources\btn_undo.png" />
-    <BundleResource Include="Resources\btn_view_horz.png" />
-    <BundleResource Include="Resources\export_annot.png" />
-    <BundleResource Include="Resources\left_arrow.png" />
-    <BundleResource Include="Resources\pdf_custom_stamp.png" />
-    <BundleResource Include="Resources\right_arrow.png" />
-    <BundleResource Include="Resources\en.lproj\Localizable.strings" />
-    <BundleResource Include="Resources\it.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\fdat\GUST e-foundry License.txt" />
     <BundleResource Include="Resources\fdat\help.pdf" />
     <BundleResource Include="Resources\fdat\stdFont\argbsn00lp.ttf" />
     <BundleResource Include="Resources\fdat\stdFont\arimo.ttf" />
@@ -173,10 +130,10 @@
     <BundleResource Include="Resources\fdat\stdFont\cousinei.ttf" />
     <BundleResource Include="Resources\fdat\stdFont\rdf008.ttf" />
     <BundleResource Include="Resources\fdat\stdFont\rdf013.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\tinos.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\tinosb.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\tinosbi.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\tinosi.ttf" />
+    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-bold.otf" />
+    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-bolditalic.otf" />
+    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-italic.otf" />
+    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-regular.otf" />
     <BundleResource Include="Resources\fdat\stdRes\00" />
     <BundleResource Include="Resources\fdat\stdRes\01" />
     <BundleResource Include="Resources\fdat\stdRes\02" />
@@ -191,7 +148,142 @@
     <BundleResource Include="Resources\fdat\stdRes\11" />
     <BundleResource Include="Resources\fdat\stdRes\12" />
     <BundleResource Include="Resources\fdat\stdRes\13" />
-    <BundleResource Include="Resources\btn_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Images.xcassets\Contents.json" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\icon.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\icon57.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\icon72.png" />
+    <ImageAsset Include="Images.xcassets\Brand Assets.launchimage\Contents.json" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-568h%402x-1.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Land-hd55.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Landscape-2.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Landscape%402x-1.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Port-hd47.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Port-hd55.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Portrait-ns.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default-Portrait-ns%402x.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default%402x-1.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\iPhoneX-Land.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\iPhoneX-Port.png" />
+    <ImageAsset Include="Images.xcassets\annot_text.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\annot_text.imageset\annot_text.png" />
+    <ImageAsset Include="Images.xcassets\annot_text.imageset\annot_text%402x.png" />
+    <ImageAsset Include="Images.xcassets\btn_add.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_add.imageset\btn_add.png" />
+    <ImageAsset Include="Images.xcassets\btn_add.imageset\btn_add%402x.png" />
+    <ImageAsset Include="Images.xcassets\btn_add.imageset\btn_add%403x.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ellipse.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ellipse.imageset\btn_annot_ellipse-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ellipse.imageset\btn_annot_ellipse-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ellipse.imageset\btn_annot_ellipse.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ink.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ink.imageset\btn_annot_ink-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ink.imageset\btn_annot_ink-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_ink.imageset\btn_annot_ink.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_line.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_annot_line.imageset\btn_annot_line.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_note.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_annot_note.imageset\btn_annot_note.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_rect.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_annot_rect.imageset\btn_annot_rect-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_rect.imageset\btn_annot_rect-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_rect.imageset\btn_annot_rect.png" />
+    <ImageAsset Include="Images.xcassets\btn_annot_remove.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_annot_remove.imageset\annot_remove.png" />
+    <ImageAsset Include="Images.xcassets\btn_back.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_back.imageset\btn_back.png" />
+    <ImageAsset Include="Images.xcassets\btn_done.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_done.imageset\btn_done-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_done.imageset\btn_done-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_done.imageset\btn_done.png" />
+    <ImageAsset Include="Images.xcassets\btn_grid.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_grid.imageset\btn_grid.png" />
+    <ImageAsset Include="Images.xcassets\btn_ink.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_ink.imageset\btn_ink.png" />
+    <ImageAsset Include="Images.xcassets\btn_left.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_left.imageset\btn_left-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_left.imageset\btn_left-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_left.imageset\btn_left.png" />
+    <ImageAsset Include="Images.xcassets\btn_more.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_more.imageset\btn_more.png" />
+    <ImageAsset Include="Images.xcassets\btn_outline.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_outline.imageset\btn_outline-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_outline.imageset\btn_outline-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_outline.imageset\btn_outline.png" />
+    <ImageAsset Include="Images.xcassets\btn_perform.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_perform.imageset\btn_perform-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_perform.imageset\btn_perform-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_perform.imageset\btn_perform.png" />
+    <ImageAsset Include="Images.xcassets\btn_print.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_print.imageset\btn_print-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_print.imageset\btn_print-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_print.imageset\btn_print.png" />
+    <ImageAsset Include="Images.xcassets\btn_redo.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_redo.imageset\btn_redo.png" />
+    <ImageAsset Include="Images.xcassets\btn_remove.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_remove.imageset\btn_remove-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_remove.imageset\btn_remove-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_remove.imageset\btn_remove.png" />
+    <ImageAsset Include="Images.xcassets\btn_right.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_right.imageset\btn_right-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_right.imageset\btn_right-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_right.imageset\btn_right.png" />
+    <ImageAsset Include="Images.xcassets\btn_save.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_save.imageset\btn_save.png" />
+    <ImageAsset Include="Images.xcassets\btn_search.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_search.imageset\btn_search-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_search.imageset\btn_search-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_search.imageset\btn_search.png" />
+    <ImageAsset Include="Images.xcassets\btn_select.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_select.imageset\btn_select.png" />
+    <ImageAsset Include="Images.xcassets\btn_share.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_share.imageset\btn_share-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_share.imageset\btn_share-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_share.imageset\btn_share.png" />
+    <ImageAsset Include="Images.xcassets\btn_show.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_show.imageset\btn_show.png" />
+    <ImageAsset Include="Images.xcassets\btn_undo.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_undo.imageset\btn_undo.png" />
+    <ImageAsset Include="Images.xcassets\btn_view.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_view.imageset\btn_view-1.png" />
+    <ImageAsset Include="Images.xcassets\btn_view.imageset\btn_view-2.png" />
+    <ImageAsset Include="Images.xcassets\btn_view.imageset\btn_view.png" />
+    <ImageAsset Include="Images.xcassets\btn_view_dual.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_view_dual.imageset\btn_view_dual.png" />
+    <ImageAsset Include="Images.xcassets\btn_view_horz.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_view_horz.imageset\btn_view_hor.png" />
+    <ImageAsset Include="Images.xcassets\btn_view_single.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_view_single.imageset\btn_view_single.png" />
+    <ImageAsset Include="Images.xcassets\btn_view_vert.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_view_vert.imageset\btn_view_vert.png" />
+    <ImageAsset Include="Images.xcassets\encrypt.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\encrypt.imageset\encrypt.png" />
+    <ImageAsset Include="Images.xcassets\export_annot.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\export_annot.imageset\export_annot.png" />
+    <ImageAsset Include="Images.xcassets\export_annot.imageset\export_annot%402x.png" />
+    <ImageAsset Include="Images.xcassets\export_annot.imageset\export_annot%403x.png" />
+    <ImageAsset Include="Images.xcassets\fontBig.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\fontBig.imageset\fontBig.png" />
+    <ImageAsset Include="Images.xcassets\fontBig.imageset\fontBig%402x.png" />
+    <ImageAsset Include="Images.xcassets\fontSmall.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\fontSmall.imageset\fontSmall.png" />
+    <ImageAsset Include="Images.xcassets\fontSmall.imageset\fontSmall%402x.png" />
+    <ImageAsset Include="Images.xcassets\manage_mark.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\manage_mark.imageset\manage_mark-1.png" />
+    <ImageAsset Include="Images.xcassets\manage_mark.imageset\manage_mark%402x.png" />
+    <ImageAsset Include="Images.xcassets\pdf_custom_stamp.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\pdf_custom_stamp.imageset\pdf_custom_stamp.png" />
+    <ImageAsset Include="Images.xcassets\view_about.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\view_about.imageset\view_about.png" />
+    <ImageAsset Include="Images.xcassets\view_about.imageset\view_about%402x.png" />
+    <ImageAsset Include="Images.xcassets\view_settings_page.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\view_settings_page.imageset\view_settings_page.png" />
+    <ImageAsset Include="Images.xcassets\view_settings_page.imageset\view_settings_page%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
