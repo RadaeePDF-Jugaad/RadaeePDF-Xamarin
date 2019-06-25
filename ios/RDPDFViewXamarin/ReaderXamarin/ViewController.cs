@@ -16,7 +16,6 @@ namespace ReaderXamarin
             this.plugin = plugin;
         }
 
-<<<<<<< HEAD
 		public override void WillShowReader()
 		{
 			Console.WriteLine("will show reader");
@@ -24,15 +23,7 @@ namespace ReaderXamarin
 	
 		public override void DidShowReader()
 		{
-=======
-        public override void WillShowReader()
-        {
-            Console.WriteLine("will show reader");
-        }
 
-        public override void DidShowReader()
-        {
->>>>>>> beta
             Console.WriteLine("did show reader");
         }
 
@@ -46,32 +37,20 @@ namespace ReaderXamarin
             Console.WriteLine("did close reader");
         }
 
-<<<<<<< HEAD
 		public override void DidChangePage(int page)
 		{
 			Console.WriteLine("did change page {0}", page);
 		}
-=======
-        public override void DidChangePage(int page)
-        {
-            Console.WriteLine("did change page {0}", page);
-        }
->>>>>>> beta
+
 
         public override void DidSearchTerm(string term, bool found)
         {
             Console.WriteLine("did search {0}", term);
         }
 
-<<<<<<< HEAD
 		public override void DidTapOnPage(int page, CGPoint point)
 		{ 
 			Console.WriteLine("did tap page {0}", page);
-=======
-        public override void DidTapOnPage(int page, CGPoint point)
-        {
-            Console.WriteLine("did tap page {0}", page);
->>>>>>> beta
         }
 
         public override void DidDoubleTapOnPage(int page, CGPoint point)
@@ -85,22 +64,10 @@ namespace ReaderXamarin
         }
 
         public override void DidTapOnAnnotationOfType(int type, int page, CGPoint point)
-<<<<<<< HEAD
 		{
 			Console.WriteLine("did tap annot of type {0} at page {1}", type, page);
 		}
 	}
-=======
-        {
-            Console.WriteLine("did tap annot of type {0} at page {1}", type, page);
-        }
-
-        public override void OnAnnotExported(string path)
-        {
-            Console.WriteLine("did export annot at path {0}", path);
-        }
-    }
->>>>>>> beta
 
 	public partial class ViewController : UIViewController
 	{
@@ -179,7 +146,6 @@ namespace ReaderXamarin
                 alert.Show();
             }
         }
-
 	}
 }
 
