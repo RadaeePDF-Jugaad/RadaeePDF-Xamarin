@@ -67,6 +67,11 @@ namespace ReaderXamarin
 		{
 			Console.WriteLine("did tap annot of type {0} at page {1}", type, page);
 		}
+
+        public override void OnAnnotExported(string path)
+        {
+            Console.WriteLine("did export annot at path {0}", path);
+        }
 	}
 
 	public partial class ViewController : UIViewController
