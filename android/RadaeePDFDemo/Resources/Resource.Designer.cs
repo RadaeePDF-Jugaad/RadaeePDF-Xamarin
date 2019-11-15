@@ -922,8 +922,8 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f050003
 			public const int annotation_failed = 2131034115;
 			
-			// aapt resource value: 0x7f050004
-			public const int app_name = 2131034116;
+			// aapt resource value: 0x7f05004c
+			public const int app_name = 2131034188;
 			
 			// aapt resource value: 0x7f05004d
 			public const int bookmark_add = 2131034189;
@@ -949,236 +949,236 @@ namespace RadaeePDFDemo
 			// aapt resource value: 0x7f050054
 			public const int bookmarks = 2131034196;
 			
+			// aapt resource value: 0x7f050004
+			public const int browse_open_file = 2131034116;
+			
 			// aapt resource value: 0x7f050005
-			public const int browse_open_file = 2131034117;
+			public const int cancel = 2131034117;
 			
 			// aapt resource value: 0x7f050006
-			public const int cancel = 2131034118;
+			public const int cannot_write_or_encrypted = 2131034118;
 			
 			// aapt resource value: 0x7f050007
-			public const int cannot_write_or_encrypted = 2131034119;
+			public const int catalog_not_found = 2131034119;
 			
-			// aapt resource value: 0x7f050008
-			public const int catalog_not_found = 2131034120;
+			// aapt resource value: 0x7f05003f
+			public const int clear = 2131034175;
 			
 			// aapt resource value: 0x7f050040
-			public const int clear = 2131034176;
+			public const int confirm = 2131034176;
 			
-			// aapt resource value: 0x7f050041
-			public const int confirm = 2131034177;
+			// aapt resource value: 0x7f050008
+			public const int copy_text = 2131034120;
 			
 			// aapt resource value: 0x7f050009
-			public const int copy_text = 2131034121;
+			public const int copy_text_to_clipboard = 2131034121;
 			
 			// aapt resource value: 0x7f05000a
-			public const int copy_text_to_clipboard = 2131034122;
+			public const int create_pdf = 2131034122;
+			
+			// aapt resource value: 0x7f050041
+			public const int curl = 2131034177;
 			
 			// aapt resource value: 0x7f05000b
-			public const int create_pdf = 2131034123;
+			public const int curl_pages = 2131034123;
 			
 			// aapt resource value: 0x7f050042
-			public const int curl = 2131034178;
-			
-			// aapt resource value: 0x7f05000c
-			public const int curl_pages = 2131034124;
+			public const int delete = 2131034178;
 			
 			// aapt resource value: 0x7f050043
-			public const int delete = 2131034179;
+			public const int delete_signature_message = 2131034179;
 			
-			// aapt resource value: 0x7f050044
-			public const int delete_signature_message = 2131034180;
+			// aapt resource value: 0x7f05000c
+			public const int dual_page = 2131034124;
 			
 			// aapt resource value: 0x7f05000d
-			public const int dual_page = 2131034125;
+			public const int edit_catalog_failed = 2131034125;
 			
 			// aapt resource value: 0x7f05000e
-			public const int edit_catalog_failed = 2131034126;
+			public const int exiting = 2131034126;
 			
 			// aapt resource value: 0x7f05000f
-			public const int exiting = 2131034127;
+			public const int failed_encryption = 2131034127;
 			
 			// aapt resource value: 0x7f050010
-			public const int failed_encryption = 2131034128;
+			public const int failed_invalid_format = 2131034128;
 			
 			// aapt resource value: 0x7f050011
-			public const int failed_invalid_format = 2131034129;
+			public const int failed_invalid_password = 2131034129;
 			
 			// aapt resource value: 0x7f050012
-			public const int failed_invalid_password = 2131034130;
+			public const int failed_invalid_path = 2131034130;
 			
 			// aapt resource value: 0x7f050013
-			public const int failed_invalid_path = 2131034131;
+			public const int failed_unknown = 2131034131;
 			
 			// aapt resource value: 0x7f050014
-			public const int failed_unknown = 2131034132;
+			public const int file_not_exist = 2131034132;
 			
 			// aapt resource value: 0x7f050015
-			public const int file_not_exist = 2131034133;
+			public const int file_not_exist_error = 2131034133;
 			
 			// aapt resource value: 0x7f050016
-			public const int file_not_exist_error = 2131034134;
+			public const int file_not_opened = 2131034134;
 			
 			// aapt resource value: 0x7f050017
-			public const int file_not_opened = 2131034135;
+			public const int highlight_texts = 2131034135;
 			
 			// aapt resource value: 0x7f050018
-			public const int highlight_texts = 2131034136;
+			public const int horizontal = 2131034136;
 			
 			// aapt resource value: 0x7f050019
-			public const int horizontal = 2131034137;
+			public const int input_password = 2131034137;
 			
 			// aapt resource value: 0x7f05001a
-			public const int input_password = 2131034138;
-			
-			// aapt resource value: 0x7f05001b
-			public const int javascript = 2131034139;
+			public const int javascript = 2131034138;
 			
 			// aapt resource value: 0x7f050055
 			public const int loading = 2131034197;
 			
-			// aapt resource value: 0x7f05001c
-			public const int loading_pdf = 2131034140;
+			// aapt resource value: 0x7f05001b
+			public const int loading_pdf = 2131034139;
 			
-			// aapt resource value: 0x7f05001d
-			public const int no = 2131034141;
+			// aapt resource value: 0x7f05001c
+			public const int no = 2131034140;
 			
 			// aapt resource value: 0x7f050056
 			public const int no_bookmarks = 2131034198;
 			
+			// aapt resource value: 0x7f05001d
+			public const int no_more_found = 2131034141;
+			
 			// aapt resource value: 0x7f05001e
-			public const int no_more_found = 2131034142;
+			public const int no_more_redo = 2131034142;
 			
 			// aapt resource value: 0x7f05001f
-			public const int no_more_redo = 2131034143;
+			public const int no_more_undo = 2131034143;
 			
 			// aapt resource value: 0x7f050020
-			public const int no_more_undo = 2131034144;
+			public const int no_pdf_outlines = 2131034144;
 			
 			// aapt resource value: 0x7f050021
-			public const int no_pdf_outlines = 2131034145;
+			public const int note_content = 2131034145;
 			
-			// aapt resource value: 0x7f050022
-			public const int note_content = 2131034146;
+			// aapt resource value: 0x7f050044
+			public const int note_subject = 2131034180;
 			
 			// aapt resource value: 0x7f050045
-			public const int note_subject = 2131034181;
+			public const int note_text = 2131034181;
 			
-			// aapt resource value: 0x7f050046
-			public const int note_text = 2131034182;
+			// aapt resource value: 0x7f050022
+			public const int ok = 2131034146;
 			
 			// aapt resource value: 0x7f050023
-			public const int ok = 2131034147;
+			public const int open_asset = 2131034147;
 			
 			// aapt resource value: 0x7f050024
-			public const int open_asset = 2131034148;
+			public const int open_http = 2131034148;
 			
 			// aapt resource value: 0x7f050025
-			public const int open_http = 2131034149;
+			public const int open_sdcard = 2131034149;
 			
 			// aapt resource value: 0x7f050026
-			public const int open_sdcard = 2131034150;
+			public const int page_change_block = 2131034150;
 			
 			// aapt resource value: 0x7f050027
-			public const int page_change_block = 2131034151;
+			public const int pdf_outline = 2131034151;
 			
 			// aapt resource value: 0x7f050028
-			public const int pdf_outline = 2131034152;
+			public const int pdf_print_calculation_failed = 2131034152;
 			
 			// aapt resource value: 0x7f050029
-			public const int pdf_print_calculation_failed = 2131034153;
+			public const int pdf_print_not_available = 2131034153;
 			
 			// aapt resource value: 0x7f05002a
-			public const int pdf_print_not_available = 2131034154;
+			public const int pdf_share_not_available = 2131034154;
 			
 			// aapt resource value: 0x7f05002b
-			public const int pdf_share_not_available = 2131034155;
-			
-			// aapt resource value: 0x7f05002c
-			public const int please_wait = 2131034156;
+			public const int please_wait = 2131034155;
 			
 			// aapt resource value: 0x7f050057
 			public const int print = 2131034199;
 			
-			// aapt resource value: 0x7f05002d
-			public const int process_selected_text = 2131034157;
+			// aapt resource value: 0x7f05002c
+			public const int process_selected_text = 2131034156;
+			
+			// aapt resource value: 0x7f050046
+			public const int read_only_annotation = 2131034182;
 			
 			// aapt resource value: 0x7f050047
-			public const int read_only_annotation = 2131034183;
+			public const int reflow = 2131034183;
 			
 			// aapt resource value: 0x7f050048
-			public const int reflow = 2131034184;
+			public const int save = 2131034184;
+			
+			// aapt resource value: 0x7f05002d
+			public const int save_msg = 2131034157;
 			
 			// aapt resource value: 0x7f050049
-			public const int save = 2131034185;
-			
-			// aapt resource value: 0x7f05002e
-			public const int save_msg = 2131034158;
-			
-			// aapt resource value: 0x7f05004a
-			public const int saved_message = 2131034186;
+			public const int saved_message = 2131034185;
 			
 			// aapt resource value: 0x7f050058
 			public const int share = 2131034200;
 			
-			// aapt resource value: 0x7f05004b
-			public const int show_password = 2131034187;
+			// aapt resource value: 0x7f05004a
+			public const int show_password = 2131034186;
+			
+			// aapt resource value: 0x7f05002e
+			public const int simple_open_gl = 2131034158;
 			
 			// aapt resource value: 0x7f05002f
-			public const int simple_open_gl = 2131034159;
+			public const int single_page = 2131034159;
 			
 			// aapt resource value: 0x7f050030
-			public const int single_page = 2131034160;
-			
-			// aapt resource value: 0x7f050031
-			public const int squiggly = 2131034161;
+			public const int squiggly = 2131034160;
 			
 			// aapt resource value: 0x7f050000
 			public const int status_bar_notification_info_overflow = 2131034112;
 			
+			// aapt resource value: 0x7f050031
+			public const int strikeout = 2131034161;
+			
 			// aapt resource value: 0x7f050032
-			public const int strikeout = 2131034162;
+			public const int thumbnail_creation_running = 2131034162;
 			
 			// aapt resource value: 0x7f050033
-			public const int thumbnail_creation_running = 2131034163;
+			public const int todo_3d = 2131034163;
 			
 			// aapt resource value: 0x7f050034
-			public const int todo_3d = 2131034164;
+			public const int todo_attachment = 2131034164;
 			
 			// aapt resource value: 0x7f050035
-			public const int todo_attachment = 2131034165;
+			public const int todo_java_script = 2131034165;
 			
 			// aapt resource value: 0x7f050036
-			public const int todo_java_script = 2131034166;
+			public const int todo_open_url = 2131034166;
 			
 			// aapt resource value: 0x7f050037
-			public const int todo_open_url = 2131034167;
+			public const int todo_play_movie = 2131034167;
 			
 			// aapt resource value: 0x7f050038
-			public const int todo_play_movie = 2131034168;
+			public const int todo_play_sound = 2131034168;
 			
 			// aapt resource value: 0x7f050039
-			public const int todo_play_sound = 2131034169;
+			public const int underline = 2131034169;
 			
 			// aapt resource value: 0x7f05003a
-			public const int underline = 2131034170;
+			public const int using_RGB_4444 = 2131034170;
 			
 			// aapt resource value: 0x7f05003b
-			public const int using_RGB_4444 = 2131034171;
+			public const int using_RGB_565 = 2131034171;
 			
 			// aapt resource value: 0x7f05003c
-			public const int using_RGB_565 = 2131034172;
+			public const int vertical = 2131034172;
 			
 			// aapt resource value: 0x7f05003d
-			public const int vertical = 2131034173;
+			public const int view_pager = 2131034173;
+			
+			// aapt resource value: 0x7f05004b
+			public const int warning = 2131034187;
 			
 			// aapt resource value: 0x7f05003e
-			public const int view_pager = 2131034174;
-			
-			// aapt resource value: 0x7f05004c
-			public const int warning = 2131034188;
-			
-			// aapt resource value: 0x7f05003f
-			public const int yes = 2131034175;
+			public const int yes = 2131034174;
 			
 			static String()
 			{
