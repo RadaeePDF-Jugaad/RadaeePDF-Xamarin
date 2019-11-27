@@ -53,7 +53,7 @@ namespace RadaeePDFDemo
             Button open = FindViewById<Button>(Resource.Id.open);
 
             open.Click += delegate {
-                mPdfManager.Show(this, "file:///mnt/sdcard/Download/pdf/License.pdf", "");
+                mPdfManager.Show(this, "file:///mnt/sdcard/Download/test.pdf", "");
                 //mPdfManager.Show(this, "file:///mnt/sdcard/Download/pdf/License.pdf", "", false, false, 4);
             };
 
