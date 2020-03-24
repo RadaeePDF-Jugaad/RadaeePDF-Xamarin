@@ -13,21 +13,21 @@ namespace RadaeeLib
         [Export("text", ArgumentSemantic.Strong)]
         string Text { get; set; }
 
-        // @property (nonatomic, strong) NSMutableString * pdfName;
-        [Export("pdfName", ArgumentSemantic.Strong)]
-        NSMutableString PdfName { get; set; }
+        // @property (nonatomic, strong) NSMutableString * g_pdf_name;
+        [Export("g_pdf_name", ArgumentSemantic.Strong)]
+        NSMutableString G_pdf_name { get; set; }
 
-        // @property (nonatomic, strong) NSMutableString * pdfPath;
-        [Export("pdfPath", ArgumentSemantic.Strong)]
-        NSMutableString PdfPath { get; set; }
+        // @property (nonatomic, strong) NSMutableString * g_pdf_path;
+        [Export("g_pdf_path", ArgumentSemantic.Strong)]
+        NSMutableString G_pdf_path { get; set; }
 
         // @property (nonatomic, strong) NSString * g_author;
         [Export("g_author", ArgumentSemantic.Strong)]
         string G_author { get; set; }
 
-        // @property (nonatomic) int g_render_quality;
-        [Export("g_render_quality")]
-        int G_render_quality { get; set; }
+        // @property (nonatomic, strong) NSString * g_sign_pad_descr;
+        [Export("g_sign_pad_descr", ArgumentSemantic.Strong)]
+        string G_sign_pad_descr { get; set; }
 
         // @property (nonatomic) uint g_rect_color;
         [Export("g_rect_color")]
@@ -49,25 +49,49 @@ namespace RadaeeLib
         [Export("g_oval_color")]
         uint G_oval_color { get; set; }
 
-        // @property (nonatomic) _Bool g_case_sensitive;
-        [Export("g_case_sensitive")]
-        bool G_case_sensitive { get; set; }
+        // @property (nonatomic) uint g_rect_annot_fill_color;
+        [Export("g_rect_annot_fill_color")]
+        uint G_rect_annot_fill_color { get; set; }
 
-        // @property (nonatomic) _Bool g_match_whole_word;
-        [Export("g_match_whole_word")]
-        bool G_match_whole_word { get; set; }
+        // @property (nonatomic) uint g_ellipse_annot_fill_color;
+        [Export("g_ellipse_annot_fill_color")]
+        uint G_ellipse_annot_fill_color { get; set; }
 
-        // @property (nonatomic) _Bool g_sel_right;
-        [Export("g_sel_right")]
-        bool G_sel_right { get; set; }
+        // @property (nonatomic) uint g_line_annot_fill_color;
+        [Export("g_line_annot_fill_color")]
+        uint G_line_annot_fill_color { get; set; }
 
-        // @property (nonatomic) _Bool g_screen_awake;
-        [Export("g_screen_awake")]
-        bool G_screen_awake { get; set; }
+        // @property (nonatomic) uint g_annot_highlight_clr;
+        [Export("g_annot_highlight_clr")]
+        uint G_annot_highlight_clr { get; set; }
 
-        // @property (nonatomic) _Bool g_save_doc;
-        [Export("g_save_doc")]
-        bool G_save_doc { get; set; }
+        // @property (nonatomic) uint g_annot_underline_clr;
+        [Export("g_annot_underline_clr")]
+        uint G_annot_underline_clr { get; set; }
+
+        // @property (nonatomic) uint g_annot_strikeout_clr;
+        [Export("g_annot_strikeout_clr")]
+        uint G_annot_strikeout_clr { get; set; }
+
+        // @property (nonatomic) uint g_annot_squiggly_clr;
+        [Export("g_annot_squiggly_clr")]
+        uint G_annot_squiggly_clr { get; set; }
+
+        // @property (nonatomic) uint g_annot_transparency;
+        [Export("g_annot_transparency")]
+        uint G_annot_transparency { get; set; }
+
+        // @property (nonatomic) uint g_find_primary_color;
+        [Export("g_find_primary_color")]
+        uint G_find_primary_color { get; set; }
+
+        // @property (nonatomic) uint g_readerview_bg_color;
+        [Export("g_readerview_bg_color")]
+        uint G_readerview_bg_color { get; set; }
+
+        // @property (nonatomic) uint g_thumbview_bg_color;
+        [Export("g_thumbview_bg_color")]
+        uint G_thumbview_bg_color { get; set; }
 
         // @property (nonatomic) float g_ink_width;
         [Export("g_ink_width")]
@@ -93,13 +117,37 @@ namespace RadaeeLib
         [Export("g_swipe_distance")]
         float G_swipe_distance { get; set; }
 
-        // @property (nonatomic) int g_render_mode;
-        [Export("g_render_mode")]
-        int G_render_mode { get; set; }
-
         // @property (nonatomic) float g_zoom_level;
         [Export("g_zoom_level")]
         float G_zoom_level { get; set; }
+
+        // @property (nonatomic) float g_layout_zoom_level;
+        [Export("g_layout_zoom_level")]
+        float G_layout_zoom_level { get; set; }
+
+        // @property (nonatomic) float g_zoom_step;
+        [Export("g_zoom_step")]
+        float G_zoom_step { get; set; }
+
+        // @property (nonatomic) _Bool g_case_sensitive;
+        [Export("g_case_sensitive")]
+        bool G_case_sensitive { get; set; }
+
+        // @property (nonatomic) _Bool g_match_whole_word;
+        [Export("g_match_whole_word")]
+        bool G_match_whole_word { get; set; }
+
+        // @property (nonatomic) _Bool g_sel_right;
+        [Export("g_sel_right")]
+        bool G_sel_right { get; set; }
+
+        // @property (nonatomic) _Bool g_screen_awake;
+        [Export("g_screen_awake")]
+        bool G_screen_awake { get; set; }
+
+        // @property (nonatomic) _Bool g_save_doc;
+        [Export("g_save_doc")]
+        bool G_save_doc { get; set; }
 
         // @property (nonatomic) _Bool g_static_scale;
         [Export("g_static_scale")]
@@ -145,29 +193,37 @@ namespace RadaeeLib
         [Export("g_auto_launch_link")]
         bool G_auto_launch_link { get; set; }
 
-        // @property (nonatomic) int renderQuality;
-        [Export("renderQuality")]
-        int RenderQuality { get; set; }
+        // @property (nonatomic) _Bool g_highlight_annotation;
+        [Export("g_highlight_annotation")]
+        bool G_highlight_annotation { get; set; }
 
-        // @property (nonatomic) uint g_annot_highlight_clr;
-        [Export("g_annot_highlight_clr")]
-        uint G_annot_highlight_clr { get; set; }
+        // @property (nonatomic) _Bool g_enable_graphical_signature;
+        [Export("g_enable_graphical_signature")]
+        bool G_enable_graphical_signature { get; set; }
 
-        // @property (nonatomic) uint g_annot_underline_clr;
-        [Export("g_annot_underline_clr")]
-        uint G_annot_underline_clr { get; set; }
+        // @property (nonatomic) int g_render_quality;
+        [Export("g_render_quality")]
+        int G_render_quality { get; set; }
 
-        // @property (nonatomic) uint g_annot_strikeout_clr;
-        [Export("g_annot_strikeout_clr")]
-        uint G_annot_strikeout_clr { get; set; }
+        // @property (nonatomic) int g_render_mode;
+        [Export("g_render_mode")]
+        int G_render_mode { get; set; }
 
-        // @property (nonatomic) uint g_annot_squiggly_clr;
-        [Export("g_annot_squiggly_clr")]
-        uint G_annot_squiggly_clr { get; set; }
+        // @property (nonatomic) int g_navigation_mode;
+        [Export("g_navigation_mode")]
+        int G_navigation_mode { get; set; }
 
-        // @property (nonatomic) uint g_annot_transparency;
-        [Export("g_annot_transparency")]
-        uint G_annot_transparency { get; set; }
+        // @property (nonatomic) int g_line_annot_style1;
+        [Export("g_line_annot_style1")]
+        int G_line_annot_style1 { get; set; }
+
+        // @property (nonatomic) int g_line_annot_style2;
+        [Export("g_line_annot_style2")]
+        int G_line_annot_style2 { get; set; }
+
+        // @property (nonatomic) int g_thumbview_height;
+        [Export("g_thumbview_height")]
+        int G_thumbview_height { get; set; }
 
         // +(RDVGlobal *)sharedInstance;
         [Static]
@@ -249,10 +305,6 @@ namespace RadaeeLib
     [BaseType(typeof(NSObject))]
     interface RadaeePDFPlugin
     {
-        // @property (nonatomic) int viewMode;
-        [Export("viewMode")]
-        int ViewMode { get; set; }
-
         // @property (nonatomic, strong) NSString * lastOpenedPath;
         [Export("lastOpenedPath", ArgumentSemantic.Strong)]
         string LastOpenedPath { get; set; }
