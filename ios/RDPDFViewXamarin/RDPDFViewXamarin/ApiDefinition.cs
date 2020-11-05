@@ -566,6 +566,42 @@ namespace RadaeeLib
         [Export("refreshCurrentPage")]
         void RefreshCurrentPage();
 
+        // -(NSString *)getTextAnnotationDetails:(int)pageNum;
+        [Export("getTextAnnotationDetails:")]
+        string GetTextAnnotationDetails(int pageNum);
+
+        // -(NSString *)getMarkupAnnotationDetails:(int)pageNum;
+        [Export("getMarkupAnnotationDetails:")]
+        string GetMarkupAnnotationDetails(int pageNum);
+
+        // -(void)addTextAnnotation:(int)pageNum :(float)x :(float)y :(NSString *)text :(NSString *)subject;
+        [Export("addTextAnnotation:::::")]
+        void AddTextAnnotation(int pageNum, float x, float y, string text, string subject);
+
+        // -(int)getCharIndex:(int)pageNum :(float)x :(float)y;
+        [Export("getCharIndex:::")]
+        int GetCharIndex(int pageNum, float x, float y);
+
+        // -(void)addMarkupAnnotation:(int)pageNum :(int)type :(int)index1 :(int)index2;
+        [Export("addMarkupAnnotation::::")]
+        void AddMarkupAnnotation(int pageNum, int type, int index1, int index2);
+
+        //-(NSString *)getPDFCoordinates:(int)x :(int)y
+        [Export("getPDFCoordinates::")]
+        string GetPDFCoordinates(int x, int y);
+
+        //-(NSString *)getScreenCoordinates:(int)x :(int)y :(int)pageNum;
+        [Export("getScreenCoordinates:::")]
+        string GetScreenCoordinates(int x, int y ,int pageNum);
+
+        //-(NSString *)getPDFRect:(float)x :(float)y :(float)width :(float)height
+        [Export("getPDFRect::::")]
+        string GetPDFRect(float x, float y, float width, float height);
+
+        //-(NSString *)getScreenRect:(float)left :(float)top :(float)right :(float)bottom :(int)pageNum;
+        [Export("getScreenRect:::::")]
+        string GetScreenRect(float left, float top, float right, float bottom, int pageNum);
+
         // -(id)getGlobal;
         [Export("getGlobal")]
         NSObject Global { get; }
