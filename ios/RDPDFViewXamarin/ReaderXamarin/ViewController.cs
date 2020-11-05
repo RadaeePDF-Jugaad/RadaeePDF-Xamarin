@@ -128,7 +128,7 @@ namespace ReaderXamarin
             RDVGlobal.SharedInstance.G_render_mode = 3; // Set render mode
 
             //Open from assets
-            UIViewController controller = (UIKit.UIViewController)plugin.OpenFromAssets("test.pdf", "");
+            UIViewController controller = (UIKit.UIViewController)plugin.Show("file://help.pdf", "");
 
             //Set Callback for RadaeeDelegate
             selector = new RadaeeDelegate(plugin);

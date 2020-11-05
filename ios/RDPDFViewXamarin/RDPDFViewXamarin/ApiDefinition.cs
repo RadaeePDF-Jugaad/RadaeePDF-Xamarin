@@ -240,6 +240,289 @@ namespace RadaeeLib
         void Setup();
     }
 
+    // @interface DlgAnnotPopText : UIView
+    [BaseType(typeof(UIView))]
+    interface DlgAnnotPopText
+    {
+        // __weak IBOutlet UITextField *mSubj;
+        [Export("mSubj", ArgumentSemantic.Strong)]
+        UITextField MSubj { get; set; }
+
+        //__weak IBOutlet UITextView *mText;
+        [Export("mText", ArgumentSemantic.Strong)]
+        UITextView MText { get; set; }
+    }
+
+    // @interface UILStyleView : UIView
+    [BaseType(typeof(UIView))]
+    interface UILStyleView
+    {
+    }
+
+    // @interface UILStyleBtn : UIView
+    [BaseType(typeof(UIView))]
+    interface UILStyleBtn
+    {
+    }
+
+    // @interface UIColorBtn : UIView
+    [BaseType(typeof(UIView))]
+    interface UIColorBtn
+    {
+    }
+
+    // @interface DlgAnnotPropComm : UIView
+    [BaseType(typeof(UIView))]
+    interface DlgAnnotPropComm
+    {
+        // __weak IBOutlet UITextField *mLWidth;
+        [Export("mLWidth", ArgumentSemantic.Strong)]
+        UITextField MLWidth { get; set; }
+
+        //__weak IBOutlet UILStyleBtn* mLStyle;
+        [Export("mLStyle", ArgumentSemantic.Strong)]
+        UILStyleBtn MLStyle { get; set; }
+
+        //__weak IBOutlet UIColorBtn* mLColor;
+        [Export("mLColor", ArgumentSemantic.Strong)]
+        UIColorBtn MLColor { get; set; }
+
+        //__weak IBOutlet UIColorBtn* mFColor;
+        [Export("mFColor", ArgumentSemantic.Strong)]
+        UIColorBtn MFColor { get; set; }
+
+        //__weak IBOutlet UILabel* mLFColor;
+        [Export("mLFColor", ArgumentSemantic.Strong)]
+        UILabel MLFColor { get; set; }
+
+        //__weak IBOutlet UISlider* mAlpha;
+        [Export("mAlpha", ArgumentSemantic.Strong)]
+        UISlider MAlpha { get; set; }
+
+        //__weak IBOutlet UILabel* mLAlpha;
+        [Export("mLAlpha", ArgumentSemantic.Strong)]
+        UILabel MLAlpha { get; set; }
+
+        //__weak IBOutlet UIButton* mLocked;
+        [Export("mLocked", ArgumentSemantic.Strong)]
+        UIButton MLocked { get; set; }
+
+        // -(void)OnAlphaChanged:(id)sender __attribute__((ibaction));
+        [Export("OnAlphaChanged:")]
+        void OnAlphaChanged(NSObject sender);
+
+        // -(void)OnLock:(id)sender __attribute__((ibaction));
+        [Export("OnLock:")]
+        void OnLock(NSObject sender);
+    }
+
+    // @interface UIIconBtn : UIImageView
+    [BaseType(typeof(UIImageView))]
+    interface UIIconBtn
+    {
+    }
+
+    // @interface DlgAnnotPropIcon : UIView
+    [BaseType(typeof(UIView))]
+    interface DlgAnnotPropIcon
+    {
+        //__weak IBOutlet UIIconBtn* mIcon;
+        [Export("mIcon", ArgumentSemantic.Strong)]
+        UIIconBtn MIcon { get; set; }
+
+        //__weak IBOutlet UIColorBtn* mFColor;
+        [Export("mFColor", ArgumentSemantic.Strong)]
+        UIColorBtn MFColor { get; set; }
+
+        //__weak IBOutlet UISlider* mAlpha;
+        [Export("mAlpha", ArgumentSemantic.Strong)]
+        UISlider MAlpha { get; set; }
+
+        //__weak IBOutlet UIButton* mLocked;
+        [Export("mLocked", ArgumentSemantic.Strong)]
+        UIButton MLocked { get; set; }
+
+        //__weak IBOutlet UILabel* mLAlpha;
+        [Export("mLAlpha", ArgumentSemantic.Strong)]
+        UILabel MLAlpha { get; set; }
+
+        // -(void)OnAlphaChanged:(id)sender __attribute__((ibaction));
+        [Export("OnAlphaChanged:")]
+        void OnAlphaChanged(NSObject sender);
+
+        // -(void)OnLock:(id)sender __attribute__((ibaction));
+        [Export("OnLock:")]
+        void OnLock(NSObject sender);
+    }
+
+    // @interface UILHeadView : UIView
+    [BaseType(typeof(UIView))]
+    interface UILHeadView
+    {
+    }
+
+    // @interface UILHeadBtn : UIView
+    [BaseType(typeof(UIView))]
+    interface UILHeadBtn
+    {
+
+    }
+
+    // @interface DlgAnnotPropLine : UIView
+    [BaseType(typeof(UIView))]
+    interface DlgAnnotPropLine
+    {
+        //__weak IBOutlet UITextField* mLWidth;
+        [Export("mLWidth", ArgumentSemantic.Strong)]
+        UITextField MLWidth { get; set; }
+
+        //__weak IBOutlet UILStyleBtn* mLStyle;
+        [Export("mLStyle", ArgumentSemantic.Strong)]
+        UILStyleBtn MLStyle { get; set; }
+
+        //__weak IBOutlet UIColorBtn* mLColor;
+        [Export("mLColor", ArgumentSemantic.Strong)]
+        UIColorBtn MLColor { get; set; }
+
+        //__weak IBOutlet UIColorBtn* mFColor;
+        [Export("mFColor", ArgumentSemantic.Strong)]
+        UIColorBtn MFColor { get; set; }
+
+        //__weak IBOutlet UILHeadBtn* mLStart;
+        [Export("mLStart", ArgumentSemantic.Strong)]
+        UILHeadBtn MLStart { get; set; }
+
+        //__weak IBOutlet UILHeadBtn* mLEnd;
+        [Export("mLEnd", ArgumentSemantic.Strong)]
+        UILHeadBtn MLEnd { get; set; }
+
+        //__weak IBOutlet UISlider* mAlpha;
+        [Export("mAlpha", ArgumentSemantic.Strong)]
+        UISlider MAlpha { get; set; }
+
+        //__weak IBOutlet UILabel* mLAlpha;
+        [Export("mLAlpha", ArgumentSemantic.Strong)]
+        UILabel mLAlpha { get; set; }
+
+        //__weak IBOutlet UIButton* mLocked;
+        [Export("mLocked", ArgumentSemantic.Strong)]
+        UIButton MLocked { get; set; }
+
+        // -(void)OnAlphaChanged:(id)sender __attribute__((ibaction));
+        [Export("OnAlphaChanged:")]
+        void OnAlphaChanged(NSObject sender);
+
+        // -(void)OnLock:(id)sender __attribute__((ibaction));
+        [Export("OnLock:")]
+        void OnLock(NSObject sender);
+    }
+
+    // @interface DlgAnnotPropMarkup : UIView
+    [BaseType(typeof(UIView))]
+    interface DlgAnnotPropMarkup
+    {
+        //__weak IBOutlet UIColorBtn* mColor;
+        [Export("mColor", ArgumentSemantic.Strong)]
+        UIColorBtn MColor { get; set; }
+
+        //__weak IBOutlet UISlider* mAlpha;
+        [Export("mAlpha", ArgumentSemantic.Strong)]
+        UISlider MAlpha { get; set; }
+
+        //__weak IBOutlet UIButton* mLocked;
+        [Export("mLocked", ArgumentSemantic.Strong)]
+        UIButton MLocked { get; set; }
+
+        //__weak IBOutlet UILabel* mLAlpha;
+        [Export("mLAlpha", ArgumentSemantic.Strong)]
+        UILabel MLAlpha { get; set; }
+
+        // -(void)OnAlpha:(id)sender __attribute__((ibaction));
+        [Export("OnAlpha:")]
+        void OnAlpha(NSObject sender);
+
+        // -(void)OnLocked:(id)sender __attribute__((ibaction));
+        [Export("OnLocked:")]
+        void OnLocked(NSObject sender);
+    }
+
+    // @interface DlgMeta : UIView
+    [BaseType(typeof(UIView))]
+    interface DlgMeta
+    {
+        //__weak IBOutlet UITextField* mTitle;
+        [Export("mTitle", ArgumentSemantic.Strong)]
+        UITextField MTitle { get; set; }
+
+        //__weak IBOutlet UITextField* mAuthor;
+        [Export("mAuthor", ArgumentSemantic.Strong)]
+        UITextField MAuthor { get; set; }
+
+        //__weak IBOutlet UITextField* mSubject;
+        [Export("mSubject", ArgumentSemantic.Strong)]
+        UITextField mSubject { get; set; }
+
+        //__weak IBOutlet UITextView* mKeyWords;
+        [Export("mKeyWords", ArgumentSemantic.Strong)]
+        UITextView MKeyWords { get; set; }
+    }
+
+    // @interface PopColor : UIView
+    [BaseType(typeof(UIView))]
+    interface PopColor
+    {
+        //__weak IBOutlet UISlider* mR;
+        [Export("mR", ArgumentSemantic.Strong)]
+        UISlider MR { get; set; }
+
+        //__weak IBOutlet UISlider* mG;
+        [Export("mG", ArgumentSemantic.Strong)]
+        UISlider MG { get; set; }
+
+        //__weak IBOutlet UISlider* mB;
+        [Export("mB", ArgumentSemantic.Strong)]
+        UISlider MB { get; set; }
+
+        //__weak IBOutlet UIButton* mEnable;
+        [Export("mEnable", ArgumentSemantic.Strong)]
+        UIButton MEnable { get; set; }
+
+        //__weak IBOutlet UILabel* mLEnable;
+        [Export("mLEnable", ArgumentSemantic.Strong)]
+        UILabel MLEnable { get; set; }
+
+        // -(void)OnEnable:(id)sender __attribute__((ibaction));
+        [Export("OnEnable:")]
+        void OnEnable(NSObject sender);
+
+        // -(void)OnOK:(id)sender __attribute__((ibaction));
+        [Export("OnOK:")]
+        void OnOK(NSObject sender);
+
+        // -(void)OnCancel:(id)sender __attribute__((ibaction));
+        [Export("OnCancel:")]
+        void OnCancel(NSObject sender);
+
+        // -(void)OnProgress:(id)sender __attribute__((ibaction));
+        [Export("OnProgress:")]
+        void OnProgress(NSObject sender);
+    }
+
+    // @interface PopOutlineItem : UIView
+    [BaseType(typeof(UIView))]
+    interface PopOutlineItem
+    {
+    }
+
+    // @interface PopOutline : UIView
+    [BaseType(typeof(UIView))]
+    interface PopOutline
+    {
+        //__weak IBOutlet UIScrollView* mOutlines;
+        [Export("mOutlines", ArgumentSemantic.Strong)]
+        UIScrollView MOutlines { get; set; }
+    }
+
     // @protocol RadaeePDFPluginDelegate
     [BaseType(typeof(NSObject))]
     [Model]
