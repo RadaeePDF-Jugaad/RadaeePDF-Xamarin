@@ -201,6 +201,30 @@ namespace RadaeeLib
         [Export("g_enable_graphical_signature")]
         bool G_enable_graphical_signature { get; set; }
 
+        // @property (nonatomic) _Bool g_hide_search_button;
+        [Export("g_hide_search_button")]
+        bool G_hide_search_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_annot_button;
+        [Export("g_hide_annot_button")]
+        bool G_hide_annot_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_selector_button;
+        [Export("g_hide_selector_button")]
+        bool G_hide_selector_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_undo_button;
+        [Export("g_hide_undo_button")]
+        bool G_hide_undo_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_redo_button;
+        [Export("g_hide_redo_button")]
+        bool G_hide_redo_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_more_button;
+        [Export("g_hide_more_button")]
+        bool G_hide_more_button { get; set; }
+
         // @property (nonatomic) int g_render_quality;
         [Export("g_render_quality")]
         int G_render_quality { get; set; }
