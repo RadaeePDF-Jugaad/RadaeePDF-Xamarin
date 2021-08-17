@@ -120,7 +120,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\test.pdf" />
+    <BundleResource Include="Resources\help.pdf" />
     <BundleResource Include="Resources\en.lproj\Localizable.strings" />
     <BundleResource Include="Resources\it.lproj\Localizable.strings" />
     <BundleResource Include="Resources\cmaps\cmaps.dat" />

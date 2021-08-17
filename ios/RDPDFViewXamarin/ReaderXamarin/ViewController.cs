@@ -126,12 +126,12 @@ namespace ReaderXamarin
              */
 
             RDVGlobal.SharedInstance.G_render_mode = 3; // Set render mode
-            RDVGlobal.SharedInstance.G_hide_more_button = true;
-            RDVGlobal.SharedInstance.G_hide_annot_button = true;
-            RDVGlobal.SharedInstance.G_hide_search_button = true;
-            RDVGlobal.SharedInstance.G_hide_undo_button = true;
-            RDVGlobal.SharedInstance.G_hide_redo_button = true;
-            RDVGlobal.SharedInstance.G_hide_selector_button = true;
+            //RDVGlobal.SharedInstance.G_hide_more_button = true;
+            //RDVGlobal.SharedInstance.G_hide_annot_button = true;
+            //RDVGlobal.SharedInstance.G_hide_search_button = true;
+            //RDVGlobal.SharedInstance.G_hide_undo_button = true;
+            //RDVGlobal.SharedInstance.G_hide_redo_button = true;
+            //RDVGlobal.SharedInstance.G_hide_selector_button = true;
 
             //Open from assets
             UIViewController controller = (UIKit.UIViewController)plugin.Show("file://help.pdf", "");
