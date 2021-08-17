@@ -157,6 +157,8 @@
     <BundleResource Include="Resources\fdat\stdRes\11" />
     <BundleResource Include="Resources\fdat\stdRes\12" />
     <BundleResource Include="Resources\fdat\stdRes\13" />
+    <BundleResource Include="Resources\fdat\stdFont\NotoSansCJK-Regular.ttc" />
+    <BundleResource Include="Resources\fdat\stdFont\Symbol Neu for Powerline.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Images.xcassets\.DS_Store" />
