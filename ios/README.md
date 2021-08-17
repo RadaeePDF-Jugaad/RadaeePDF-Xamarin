@@ -1,4 +1,5 @@
-**Only on iOS
+Only on iOS
+===========
 
 Added bool properties of RDVGlobal.SharedInstance to hide buttons in the toolbar.
 
