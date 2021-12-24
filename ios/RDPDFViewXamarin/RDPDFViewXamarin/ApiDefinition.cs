@@ -225,6 +225,10 @@ namespace RadaeeLib
         [Export("g_hide_more_button")]
         bool G_hide_more_button { get; set; }
 
+        // @property (nonatomic) _Bool g_disable_text_copy
+        [Export("g_disable_text_copy")]
+        bool G_disable_text_copy { get; set; }
+
         // @property (nonatomic) int g_render_quality;
         [Export("g_render_quality")]
         int G_render_quality { get; set; }
