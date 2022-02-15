@@ -25,13 +25,14 @@ If you, as user or developer need new features or fixes you shall submit them he
 
 ```C#
 RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
-bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //license activation info
+// bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //license activation info
+bool activated = mRadaeePDFPlugin.activateLicense(this, company, email, licenseKey); //license activation info
 ```
 
 ###### Example:
 
 ```C#
-bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
+bool activated = mRadaeePDFPlugin.activateLicense(this, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
 ```
 
 ### Open PDF from file system/remote server
