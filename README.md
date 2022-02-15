@@ -49,7 +49,7 @@ mRadaeePDFPlugin.show(filePath, password, this); //the file path and the passwor
 ```C#
 mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //local
 
-mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
+mRadaeePDFPlugin.show("https://www.radaeepdf.com/documentation/readeula/eula/eula.pdf", "", this); //remote
 ```
 
 ### Open PDF from assets
