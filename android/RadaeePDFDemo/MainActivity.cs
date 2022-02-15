@@ -43,7 +43,7 @@ namespace RadaeePDFDemo
             Button activate = FindViewById<Button>(Resource.Id.activate);
 
             activate.Click += delegate {
-                bool activated = mPdfManager.ActivateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
+                bool activated = mPdfManager.ActivateLicense(this, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
                 if (activated)
                     Toast.MakeText(this, "License activated successfully", ToastLength.Short).Show();
                 else
@@ -60,7 +60,7 @@ namespace RadaeePDFDemo
             Button openHttp = FindViewById<Button>(Resource.Id.open_http);
 
             openHttp.Click += delegate {
-                mPdfManager.Show(this, "http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "");
+                mPdfManager.Show(this, "https://www.radaeepdf.com/documentation/readeula/eula/eula.pdf", "");
             };
 
             Button openAssets = FindViewById<Button>(Resource.Id.open_assets);
