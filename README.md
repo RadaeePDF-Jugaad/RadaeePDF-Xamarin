@@ -25,8 +25,8 @@ If you, as user or developer need new features or fixes you shall submit them he
 
 ```C#
 RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
-// bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //license activation info
-bool activated = mRadaeePDFPlugin.activateLicense(this, company, email, licenseKey); //license activation info
+// bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //old license activation method
+bool activated = mRadaeePDFPlugin.activateLicense(this, company, email, licenseKey); //now it is substituted by this one
 ```
 
 ###### Example:
