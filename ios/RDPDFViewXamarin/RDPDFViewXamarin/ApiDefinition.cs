@@ -201,6 +201,34 @@ namespace RadaeeLib
         [Export("g_enable_graphical_signature")]
         bool G_enable_graphical_signature { get; set; }
 
+        // @property (nonatomic) _Bool g_hide_search_button;
+        [Export("g_hide_search_button")]
+        bool G_hide_search_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_annot_button;
+        [Export("g_hide_annot_button")]
+        bool G_hide_annot_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_selector_button;
+        [Export("g_hide_selector_button")]
+        bool G_hide_selector_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_undo_button;
+        [Export("g_hide_undo_button")]
+        bool G_hide_undo_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_redo_button;
+        [Export("g_hide_redo_button")]
+        bool G_hide_redo_button { get; set; }
+
+        // @property (nonatomic) _Bool g_hide_more_button;
+        [Export("g_hide_more_button")]
+        bool G_hide_more_button { get; set; }
+
+        // @property (nonatomic) _Bool g_disable_text_copy
+        [Export("g_disable_text_copy")]
+        bool G_disable_text_copy { get; set; }
+
         // @property (nonatomic) int g_render_quality;
         [Export("g_render_quality")]
         int G_render_quality { get; set; }
@@ -669,9 +697,9 @@ namespace RadaeeLib
         [Export("show:atPage:withPassword:readOnly:autoSave:author:")]
         NSObject Show(string file, int page, string password, bool readOnly, bool autoSave, string author);
 
-        // -(void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key licenseType:(int)type;
-        [Export("activateLicenseWithBundleId:company:email:key:licenseType:")]
-        void ActivateLicenseWithBundleId(string bundleId, string company, string email, string key, int type);
+        // -(void)activateLicenseWithBundleId:(NSString *)bundleId company:(NSString *)company email:(NSString *)email key:(NSString *)key;
+        [Export("activateLicenseWithBundleId:company:email:key:")]
+        void ActivateLicenseWithBundleId(string bundleId, string company, string email, string key);
 
         // -(id)openFromAssets:(NSString *)file withPassword:(NSString *)password;
         [Export("openFromAssets:withPassword:")]
@@ -875,7 +903,7 @@ namespace RadaeeLib
 
         //-(NSString *)getScreenCoordinates:(int)x :(int)y :(int)pageNum;
         [Export("getScreenCoordinates:::")]
-        string GetScreenCoordinates(int x, int y ,int pageNum);
+        string GetScreenCoordinates(int x, int y, int pageNum);
 
         //-(NSString *)getPDFRect:(float)x :(float)y :(float)width :(float)height
         [Export("getPDFRect::::")]
