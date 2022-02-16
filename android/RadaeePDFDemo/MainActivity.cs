@@ -6,6 +6,14 @@ using Android.OS;
 using Android.Util;
 using System;
 
+/*
+ *  demo for RadaeePDF Classic SDK and Xamarin
+ *  (c)2018-2022 RadaeePDF
+ *  (c)2019-2020 GEAR.it
+ *  (c)2021-2022 Jugaad srl
+ *
+ **/
+
 namespace RadaeePDFDemo
 {
     [Activity(Label = "RadaeePDFDemo", MainLauncher = true, Icon = "@drawable/icon")]
