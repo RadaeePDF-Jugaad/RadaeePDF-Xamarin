@@ -25,13 +25,14 @@ If you, as user or developer need new features or fixes you shall submit them he
 
 ```C#
 RadaeePDFPlugin mRadaeePDFPlugin = new RadaeePDFPlugin();
-bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //license activation info
+// bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, email, licenseKey); //old license activation method
+bool activated = mRadaeePDFPlugin.activateLicense(this, company, email, licenseKey); //now it is substituted by this one
 ```
 
 ###### Example:
 
 ```C#
-bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
+bool activated = mRadaeePDFPlugin.activateLicense(this, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
 ```
 
 ### Open PDF from file system/remote server
@@ -48,7 +49,7 @@ mRadaeePDFPlugin.show(filePath, password, this); //the file path and the passwor
 ```C#
 mRadaeePDFPlugin.show("file:///mnt/sdcard/Download/pdf/Test.pdf", "", this); //local
 
-mRadaeePDFPlugin.show("http://www.radaeepdf.com/documentation/MRBrochoure.pdf", "", this); //remote
+mRadaeePDFPlugin.show("https://www.radaeepdf.com/documentation/readeula/eula/eula.pdf", "", this); //remote
 ```
 
 ### Open PDF from assets
