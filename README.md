@@ -34,6 +34,19 @@ bool activated = mRadaeePDFPlugin.activateLicense(this, licenseType, company, em
 bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com@yahoo.cn", "LNJFDN-C89QFX-9ZOU9E-OQ31K2-FADG6Z-XEBCAO");
 ```
 
+* iOS
+
+```C#
+RadaeePDFPlugin mRadaeePDFPlugin = mRadaeePDFPlugin.PluginInit;
+mRadaeePDFPlugin.ActivateLicenseWithBundleId(bundleID, company, email, licenseKey); //license activation info
+```
+
+###### Example:
+
+```C#
+mRadaeePDFPlugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO");
+```
+
 ### Open PDF from file system/remote server
 
 * Android
