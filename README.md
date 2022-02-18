@@ -37,7 +37,7 @@ bool activated = mRadaeePDFPlugin.activateLicense(this, 2, "radaee", "radaee_com
 * iOS
 
 ```C#
-RadaeePDFPlugin mRadaeePDFPlugin = mRadaeePDFPlugin.PluginInit;
+RadaeePDFPlugin mRadaeePDFPlugin = RadaeePDFPlugin.PluginInit;
 mRadaeePDFPlugin.ActivateLicenseWithBundleId(bundleID, company, email, licenseKey); //license activation info
 ```
 
