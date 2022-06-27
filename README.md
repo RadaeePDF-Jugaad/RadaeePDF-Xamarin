@@ -68,7 +68,7 @@ mRadaeePDFPlugin.openFromAssets("test.PDF", "");
 ```
 
 RadaeePDF library version included:
-- Android: v3.54
+- Android: v3.65.8
 - iOS: v3.73
 
 More information about RadaeePDF SDK on http://www.radaeepdf.com.  
