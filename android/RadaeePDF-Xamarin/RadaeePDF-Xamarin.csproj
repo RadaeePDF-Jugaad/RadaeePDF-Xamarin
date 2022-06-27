@@ -85,11 +85,11 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\ViewLib.aar" />
     <EmbeddedNativeLibrary Include="Libs\arm64-v8a\librdpdf.so" />
     <EmbeddedNativeLibrary Include="Libs\armeabi-v7a\librdpdf.so" />
     <EmbeddedNativeLibrary Include="Libs\x86\librdpdf.so" />
     <EmbeddedNativeLibrary Include="Libs\x86_64\librdpdf.so" />
+    <LibraryProjectZip Include="Jars\ViewLib-release.aar" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
