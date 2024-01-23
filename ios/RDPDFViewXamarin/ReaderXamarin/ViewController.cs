@@ -108,7 +108,7 @@ namespace ReaderXamarin
             plugin = RadaeePDFPlugin.PluginInit;
 
             //Activate license
-            plugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO");
+            plugin.ActivateLicenseWithBundleId("CA70EB5DDD2FFC67E6630B2F411875C0621366DE8732CEEE594770237EEEAE030910966E24891181C5DA63AC4A4C77EF");
 
             //Thumbnail settings
             plugin.SetThumbnailBGColor(Convert.ToInt32("0x88000000", 16)); //AARRGGBB
@@ -125,7 +125,7 @@ namespace ReaderXamarin
              * 4: Double Page (LTOR, paging enabled)
              */
 
-            RDVGlobal.SharedInstance.G_render_mode = 3; // Set render mode
+            RDVGlobal.SharedInstance.G_view_mode = 3; // Set render mode
 
             //Open from assets
             UIViewController controller = (UIKit.UIViewController)plugin.Show("file://help.pdf", "");

@@ -23,8 +23,8 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchLink>Full</MtouchLink>
-    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
@@ -92,14 +92,25 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="Resources\DlgAnnotPopText.xib" />
-    <InterfaceDefinition Include="Resources\DlgAnnotPropComm.xib" />
-    <InterfaceDefinition Include="Resources\DlgAnnotPropIcon.xib" />
-    <InterfaceDefinition Include="Resources\DlgAnnotPropLine.xib" />
+    <InterfaceDefinition Include="Resources\MoreViewController.xib" />
+    <InterfaceDefinition Include="Resources\UICellView.xib" />
+    <InterfaceDefinition Include="Resources\UIPageCellView.xib" />
+    <InterfaceDefinition Include="Resources\SearchResultViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDPopupTextViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDPDFReflowViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDMetaDataViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDBookmarkViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDAnnotPickerViewController.xib" />
     <InterfaceDefinition Include="Resources\DlgAnnotPropMarkup.xib" />
-    <InterfaceDefinition Include="Resources\DlgMeta.xib" />
-    <InterfaceDefinition Include="Resources\PopColor.xib" />
-    <InterfaceDefinition Include="Resources\PopOutline.xib" />
+    <InterfaceDefinition Include="Resources\DlgAnnotPropLine.xib" />
+    <InterfaceDefinition Include="Resources\DlgAnnotPropIcon.xib" />
+    <InterfaceDefinition Include="Resources\DlgAnnotPropComm.xib" />
+    <InterfaceDefinition Include="Resources\RDFileDetailViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDFileCollectionViewController.xib" />
+    <InterfaceDefinition Include="Resources\RDFileCollectionViewCell.xib" />
+    <InterfaceDefinition Include="Resources\RDTreeViewController.xib" />
+    <InterfaceDefinition Include="Resources\PDFPagesCtrl.storyboard" />
+    <InterfaceDefinition Include="Resources\PDFReaderCtrl.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -126,40 +137,25 @@
     <BundleResource Include="Resources\cmaps\cmaps.dat" />
     <BundleResource Include="Resources\cmaps\cmyk_rgb.dat" />
     <BundleResource Include="Resources\cmaps\umaps.dat" />
-    <BundleResource Include="Resources\fdat\GUST e-foundry License.txt" />
-    <BundleResource Include="Resources\fdat\help.pdf" />
-    <BundleResource Include="Resources\fdat\stdFont\argbsn00lp.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\arimo.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\arimob.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\arimobi.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\arimoi.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\cousine.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\cousineb.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\cousinebi.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\cousinei.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\rdf008.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\rdf013.ttf" />
-    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-bold.otf" />
-    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-bolditalic.otf" />
-    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-italic.otf" />
-    <BundleResource Include="Resources\fdat\stdFont\texgyretermes-regular.otf" />
-    <BundleResource Include="Resources\fdat\stdRes\00" />
-    <BundleResource Include="Resources\fdat\stdRes\01" />
-    <BundleResource Include="Resources\fdat\stdRes\02" />
-    <BundleResource Include="Resources\fdat\stdRes\03" />
-    <BundleResource Include="Resources\fdat\stdRes\04" />
-    <BundleResource Include="Resources\fdat\stdRes\05" />
-    <BundleResource Include="Resources\fdat\stdRes\06" />
-    <BundleResource Include="Resources\fdat\stdRes\07" />
-    <BundleResource Include="Resources\fdat\stdRes\08" />
-    <BundleResource Include="Resources\fdat\stdRes\09" />
-    <BundleResource Include="Resources\fdat\stdRes\10" />
-    <BundleResource Include="Resources\fdat\stdRes\11" />
-    <BundleResource Include="Resources\fdat\stdRes\12" />
-    <BundleResource Include="Resources\fdat\stdRes\13" />
+    <BundleResource Include="Resources\fonts\NotoSansCJK-Regular.ttc" />
+    <BundleResource Include="Resources\fonts\Symbol Neu for Powerline.ttf" />
+    <BundleResource Include="Resources\fonts\argbsn00lp.ttf" />
+    <BundleResource Include="Resources\fonts\arimo.ttf" />
+    <BundleResource Include="Resources\fonts\arimob.ttf" />
+    <BundleResource Include="Resources\fonts\arimobi.ttf" />
+    <BundleResource Include="Resources\fonts\arimoi.ttf" />
+    <BundleResource Include="Resources\fonts\cousine.ttf" />
+    <BundleResource Include="Resources\fonts\cousineb.ttf" />
+    <BundleResource Include="Resources\fonts\cousinebi.ttf" />
+    <BundleResource Include="Resources\fonts\cousinei.ttf" />
+    <BundleResource Include="Resources\fonts\rdf008.dat" />
+    <BundleResource Include="Resources\fonts\rdf013.dat" />
+    <BundleResource Include="Resources\fonts\texgyretermes-bold.otf" />
+    <BundleResource Include="Resources\fonts\texgyretermes-bolditalic.otf" />
+    <BundleResource Include="Resources\fonts\texgyretermes-italic.otf" />
+    <BundleResource Include="Resources\fonts\texgyretermes-regular.otf" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Images.xcassets\.DS_Store" />
     <ImageAsset Include="Images.xcassets\Contents.json" />
     <ImageAsset Include="Images.xcassets\encrypt.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\encrypt.imageset\encrypt.png" />
@@ -205,6 +201,10 @@
     <ImageAsset Include="Images.xcassets\fontSmall.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_grid.imageset\btn_grid.png" />
     <ImageAsset Include="Images.xcassets\btn_grid.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_polyline.imageset\btn_polyline.png" />
+    <ImageAsset Include="Images.xcassets\btn_polyline.imageset\btn_polyline-2x.png" />
+    <ImageAsset Include="Images.xcassets\btn_polyline.imageset\btn_polyline-3x.png" />
+    <ImageAsset Include="Images.xcassets\btn_polyline.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_print.imageset\btn_print-1.png" />
     <ImageAsset Include="Images.xcassets\btn_print.imageset\btn_print-2.png" />
     <ImageAsset Include="Images.xcassets\btn_print.imageset\btn_print.png" />
@@ -231,8 +231,6 @@
     <ImageAsset Include="Images.xcassets\btn_view_dual.imageset\btn_view_dual.png" />
     <ImageAsset Include="Images.xcassets\btn_view_horz.imageset\btn_view_hor.png" />
     <ImageAsset Include="Images.xcassets\btn_view_horz.imageset\Contents.json" />
-    <ImageAsset Include="Images.xcassets\btn_show.imageset\btn_show.png" />
-    <ImageAsset Include="Images.xcassets\btn_show.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_search_results.imageset\btn_search_results-2.png" />
     <ImageAsset Include="Images.xcassets\btn_search_results.imageset\btn_search_results-1.png" />
     <ImageAsset Include="Images.xcassets\btn_search_results.imageset\Contents.json" />
@@ -277,6 +275,10 @@
     <ImageAsset Include="Images.xcassets\btn_perform.imageset\btn_perform-1.png" />
     <ImageAsset Include="Images.xcassets\btn_perform.imageset\btn_perform.png" />
     <ImageAsset Include="Images.xcassets\btn_perform.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark_add.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark_add.imageset\add-bookmark%403.png" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark_add.imageset\add-bookmark%402.png" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark_add.imageset\add-bookmark%401.png" />
     <ImageAsset Include="Images.xcassets\btn_annot_line.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_annot_line.imageset\btn_annot_line.png" />
     <ImageAsset Include="Images.xcassets\btn_undo.imageset\Contents.json" />
@@ -296,6 +298,10 @@
     <ImageAsset Include="Images.xcassets\btn_thumb.imageset\btn_thumb-1.png" />
     <ImageAsset Include="Images.xcassets\btn_thumb.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_thumb.imageset\btn_thumb.png" />
+    <ImageAsset Include="Images.xcassets\btn_polygon.imageset\btn_polygon.png" />
+    <ImageAsset Include="Images.xcassets\btn_polygon.imageset\btn_polygon-3x.png" />
+    <ImageAsset Include="Images.xcassets\btn_polygon.imageset\btn_polygon-2x.png" />
+    <ImageAsset Include="Images.xcassets\btn_polygon.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_done.imageset\btn_done-1.png" />
     <ImageAsset Include="Images.xcassets\btn_done.imageset\btn_done-2.png" />
     <ImageAsset Include="Images.xcassets\btn_done.imageset\Contents.json" />
@@ -312,6 +318,10 @@
     <ImageAsset Include="Images.xcassets\btn_lock.imageset\btn_lock-2x.png" />
     <ImageAsset Include="Images.xcassets\btn_lock.imageset\btn_lock.png" />
     <ImageAsset Include="Images.xcassets\btn_lock.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark.imageset\btn_show%402.png" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark.imageset\btn_show%403.png" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark.imageset\btn_show%401.png" />
+    <ImageAsset Include="Images.xcassets\btn_bookmark.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_share.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\btn_share.imageset\btn_share.png" />
     <ImageAsset Include="Images.xcassets\btn_share.imageset\btn_share-2.png" />
