@@ -43,13 +43,13 @@ To activate the license key in newkey version you will need a new key, specific 
 plugin = RadaeePDFPlugin.PluginInit;
 //Activate license
 //plugin.ActivateLicenseWithBundleId("com.radaee.pdf.PDFViewer", "Radaee", "radaee_com@yahoo.cn", "89WG9I-HCL62K-H3CRUZ-WAJQ9H-FADG6Z-XEBCAO"); //old license activation method
-bool activated = mRadaeePDFPlugin.activateLicense(licenseKey); //now it is substituted by this one
+plugin.ActivateLicenseWithBundleId(licenseKey); //now it is substituted by this one
 ```
 
 ###### Example:
 
 ```C#
-bool activated = mRadaeePDFPlugin.activateLicense("CA70EB5DDD2FFC67E6630B2F411875C0621366DE8732CEEE594770237EEEAE030910966E24891181C5DA63AC4A4C77EF");
+plugin.ActivateLicenseWithBundleId("CA70EB5DDD2FFC67E6630B2F411875C0621366DE8732CEEE594770237EEEAE030910966E24891181C5DA63AC4A4C77EF");
 ```
 
 ### Open PDF from file system/remote server
