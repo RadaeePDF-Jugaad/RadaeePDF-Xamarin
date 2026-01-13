@@ -1,5 +1,6 @@
-RadaeePDF-Xamarin Module
-========================
+# RadaeePDF SDK - Xamarin Module
+
+<img src="https://www.radaeepdf.com/images/logo/logo-butterfly-only.png" style="width:100px;"> 
 
 Project that enable the use of RadaeePDF SDK (www.radaeepdf.com) with Xamarin development tool.
 
