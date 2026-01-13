@@ -2,7 +2,7 @@
 
 ## *END USER LICENSE AGREEMENT*
 
-<img src="https://www.radaeepdf.com/images/logo/radaee_master_225x200.png" style="width:100px;"> 
+<img src="https://www.radaeepdf.com/images/logo/logo-butterfly-only.png" style="width:100px;"> 
 
 # **Software License Agreement for RadaeePDF SDK**
 
