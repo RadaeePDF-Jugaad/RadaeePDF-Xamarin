@@ -1,8 +1,8 @@
 # **RadaeePDF SDK**
 
-<img src="https://www.radaeepdf.com/images/logo/radaee_master_225x200.png" style="width:100px;"> 
-
 ## *END USER LICENSE AGREEMENT*
+
+<img src="https://www.radaeepdf.com/images/logo/radaee_master_225x200.png" style="width:100px;"> 
 
 # **Software License Agreement for RadaeePDF SDK**
 
