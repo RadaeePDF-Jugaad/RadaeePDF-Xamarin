@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-# **RadaeePDF SDK**
-
-## *END USER LICENSE AGREEMENT*
-
-<img src="https://www.radaeepdf.com/images/logo/logo-butterfly-only.png" style="width:100px;"> 
-
-=======
->>>>>>> 9b2d0f4b9a24c0168bcc563d8b2c1b9b9cfef953
 # **Software License Agreement for RadaeePDF SDK**
 <img src="https://www.radaeepdf.com/images/logo/radaee_master_225x200.png" style="width:100px;"> 
 
